@@ -2,14 +2,13 @@
 
 .contents {
     @include relPosition();
-    background: #fff;
-    background: url(#{$imgDir}bg_line.png) repeat-y top left / 8px 48px, url(#{$imgDir}bg_line.png) repeat-y top right / 8px 48px;
-    padding: 0 8px;
 
     @include MQ_WIDE {
+        background: url(#{$imgDir}bg_line.png) repeat-y top left / 8px 48px, url(#{$imgDir}bg_line.png) repeat-y top right / 8px 48px;
         box-shadow: 0 0 14px rgba(#000, 0.7);
-        width: calc(580px + 16px);
         margin: 0 auto;
+        padding: 0 8px;
+        width: calc(580px + 16px);
     }
 
     

@@ -1370,9 +1370,6 @@ nav li:before {
 
 .contents {
   position: relative;
-  background: #fff;
-  background: url(../img/bg_line.png) repeat-y top left/8px 48px, url(../img/bg_line.png) repeat-y top right/8px 48px;
-  padding: 0 8px;
 }
 
 .keywords {
@@ -1896,9 +1893,11 @@ nav li:before {
     display: none;
   }
   .contents {
+    background: url(../img/bg_line.png) repeat-y top left/8px 48px, url(../img/bg_line.png) repeat-y top right/8px 48px;
     box-shadow: 0 0 14px rgba(0, 0, 0, 0.7);
-    width: 596px;
     margin: 0 auto;
+    padding: 0 8px;
+    width: 596px;
   }
 }
 
