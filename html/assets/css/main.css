@@ -1,0 +1,1909 @@
+@charset "UTF-8";
+/**
+ * Lightcase - jQuery Plugin
+ * The smart and flexible Lightbox Plugin.
+ *
+ * @author		Cornel Boppart <cornel@bopp-art.com>
+ * @copyright	Author
+ *
+ * @version		2.5.0 (11/03/2018)
+ */
+/**
+ * Lightcase settings
+ *
+ * Note: Override default settings for your project without touching this source code by simply
+ * defining those variables within a SASS map called '$lightcase-custom'.
+ *
+ * // Example usage
+ * $lightcase-custom: (
+ *   'breakpoint': 768px
+ * );
+ */
+@font-face {
+  font-family: "lightcase";
+  src: url("/assets/img/common/lightcase/lightcase.eot?55356177");
+  src: url("/assets/img/common/lightcase/lightcase.eot?55356177#iefix") format("embedded-opentype"), url("/assets/img/common/lightcase/lightcase.woff?55356177") format("woff"), url("/assets/img/common/lightcase/lightcase.ttf?55356177") format("truetype"), url("/assets/img/common/lightcase/lightcase.svg?55356177#lightcase") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+/* line 12, ../scss/components/fonts/_font-lightcase.scss */
+[class*=lightcase-icon-]:before {
+  font-family: "lightcase", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  text-align: center;
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+
+/* Codes */
+/* line 35, ../scss/components/fonts/_font-lightcase.scss */
+.lightcase-icon-play:before {
+  content: "\e800";
+}
+
+/* line 36, ../scss/components/fonts/_font-lightcase.scss */
+.lightcase-icon-pause:before {
+  content: "\e801";
+}
+
+/* line 37, ../scss/components/fonts/_font-lightcase.scss */
+.lightcase-icon-close {
+  width: 40px !important;
+}
+
+.lightcase-icon-close:before {
+  content: "";
+  height: 40px;
+  width: 40px;
+  background: url("../img/common/ico/ico_close_black.svg") 0 0/100% auto no-repeat;
+}
+
+/* line 38, ../scss/components/fonts/_font-lightcase.scss */
+.lightcase-icon-prev:before {
+  content: "\e803";
+}
+
+/* line 39, ../scss/components/fonts/_font-lightcase.scss */
+.lightcase-icon-next:before {
+  content: "\e804";
+}
+
+/* line 40, ../scss/components/fonts/_font-lightcase.scss */
+.lightcase-icon-spin:before {
+  content: "\e805";
+}
+
+/**
+ * Mixin providing icon defaults to be used on top of font-lightcase.
+ *
+ * Example usage:
+ * @include icon(#e9e9e9)
+ */
+/**
+ * Mixin providing icon defaults including a hover status to be used
+ * on top of font-lightcase.
+ *
+ * Example usage:
+ * @include icon-hover(#e9e9e9, #fff)
+ */
+/**
+ * Provides natural content overflow behavior and scrolling support
+ * even so for touch devices.
+ *
+ * Example usage:
+ * @include overflow()
+ */
+/**
+ * Neutralizes/resets dimensions including width, height, position as well as margins,
+ * paddings and styles. Used to enforce a neutral and unstyled look and behavoir!
+ *
+ * Example usage:
+ * @include clear(true)
+ *
+ * @param boolean $important
+ */
+@-webkit-keyframes lightcase-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(359deg);
+  }
+}
+@keyframes lightcase-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(359deg);
+  }
+}
+/* line 1, ../scss/components/modules/_case.scss */
+#lightcase-case {
+  display: none;
+  position: fixed;
+  z-index: 9002;
+  top: 50%;
+  left: 50%;
+  font-family: arial, sans-serif;
+  font-size: 13px;
+  line-height: 1.5;
+  text-align: left;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+/* line 31, ../scss/components/modules/_content.scss */
+html[data-lc-type=inline] #lightcase-content, html[data-lc-type=ajax] #lightcase-content, html[data-lc-type=error] #lightcase-content {
+  -o-box-shadow: none;
+  box-shadow: none;
+}
+/* line 43, ../scss/components/modules/_content.scss */
+html[data-lc-type=inline] #lightcase-content .lightcase-contentInner, html[data-lc-type=ajax] #lightcase-content .lightcase-contentInner, html[data-lc-type=error] #lightcase-content .lightcase-contentInner {
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+}
+/* line 82, ../scss/components/modules/_content.scss */
+html[data-lc-type=image] #lightcase-content .lightcase-contentInner {
+  position: relative;
+}
+/* line 3, ../scss/components/modules/_error.scss */
+#lightcase-case p.lightcase-error {
+  margin: 0;
+  font-size: 17px;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #aaa;
+}
+/* line 4, ../scss/components/modules/_global.scss */
+.lightcase-open body {
+  overflow: hidden;
+}
+
+/* line 8, ../scss/components/modules/_global.scss */
+.lightcase-isMobileDevice .lightcase-open body {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+/* line 1, ../scss/components/modules/_info.scss */
+#lightcase-info {
+  position: absolute;
+  padding-top: 15px;
+}
+
+/* line 9, ../scss/components/modules/_info.scss */
+#lightcase-info #lightcase-title,
+#lightcase-info #lightcase-caption {
+  margin: 0;
+  padding: 0;
+  line-height: 1.5;
+  font-weight: normal;
+  text-overflow: ellipsis;
+}
+
+/* line 19, ../scss/components/modules/_info.scss */
+#lightcase-info #lightcase-title {
+  font-size: 17px;
+  color: #aaa;
+}
+/* line 33, ../scss/components/modules/_info.scss */
+#lightcase-info #lightcase-caption {
+  clear: both;
+  font-size: 13px;
+  color: #aaa;
+}
+
+/* line 39, ../scss/components/modules/_info.scss */
+#lightcase-info #lightcase-sequenceInfo {
+  font-size: 11px;
+  color: #aaa;
+}
+/* line 1, ../scss/components/modules/_loading.scss */
+#lightcase-loading {
+  position: fixed;
+  z-index: 9999;
+  width: 1.123em;
+  height: auto;
+  font-size: 38px;
+  line-height: 1;
+  text-align: center;
+  text-shadow: none;
+  position: fixed;
+  z-index: 2001;
+  top: 50%;
+  left: 50%;
+  margin-top: -0.5em;
+  margin-left: -0.5em;
+  opacity: 1;
+  font-size: 32px;
+  text-shadow: 0 0 15px #fff;
+  -moz-transform-origin: 50% 53%;
+  -webkit-animation: lightcase-spin 0.5s infinite linear;
+  animation: lightcase-spin 0.5s infinite linear;
+}
+
+/* line 20, ../scss/components/mixins/_presets.scss */
+#lightcase-loading, #lightcase-loading:focus {
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.6);
+  -webkit-tap-highlight-color: transparent;
+  transition: color, opacity, ease-in-out 0.25s;
+}
+
+/* line 32, ../scss/components/mixins/_presets.scss */
+#lightcase-loading > span {
+  display: inline-block;
+  text-indent: -9999px;
+}
+
+/* line 2, ../scss/components/modules/_navigation.scss */
+a[class*=lightcase-icon-] {
+  position: fixed;
+  z-index: 9999;
+  width: 1.123em;
+  height: auto;
+  font-size: 38px;
+  line-height: 1;
+  text-align: center;
+  text-shadow: none;
+  outline: none;
+  cursor: pointer;
+}
+
+/* line 20, ../scss/components/mixins/_presets.scss */
+a[class*=lightcase-icon-], a[class*=lightcase-icon-]:focus {
+  text-decoration: none;
+  color: white;
+  -webkit-tap-highlight-color: transparent;
+  transition: color, opacity, ease-in-out 0.25s;
+}
+
+/* line 32, ../scss/components/mixins/_presets.scss */
+a[class*=lightcase-icon-] > span {
+  display: inline-block;
+  text-indent: -9999px;
+}
+
+/* line 49, ../scss/components/mixins/_presets.scss */
+a[class*=lightcase-icon-]:hover {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* line 10, ../scss/components/modules/_navigation.scss */
+.lightcase-isMobileDevice a[class*=lightcase-icon-]:hover {
+  color: rgba(255, 255, 255, 0.8);
+  text-shadow: none;
+}
+
+/* line 17, ../scss/components/modules/_navigation.scss */
+a[class*=lightcase-icon-].lightcase-icon-close {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  bottom: auto;
+  margin: 0;
+  opacity: 0;
+  outline: none;
+}
+
+/* line 28, ../scss/components/modules/_navigation.scss */
+a[class*=lightcase-icon-].lightcase-icon-prev {
+  left: 15px;
+}
+
+/* line 33, ../scss/components/modules/_navigation.scss */
+a[class*=lightcase-icon-].lightcase-icon-next {
+  right: 15px;
+}
+
+/* line 38, ../scss/components/modules/_navigation.scss */
+a[class*=lightcase-icon-].lightcase-icon-pause, a[class*=lightcase-icon-].lightcase-icon-play {
+  left: 50%;
+  margin-left: -0.5em;
+}
+/* line 1, ../scss/components/modules/_overlay.scss */
+#lightcase-overlay {
+  display: none;
+  width: 100%;
+  min-height: 100%;
+  position: fixed;
+  z-index: 9000;
+  top: -9999px;
+  bottom: -9999px;
+  left: 0;
+  background: rgba(255, 255, 255, 0.9);
+}
+#lightcase-overlay.-active {
+  display: block;
+}
+/* Document
+ * ========================================================================== */
+/**
+ * Add border box sizing in all browsers (opinionated).
+ */
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+/**
+  * 1. Add text decoration inheritance in all browsers (opinionated).
+  * 2. Add vertical alignment inheritance in all browsers (opinionated).
+  */
+::before,
+::after {
+  text-decoration: inherit;
+  /* 1 */
+  vertical-align: inherit;
+  /* 2 */
+}
+
+/**
+  * 1. Use the default cursor in all browsers (opinionated).
+  * 2. Change the line height in all browsers (opinionated).
+  * 3. Use a 4-space tab width in all browsers (opinionated).
+  * 4. Remove the grey highlight on links in iOS (opinionated).
+  * 5. Prevent adjustments of font size after orientation changes in
+  *    IE on Windows Phone and in iOS.
+  * 6. Breaks words to prevent overflow in all browsers (opinionated).
+  */
+html {
+  cursor: default;
+  /* 1 */
+  line-height: 1.5;
+  /* 2 */
+  -moz-tab-size: 4;
+  /* 3 */
+  -o-tab-size: 4;
+     tab-size: 4;
+  /* 3 */
+  -webkit-tap-highlight-color: transparent;
+  -ms-text-size-adjust: 100%;
+  /* 5 */
+  -webkit-text-size-adjust: 100%;
+  /* 5 */
+  word-break: break-word;
+  /* 6 */
+}
+
+/* Sections
+  * ========================================================================== */
+/**
+  * Remove the margin in all browsers (opinionated).
+  */
+body {
+  margin: 0;
+}
+
+/**
+  * Correct the font size and margin on `h1` elements within `section` and
+  * `article` contexts in Chrome, Edge, Firefox, and Safari.
+  */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+/* Grouping content
+  * ========================================================================== */
+/**
+  * Remove the margin on nested lists in Chrome, Edge, IE, and Safari.
+  */
+dl dl,
+dl ol,
+dl ul,
+ol dl,
+ul dl {
+  margin: 0;
+}
+
+/**
+  * Remove the margin on nested lists in Edge 18- and IE.
+  */
+ol ol,
+ol ul,
+ul ol,
+ul ul {
+  margin: 0;
+}
+
+/**
+  * 1. Correct the inheritance of border color in Firefox.
+  * 2. Add the correct box sizing in Firefox.
+  * 3. Show the overflow in Edge 18- and IE.
+  */
+hr {
+  color: inherit;
+  /* 1 */
+  height: 0;
+  /* 2 */
+  overflow: visible;
+  /* 3 */
+}
+
+/**
+  * Add the correct display in IE.
+  */
+main {
+  display: block;
+}
+
+/**
+  * Remove the list style on navigation lists in all browsers (opinionated).
+  */
+nav ol,
+nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+/**
+  * Prevent VoiceOver from ignoring list semantics in Safari (opinionated).
+  */
+nav li::before {
+  content: "​";
+}
+
+/**
+  * 1. Correct the inheritance and scaling of font size in all browsers.
+  * 2. Correct the odd `em` font sizing in all browsers.
+  * 3. Prevent overflow of the container in all browsers (opinionated).
+  */
+pre {
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */
+  overflow: auto;
+  /* 3 */
+  -ms-overflow-style: scrollbar;
+  /* 3 */
+}
+
+/* Text-level semantics
+  * ========================================================================== */
+/**
+  * Remove the gray background on active links in IE 10.
+  */
+a {
+  background-color: transparent;
+}
+
+/**
+  * Add the correct text decoration in Edge 18-, IE, and Safari.
+  */
+abbr[title] {
+  text-decoration: underline;
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted;
+}
+
+/**
+  * Add the correct font weight in Chrome, Edge, and Safari.
+  */
+b,
+strong {
+  font-weight: bolder;
+}
+
+/**
+  * 1. Correct the inheritance and scaling of font size in all browsers.
+  * 2. Correct the odd `em` font sizing in all browsers.
+  */
+code,
+kbd,
+samp {
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */
+}
+
+/**
+  * Add the correct font size in all browsers.
+  */
+small {
+  font-size: 80%;
+}
+
+/* Embedded content
+  * ========================================================================== */
+/*
+  * Change the alignment on media elements in all browsers (opinionated).
+  */
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
+
+/**
+  * Add the correct display in IE 9-.
+  */
+audio,
+video {
+  display: inline-block;
+}
+
+/**
+  * Add the correct display in iOS 4-7.
+  */
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+/**
+  * Remove the border on iframes in all browsers (opinionated).
+  */
+iframe {
+  border-style: none;
+}
+
+/**
+  * Remove the border on images within links in IE 10-.
+  */
+img {
+  border-style: none;
+}
+
+/**
+  * Change the fill color to match the text color in all browsers (opinionated).
+  */
+svg:not([fill]) {
+  fill: currentColor;
+}
+
+/**
+  * Hide the overflow in IE.
+  */
+svg:not(:root) {
+  overflow: hidden;
+}
+
+/* Tabular data
+  * ========================================================================== */
+/**
+  * 1. Collapse border spacing in all browsers (opinionated).
+  * 2. Correct table border color inheritance in all Chrome, Edge, and Safari.
+  * 3. Remove text indentation from table contents in Chrome, Edge, and Safari.
+  */
+table {
+  border-collapse: collapse;
+  /* 1 */
+  border-color: inherit;
+  /* 2 */
+  text-indent: 0;
+  /* 3 */
+}
+
+/* Forms
+  * ========================================================================== */
+/**
+  * Remove the margin on controls in Safari.
+  */
+button,
+input,
+select {
+  margin: 0;
+}
+
+/**
+  * 1. Show the overflow in IE.
+  * 2. Remove the inheritance of text transform in Edge 18-, Firefox, and IE.
+  */
+button {
+  overflow: visible;
+  /* 1 */
+  text-transform: none;
+  /* 2 */
+}
+
+/**
+  * Correct the inability to style buttons in iOS and Safari.
+  */
+button,
+[type=button],
+[type=reset],
+[type=submit] {
+  -webkit-appearance: button;
+}
+
+/**
+  * 1. Change the inconsistent appearance in all browsers (opinionated).
+  * 2. Correct the padding in Firefox.
+  */
+fieldset {
+  border: 1px solid #a0a0a0;
+  /* 1 */
+  padding: 0.35em 0.75em 0.625em;
+  /* 2 */
+}
+
+/**
+  * Show the overflow in Edge 18- and IE.
+  */
+input {
+  overflow: visible;
+}
+
+/**
+  * 1. Correct the text wrapping in Edge 18- and IE.
+  * 2. Correct the color inheritance from `fieldset` elements in IE.
+  */
+legend {
+  color: inherit;
+  /* 2 */
+  display: table;
+  /* 1 */
+  max-width: 100%;
+  /* 1 */
+  white-space: normal;
+  /* 1 */
+}
+
+/**
+  * 1. Add the correct display in Edge 18- and IE.
+  * 2. Add the correct vertical alignment in Chrome, Edge, and Firefox.
+  */
+progress {
+  display: inline-block;
+  /* 1 */
+  vertical-align: baseline;
+  /* 2 */
+}
+
+/**
+  * Remove the inheritance of text transform in Firefox.
+  */
+select {
+  text-transform: none;
+}
+
+/**
+  * 1. Remove the margin in Firefox and Safari.
+  * 2. Remove the default vertical scrollbar in IE.
+  * 3. Change the resize direction in all browsers (opinionated).
+  */
+textarea {
+  margin: 0;
+  /* 1 */
+  overflow: auto;
+  /* 2 */
+  resize: vertical;
+  /* 3 */
+  resize: block;
+  /* 3 */
+}
+
+/**
+  * Remove the padding in IE 10-.
+  */
+[type=checkbox],
+[type=radio] {
+  padding: 0;
+}
+
+/**
+  * 1. Correct the odd appearance in Chrome, Edge, and Safari.
+  * 2. Correct the outline style in Safari.
+  */
+[type=search] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  outline-offset: -2px;
+  /* 2 */
+}
+
+/**
+  * Correct the cursor style of increment and decrement buttons in Safari.
+  */
+::-webkit-inner-spin-button,
+::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/**
+  * Correct the text style of placeholders in Chrome, Edge, and Safari.
+  */
+::-webkit-input-placeholder {
+  color: inherit;
+  opacity: 0.54;
+}
+
+/**
+  * Remove the inner padding in Chrome, Edge, and Safari on macOS.
+  */
+::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+  * 1. Correct the inability to style upload buttons in iOS and Safari.
+  * 2. Change font properties to `inherit` in Safari.
+  */
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  /* 1 */
+  font: inherit;
+  /* 2 */
+}
+
+/**
+  * Remove the inner border and padding of focus outlines in Firefox.
+  */
+::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+/**
+  * Restore the focus outline styles unset by the previous rule in Firefox.
+  */
+:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+/**
+  * Remove the additional :invalid styles in Firefox.
+  */
+:-moz-ui-invalid {
+  box-shadow: none;
+}
+
+/* Interactive
+  * ========================================================================== */
+/*
+  * Add the correct display in Edge 18- and IE.
+  */
+details {
+  display: block;
+}
+
+/*
+  * Add the correct styles in Edge 18-, IE, and Safari.
+  */
+dialog {
+  background-color: white;
+  border: solid;
+  color: black;
+  display: block;
+  height: -moz-fit-content;
+  height: -webkit-fit-content;
+  height: fit-content;
+  left: 0;
+  margin: auto;
+  padding: 1em;
+  position: absolute;
+  right: 0;
+  width: -moz-fit-content;
+  width: -webkit-fit-content;
+  width: fit-content;
+}
+
+dialog:not([open]) {
+  display: none;
+}
+
+/*
+  * Add the correct display in all browsers.
+  */
+summary {
+  display: list-item;
+}
+
+/* Scripting
+  * ========================================================================== */
+/**
+  * Add the correct display in IE 9-.
+  */
+canvas {
+  display: inline-block;
+}
+
+/**
+  * Add the correct display in IE.
+  */
+template {
+  display: none;
+}
+
+/* User interaction
+  * ========================================================================== */
+/*
+  * Remove the tapping delay in IE 10.
+  */
+a,
+area,
+button,
+input,
+label,
+select,
+summary,
+textarea,
+[tabindex] {
+  -ms-touch-action: manipulation;
+}
+
+/**
+  * Add the correct display in IE 10-.
+  */
+[hidden] {
+  display: none;
+}
+
+/* Accessibility
+  * ========================================================================== */
+/**
+  * Change the cursor on busy elements in all browsers (opinionated).
+  */
+[aria-busy=true] {
+  cursor: progress;
+}
+
+/*
+  * Change the cursor on control elements in all browsers (opinionated).
+  */
+[aria-controls] {
+  cursor: pointer;
+}
+
+/*
+  * Change the cursor on disabled, not-editable, or otherwise
+  * inoperable elements in all browsers (opinionated).
+  */
+[aria-disabled=true],
+[disabled] {
+  cursor: not-allowed;
+}
+
+/*
+  * Change the display on visually hidden accessible elements
+  * in all browsers (opinionated).
+  */
+[aria-hidden=false][hidden] {
+  display: initial;
+}
+
+[aria-hidden=false][hidden]:not(:focus) {
+  clip: rect(0, 0, 0, 0);
+  position: absolute;
+}
+
+body {
+  font-size: 1rem;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #fff;
+  color: #003856;
+  font-family: "YakuHanJP_Noto", "Noto Sans JP", sans-serif;
+  line-height: 1.7;
+  -webkit-text-size-adjust: 100%;
+}
+
+img {
+  width: 100%;
+}
+
+button {
+  cursor: pointer;
+  display: block;
+  outline: none;
+}
+
+iframe[name=google_conversion_frame] {
+  height: 0;
+  position: absolute;
+}
+
+a {
+  cursor: pointer;
+}
+
+/* sanitize overwrite */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+li,
+dl,
+dd,
+dt {
+  padding: 0;
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 100%;
+  font-weight: normal;
+}
+
+ol,
+ul,
+li {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  outline: none;
+}
+
+a:focus {
+  outline: none;
+}
+
+main {
+  display: block;
+}
+
+button {
+  border: none;
+  outline: none;
+  background: none;
+  cursor: pointer;
+  font-family: initial;
+}
+
+nav li:before {
+  content: "";
+  display: none;
+}
+
+.l-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 3;
+}
+.l-canvas.-disable {
+  opacity: 0;
+  transition: opacity 1s 0s ease;
+}
+
+.l-footer {
+  position: relative;
+  background: #000;
+  color: #fff;
+}
+
+.l-footer__row {
+  padding: 4rem 2.5rem;
+}
+.l-footer__row + .l-footer__row {
+  border-top: 1px solid #797981;
+}
+
+.l-footer__head {
+  display: flex;
+}
+
+.l-footer__head__ico {
+  width: 14.75rem;
+}
+
+.l-footer__head__logo {
+  width: 23.875rem;
+}
+
+.l-footer__dllinks {
+  display: flex;
+  gap: 0.625rem;
+  margin-top: 2rem;
+}
+
+.l-footer__spec {
+  position: relative;
+  display: flex;
+  margin-top: 1.75rem;
+  flex-wrap: wrap;
+  font-size: 2rem;
+}
+.l-footer__spec dt {
+  color: #8A7C21;
+  display: inline-block;
+  font-weight: 700;
+  width: 10rem;
+}
+.l-footer__spec dd {
+  display: inline-block;
+  width: calc(100% - 10rem);
+}
+
+.l-footer__offer {
+  margin-top: 3rem;
+}
+
+.l-footer__offer__txt {
+  font-size: 1.75rem;
+}
+
+.l-footer__bottom {
+  color: #797981;
+  font-size: 1.75rem;
+  text-align: center;
+}
+.l-footer__bottom .links {
+  display: flex;
+}
+.l-footer__bottom .links a {
+  width: 50%;
+}
+
+.l-main {
+  position: relative;
+  overflow: hidden;
+}
+
+.l-main__videobg {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  height: 100vh;
+  height: 100svh;
+  transform: translateX(-50%);
+  width: 100%;
+}
+.l-main__videobg video {
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+.l-main__videobg::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(60, 109, 56, 0.6);
+  content: "";
+  height: 100%;
+  width: 100%;
+}
+.l-main__videobg::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: url(../img/bg_dot.png) 0 0/0.75rem;
+  content: "";
+  height: 100%;
+  opacity: 0.15;
+  width: 100%;
+}
+
+.c-font_oswald {
+  font-family: "Oswald", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+.c-font_cormorant-garamond {
+  font-family: "Cormorant Garamond", serif;
+  font-style: normal;
+}
+
+.c-font_shippori-mincho {
+  font-family: "Shippori Mincho", serif;
+  font-style: normal;
+}
+
+.c-hover_op {
+  transition: opacity 0.3s 0s ease;
+}
+
+.c-hover_opacity {
+  transition: opacity 0.3s 0s ease;
+}
+
+.c-modal {
+  transition: all 0.3s ease;
+  position: absolute;
+  top: 0;
+  left: 0;
+  align-items: center;
+  background: url(../img/bg_contents.jpg) no-repeat 0 0/cover;
+  display: flex;
+  height: 100%;
+  opacity: 0;
+  overflow: auto;
+  visibility: hidden;
+  width: 100%;
+  z-index: 3;
+}
+.c-modal.-active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.c-modal__inner {
+  position: relative;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.c-modal__close {
+  transition: all 0.3s ease;
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  height: 5rem;
+  width: 5rem;
+}
+.c-modal__close:before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background: #003856;
+  content: "";
+  height: 0.125rem;
+  transform: translate(-50%, -50%) rotate(45deg);
+  width: 100%;
+}
+.c-modal__close:after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background: #003856;
+  content: "";
+  height: 0.125rem;
+  transform: translate(-50%, -50%) rotate(-45deg);
+  width: 100%;
+}
+.c-modal__close:hover {
+  opacity: 0.5;
+  transform: scale(1.25);
+}
+
+.c-scrollreveal {
+  opacity: 0;
+}
+
+@-webkit-keyframes itemInSp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes itemInSp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@-webkit-keyframes itemInPc {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes itemInPc {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.c-visible_nrw {
+  display: block;
+}
+
+.about {
+  position: relative;
+  margin-top: 10.25rem;
+  padding: 6.875rem 0 11.25rem;
+}
+.about::before {
+  position: absolute;
+  top: -8.75rem;
+  background: url(../img/about/bg_deco.png) no-repeat 0 0/100%;
+  content: "";
+  height: 26.3125rem;
+  opacity: 0.6;
+  width: 100%;
+}
+.about::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: url(../img/about/bg.png) no-repeat 0 0/100% auto;
+  content: "";
+  height: 100%;
+  width: 100%;
+}
+
+.about__inner {
+  position: relative;
+  z-index: 1;
+}
+
+.about__catch {
+  position: relative;
+  margin: 0 auto;
+  width: 45.25rem;
+}
+.about__catch::before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background: url(../img/about/bg_light.png) no-repeat center/100%;
+  content: "";
+  height: 71.625rem;
+  transform: translate(-50%, -50%);
+  width: 71.625rem;
+}
+.about__catch img {
+  position: relative;
+}
+
+.about__pv {
+  position: relative;
+  height: 32.1875rem;
+  margin: 6.75rem auto 0;
+  width: 43.6875rem;
+}
+
+.about__pv__cont {
+  position: relative;
+  height: 100%;
+  padding-top: 9.125rem;
+}
+.about__pv__cont::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: url(../img/about/ph_tv.png) no-repeat 0 0/100%;
+  content: "";
+  height: 100%;
+  width: 100%;
+}
+
+.about__pv__shadow {
+  position: absolute;
+  left: 4.375rem;
+  bottom: 0;
+  background: url(../img/about/ph_shadow.png) no-repeat 0 0/100%;
+  height: 3.25rem;
+  width: 35rem;
+}
+
+.about__pv__cont__movie {
+  position: relative;
+  background: yellow;
+  height: 17.875rem;
+  margin: 0 auto;
+  width: 23.25rem;
+}
+.about__pv__cont__movie::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background: url(../img/about/btn_play.png) no-repeat 0 0/100%;
+  content: "";
+  display: block;
+  height: 10.125rem;
+  transform: translate(-50%, -50%);
+  width: 10.125rem;
+}
+
+.about__pv__balloon {
+  position: absolute;
+  top: 2.875rem;
+  left: -0.625rem;
+  width: 16.625rem;
+  z-index: 1;
+}
+
+.bottom {
+  position: relative;
+  height: 18.25rem;
+}
+
+.bottom__pagetop {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  height: 11rem;
+  padding: 0;
+  width: 11rem;
+}
+
+.bottom__pagetop__inner {
+  position: relative;
+  height: 100%;
+}
+.bottom__pagetop__inner .shadow,
+.bottom__pagetop__inner .brown {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.bottom__pagetop__inner .balloon {
+  position: absolute;
+  top: -6.25rem;
+  left: -6rem;
+  width: 18rem;
+}
+
+.contents {
+  position: relative;
+  background: #fff;
+  background: url(../img/bg_line.png) repeat-y top left/8px 48px, url(../img/bg_line.png) repeat-y top right/8px 48px;
+  padding: 0 8px;
+}
+
+.keywords {
+  position: relative;
+  margin-top: -10rem;
+}
+.keywords::before {
+  position: absolute;
+  top: 6.25rem;
+  left: 0;
+  background: url(../img/keywords/bg.jpg) repeat-y 0 0/100% auto;
+  content: "";
+  height: calc(100% - 6.25rem);
+  width: 100%;
+}
+
+.keywords__inner {
+  position: relative;
+}
+
+.keywords__head {
+  position: relative;
+  height: 16.875rem;
+}
+
+.keywords__head__bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.keywords__head__ttl {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.keywords__cont {
+  margin-top: -1.375rem;
+}
+
+.keywords__cont__item {
+  position: relative;
+}
+.keywords__cont__item + .keywords__cont__item {
+  margin-top: 5rem;
+}
+
+.keywords__cont__item__bg {
+  position: absolute;
+  top: -8.75rem;
+  left: 0;
+  height: 90.5625rem;
+  width: 100%;
+}
+.-key1 .keywords__cont__item__bg {
+  background: url(../img/keywords/bg_key1.png) repeat-y 0 0/100% auto;
+}
+.-key2 .keywords__cont__item__bg {
+  background: url(../img/keywords/bg_key2.png) repeat-y 0 0/100% auto;
+}
+.-key3 .keywords__cont__item__bg {
+  background: url(../img/keywords/bg_key3.png) repeat-y 0 0/100% auto;
+}
+.-key4 .keywords__cont__item__bg {
+  background: url(../img/keywords/bg_key4.png) repeat-y 0 0/100% auto;
+}
+.-key5 .keywords__cont__item__bg {
+  background: url(../img/keywords/bg_key5.png) repeat-y 0 0/100% auto;
+}
+
+.keywords__cont__item__ttl {
+  position: relative;
+  display: block;
+  height: 15.5rem;
+  z-index: 1;
+}
+.keywords__cont__item__ttl .ttl {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.keywords__cont__item__ttl .ttltxt {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 26.5rem;
+}
+.-key5 .keywords__cont__item__ttl .ttltxt {
+  position: absolute;
+  top: auto;
+  left: 18.5rem;
+  bottom: 0;
+}
+
+.keywords__cont__item__movie {
+  position: relative;
+  height: 64rem;
+  margin: -7.25rem auto 0;
+  border-radius: 2rem;
+  width: 39rem;
+}
+.-key1 .keywords__cont__item__movie {
+  border: 0.625rem solid #b21315;
+}
+.-key2 .keywords__cont__item__movie {
+  border: 0.625rem solid #723f04;
+}
+.-key3 .keywords__cont__item__movie {
+  border: 0.625rem solid #072389;
+}
+.-key4 .keywords__cont__item__movie {
+  border: 0.625rem solid #074d33;
+}
+.-key5 .keywords__cont__item__movie {
+  border: 0.625rem solid #451462;
+}
+.keywords__cont__item__movie video {
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+
+.keywords__cont__item__movie__inner {
+  position: relative;
+  border-radius: 1.375rem;
+  height: 100%;
+  overflow: hidden;
+}
+.-key1 .keywords__cont__item__movie__inner {
+  border: 0.625rem solid #d93638;
+}
+.-key2 .keywords__cont__item__movie__inner {
+  border: 0.625rem solid #ef5a07;
+}
+.-key3 .keywords__cont__item__movie__inner {
+  border: 0.625rem solid #3d65f2;
+}
+.-key4 .keywords__cont__item__movie__inner {
+  border: 0.625rem solid #009960;
+}
+.-key5 .keywords__cont__item__movie__inner {
+  border: 0.625rem solid #7e0ac3;
+}
+
+.keywords__cont__item__catch {
+  width: 24.125rem;
+}
+.-key1 .keywords__cont__item__catch, .-key3 .keywords__cont__item__catch {
+  position: absolute;
+  left: 2.125rem;
+  bottom: 5rem;
+}
+.-key2 .keywords__cont__item__catch, .-key4 .keywords__cont__item__catch {
+  position: absolute;
+  bottom: 5rem;
+  right: 2.125rem;
+}
+.-key5 .keywords__cont__item__catch {
+  position: absolute;
+  left: 2.125rem;
+  bottom: 29.75rem;
+}
+
+.-key5 .keywords__cont__item__chara {
+  position: absolute;
+  left: -9.375rem;
+  bottom: 0rem;
+  width: 65.375rem;
+}
+
+.keywords__bottom {
+  position: absolute;
+  bottom: -7.5rem;
+  height: 14.25rem;
+  width: 100%;
+}
+
+.keywords__bottom__inner {
+  position: relative;
+  height: 100%;
+}
+
+.keywords__boottom__tape1 {
+  position: absolute;
+  top: 2.75rem;
+  left: 0;
+}
+
+.keywords__boottom__tape2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.mv {
+  position: relative;
+  font-size: 2rem;
+}
+.mv.-bottom {
+  margin-top: 5.625rem;
+  padding-bottom: 5.25rem;
+}
+
+.mv__maincatch {
+  margin: 1.875rem auto 0;
+  width: 41.5rem;
+}
+
+.mv__chara.-sally {
+  position: absolute;
+  top: 6.25rem;
+  right: -4.75rem;
+  width: 18.125rem;
+}
+.mv__chara.-brown {
+  position: absolute;
+  top: 24.375rem;
+  left: 0rem;
+  width: 14.75rem;
+}
+
+.mv__logo {
+  position: relative;
+  margin: 0 auto;
+  width: 39.125rem;
+}
+.-top .mv__logo {
+  margin-top: -2rem;
+}
+
+.mv__dl__txt {
+  position: relative;
+  margin: -3rem auto 0;
+  width: 26rem;
+  z-index: 1;
+}
+
+.mv__dl__btn {
+  filter: drop-shadow(0 0 1.25rem #f7d500) drop-shadow(0 0 1.125rem #f7d500);
+  display: block;
+  margin: -1.625rem auto 0;
+  width: 40.25rem;
+}
+
+.mv__links {
+  margin: 1.75rem auto 0;
+  width: 35.25rem;
+}
+
+.mv__links__btn {
+  display: block;
+}
+.mv__links__btn + .mv__links__btn {
+  margin-top: 0.5rem;
+}
+
+.wide {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: url(../img/wide/bg.jpg) no-repeat center/cover;
+  height: 100%;
+  width: 100%;
+}
+
+.wide__content {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+}
+
+.wide__content__l {
+  display: flex;
+  padding: 45px 40px;
+  justify-content: flex-end;
+  width: calc((100% - 596px) / 2);
+}
+
+.wide__links {
+  max-width: 250px;
+}
+
+.wide__links__btn {
+  display: block;
+}
+.wide__links__btn + .wide__links__btn {
+  margin-top: 10px;
+}
+
+.wide__content__r {
+  position: relative;
+  height: 100vh;
+  width: calc((100% - 596px) / 2);
+}
+
+.wide__dl {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  aspect-ratio: 820/556;
+  background: url(../img/wide/bg_dl.png) no-repeat center/100%;
+  max-width: 420px;
+  padding: 25px 38px 0;
+  transform: translateX(-50%);
+  width: 420px;
+}
+
+.wide__dl__row {
+  align-items: center;
+  display: flex;
+  gap: 14px;
+}
+
+.wide__dl__qr {
+  width: 129px;
+}
+
+.wide__dl__txt {
+  width: 206px;
+}
+
+.wide__dllinks {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+@media screen and (min-width: 769px){
+  .lightcase-icon-close {
+    right: 30px !important;
+    top: 30px !important;
+    width: 80px !important;
+  }
+  .lightcase-icon-close:before {
+    height: 80px;
+    width: 80px;
+  }
+  /* line 4, ../scss/components/modules/_content.scss */
+  html:not([data-lc-type=error]) #lightcase-content {
+    position: relative;
+    z-index: 1;
+    text-shadow: none;
+    -webkit-backface-visibility: hidden;
+  }
+  /* line 23, ../scss/components/modules/_content.scss */
+  /* line 100, ../scss/components/modules/_content.scss */
+  html:not([data-lc-type=error]) #lightcase-content .lightcase-contentInner .lightcase-inlineWrap {
+    padding: 30px;
+    overflow: auto;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  /* line 117, ../scss/components/modules/_content.scss */
+  #lightcase-content h1, #lightcase-content h2, #lightcase-content h3, #lightcase-content h4, #lightcase-content h5, #lightcase-content h6, #lightcase-content p {
+    color: #333;
+  }
+  /* line 3, ../scss/components/modules/_error.scss */
+  #lightcase-case p.lightcase-error {
+    padding: 0;
+  }
+  /* line 38, ../scss/components/modules/_navigation.scss */
+  a[class*=lightcase-icon-].lightcase-icon-pause, a[class*=lightcase-icon-].lightcase-icon-play {
+    opacity: 0;
+  }
+  /* line 2, ../scss/components/modules/_navigation.scss */
+  a[class*=lightcase-icon-] {
+    bottom: 50%;
+    margin-bottom: -0.5em;
+  }
+
+  /* line 57, ../scss/components/modules/_navigation.scss */
+  a[class*=lightcase-icon-]:hover, #lightcase-case:hover ~ a[class*=lightcase-icon-] {
+    opacity: 1;
+  }
+}
+
+@media screen and (max-width: 768px){
+  /* line 16, ../scss/components/modules/_case.scss */
+  html[data-lc-type=inline] #lightcase-case, html[data-lc-type=ajax] #lightcase-case {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    margin: 0 !important;
+    padding: 55px 0 70px 0;
+    width: 100% !important;
+    height: 100% !important;
+    overflow: auto !important;
+  }
+  /* line 31, ../scss/components/modules/_content.scss */
+  html[data-lc-type=inline] #lightcase-content, html[data-lc-type=ajax] #lightcase-content, html[data-lc-type=error] #lightcase-content {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    width: auto !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+    background: none !important;
+  }
+  /* line 43, ../scss/components/modules/_content.scss */
+  html[data-lc-type=inline] #lightcase-content .lightcase-contentInner, html[data-lc-type=ajax] #lightcase-content .lightcase-contentInner, html[data-lc-type=error] #lightcase-content .lightcase-contentInner {
+    padding: 15px;
+  }
+
+  /* line 52, ../scss/components/modules/_content.scss */
+  html[data-lc-type=inline] #lightcase-content .lightcase-contentInner, html[data-lc-type=inline] #lightcase-content .lightcase-contentInner > *, html[data-lc-type=ajax] #lightcase-content .lightcase-contentInner, html[data-lc-type=ajax] #lightcase-content .lightcase-contentInner > *, html[data-lc-type=error] #lightcase-content .lightcase-contentInner, html[data-lc-type=error] #lightcase-content .lightcase-contentInner > * {
+    width: 100% !important;
+    max-width: none !important;
+  }
+
+  /* line 59, ../scss/components/modules/_content.scss */
+  html[data-lc-type=inline] #lightcase-content .lightcase-contentInner > *:not(iframe), html[data-lc-type=ajax] #lightcase-content .lightcase-contentInner > *:not(iframe), html[data-lc-type=error] #lightcase-content .lightcase-contentInner > *:not(iframe) {
+    height: auto !important;
+    max-height: none !important;
+  }
+  /* line 70, ../scss/components/modules/_content.scss */
+  html.lightcase-isMobileDevice[data-lc-type=iframe] #lightcase-content .lightcase-contentInner iframe {
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  /* line 91, ../scss/components/modules/_content.scss */
+  html[data-lc-type=inline] #lightcase-content .lightcase-contentInner .lightcase-inlineWrap, html[data-lc-type=ajax] #lightcase-content .lightcase-contentInner .lightcase-inlineWrap, html[data-lc-type=error] #lightcase-content .lightcase-contentInner .lightcase-inlineWrap {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    width: auto !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+    background: none !important;
+  }
+  /* line 117, ../scss/components/modules/_content.scss */
+  #lightcase-content h1, #lightcase-content h2, #lightcase-content h3, #lightcase-content h4, #lightcase-content h5, #lightcase-content h6, #lightcase-content p {
+    color: #aaa;
+  }
+  /* line 3, ../scss/components/modules/_error.scss */
+  #lightcase-case p.lightcase-error {
+    padding: 30px 0;
+  }
+  /* line 19, ../scss/components/modules/_info.scss */
+  #lightcase-info #lightcase-title {
+    position: fixed;
+    top: 10px;
+    left: 0;
+    max-width: 87.5%;
+    padding: 5px 15px;
+    background: #333;
+  }
+  /* line 45, ../scss/components/modules/_info.scss */
+  .lightcase-fullScreenMode #lightcase-info {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  /* line 51, ../scss/components/modules/_info.scss */
+  html:not([data-lc-type=image]):not([data-lc-type=video]):not([data-lc-type=flash]):not([data-lc-type=error]) #lightcase-info {
+    position: static;
+  }
+  /* line 2, ../scss/components/modules/_navigation.scss */
+  a[class*=lightcase-icon-] {
+    bottom: 15px;
+    font-size: 24px;
+  }
+  /* line 1, ../scss/components/modules/_overlay.scss */
+  #lightcase-overlay {
+    opacity: 0.9 !important;
+  }
+}
+
+@media screen and (max-width: 768px) and (min-width: 769px){
+  /* line 74, ../scss/components/modules/_content.scss */
+  html[data-lc-type=image] #lightcase-content .lightcase-contentInner, html[data-lc-type=video] #lightcase-content .lightcase-contentInner {
+    line-height: 0.75;
+  }
+}
+
+@media (max-width: 959px){
+  html {
+    font-size: 2.1333333333vw;
+  }
+  .c-scrollreveal {
+    transform: translateY(20px);
+  }
+  .c-scrollreveal.-reveal {
+    -webkit-animation: itemInSp 1s 0s forwards;
+            animation: itemInSp 1s 0s forwards;
+  }
+  .c-visible_wide {
+    display: none;
+  }
+}
+
+@media (min-width: 960px){
+  html {
+    font-size: min(12.3733333333px, 2.1333333333vw);
+  }
+  .l-main__videobg {
+    width: 580px;
+  }
+  .c-hover_op:hover {
+    filter: blur(1px);
+    opacity: 0.75;
+  }
+  .c-hover_opacity:hover {
+    opacity: 0.75;
+  }
+  .c-scrollreveal {
+    transform: translateY(30px);
+  }
+  .c-scrollreveal.-reveal {
+    -webkit-animation: itemInPc 1s 0s forwards;
+            animation: itemInPc 1s 0s forwards;
+  }
+  .c-visible_nrw {
+    display: none;
+  }
+  .contents {
+    box-shadow: 0 0 14px rgba(0, 0, 0, 0.7);
+    width: 596px;
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 960px) and (max-height: 800px){
+  .wide {
+    height: 800px;
+  }
+}

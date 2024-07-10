@@ -1,0 +1,10 @@
+{
+    "css.validate": false,
+    "scss.validate": false,
+    "stylelint.validate": ["css", "scss"],
+    "editor.codeActionsOnSave": {
+        "source.fixAll.stylelint": "explicit"
+    },
+    "stylelint.configFile": "build/.stylelintrc.js",
+    "stylelint.stylelintPath": "build/node_modules/stylelint"
+}

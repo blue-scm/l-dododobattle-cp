@@ -1,0 +1,45 @@
+@use 'global' as *;
+
+.c-scrollreveal {
+    opacity: 0;
+    
+
+    @include MQ_NARROW {
+        transform: translateY(20px);
+    }
+    @include MQ_WIDE {
+        transform: translateY(30px);
+    }
+
+    &.-reveal {
+        
+        @include MQ_NARROW {
+            animation: itemInSp 1s 0s forwards;
+        }
+        @include MQ_WIDE {
+            animation: itemInPc 1s 0s forwards;
+        }
+    }
+}
+
+@keyframes itemInSp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes itemInPc {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

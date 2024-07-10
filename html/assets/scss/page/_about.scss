@@ -1,0 +1,101 @@
+@use 'global' as *;
+
+.about {
+    @include relPosition();
+    margin-top: getRem(164);
+    padding: getRem(110) 0 getRem(180);
+
+    &::before {
+        @include absPosition(getRem(-140));
+        background: url(#{$imgDir}about/bg_deco.png) no-repeat 0 0 / 100%;
+        content: '';
+        height: getRem(421);
+        opacity: 0.6;
+        // mix-blend-mode: overlay;
+        width: 100%;
+    }
+
+    &::after {
+        @include absPosition(0, 0);
+        background: url(#{$imgDir}about/bg.png) no-repeat 0 0 / 100% auto;
+        content: '';
+        height: 100%;
+        width: 100%;
+    }
+}
+
+.about__inner {
+    @include relPosition();
+    z-index: $zLayer1;
+}
+
+.about__catch {
+    @include relPosition();
+    margin: 0 auto;
+    width: getRem(724);
+
+    &::before {
+        @include absPosition(50%, 50%);
+        background: url(#{$imgDir}about/bg_light.png) no-repeat center / 100%;
+        content: '';
+        height: getRem(1146);
+        transform: translate(-50%, -50%);
+        width: getRem(1146);
+    }
+
+    img {
+        @include relPosition();
+    }
+}
+
+.about__pv {
+    @include relPosition();
+    height: getRem(515);
+    margin: getRem(108) auto 0;
+    width: getRem(699);
+}
+
+.about__pv__cont {
+    @include relPosition();
+    height: 100%;
+    padding-top: getRem(146);
+
+    &::after {
+        @include absPosition(0, 0);
+        background: url(#{$imgDir}about/ph_tv.png) no-repeat 0 0 / 100%;
+        content: '';
+        height: 100%;
+        width: 100%;
+    }
+}
+
+.about__pv__shadow {
+    @include absPosition(null, getRem(70), 0);
+    background: url(#{$imgDir}about/ph_shadow.png) no-repeat 0 0 / 100%;
+    height: getRem(52);
+    width: getRem(560);
+}
+
+.about__pv__cont__movie {
+    @include relPosition();
+    background: yellow;
+    height: getRem(286);
+    margin: 0 auto;
+    width: getRem(372);
+
+    &::after {
+        @include absPosition(50%, 50%);
+        background: url(#{$imgDir}about/btn_play.png) no-repeat 0 0 / 100%;
+        content: '';
+        display: block;
+        height: getRem(162);
+        transform: translate(-50%, -50%);
+        width: getRem(162);
+    }
+}
+
+.about__pv__balloon {
+    @include absPosition(getRem(46), getRem(-10));
+    width: getRem(266);
+    z-index: $zLayer1;
+}

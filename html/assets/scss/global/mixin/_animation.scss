@@ -1,0 +1,7 @@
+//----------------------------------
+//  汎用Transition
+// ---------------------------------
+
+@mixin cmn-transition($default-speed: 0.3s) {
+    transition: all $default-speed ease;
+}

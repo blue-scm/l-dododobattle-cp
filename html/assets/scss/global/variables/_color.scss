@@ -1,0 +1,10 @@
+// 汎用カラー
+
+$color: (
+    primary: #003856,
+    secondary: #0098e9,
+);
+
+@function getColor($key) {
+    @return map-get($color, $key);
+}

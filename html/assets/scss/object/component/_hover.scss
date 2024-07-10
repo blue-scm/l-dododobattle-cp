@@ -1,0 +1,22 @@
+@use "global" as *;
+
+.c-hover_op {
+    transition: opacity 0.3s 0s ease;
+    
+    &:hover {
+        @include MQ_WIDE {
+            filter: blur(1px);
+            opacity: 0.75;
+        }
+    }
+}
+
+.c-hover_opacity {
+    transition: opacity 0.3s 0s ease;
+    
+    &:hover {
+        @include MQ_WIDE {
+            opacity: 0.75;
+        }
+    }
+}

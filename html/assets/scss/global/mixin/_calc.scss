@@ -1,0 +1,17 @@
+@use 'sass:math';
+
+// %を算出
+@function getPer($bunshi, $bunbo: 750) {
+    $per: math.div(math.floor(math.percentage(math.div($bunshi, $bunbo)) * 10), 10);
+    @return $per;
+}
+
+// pxをvwに変換
+@function getVW($size, $viewport: 750) {
+    $rate: math.div(100, $viewport);
+    @return math.div(math.floor($rate * $size * 1vw * 10), 10);
+}
+
+@function getRem($size) {
+    @return math.div($size * 1rem, 16);
+}

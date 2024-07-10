@@ -1,0 +1,35 @@
+//----------------------------------
+//  Respond unit
+// ----------------------------------
+
+//（959px）以下の場合
+@mixin MQ_NARROW {
+    @media (max-width: 959px) {
+        @content;
+    }
+}
+
+//（960px）以上の場合
+@mixin MQ_WIDE {
+    @media (min-width: 960px) {
+        @content;
+    }
+}
+
+@mixin MQ_MID {
+    @media (min-width: 769px) and (max-width: 1200px) {
+        @content;
+    }
+}
+
+@mixin MQ_UNDER($px) {
+    @media (max-width: #{$px}px) {
+        @content;
+    }
+}
+
+@mixin MQ_OVER($px) {
+    @media (min-width: #{$px+1}px) {
+        @content;
+    }
+}

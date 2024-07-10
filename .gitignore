@@ -1,0 +1,13 @@
+*~
+*.bak
+*.org
+Thumbs.db
+desktop.ini
+.DS_Store
+.buildpath
+.project
+.settings
+*.tmproj
+.idea
+
+/build/node_modules/

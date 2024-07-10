@@ -1,0 +1,15 @@
+@use "global" as *;
+
+.c-visible_nrw {
+    display: block;
+
+    @include MQ_WIDE {
+        display: none;
+    }
+}
+
+.c-visible_wide {
+    @include MQ_NARROW {
+        display: none;
+    }
+}

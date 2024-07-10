@@ -1,0 +1,28 @@
+@use 'global' as *;
+
+.bottom {
+    @include relPosition();
+    height: getRem(292);
+}
+
+.bottom__pagetop {
+    @include absPosition(null, null, getRem(16), getRem(16));
+    height: getRem(176);
+    padding: 0;
+    width: getRem(176);
+}
+
+.bottom__pagetop__inner {
+    @include relPosition();
+    height: 100%;
+
+    .shadow,
+    .brown {
+        @include absPosition(0, 0);
+    }
+
+    .balloon {
+        @include absPosition(getRem(-100), getRem(-96));
+        width: getRem(288);
+    }
+}

@@ -1,0 +1,17 @@
+{
+    "compilerOptions": {
+        "target": "es5",
+        "module": "es2015",
+        "lib": ["dom", "dom.iterable", "es6"],
+        "baseUrl": "./node_modules",
+        "moduleResolution": "node",
+        "noImplicitAny": false,
+        "strictNullChecks": false,
+        "strictFunctionTypes": false,
+        "strictBindCallApply": false,
+        "strictPropertyInitialization": false,
+        "noImplicitThis": false,
+    },
+    "include": ["../html/assets/ts/**/*"],
+    "exclude": ["node_modules"]
+}
