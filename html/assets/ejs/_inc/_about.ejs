@@ -1,0 +1,26 @@
+<section class="about">
+
+    <div class="about__inner">
+        <div class="about__catch">
+            <p class="about__catch__txt"><img src="<%= pageInfo.relPath %>assets/img/about/txt_catch.png" alt="群がるモンスターの大群を結らせ！"></p>
+
+            <% for (var i = 0; i < 6; i++) { %>
+            <span class="about__catch__slime -slime<%= i+1 %>">
+                <img src="<%= pageInfo.relPath %>assets/img/about/ph_slime<%= i+1 %>.png" alt="">
+            </span>
+            <% } %>
+        </div>
+
+        <div class="about__pv">
+            <div class="about__pv__shadow"></div>
+            <div class="about__pv__cont">
+                <div class="about__pv__cont__movie"></div>
+            </div>
+            
+            <p class="about__pv__balloon">
+                <img src="<%= pageInfo.relPath %>assets/img/about/txt_balloon.png" alt="WATCH PV!">
+            </p>
+        </div>
+    </div>
+    
+</section>

@@ -1,45 +1,55 @@
-@use 'global' as *;
+@use "global" as *;
 
 .mv {
     @include relPosition();
     font-size: getRem(32);
 
+    &.-top {
+        padding-top: getRem(20);
+    }
+
     &.-bottom {
-        margin-top: getRem(90);
-        padding-bottom: getRem(84);
+        margin-top: getRem(180);
+        padding-bottom: getRem(48);
     }
 }
 
 .mv__maincatch {
-    margin: getRem(30) auto 0;
-    width: getRem(664);
+    @include relPosition();
+    margin: 0 auto;
+    width: getRem(710);
+    z-index: $zLayer1;
 }
 
 .mv__chara {
     &.-sally {
-        @include absPosition(getRem(100), null, null, getRem(-76));
+        @include absPosition(getRem(184), null, null, getRem(-80));
         width: getRem(290);
     }
 
     &.-brown {
-        @include absPosition(getRem(390), getRem(0));
-        width: getRem(236);
+        @include absPosition(getRem(488), getRem(0));
+        width: getRem(228);
+        z-index: $zLayer1;
     }
 }
 
 .mv__logo {
     @include relPosition();
-    margin: 0 auto;
-    width: getRem(626);
+    width: getRem(706);
 
     .-top & {
-        margin-top: getRem(-32);
+        margin: getRem(-18) auto 0;
+    }
+
+    .-bottom & {
+        margin: 0 auto;
     }
 }
 
 .mv__dl__txt {
     @include relPosition();
-    margin: getRem(-48) auto 0;
+    margin: getRem(32) auto 0;
     width: getRem(416);
     z-index: $zLayer1;
 }
@@ -47,12 +57,12 @@
 .mv__dl__btn {
     filter: drop-shadow(0 0 getRem(20) #f7d500) drop-shadow(0 0 getRem(18) #f7d500);
     display: block;
-    margin: getRem(-26) auto 0;
+    margin: getRem(-28) auto 0;
     width: getRem(644);
 }
 
 .mv__links {
-    margin: getRem(28) auto 0;
+    margin: getRem(20) auto 0;
     width: getRem(564);
 }
 

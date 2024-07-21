@@ -59,7 +59,10 @@
 .keywords__cont__item__ttl {
     @include relPosition();
     display: block;
-    height: getRem(248);
+    filter: drop-shadow(0 getRem(8) getRem(8) rgba(#000, 0.25));
+    height: getRem(236);
+    margin: 0 auto;
+    width: getRem(714);
     z-index: $zLayer1;
 
     .ttl {
@@ -68,18 +71,19 @@
 
     .ttltxt {
         @include absPosition(0, 0);
-        width: getRem(424);
+        width: getRem(404);
 
         .-key5 & {
-            @include absPosition(auto, getRem(296), 0);
+            @include absPosition(auto, getRem(282), 0);
         }
     }
 }
 
 .keywords__cont__item__movie {
     @include relPosition();
+    filter: drop-shadow(0 getRem(8) getRem(8) rgba(#000, 0.25)) drop-shadow(getRem(12) getRem(12) 0 rgba(#000, 0.2));
     height: getRem(1024);
-    margin: getRem(-116) auto 0;
+    margin: getRem(-96) auto 0;
 
     border-radius: getRem(32);
     width: getRem(624);
@@ -89,7 +93,7 @@
     }
 
     .-key2 & {
-        border: getRem(10) solid #723f04;
+        border: getRem(10) solid #C02E00;
     }
 
     .-key3 & {
@@ -157,9 +161,53 @@
 }
 
 .keywords__cont__item__chara {
+
+    .-key1 & {
+        .chara1 {
+            @include absPosition(null, null, getRem(-44), getRem(54));
+            width: getRem(320);
+        }
+        .chara2 {
+            @include absPosition(null, null, getRem(-74), 0);
+            width: getRem(240);
+        }
+    }
+
+    .-key2 & {
+        .chara1 {
+            @include absPosition(null, getRem(0), getRem(44));
+            width: getRem(212);
+        }
+        .chara2 {
+            @include absPosition(null, getRem(148), getRem(36));
+            width: getRem(184);
+        }
+    }
+
+    .-key3 & {
+        .chara1 {
+            @include absPosition(null, null, getRem(50), 0);
+            width: getRem(308);
+        }
+    }
+
+    .-key4 & {
+        .chara1 {
+            @include absPosition(null, getRem(-12), getRem(84));
+            width: getRem(284);
+        }
+        .chara2 {
+            @include absPosition(null, 0, getRem(-84));
+            transform: scale(-1, 1);
+            width: getRem(260);
+        }
+    }
+
     .-key5 & {
-        @include absPosition(null, getRem(-150), getRem(0));
-        width: getRem(1046);
+        .chara1 {
+            @include absPosition(null, getRem(-150), getRem(0));
+            width: getRem(1046);
+        }   
     }
 }
 
@@ -177,8 +225,10 @@
 
 .keywords__boottom__tape1 {
     @include absPosition(getRem(44), 0);
+    width: 100%;
 }
 
 .keywords__boottom__tape2 {
     @include absPosition(0, 0);
+    width: 100%;
 }

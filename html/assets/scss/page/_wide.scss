@@ -51,7 +51,7 @@
 
 .wide__dl {
     @include absPosition(null, 50%, 0);
-    aspect-ratio: 820 / 556;
+    aspect-ratio: 840 / 556;
     background: url(#{$imgDir}wide/bg_dl.png) no-repeat center / 100%;
     max-width: 420px;
     padding: 25px 38px 0;

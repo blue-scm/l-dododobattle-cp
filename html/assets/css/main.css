@@ -1005,6 +1005,7 @@ nav li:before {
 
 .l-footer__head {
   display: flex;
+  gap: 0 1.5rem;
 }
 
 .l-footer__head__ico {
@@ -1231,14 +1232,153 @@ nav li:before {
   display: block;
 }
 
+.p-sprite__meercat__red, .p-sprite__meercat__green, .p-sprite__meercat__yellow, .p-sprite__goblin-bow__blue, .p-sprite__goblin-bow__green, .p-sprite__goblin-bow__yellow, .p-sprite__goblin-sword__blue, .p-sprite__goblin-sword__green, .p-sprite__goblin-sword__yellow, .p-sprite__goblin__blue, .p-sprite__goblin__green, .p-sprite__goblin__yellow, .p-sprite__inu, .p-sprite__fox__yellow, .p-sprite__fox__blue, .p-sprite__fox__green, .p-sprite__slime__yellow, .p-sprite__slime__green, .p-sprite__slime__blue {
+  -webkit-animation: stepAnimation 0.8s infinite;
+          animation: stepAnimation 0.8s infinite;
+  aspect-ratio: 1/1;
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+}
+
+.p-sprite__slime__blue {
+  -webkit-animation-timing-function: steps(3);
+          animation-timing-function: steps(3);
+  background-image: url(../img/common/sprite/ph_slime1.png);
+}
+
+.p-sprite__slime__green {
+  -webkit-animation-timing-function: steps(3);
+          animation-timing-function: steps(3);
+  background-image: url(../img/common/sprite/ph_slime2.png);
+}
+
+.p-sprite__slime__yellow {
+  -webkit-animation-timing-function: steps(3);
+          animation-timing-function: steps(3);
+  background-image: url(../img/common/sprite/ph_slime3.png);
+}
+
+.p-sprite__fox__green {
+  -webkit-animation-timing-function: steps(3);
+          animation-timing-function: steps(3);
+  background-image: url(../img/common/sprite/ph_fox1.png);
+}
+
+.p-sprite__fox__blue {
+  -webkit-animation-timing-function: steps(3);
+          animation-timing-function: steps(3);
+  background-image: url(../img/common/sprite/ph_fox2.png);
+}
+
+.p-sprite__fox__yellow {
+  -webkit-animation-timing-function: steps(3);
+          animation-timing-function: steps(3);
+  background-image: url(../img/common/sprite/ph_fox3.png);
+}
+
+.p-sprite__inu {
+  -webkit-animation-timing-function: steps(7);
+          animation-timing-function: steps(7);
+  background-image: url(../img/common/sprite/ph_inu.png);
+}
+
+.p-sprite__goblin__yellow {
+  -webkit-animation-timing-function: steps(3);
+          animation-timing-function: steps(3);
+  background-image: url(../img/common/sprite/ph_goblin1.png);
+}
+
+.p-sprite__goblin__green {
+  -webkit-animation-timing-function: steps(3);
+          animation-timing-function: steps(3);
+  background-image: url(../img/common/sprite/ph_goblin2.png);
+}
+
+.p-sprite__goblin__blue {
+  -webkit-animation-timing-function: steps(3);
+          animation-timing-function: steps(3);
+  background-image: url(../img/common/sprite/ph_goblin3.png);
+}
+
+.p-sprite__goblin-sword__yellow {
+  -webkit-animation-timing-function: steps(3);
+          animation-timing-function: steps(3);
+  background-image: url(../img/common/sprite/ph_goblin4.png);
+}
+
+.p-sprite__goblin-sword__green {
+  -webkit-animation-timing-function: steps(3);
+          animation-timing-function: steps(3);
+  background-image: url(../img/common/sprite/ph_goblin5.png);
+}
+
+.p-sprite__goblin-sword__blue {
+  -webkit-animation-timing-function: steps(3);
+          animation-timing-function: steps(3);
+  background-image: url(../img/common/sprite/ph_goblin6.png);
+}
+
+.p-sprite__goblin-bow__yellow {
+  -webkit-animation-timing-function: steps(3);
+          animation-timing-function: steps(3);
+  background-image: url(../img/common/sprite/ph_goblin7.png);
+}
+
+.p-sprite__goblin-bow__green {
+  -webkit-animation-timing-function: steps(3);
+          animation-timing-function: steps(3);
+  background-image: url(../img/common/sprite/ph_goblin8.png);
+}
+
+.p-sprite__goblin-bow__blue {
+  -webkit-animation-timing-function: steps(3);
+          animation-timing-function: steps(3);
+  background-image: url(../img/common/sprite/ph_goblin9.png);
+}
+
+.p-sprite__meercat__yellow {
+  -webkit-animation-timing-function: steps(3);
+          animation-timing-function: steps(3);
+  background-image: url(../img/common/sprite/ph_meercat1.png);
+}
+
+.p-sprite__meercat__green {
+  -webkit-animation-timing-function: steps(3);
+          animation-timing-function: steps(3);
+  background-image: url(../img/common/sprite/ph_meercat2.png);
+}
+
+.p-sprite__meercat__red {
+  -webkit-animation-timing-function: steps(3);
+          animation-timing-function: steps(3);
+  background-image: url(../img/common/sprite/ph_meercat3.png);
+}
+
+@-webkit-keyframes stepAnimation {
+  from {
+    background-position: 0% 0;
+  }
+  to {
+    background-position: -100% 0%;
+  }
+}
+
+@keyframes stepAnimation {
+  from {
+    background-position: 0% 0;
+  }
+  to {
+    background-position: -100% 0%;
+  }
+}
 .about {
   position: relative;
-  margin-top: 10.25rem;
-  padding: 6.875rem 0 11.25rem;
+  margin-top: 11.5rem;
+  padding: 0 0 11.25rem;
 }
 .about::before {
   position: absolute;
-  top: -8.75rem;
+  top: -11.875rem;
   background: url(../img/about/bg_deco.png) no-repeat 0 0/100%;
   content: "";
   height: 26.3125rem;
@@ -1247,7 +1387,7 @@ nav li:before {
 }
 .about::after {
   position: absolute;
-  top: 0;
+  top: 9.0625rem;
   left: 0;
   background: url(../img/about/bg.png) no-repeat 0 0/100% auto;
   content: "";
@@ -1279,17 +1419,56 @@ nav li:before {
   position: relative;
 }
 
+.about__catch__slime {
+  display: block;
+}
+.about__catch__slime.-slime1 {
+  position: absolute;
+  top: -3rem;
+  left: 5.625rem;
+  width: 5.4375rem;
+}
+.about__catch__slime.-slime2 {
+  position: absolute;
+  top: -5rem;
+  right: 5.875rem;
+  width: 7.9375rem;
+}
+.about__catch__slime.-slime3 {
+  position: absolute;
+  top: 7.5rem;
+  right: -0.625rem;
+  width: 7.1875rem;
+}
+.about__catch__slime.-slime4 {
+  width: 8.0625rem;
+  position: absolute;
+  left: 1.25rem;
+  bottom: -1.875rem;
+}
+.about__catch__slime.-slime5 {
+  width: 4.375rem;
+  position: absolute;
+  bottom: -1.875rem;
+  right: 15.625rem;
+}
+.about__catch__slime.-slime6 {
+  width: 11.625rem;
+  position: absolute;
+  bottom: -6.25rem;
+  right: 3.125rem;
+}
+
 .about__pv {
   position: relative;
-  height: 32.1875rem;
-  margin: 6.75rem auto 0;
-  width: 43.6875rem;
+  height: 34rem;
+  margin: 5.625rem auto 0;
 }
 
 .about__pv__cont {
   position: relative;
   height: 100%;
-  padding-top: 9.125rem;
+  padding-top: 8.125rem;
 }
 .about__pv__cont::after {
   position: absolute;
@@ -1303,7 +1482,7 @@ nav li:before {
 
 .about__pv__shadow {
   position: absolute;
-  left: 4.375rem;
+  left: 5.9375rem;
   bottom: 0;
   background: url(../img/about/ph_shadow.png) no-repeat 0 0/100%;
   height: 3.25rem;
@@ -1313,9 +1492,9 @@ nav li:before {
 .about__pv__cont__movie {
   position: relative;
   background: yellow;
-  height: 17.875rem;
+  height: 21.375rem;
   margin: 0 auto;
-  width: 23.25rem;
+  width: 27.875rem;
 }
 .about__pv__cont__movie::after {
   position: absolute;
@@ -1331,9 +1510,9 @@ nav li:before {
 
 .about__pv__balloon {
   position: absolute;
-  top: 2.875rem;
-  left: -0.625rem;
-  width: 16.625rem;
+  top: -0.125rem;
+  left: 2.625rem;
+  width: 18.25rem;
   z-index: 1;
 }
 
@@ -1444,7 +1623,10 @@ nav li:before {
 .keywords__cont__item__ttl {
   position: relative;
   display: block;
-  height: 15.5rem;
+  filter: drop-shadow(0 0.5rem 0.5rem rgba(0, 0, 0, 0.25));
+  height: 14.75rem;
+  margin: 0 auto;
+  width: 44.625rem;
   z-index: 1;
 }
 .keywords__cont__item__ttl .ttl {
@@ -1456,19 +1638,20 @@ nav li:before {
   position: absolute;
   top: 0;
   left: 0;
-  width: 26.5rem;
+  width: 25.25rem;
 }
 .-key5 .keywords__cont__item__ttl .ttltxt {
   position: absolute;
   top: auto;
-  left: 18.5rem;
+  left: 17.625rem;
   bottom: 0;
 }
 
 .keywords__cont__item__movie {
   position: relative;
+  filter: drop-shadow(0 0.5rem 0.5rem rgba(0, 0, 0, 0.25)) drop-shadow(0.75rem 0.75rem 0 rgba(0, 0, 0, 0.2));
   height: 64rem;
-  margin: -7.25rem auto 0;
+  margin: -6rem auto 0;
   border-radius: 2rem;
   width: 39rem;
 }
@@ -1476,7 +1659,7 @@ nav li:before {
   border: 0.625rem solid #b21315;
 }
 .-key2 .keywords__cont__item__movie {
-  border: 0.625rem solid #723f04;
+  border: 0.625rem solid #C02E00;
 }
 .-key3 .keywords__cont__item__movie {
   border: 0.625rem solid #072389;
@@ -1535,7 +1718,50 @@ nav li:before {
   bottom: 29.75rem;
 }
 
-.-key5 .keywords__cont__item__chara {
+.-key1 .keywords__cont__item__chara .chara1 {
+  position: absolute;
+  bottom: -2.75rem;
+  right: 3.375rem;
+  width: 20rem;
+}
+.-key1 .keywords__cont__item__chara .chara2 {
+  position: absolute;
+  bottom: -4.625rem;
+  right: 0;
+  width: 15rem;
+}
+.-key2 .keywords__cont__item__chara .chara1 {
+  position: absolute;
+  left: 0rem;
+  bottom: 2.75rem;
+  width: 13.25rem;
+}
+.-key2 .keywords__cont__item__chara .chara2 {
+  position: absolute;
+  left: 9.25rem;
+  bottom: 2.25rem;
+  width: 11.5rem;
+}
+.-key3 .keywords__cont__item__chara .chara1 {
+  position: absolute;
+  bottom: 3.125rem;
+  right: 0;
+  width: 19.25rem;
+}
+.-key4 .keywords__cont__item__chara .chara1 {
+  position: absolute;
+  left: -0.75rem;
+  bottom: 5.25rem;
+  width: 17.75rem;
+}
+.-key4 .keywords__cont__item__chara .chara2 {
+  position: absolute;
+  left: 0;
+  bottom: -5.25rem;
+  transform: scale(-1, 1);
+  width: 16.25rem;
+}
+.-key5 .keywords__cont__item__chara .chara1 {
   position: absolute;
   left: -9.375rem;
   bottom: 0rem;
@@ -1558,53 +1784,63 @@ nav li:before {
   position: absolute;
   top: 2.75rem;
   left: 0;
+  width: 100%;
 }
 
 .keywords__boottom__tape2 {
   position: absolute;
   top: 0;
   left: 0;
+  width: 100%;
 }
 
 .mv {
   position: relative;
   font-size: 2rem;
 }
+.mv.-top {
+  padding-top: 1.25rem;
+}
 .mv.-bottom {
-  margin-top: 5.625rem;
-  padding-bottom: 5.25rem;
+  margin-top: 11.25rem;
+  padding-bottom: 3rem;
 }
 
 .mv__maincatch {
-  margin: 1.875rem auto 0;
-  width: 41.5rem;
+  position: relative;
+  margin: 0 auto;
+  width: 44.375rem;
+  z-index: 1;
 }
 
 .mv__chara.-sally {
   position: absolute;
-  top: 6.25rem;
-  right: -4.75rem;
+  top: 11.5rem;
+  right: -5rem;
   width: 18.125rem;
 }
 .mv__chara.-brown {
   position: absolute;
-  top: 24.375rem;
+  top: 30.5rem;
   left: 0rem;
-  width: 14.75rem;
+  width: 14.25rem;
+  z-index: 1;
 }
 
 .mv__logo {
   position: relative;
-  margin: 0 auto;
-  width: 39.125rem;
+  width: 44.125rem;
 }
 .-top .mv__logo {
-  margin-top: -2rem;
+  margin: -1.125rem auto 0;
+}
+.-bottom .mv__logo {
+  margin: 0 auto;
 }
 
 .mv__dl__txt {
   position: relative;
-  margin: -3rem auto 0;
+  margin: 2rem auto 0;
   width: 26rem;
   z-index: 1;
 }
@@ -1612,12 +1848,12 @@ nav li:before {
 .mv__dl__btn {
   filter: drop-shadow(0 0 1.25rem #f7d500) drop-shadow(0 0 1.125rem #f7d500);
   display: block;
-  margin: -1.625rem auto 0;
+  margin: -1.75rem auto 0;
   width: 40.25rem;
 }
 
 .mv__links {
-  margin: 1.75rem auto 0;
+  margin: 1.25rem auto 0;
   width: 35.25rem;
 }
 
@@ -1671,7 +1907,7 @@ nav li:before {
   position: absolute;
   left: 50%;
   bottom: 0;
-  aspect-ratio: 820/556;
+  aspect-ratio: 840/556;
   background: url(../img/wide/bg_dl.png) no-repeat center/100%;
   max-width: 420px;
   padding: 25px 38px 0;

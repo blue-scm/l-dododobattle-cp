@@ -1,0 +1,131 @@
+@use "global" as *;
+
+%base-animation {
+    animation: stepAnimation 0.8s infinite;
+    aspect-ratio: 1 / 1;
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+}
+
+.p-sprite__slime__blue {
+    @extend %base-animation;
+    animation-timing-function: steps(3);
+    background-image: url(#{$imgDir}common/sprite/ph_slime1.png);
+}
+
+.p-sprite__slime__green {
+    @extend %base-animation;
+    animation-timing-function: steps(3);
+    background-image: url(#{$imgDir}common/sprite/ph_slime2.png);
+}
+
+.p-sprite__slime__yellow {
+    @extend %base-animation;
+    animation-timing-function: steps(3);
+    background-image: url(#{$imgDir}common/sprite/ph_slime3.png);
+}
+
+.p-sprite__fox__green {
+    @extend %base-animation;
+    animation-timing-function: steps(3);
+    background-image: url(#{$imgDir}common/sprite/ph_fox1.png);
+}
+
+.p-sprite__fox__blue {
+    @extend %base-animation;
+    animation-timing-function: steps(3);
+    background-image: url(#{$imgDir}common/sprite/ph_fox2.png);
+}
+
+.p-sprite__fox__yellow {
+    @extend %base-animation;
+    animation-timing-function: steps(3);
+    background-image: url(#{$imgDir}common/sprite/ph_fox3.png);
+}
+
+.p-sprite__inu {
+    @extend %base-animation;
+    animation-timing-function: steps(7);
+    background-image: url(#{$imgDir}common/sprite/ph_inu.png);
+}
+
+.p-sprite__goblin__yellow {
+    @extend %base-animation;
+    animation-timing-function: steps(3);
+    background-image: url(#{$imgDir}common/sprite/ph_goblin1.png);
+}
+
+.p-sprite__goblin__green {
+    @extend %base-animation;
+    animation-timing-function: steps(3);
+    background-image: url(#{$imgDir}common/sprite/ph_goblin2.png);
+}
+
+.p-sprite__goblin__blue {
+    @extend %base-animation;
+    animation-timing-function: steps(3);
+    background-image: url(#{$imgDir}common/sprite/ph_goblin3.png);
+}
+
+.p-sprite__goblin-sword__yellow {
+    @extend %base-animation;
+    animation-timing-function: steps(3);
+    background-image: url(#{$imgDir}common/sprite/ph_goblin4.png);
+}
+
+.p-sprite__goblin-sword__green {
+    @extend %base-animation;
+    animation-timing-function: steps(3);
+    background-image: url(#{$imgDir}common/sprite/ph_goblin5.png);
+}
+
+.p-sprite__goblin-sword__blue {
+    @extend %base-animation;
+    animation-timing-function: steps(3);
+    background-image: url(#{$imgDir}common/sprite/ph_goblin6.png);
+}
+
+.p-sprite__goblin-bow__yellow {
+    @extend %base-animation;
+    animation-timing-function: steps(3);
+    background-image: url(#{$imgDir}common/sprite/ph_goblin7.png);
+}
+
+.p-sprite__goblin-bow__green {
+    @extend %base-animation;
+    animation-timing-function: steps(3);
+    background-image: url(#{$imgDir}common/sprite/ph_goblin8.png);
+}
+
+.p-sprite__goblin-bow__blue {
+    @extend %base-animation;
+    animation-timing-function: steps(3);
+    background-image: url(#{$imgDir}common/sprite/ph_goblin9.png);
+}
+
+.p-sprite__meercat__yellow {
+    @extend %base-animation;
+    animation-timing-function: steps(3);
+    background-image: url(#{$imgDir}common/sprite/ph_meercat1.png);
+}
+
+.p-sprite__meercat__green {
+    @extend %base-animation;
+    animation-timing-function: steps(3);
+    background-image: url(#{$imgDir}common/sprite/ph_meercat2.png);
+}
+
+.p-sprite__meercat__red {
+    @extend %base-animation;
+    animation-timing-function: steps(3);
+    background-image: url(#{$imgDir}common/sprite/ph_meercat3.png);
+}
+
+@keyframes stepAnimation {
+    from {
+        background-position: 0% 0;
+    }
+    to {
+        background-position: -100% 0%;
+    }
+}
