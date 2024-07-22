@@ -3,7 +3,7 @@
 %base-animation {
     animation: stepAnimation 0.8s infinite;
     aspect-ratio: 1 / 1;
-    background-repeat: no-repeat;
+    background-repeat: repeat-x;
     background-size: auto 100%;
 }
 

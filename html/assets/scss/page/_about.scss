@@ -1,4 +1,4 @@
-@use "global" as *;
+@use 'global' as *;
 
 .about {
     @include relPosition();
@@ -8,7 +8,7 @@
     &::before {
         @include absPosition(getRem(-190));
         background: url(#{$imgDir}about/bg_deco.png) no-repeat 0 0 / 100%;
-        content: "";
+        content: '';
         height: getRem(421);
         opacity: 0.6;
         width: 100%;
@@ -17,7 +17,7 @@
     &::after {
         @include absPosition(getRem(145), 0);
         background: url(#{$imgDir}about/bg.png) no-repeat 0 0 / 100% auto;
-        content: "";
+        content: '';
         height: 100%;
         width: 100%;
     }
@@ -35,11 +35,20 @@
 
     &::before {
         @include absPosition(50%, 50%);
+        animation: rotateLight 30s linear infinite;
         background: url(#{$imgDir}about/bg_light.png) no-repeat center / 100%;
-        content: "";
+        content: '';
         height: getRem(1146);
-        transform: translate(-50%, -50%);
         width: getRem(1146);
+    }
+
+    @keyframes rotateLight {
+        from {
+            transform: translate(-50%, -50%) rotate(0);
+        }
+        to {
+            transform: translate(-50%, -50%) rotate(360deg);
+        }
     }
 
     img {
@@ -95,7 +104,7 @@
     &::after {
         @include absPosition(0, 0);
         background: url(#{$imgDir}about/ph_tv.png) no-repeat 0 0 / 100%;
-        content: "";
+        content: '';
         height: 100%;
         width: 100%;
     }
@@ -118,7 +127,7 @@
     &::after {
         @include absPosition(50%, 50%);
         background: url(#{$imgDir}about/btn_play.png) no-repeat 0 0 / 100%;
-        content: "";
+        content: '';
         display: block;
         height: getRem(162);
         transform: translate(-50%, -50%);

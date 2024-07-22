@@ -3,6 +3,7 @@
 .mv {
     @include relPosition();
     font-size: getRem(32);
+    z-index: $zLayer2;
 
     &.-top {
         padding-top: getRem(20);
@@ -55,10 +56,19 @@
 }
 
 .mv__dl__btn {
-    filter: drop-shadow(0 0 getRem(20) #f7d500) drop-shadow(0 0 getRem(18) #f7d500);
+    animation: flashDlBtn 1.0s $EaseInOut_Circ infinite alternate;
     display: block;
     margin: getRem(-28) auto 0;
     width: getRem(644);
+
+    @keyframes flashDlBtn {
+        from {
+            filter: drop-shadow(0 0 getRem(0) #f7d500) drop-shadow(0 0 getRem(0) #f7d500);
+        }
+        to {
+            filter: drop-shadow(0 0 getRem(20) #f7d500) drop-shadow(0 0 getRem(18) #f7d500);
+        }
+    }
 }
 
 .mv__links {

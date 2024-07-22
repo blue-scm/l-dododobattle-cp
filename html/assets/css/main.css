@@ -1236,7 +1236,7 @@ nav li:before {
   -webkit-animation: stepAnimation 0.8s infinite;
           animation: stepAnimation 0.8s infinite;
   aspect-ratio: 1/1;
-  background-repeat: no-repeat;
+  background-repeat: repeat-x;
   background-size: auto 100%;
 }
 
@@ -1409,11 +1409,28 @@ nav li:before {
   position: absolute;
   top: 50%;
   left: 50%;
+  -webkit-animation: rotateLight 30s linear infinite;
+          animation: rotateLight 30s linear infinite;
   background: url(../img/about/bg_light.png) no-repeat center/100%;
   content: "";
   height: 71.625rem;
-  transform: translate(-50%, -50%);
   width: 71.625rem;
+}
+@-webkit-keyframes rotateLight {
+  from {
+    transform: translate(-50%, -50%) rotate(0);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+@keyframes rotateLight {
+  from {
+    transform: translate(-50%, -50%) rotate(0);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
 }
 .about__catch img {
   position: relative;
@@ -1578,12 +1595,14 @@ nav li:before {
   position: absolute;
   top: 0;
   left: 0;
+  width: 100%;
 }
 
 .keywords__head__ttl {
   position: absolute;
   top: 0;
   left: 0;
+  width: 100%;
 }
 
 .keywords__cont {
@@ -1633,6 +1652,7 @@ nav li:before {
   position: absolute;
   top: 0;
   left: 0;
+  width: 100%;
 }
 .keywords__cont__item__ttl .ttltxt {
   position: absolute;
@@ -1645,6 +1665,41 @@ nav li:before {
   top: auto;
   left: 17.625rem;
   bottom: 0;
+}
+.keywords__cont__item__ttl .effect {
+  aspect-ratio: 1/1;
+  display: block;
+  width: 30rem;
+  z-index: 1;
+}
+.-key1 .keywords__cont__item__ttl .effect {
+  position: absolute;
+  top: -8.125rem;
+  right: -10rem;
+}
+.-key2 .keywords__cont__item__ttl .effect {
+  position: absolute;
+  top: -10rem;
+  left: -7.5rem;
+  bottom: auto;
+  right: auto;
+}
+.-key3 .keywords__cont__item__ttl .effect {
+  position: absolute;
+  top: -5rem;
+  right: -8.4375rem;
+}
+.-key4 .keywords__cont__item__ttl .effect {
+  position: absolute;
+  top: -5.625rem;
+  left: -7.5rem;
+  bottom: auto;
+  right: auto;
+}
+.-key5 .keywords__cont__item__ttl .effect {
+  position: absolute;
+  top: -10rem;
+  right: -7.5rem;
 }
 
 .keywords__cont__item__movie {
@@ -1659,7 +1714,7 @@ nav li:before {
   border: 0.625rem solid #b21315;
 }
 .-key2 .keywords__cont__item__movie {
-  border: 0.625rem solid #C02E00;
+  border: 0.625rem solid #c02e00;
 }
 .-key3 .keywords__cont__item__movie {
   border: 0.625rem solid #072389;
@@ -1797,6 +1852,7 @@ nav li:before {
 .mv {
   position: relative;
   font-size: 2rem;
+  z-index: 2;
 }
 .mv.-top {
   padding-top: 1.25rem;
@@ -1846,10 +1902,27 @@ nav li:before {
 }
 
 .mv__dl__btn {
-  filter: drop-shadow(0 0 1.25rem #f7d500) drop-shadow(0 0 1.125rem #f7d500);
+  -webkit-animation: flashDlBtn 1s cubic-bezier(0.785, 0.135, 0.15, 0.86) infinite alternate;
+          animation: flashDlBtn 1s cubic-bezier(0.785, 0.135, 0.15, 0.86) infinite alternate;
   display: block;
   margin: -1.75rem auto 0;
   width: 40.25rem;
+}
+@-webkit-keyframes flashDlBtn {
+  from {
+    filter: drop-shadow(0 0 0rem #f7d500) drop-shadow(0 0 0rem #f7d500);
+  }
+  to {
+    filter: drop-shadow(0 0 1.25rem #f7d500) drop-shadow(0 0 1.125rem #f7d500);
+  }
+}
+@keyframes flashDlBtn {
+  from {
+    filter: drop-shadow(0 0 0rem #f7d500) drop-shadow(0 0 0rem #f7d500);
+  }
+  to {
+    filter: drop-shadow(0 0 1.25rem #f7d500) drop-shadow(0 0 1.125rem #f7d500);
+  }
 }
 
 .mv__links {

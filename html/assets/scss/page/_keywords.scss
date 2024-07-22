@@ -26,10 +26,12 @@
 
 .keywords__head__bg {
     @include absPosition(0, 0);
+    width: 100%;
 }
 
 .keywords__head__ttl {
     @include absPosition(0, 0);
+    width: 100%;
 }
 
 .keywords__cont {
@@ -67,6 +69,7 @@
 
     .ttl {
         @include absPosition(0, 0);
+        width: 100%;
     }
 
     .ttltxt {
@@ -75,6 +78,33 @@
 
         .-key5 & {
             @include absPosition(auto, getRem(282), 0);
+        }
+    }
+
+    .effect {
+        aspect-ratio: 1 / 1;
+        display: block;
+        width: getRem(480);
+        z-index: $zLayer1;
+
+        .-key1 & {
+            @include absPosition(getRem(-130), null, null, getRem(-160));
+        }
+
+        .-key2 & {
+            @include absPosition(getRem(-160), getRem(-120), auto, auto);
+        }
+
+        .-key3 & {
+            @include absPosition(getRem(-80), null, null, getRem(-135));
+        }
+
+        .-key4 & {
+            @include absPosition(getRem(-90), getRem(-120), auto, auto);
+        }
+
+        .-key5 & {
+            @include absPosition(getRem(-160), null, null, getRem(-120));
         }
     }
 }
@@ -93,7 +123,7 @@
     }
 
     .-key2 & {
-        border: getRem(10) solid #C02E00;
+        border: getRem(10) solid #c02e00;
     }
 
     .-key3 & {
@@ -161,7 +191,6 @@
 }
 
 .keywords__cont__item__chara {
-
     .-key1 & {
         .chara1 {
             @include absPosition(null, null, getRem(-44), getRem(54));
@@ -207,7 +236,7 @@
         .chara1 {
             @include absPosition(null, getRem(-150), getRem(0));
             width: getRem(1046);
-        }   
+        }
     }
 }
 

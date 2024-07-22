@@ -1,18 +1,19 @@
-//Libraries
-import $ from "jquery";
+import ScrollEffect from './scrollEffect.es6';
 
-//CSS in JS
-//import style from "../scss/test.scss";
+export default class Main {
+    constructor() {}
 
-import Test from "./test.es6";
-const test = new Test();
-
-const heyarr = ["hey", "hey", "hey"];
-const hey2 = heyarr.map((el) => el === "rewrite");
-
-async function HEY() {
-    console.log("hey");
-    await console.log("hey async");
+    init() {}
 }
 
-HEY();
+const main = () => {
+    const scrollEffect = new ScrollEffect();
+    const router = new Main();
+
+    window.addEventListener('load', function () {
+        router.init();
+    });
+};
+
+// 実行
+main();
