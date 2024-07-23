@@ -205,17 +205,23 @@
     .-key2 & {
         .chara1 {
             @include absPosition(null, getRem(0), getRem(44));
+            animation: charaMove 0.5s infinite alternate;
+            transform-origin: bottom;
             width: getRem(212);
         }
         .chara2 {
             @include absPosition(null, getRem(148), getRem(36));
+            animation: charaMove 0.5s 0.25s infinite alternate;
+            transform-origin: bottom;
             width: getRem(184);
         }
     }
 
     .-key3 & {
         .chara1 {
-            @include absPosition(null, null, getRem(50), 0);
+            @include absPosition(null, null, getRem(50), getRem(-5));
+            animation: charaMove 0.5s infinite alternate;
+            transform-origin: bottom;
             width: getRem(308);
         }
     }
@@ -223,6 +229,8 @@
     .-key4 & {
         .chara1 {
             @include absPosition(null, getRem(-12), getRem(84));
+            animation: charaMove 0.5s infinite alternate;
+            transform-origin: bottom;
             width: getRem(284);
         }
         .chara2 {
@@ -236,6 +244,15 @@
         .chara1 {
             @include absPosition(null, getRem(-150), getRem(0));
             width: getRem(1046);
+        }
+    }
+
+    @keyframes charaMove {
+        from {
+            transform: scale3d(0.98, 1.02, 1);
+        }
+        to {
+            transform: scale3d(1, 1, 1);
         }
     }
 }

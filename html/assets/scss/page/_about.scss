@@ -106,6 +106,7 @@
         background: url(#{$imgDir}about/ph_tv.png) no-repeat 0 0 / 100%;
         content: '';
         height: 100%;
+        pointer-events: none;
         width: 100%;
     }
 }
@@ -120,9 +121,16 @@
 .about__pv__cont__movie {
     @include relPosition();
     background: yellow;
+    cursor: pointer;
     height: getRem(342);
     margin: 0 auto;
     width: getRem(446);
+
+    iframe {
+        height: 100%;
+        pointer-events: none;
+        width: 100%;
+    }
 
     &::after {
         @include absPosition(50%, 50%);

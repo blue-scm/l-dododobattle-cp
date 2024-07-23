@@ -1,0 +1,98 @@
+@use 'global' as *;
+
+.l-header {
+    @include MQ_NARROW {
+        @include cmn-transition();
+        @include fxdPosition(0, 0);
+        opacity: 0;
+        transform: translateY(-100%);
+        width: 100%;
+        z-index: $zLayer3;
+    }
+
+    @include MQ_WIDE {
+        @include fxdPosition(0, calc((100% - 604px) / 2 - (248px + 40px + 40px)));
+    }
+
+    .-scrolled & {
+        @include MQ_NARROW {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    &::before {
+        @include MQ_NARROW {
+            @include absPosition(0, 0);
+            background: url(#{$imgDir}header/bg.png) no-repeat 0 0 / 100%;
+            content: '';
+            height: getRem(88);
+            width: 100%;
+        }
+    }
+}
+
+.l-header__cont {
+    @include MQ_NARROW {
+        @include relPosition();
+        display: flex;
+        justify-content: space-between;
+        padding: 0 getRem(30) 0 getRem(24);
+    }
+}
+
+.l-header__dl {
+    width: getRem(432);
+
+    img {
+        filter: drop-shadow(0 getRem(8) getRem(16) rgba(#000, 0.5));
+    }
+
+    &::before {
+        @include absPosition(getRem(10), getRem(5));
+        background: url(#{$imgDir}header/ph_kira.png) no-repeat 0 0 / 100%;
+        content: '';
+        height: getRem(52);
+        width: getRem(502);
+    }
+}
+
+.l-header__links {
+    @include MQ_NARROW {
+        display: flex;
+        gap: getRem(18);
+        margin-top: getRem(20);
+    }
+
+    @include MQ_WIDE {
+        margin: 40px;
+        width: 248px;
+
+        @include MQ_UNDER(1280) {
+            filter: drop-shadow(0 0 20px rgba(#000, 0.4));
+        }
+    }
+}
+
+.l-header__links__btn {
+    display: block;
+
+    @include MQ_NARROW {
+        filter: drop-shadow(0 getRem(8) getRem(20) rgba(#000, 0.6));
+        height: getRem(96);
+        width: getRem(96);
+    }
+
+    @include MQ_WIDE {
+        @include MQ_UNDER(1280) {
+            margin: 0 0 0 auto;
+            width: 56px;
+        }
+    }
+
+    & + & {
+        @include MQ_WIDE {
+            margin-top: 10px;
+        }
+    }
+}

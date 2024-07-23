@@ -4,29 +4,67 @@
 	class:'top',
 	relPath:'./',
 	css:['./assets/css/top.css'],
-	js:['./assets/js/top.js']
-}%>
+	js:['./assets/js/top.js'] }
+%>
 
 <!DOCTYPE html>
 <html>
+    <head>
+        <!-- Google Tag Manager -->
+        <script>
+            (function (w, d, s, l, i) {
+                w[l] = w[l] || [];
+                w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+                var f = d.getElementsByTagName(s)[0],
+                    j = d.createElement(s),
+                    dl = l != 'dataLayer' ? '&l=' + l : '';
+                j.async = true;
+                j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+                f.parentNode.insertBefore(j, f);
+            })(window, document, 'script', 'dataLayer', 'GTM-5F76J94V');
+        </script>
+        <!-- End Google Tag Manager -->
 
-	<head>
-		<meta charset="utf-8">
-		<meta name="keyword" content="ダミー,ダミー2,ダミー3">
-		<meta name="description" content="ディスクリプションダミー">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title><%= meta.title %></title>
+        <meta charset="utf-8" />
+        <meta name="keyword" content="ダミー,ダミー2,ダミー3" />
+        <meta name="description" content="ディスクリプションダミー" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title><%= meta.title %></title>
 
-		<!-- PAGE CSS -->
-		<link href="assets/css/main.css" rel="stylesheet" type="text/css"/>
-	</head>
+        <!-- PAGE CSS -->
+        <link href="assets/css/main.css" rel="stylesheet" type="text/css" />
+    </head>
 
-	<body>
-		<div class="wrapper">
-			<%- include('./_inc/_indextemplate', {pageInfo: pageInfo}) %>		
-		</div>
+    <body>
+        <!-- Google Tag Manager (noscript) -->
+        <noscript>
+			<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5F76J94V" height="0" width="0" style="display: none; visibility: hidden"></iframe>
+		</noscript>
+        <!-- End Google Tag Manager (noscript) -->
 
-		<script src="assets/js/vendor.js"></script>
-		<script src="assets/js/main.js"></script>
-	</body>
+        <div class="wrapper"><%- include('./_inc/_indextemplate', {pageInfo: pageInfo}) %></div>
+
+        <script src="assets/js/vendor.js"></script>
+        <script src="assets/js/main.js"></script>
+
+		<!-- User Insight PCDF Code Start : -->
+		<script type="text/javascript">
+			var _uic = _uic ||{}; var _uih = _uih ||{};_uih['id'] = 54014;
+			_uih['lg_id'] = '';
+			_uih['fb_id'] = '';
+			_uih['tw_id'] = '';
+			_uih['uigr_1'] = ''; _uih['uigr_2'] = ''; _uih['uigr_3'] = ''; _uih['uigr_4'] = ''; _uih['uigr_5'] = '';
+			_uih['uigr_6'] = ''; _uih['uigr_7'] = ''; _uih['uigr_8'] = ''; _uih['uigr_9'] = ''; _uih['uigr_10'] = '';
+			_uic['uls'] = 1;
+			
+			/* DO NOT ALTER BELOW THIS LINE */
+			/* WITH FIRST PARTY COOKIE */
+			(function() {
+			var bi = document.createElement('script');bi.type = 'text/javascript'; bi.async = true;
+			bi.src = '//cs.nakanohito.jp/b3/bi.js';
+			var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bi, s);
+			})();
+		</script>
+		<!-- User Insight PCDF Code End : -->
+    </body>
 </html>

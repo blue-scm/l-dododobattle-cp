@@ -1,0 +1,49 @@
+@use 'global' as *;
+
+.download {
+    @include fxdPosition(null, calc(((100% - 604px) / 2 + 604px) + 40px), 0);
+    aspect-ratio: 840 / 556;
+    background: url(#{$imgDir}download/bg_dl.png) no-repeat center / 100%;
+    padding: 25px 38px 0;
+    width: 420px;
+
+    @include MQ_UNDER(1620) {
+        @include fxdPosition(auto, 50%, 0);
+        background: url(#{$imgDir}download/bg_dl_narrow.png) no-repeat top / 100%;
+        filter: drop-shadow(0 0 getRem(80) rgba(#000, 0.6));
+        height: 170px;
+        padding: 24px 74px 0;
+        transform: translateX(-50%);
+        z-index: $zLayer6;
+        width: 500px;
+    }
+}
+
+.download__row {
+    align-items: center;
+    display: flex;
+    gap: 14px;
+}
+
+.download__qr {
+    width: 129px;
+
+    @include MQ_UNDER(1620) {
+        display: none;
+    }
+}
+
+.download__txt {
+    width: 206px;
+
+    @include MQ_UNDER(1620) {
+        margin: 0 auto;
+        width: 398px;
+    }
+}
+
+.download__links {
+    display: flex;
+    gap: 8px;
+    margin-top: 12px;
+}

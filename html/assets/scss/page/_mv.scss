@@ -6,6 +6,7 @@
     z-index: $zLayer2;
 
     &.-top {
+        min-height: 100vh;
         padding-top: getRem(20);
     }
 

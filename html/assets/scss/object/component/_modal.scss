@@ -1,63 +1,94 @@
 @use 'global' as *;
 
-body {
-    &.-inmodal {
-        // height: 100%;
-        // overflow: hidden;
-    }
-}
+/* ==========================================================================
+	modal
+========================================================================== */
 
 .c-modal {
-    @include cmn-transition();
-    @include absPosition(0, 0);
-    align-items: center;
-    background: url(#{$imgDir}bg_contents.jpg) no-repeat 0 0 / cover;
-    display: flex;
+    @include fxdPosition(0, 0);
+    background: rgba(0, 0, 0, 0.9);
     height: 100%;
     opacity: 0;
-    overflow: auto;
+    overflow: scroll;
+    -ms-overflow-style: none; /* IE, Edge 対応 */
+    overflow-y: scroll;
+    pointer-events: none;
+    scrollbar-width: none; /* Firefox 対応 */
+    transition: all 0.5s 0s ease;
     visibility: hidden;
     width: 100%;
-    z-index: $zLayer3;
+    z-index: -1;
 
     &.-active {
         opacity: 1;
+        pointer-events: auto;
         visibility: visible;
+        z-index: $zLayer6;
+    }
+
+    &::-webkit-scrollbar {
+        /* Chrome, Safari 対応 */
+        display: none;
     }
 }
 
 .c-modal__inner {
-    @include relPosition();
-    margin: 0 auto;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    min-height: 100%;
+    position: relative;
     width: 100%;
 }
 
 .c-modal__close {
-    @include cmn-transition();
-    @include absPosition(getRem(20), null, null, getRem(20));
-    height: getRem(80);
-    width: getRem(80);
+    cursor: pointer;
+    padding: 0;
 
-    &:before {
-        @include absPosition(50%, 50%);
-        background: getColor(primary);
-        content: '';
-        height: getRem(2);
-        transform: translate(-50%, -50%) rotate(45deg);
-        width: 100%;
+    @include MQ_NARROW {
+        @include fxdPosition(20px, null, null, 20px);
+        height: 64px;
+        width: 64px;
     }
 
+    @include MQ_WIDE {
+        @include fxdPosition(20px, null, null, 50px);
+        height: 80px;
+        width: 80px;
+    }
+
+    &:before,
     &:after {
         @include absPosition(50%, 50%);
-        background: getColor(primary);
+        background: #fff;
         content: '';
-        height: getRem(2);
-        transform: translate(-50%, -50%) rotate(-45deg);
+        height: 2px;
         width: 100%;
     }
 
-    &:hover {
-        opacity: 0.5;
-        transform: scale(1.25);
+    &:before {
+        transform: translate(-50%, -50%) rotate(45deg);
+    }
+    &:after {
+        transform: translate(-50%, -50%) rotate(-45deg);
+    }
+
+    &.-bk:before,
+    &.-bk:after {
+        background: #000;
+    }
+}
+
+.c-modal_movie__iframewrap {
+    aspect-ratio: 16 / 9;
+    margin: 0 auto;
+    max-width: 80vw;
+    position: relative;
+    width: 100%;
+
+    iframe {
+        @include absPosition(0, 0);
+        height: 100%;
+        width: 100%;
     }
 }

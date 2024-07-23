@@ -1,46 +1,63 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
-  <meta name="keyword" content="ダミー,ダミー2,ダミー3">
-  <meta name="description" content="ディスクリプションダミー">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>テストタイトルテストタイトル</title>
+  <!-- Google Tag Manager -->
+  <script>
+    (function(w, d, s, l, i) {
+      w[l] = w[l] || [];
+      w[l].push({
+        'gtm.start': new Date().getTime(),
+        event: 'gtm.js'
+      });
+      var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s),
+        dl = l != 'dataLayer' ? '&l=' + l : '';
+      j.async = true;
+      j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+      f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-5F76J94V');
+  </script>
+  <!-- End Google Tag Manager -->
+  <meta charset="utf-8" />
+  <meta name="keyword" content="ダミー,ダミー2,ダミー3" />
+  <meta name="description" content="ディスクリプションダミー" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LINE ドドドバトル 公式サイト</title>
   <!-- PAGE CSS -->
   <link href="assets/css/main.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5F76J94V" height="0" width="0" style="display: none; visibility: hidden"></iframe>
+  </noscript>
+  <!-- End Google Tag Manager (noscript) -->
   <div class="wrapper">
     <div class="wide c-visible_wide">
       <div class="wide__content">
-        <div class="wide__content__l">
-          <div class="wide__links">
-            <a href="" target="_blank" class="wide__links__btn">
-              <img src="./assets/img/wide/btn_line.png" alt="キャンペーンをチェック！">
-            </a>
-            <a href="" target="_blank" class="wide__links__btn">
-              <img src="./assets/img/wide/btn_x.png" alt="最新情報をチェック！">
-            </a>
-          </div>
-        </div>
-        <div class="wide__content__r">
-          <div class="wide__dl">
-            <div class="wide__dl__row">
-              <div class="wide__dl__qr"><img src="./assets/img/wide/qr.png" alt=""></div>
-              <p class="wide__dl__txt"><img src="./assets/img/wide/txt.png" alt=""></p>
-            </div>
-            <div class="wide__dllinks">
-              <a href="" target="_blank" class="wide__dllinks__item">
-                <img src="./assets/img/common/btn_appstore.png" alt="">
-              </a>
-              <a href="" target="_blank" class="wide__dllinks__item">
-                <img src="./assets/img/common/btn_googleplay.png" alt="">
-              </a>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
+    <header class="l-header">
+      <div class="l-header__cont">
+        <a href="" class="l-header__dl c-visible_nrw">
+          <img src="./assets/img/header/btn_dl.png" alt="今すぐダウンロード！">
+        </a>
+        <div class="l-header__links">
+          <a href="" target="_blank" class="l-header__links__btn">
+            <picture>
+              <source media="(max-width:1280px)" srcset="./assets/img/header/ico_line.png" />
+              <img src="./assets/img/header/btn_line.png" alt="キャンペーンをチェック！">
+            </picture>
+          </a>
+          <a href="" target="_blank" class="l-header__links__btn">
+            <picture>
+              <source media="(max-width:1280px)" srcset="./assets/img/header/ico_x.png" />
+              <img src="./assets/img/header/btn_x.png" alt="最新情報をチェック！">
+            </picture>
+          </a>
+        </div>
+      </div>
+    </header>
     <div class="contents js-contents">
       <main class="l-main">
         <div class="l-main__videobg">
@@ -104,7 +121,9 @@
             <div class="about__pv">
               <div class="about__pv__shadow"></div>
               <div class="about__pv__cont">
-                <div class="about__pv__cont__movie"></div>
+                <div class="about__pv__cont__movie js-modal_open js-moviemodal_btn" data-modalid="movie" data-videoid="5ZA5Abxc3Bg">
+                  <iframe width="223" height="171" src="https://www.youtube.com/embed/5ZA5Abxc3Bg?autoplay=1&mute=1&playsinline=1&loop=1&playlist=5ZA5Abxc3Bg&controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
               </div>
               <p class="about__pv__balloon">
                 <img src="./assets/img/about/txt_balloon.png" alt="WATCH PV!">
@@ -337,8 +356,66 @@
         </div>
       </footer>
     </div>
+    <div class="download">
+      <div class="download__row">
+        <div class="download__qr"><img src="./assets/img/download/qr.png" alt=""></div>
+        <p class="download__txt">
+          <picture>
+            <source media="(max-width:1620px)" srcset="./assets/img/download/txt_narrow.png" />
+            <img src="./assets/img/download/txt.png" alt="">
+          </picture>
+        </p>
+      </div>
+      <div class="download__links">
+        <a href="" target="_blank" class="download__links__item">
+          <img src="./assets/img/common/btn_appstore.png" alt="">
+        </a>
+        <a href="" target="_blank" class="download__links__item">
+          <img src="./assets/img/common/btn_googleplay.png" alt="">
+        </a>
+      </div>
+    </div>
+    <section class="c-modal js-modal" data-modalID="movie">
+      <div class="c-modal__inner">
+        <div class="c-modal_movie__iframewrap">
+          <div id="player"></div>
+        </div>
+      </div>
+      <button class="c-modal__close js-modal_close"></button>
+    </section>
   </div>
   <script src="assets/js/vendor.js"></script>
   <script src="assets/js/main.js"></script>
+  <!-- User Insight PCDF Code Start : -->
+  <script type="text/javascript">
+    var _uic = _uic || {};
+    var _uih = _uih || {};
+    _uih['id'] = 54014;
+    _uih['lg_id'] = '';
+    _uih['fb_id'] = '';
+    _uih['tw_id'] = '';
+    _uih['uigr_1'] = '';
+    _uih['uigr_2'] = '';
+    _uih['uigr_3'] = '';
+    _uih['uigr_4'] = '';
+    _uih['uigr_5'] = '';
+    _uih['uigr_6'] = '';
+    _uih['uigr_7'] = '';
+    _uih['uigr_8'] = '';
+    _uih['uigr_9'] = '';
+    _uih['uigr_10'] = '';
+    _uic['uls'] = 1;
+    /* DO NOT ALTER BELOW THIS LINE */
+    /* WITH FIRST PARTY COOKIE */
+    (function() {
+      var bi = document.createElement('script');
+      bi.type = 'text/javascript';
+      bi.async = true;
+      bi.src = '//cs.nakanohito.jp/b3/bi.js';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(bi, s);
+    })();
+  </script>
+  <!-- User Insight PCDF Code End : -->
 </body>
 </html>
