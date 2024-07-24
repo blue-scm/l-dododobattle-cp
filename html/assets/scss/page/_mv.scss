@@ -1,109 +1,109 @@
-// @use 'global' as *;
+@use 'global' as *;
 
-// .mv {
-//     @include relPosition();
-//     font-size: getRem(32);
-//     z-index: $zLayer2;
+.mv {
+    @include relPosition();
+    font-size: getRem(32);
+    z-index: $zLayer2;
 
-//     &.-top {
-//         min-height: 100vh;
-//         padding-top: getRem(20);
-//     }
+    &.-top {
+        min-height: 100vh;
+        padding-top: getRem(20);
+    }
 
-//     &.-bottom {
-//         margin-top: getRem(180);
-//         padding-bottom: getRem(48);
-//     }
-// }
+    &.-bottom {
+        margin-top: getRem(180);
+        padding-bottom: getRem(48);
+    }
+}
 
-// .mv__maincatch {
-//     @include relPosition();
-//     margin: 0 auto;
-//     width: getRem(710);
-//     z-index: $zLayer1;
-// }
+.mv__maincatch {
+    @include relPosition();
+    margin: 0 auto;
+    width: getRem(710);
+    z-index: $zLayer1;
+}
 
-// .mv__chara {
-//     &.-sally {
-//         @include absPosition(getRem(184), null, null, getRem(-80));
-//         width: getRem(290);
-//     }
+.mv__chara {
+    &.-sally {
+        @include absPosition(getRem(184), null, null, getRem(-80));
+        width: getRem(290);
+    }
 
-//     &.-brown {
-//         @include absPosition(getRem(488), getRem(0));
-//         width: getRem(228);
-//         z-index: $zLayer1;
-//     }
-// }
+    &.-brown {
+        @include absPosition(getRem(488), getRem(0));
+        width: getRem(228);
+        z-index: $zLayer1;
+    }
+}
 
-// .mv__logo {
-//     @include relPosition();
-//     width: getRem(706);
+.mv__logo {
+    @include relPosition();
+    width: getRem(706);
 
-//     .-top & {
-//         margin: getRem(-18) auto 0;
-//     }
+    .-top & {
+        margin: getRem(-18) auto 0;
+    }
 
-//     .-bottom & {
-//         margin: 0 auto;
-//     }
-// }
+    .-bottom & {
+        margin: 0 auto;
+    }
+}
 
-// .mv__dl__txt {
-//     @include relPosition();
-//     margin: getRem(32) auto 0;
-//     width: getRem(416);
-// }
+.mv__dl__txt {
+    @include relPosition();
+    margin: getRem(32) auto 0;
+    width: getRem(416);
+}
 
-// .mv__dl__btn {
-//     @include relPosition();
-//     display: block;
-//     margin: getRem(-28) auto 0;
-//     width: getRem(644);
+.mv__dl__btn {
+    @include relPosition();
+    display: block;
+    margin: getRem(-28) auto 0;
+    width: getRem(644);
 
-//     &::before {
-//         @include absPosition(50%, 50%);
-//         animation: flashDlBtn 1s $EaseInOut_Circ infinite alternate;
-//         background: url(#{$imgDir}mv/bg_flash.png) no-repeat center / 100%;
-//         content: '';
-//         height: getRem(268);
-//         transform: translate(-50%, -50%);
-//         width: getRem(744);
-//     }
+    &::before {
+        @include absPosition(50%, 50%);
+        animation: flashDlBtn 1s $EaseInOut_Circ infinite alternate;
+        background: url(#{$imgDir}mv/bg_flash.png) no-repeat center / 100%;
+        content: '';
+        height: getRem(268);
+        transform: translate(-50%, -50%);
+        width: getRem(744);
+    }
 
-//     &::after {
-//         @include absPosition(50%, 50%);
-//         aspect-ratio: 1 / 1;
-//         background: url(#{$imgDir}mv/ph_effect.png) no-repeat center / 100%;
-//         content: '';
-//         pointer-events: none;
-//         transform: translate(-50%, -50%);
-//         width: getRem(480);
-//     }
+    &::after {
+        @include absPosition(50%, 50%);
+        aspect-ratio: 1 / 1;
+        background: url(#{$imgDir}mv/ph_effect.png) no-repeat center / 100%;
+        content: '';
+        pointer-events: none;
+        transform: translate(-50%, -50%);
+        width: getRem(480);
+    }
 
-//     img {
-//         @include relPosition();
-//     }
+    img {
+        @include relPosition();
+    }
 
-//     @keyframes flashDlBtn {
-//         from {
-//             opacity: 1;
-//         }
-//         to {
-//             opacity: 0.3;
-//         }
-//     }
-// }
+    @keyframes flashDlBtn {
+        from {
+            opacity: 1;
+        }
+        to {
+            opacity: 0.3;
+        }
+    }
+}
 
-// .mv__links {
-//     margin: getRem(20) auto 0;
-//     width: getRem(564);
-// }
+.mv__links {
+    margin: getRem(20) auto 0;
+    width: getRem(564);
+}
 
-// .mv__links__btn {
-//     display: block;
+.mv__links__btn {
+    display: block;
 
-//     & + & {
-//         margin-top: getRem(8);
-//     }
-// }
+    & + & {
+        margin-top: getRem(8);
+    }
+}
