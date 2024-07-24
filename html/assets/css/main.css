@@ -2005,30 +2005,54 @@ nav li:before {
   position: relative;
   margin: 2rem auto 0;
   width: 26rem;
-  z-index: 1000;
 }
 
 .mv__dl__btn {
-  -webkit-animation: flashDlBtn 1s cubic-bezier(0.785, 0.135, 0.15, 0.86) infinite alternate;
-          animation: flashDlBtn 1s cubic-bezier(0.785, 0.135, 0.15, 0.86) infinite alternate;
+  position: relative;
   display: block;
   margin: -1.75rem auto 0;
   width: 40.25rem;
 }
+.mv__dl__btn::before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-animation: flashDlBtn 1s cubic-bezier(0.785, 0.135, 0.15, 0.86) infinite alternate;
+          animation: flashDlBtn 1s cubic-bezier(0.785, 0.135, 0.15, 0.86) infinite alternate;
+  background: url(../img/mv/bg_flash.png) no-repeat center/100%;
+  content: "";
+  height: 16.75rem;
+  transform: translate(-50%, -50%);
+  width: 46.5rem;
+}
+.mv__dl__btn::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  aspect-ratio: 1/1;
+  background: url(../img/mv/ph_effect.png) no-repeat center/100%;
+  content: "";
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  width: 30rem;
+}
+.mv__dl__btn img {
+  position: relative;
+}
 @-webkit-keyframes flashDlBtn {
   from {
-    filter: drop-shadow(0 0 0rem #f7d500) drop-shadow(0 0 0rem #f7d500);
+    opacity: 1;
   }
   to {
-    filter: drop-shadow(0 0 1.25rem #f7d500) drop-shadow(0 0 1.125rem #f7d500);
+    opacity: 0.3;
   }
 }
 @keyframes flashDlBtn {
   from {
-    filter: drop-shadow(0 0 0rem #f7d500) drop-shadow(0 0 0rem #f7d500);
+    opacity: 1;
   }
   to {
-    filter: drop-shadow(0 0 1.25rem #f7d500) drop-shadow(0 0 1.125rem #f7d500);
+    opacity: 0.3;
   }
 }
 
