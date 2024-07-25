@@ -1,6 +1,13 @@
 // config
 const PROJECT_ROOT = "../html";
 
+// dockerでの立ち上げかどうかこのENVで判断
+let proxy = "localhost:8186"
+if (process.env.WEB_SERVER_PROXY) {
+    // {compose.yamlのservicesで定義したapacheの名前}:{docker上で開かれているport}
+    proxy = process.env.WEB_SERVER_PROXY
+}
+
 const CONFIG = {
     PATH: {
         root: PROJECT_ROOT,
@@ -14,7 +21,7 @@ const CONFIG = {
         img: PROJECT_ROOT + "/assets/img/",
     },
     OPTION: {
-        proxy: "localhost:8186",
+        proxy: proxy,
         es6: true,
         ts: false,
         ejs: true,
