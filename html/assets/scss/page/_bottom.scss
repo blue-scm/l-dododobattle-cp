@@ -10,6 +10,10 @@
     height: getRem(176);
     padding: 0;
     width: getRem(176);
+
+    &.-move {
+        z-index: 10000;
+    }
 }
 
 .bottom__pagetop__inner {
@@ -19,6 +23,15 @@
     .shadow,
     .brown {
         @include absPosition(0, 0);
+    }
+
+    .brown {
+        &.-move {
+            height: getRem(176);
+            position: fixed;
+            width: getRem(176);
+            z-index: 1000;
+        }
     }
 
     .balloon {

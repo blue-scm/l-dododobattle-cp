@@ -1395,6 +1395,11 @@ nav li:before {
   background-image: url(../img/common/sprite/ph_meercat3.png);
 }
 
+.-scale {
+  -webkit-animation: stepAnimation 0.8s steps(3) infinite, scaleAnimatione 1s ease-out infinite;
+          animation: stepAnimation 0.8s steps(3) infinite, scaleAnimatione 1s ease-out infinite;
+}
+
 @-webkit-keyframes stepAnimation {
   from {
     background-position: 0% 0;
@@ -1410,6 +1415,28 @@ nav li:before {
   }
   to {
     background-position: -100% 0%;
+  }
+}
+@-webkit-keyframes scaleAnimatione {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.4);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes scaleAnimatione {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.4);
+  }
+  100% {
+    transform: scale(1);
   }
 }
 .about {
@@ -1594,6 +1621,9 @@ nav li:before {
   padding: 0;
   width: 11rem;
 }
+.bottom__pagetop.-move {
+  z-index: 10000;
+}
 
 .bottom__pagetop__inner {
   position: relative;
@@ -1604,6 +1634,12 @@ nav li:before {
   position: absolute;
   top: 0;
   left: 0;
+}
+.bottom__pagetop__inner .brown.-move {
+  height: 11rem;
+  position: fixed;
+  width: 11rem;
+  z-index: 1000;
 }
 .bottom__pagetop__inner .balloon {
   position: absolute;
@@ -1644,6 +1680,27 @@ nav li:before {
   display: flex;
   gap: 8px;
   margin-top: 12px;
+}
+
+.download__charas {
+  position: absolute;
+  top: -102px;
+  left: 0;
+  height: 130px;
+  width: 150px;
+}
+
+.download__chara.-ft {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 120px;
+}
+.download__chara.-sec {
+  position: absolute;
+  top: 40px;
+  left: 60px;
+  width: 90px;
 }
 
 .keywords {
@@ -2081,6 +2138,82 @@ nav li:before {
   position: relative;
   display: flex;
   justify-content: space-between;
+  transform: translateY(300px);
+}
+
+.wide__chara {
+  height: 5rem;
+  width: 5rem;
+}
+.wide__chara.-goblin-bow-green {
+  position: absolute;
+  top: 0.625rem;
+  left: 7rem;
+}
+.wide__chara.-slime-blue-left {
+  position: absolute;
+  top: 20.25rem;
+  left: 3.75rem;
+}
+.wide__chara.-slime-green {
+  position: absolute;
+  top: 13.4375rem;
+  left: 19.375rem;
+}
+.wide__chara.-slime-yellow-left {
+  position: absolute;
+  top: 23.9375rem;
+  left: 29.125rem;
+}
+.wide__chara.-meercat-green {
+  position: absolute;
+  top: 31.4375rem;
+  left: 22.25rem;
+}
+.wide__chara.-meercat-red {
+  position: absolute;
+  top: 53.8125rem;
+  left: 2rem;
+}
+.wide__chara.-goblin-bow-blue {
+  position: absolute;
+  top: 2.8125rem;
+  left: unset;
+  bottom: unset;
+  right: 33.625rem;
+}
+.wide__chara.-fox-green {
+  position: absolute;
+  top: 2.0625rem;
+  left: unset;
+  bottom: unset;
+  right: 6.8125rem;
+}
+.wide__chara.-slime-yellow-right {
+  position: absolute;
+  top: 15.25rem;
+  left: unset;
+  bottom: unset;
+  right: 21.875rem;
+}
+.wide__chara.-slime-blue-right {
+  position: absolute;
+  top: 23.9375rem;
+  left: unset;
+  bottom: unset;
+  right: 31.125rem;
+}
+.wide__chara.-fox-blue {
+  position: absolute;
+  top: 22.75rem;
+  left: unset;
+  bottom: unset;
+  right: 13.5rem;
+}
+
+.wide__anime.-stop {
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
 }
 
 @media screen and (min-width: 769px){
@@ -2371,8 +2504,8 @@ nav li:before {
     height: 170px;
     padding: 24px 74px 0;
     transform: translateX(-50%);
-    z-index: 6000;
     width: 500px;
+    z-index: 6000;
   }
   .download__qr {
     display: none;
@@ -2380,6 +2513,9 @@ nav li:before {
   .download__txt {
     margin: 0 auto;
     width: 398px;
+  }
+  .download__charas {
+    display: none;
   }
 }
 

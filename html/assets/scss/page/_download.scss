@@ -14,8 +14,8 @@
         height: 170px;
         padding: 24px 74px 0;
         transform: translateX(-50%);
-        z-index: $zLayer6;
         width: 500px;
+        z-index: $zLayer6;
     }
 }
 
@@ -46,4 +46,26 @@
     display: flex;
     gap: 8px;
     margin-top: 12px;
+}
+
+.download__charas {
+    @include absPosition(-102px, 0);
+    height: 130px;
+    width: 150px;
+
+    @include MQ_UNDER(1620) {
+        display: none;
+    }
+}
+
+.download__chara {
+    &.-ft {
+        @include absPosition(0, 0);
+        width: 120px;
+    }
+
+    &.-sec {
+        @include absPosition(40px, 60px);
+        width: 90px;
+    }
 }
