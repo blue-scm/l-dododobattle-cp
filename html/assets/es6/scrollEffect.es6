@@ -7,18 +7,16 @@ gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 export default class ScrollEffect {
     constructor() {
         this.init();
-        this.charas = document.querySelectorAll('.js-wide-chara');
+        this.charas;
         this.scrollEndTimer;
         this.onPageTopFlg = false;
-        this.pageTopCharaY = 0;
-        this.wideCharaTl;
     }
 
     init() {
         this.setupAnimations();
         this.setupScrollTriggers();
         this.setupPageTop();
-        this.setupWideCharaAnimation();
+        this.charas = document.querySelectorAll('.js-wide-chara');
     }
 
     setupAnimations() {
@@ -72,6 +70,15 @@ export default class ScrollEffect {
                 this.animeCharaSprite(self);
                 this.stopCharaSprite();
             },
+        });
+
+        const enemies = document.querySelectorAll('.js-enemy-chara');
+        enemies.forEach((enemy, idx) => {
+            ScrollTrigger.create({
+                trigger: '.js-enemies-anime',
+                start: 'top-=400 top',
+                onEnter: () => this.createBottomEnemyAnimation(enemy, idx).play(),
+            });
         });
     }
 
@@ -160,17 +167,53 @@ export default class ScrollEffect {
         return tl;
     }
 
-    setupWideCharaAnimation() {
-        this.wideCharaTl = gsap.timeline({ paused: true });
-        this.wideCharaTl.to('.js-chara-container', { duration: 15, ease: 'power3.out', y: 500 });
+    createBottomEnemyAnimation(enemy, idx) {
+        const enemyAreaW = document.querySelector('.js-enemies').getBoundingClientRect().width;
+        const tl = gsap.timeline({ paused: true });
+        tl.to(enemy, {
+            x: enemyAreaW,
+            duration: 2.8,
+            ease: 'none',
+            delay: idx * 0.5 + gsap.utils.random(-0.3, 0.3),
+        }).to(
+            enemy,
+            {
+                opacity: 0,
+                duration: 0.3,
+            },
+            '>'
+        );
+        return tl;
     }
 
     animeCharaSprite(self) {
-        if (self.progress > 0) {
-            this.charas.forEach((el) => {
-                el.classList.remove('-stop');
-            });
-        }
+        this.charas.forEach((chara) => {
+            chara.classList.remove('-stop');
+        });
+
+        const currentVel = parseInt(Math.abs(self.getVelocity()));
+        let speed = 0.5;
+        const list = {
+            high: 0.1,
+            mid: 1.2,
+            low: 2.5,
+        };
+        if (currentVel > 2000) speed = list.high;
+        if (2000 > currentVel > 500) speed = list.mid;
+        if (currentVel < 500) speed = list.low;
+
+        gsap.to(this.charas, {
+            scale: 1.6,
+            duration: speed,
+            ease: 'power3.out',
+            onComplete: () => {
+                gsap.to(this.charas, {
+                    scale: 1,
+                    duration: 0.8,
+                    ease: 'power3.out',
+                });
+            },
+        });
     }
 
     stopCharaSprite() {
@@ -179,56 +222,64 @@ export default class ScrollEffect {
             this.charas.forEach((chara) => {
                 chara.classList.add('-stop');
             });
+            gsap.to(this.charas, {
+                scale: 1,
+                duration: 0.8,
+                ease: 'power3.out',
+            });
         }, 100);
     }
 
-    animePageTop(self) {
-        // gsap.to('.js-pagetop-chara', { y: this.pageTopCharaY * (1 - self.progress) * -1 });
-
+    animePageTop() {
         const target = document.querySelector('.js-pagetop-chara');
         const rect = target.getBoundingClientRect();
         const targetTop = rect.top;
         const targetLeft = rect.left;
         const targetH = rect.height;
-        const distanceToTop = targetTop + window.scrollY;
 
         gsap.set(target, { top: `${targetTop}px` });
         gsap.set(target, { left: `${targetLeft}px` });
-
         target.classList.add('-move');
 
         const tl = gsap.timeline();
 
-        tl
-            // .to(target, {
-            //     y: 20,
-            //     duration: 0.5,
-            //     ease: 'power3.out',
-            // })
-            .to(window, { duration: 1.8, scrollTo: { y: 0 }, ease: 'circ.inOut' }, '>')
-            .from(
+        tl.to('.js-pagetop-shadow', {
+            opacity: 0,
+            duration: 0.2,
+        })
+            .to(target, {
+                y: 40,
+                scaleY: 0.96,
+                scaleX: 1.12,
+                duration: 0.4,
+                ease: 'power3.out',
+            })
+            .to(
+                target,
+                {
+                    scaleY: 1,
+                    scaleX: 1,
+                    duration: 0.2,
+                    ease: 'power4.out',
+                },
+                '>'
+            )
+            .to(window, { duration: 1.8, scrollTo: { y: 0 }, ease: 'circ.inOut' }, '<')
+            .to(
                 target,
                 {
                     y: (targetTop + targetH) * -1,
-                    ease: 'power3.out',
-                    scrollTrigger: {
-                        trigger: target,
-                        start: 0,
-                        end: `-=${distanceToTop * -1}`,
-                        scrub: true,
-                        once: true,
-                        onToggle: (self) => {
-                            if (self.isActive === false) {
-                                gsap.set(target, { top: 0 });
-                                gsap.set(target, { left: 0 });
-                                gsap.set(target, { y: 0 });
-                                target.classList.remove('-move');
-                                document.querySelectorAll('.js-pagetop')[0].classList.remove('-move');
-                                this.onPageTopFlg = false;
-                                self.kill();
-                                tl.kill();
-                            }
-                        },
+                    duration: 2.8,
+                    ease: 'power3.inOut',
+                    onComplete: () => {
+                        gsap.set(target, { top: 0 });
+                        gsap.set(target, { left: 0 });
+                        gsap.set(target, { y: 0 });
+                        gsap.set('.js-pagetop-shadow', { opacity: 1 });
+                        target.classList.remove('-move');
+                        document.querySelector('.js-pagetop').classList.remove('-move');
+                        this.onPageTopFlg = false;
+                        tl.kill();
                     },
                 },
                 '<'

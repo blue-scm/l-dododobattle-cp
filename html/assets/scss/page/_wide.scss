@@ -15,9 +15,6 @@
 
 .wide__content {
     @include relPosition();
-    display: flex;
-    justify-content: space-between;
-    transform: translateY(300px);
 }
 
 .wide__chara {
@@ -25,51 +22,53 @@
     width: getRem(80);
 
     &.-goblin-bow-green {
-        @include absPosition(getRem(10), getRem(112));
+        @include absPosition(getRem(310), getRem(112));
     }
 
     &.-slime-blue-left {
-        @include absPosition(getRem(324), getRem(60));
+        @include absPosition(getRem(624), getRem(60));
     }
 
     &.-slime-green {
-        @include absPosition(getRem(215), getRem(310));
+        @include absPosition(getRem(515), getRem(310));
     }
 
     &.-slime-yellow-left {
-        @include absPosition(getRem(383), getRem(466));
+        @include absPosition(getRem(683), getRem(466));
     }
 
     &.-meercat-green {
-        @include absPosition(getRem(503), getRem(356));
+        @include absPosition(getRem(803), getRem(356));
     }
 
     &.-meercat-red {
-        @include absPosition(getRem(861), getRem(32));
+        @include absPosition(getRem(961), getRem(32));
     }
 
     &.-goblin-bow-blue {
-        @include absPosition(getRem(45), unset, unset, getRem(538));
+        @include absPosition(getRem(345), unset, unset, getRem(538));
     }
 
     &.-fox-green {
-        @include absPosition(getRem(33), unset, unset, getRem(109));
+        @include absPosition(getRem(333), unset, unset, getRem(109));
     }
 
     &.-slime-yellow-right {
-        @include absPosition(getRem(244), unset, unset, getRem(350));
+        @include absPosition(getRem(544), unset, unset, getRem(350));
     }
 
     &.-slime-blue-right {
-        @include absPosition(getRem(383), unset, unset, getRem(498));
+        @include absPosition(getRem(683), unset, unset, getRem(498));
     }
 
     &.-fox-blue {
-        @include absPosition(getRem(364), unset, unset, getRem(216));
+        @include absPosition(getRem(664), unset, unset, getRem(216));
     }
 }
 
 .wide__anime {
+    transform-origin: bottom center;
+
     &.-stop {
         animation-play-state: paused;
     }

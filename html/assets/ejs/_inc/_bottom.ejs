@@ -1,8 +1,81 @@
-<section class="bottom">
+<% 
+    const items = [
+        {
+            className: "p-sprite__goblin__blue",
+        },
+        {
+            className: "p-sprite__slime__green",
+        },
+        {
+            className: "p-sprite__slime__blue",
+        },
+        {
+            className: "p-sprite__goblin-bow__yellow",
+        },
+        {
+            className: "p-sprite__slime__yellow"
+        },
+        {
+            className: "p-sprite__fox__yellow"
+        },
+        {
+            className: "p-sprite__goblin-sword__green"
+        },
+        {
+            className: "p-sprite__goblin__yellow"
+        },
+        {
+            className: "p-sprite__meercat__green"
+        },
+        {
+            className: "p-sprite__goblin__green"
+        },
+        {
+            className: "p-sprite__fox__green"
+        },
+        {
+            className: "p-sprite__goblin-sword__yellow"
+        },
+        {
+            className: "p-sprite__meercat__yellow"
+        },
+        {
+            className: "p-sprite__goblin-bow__green"
+        },
+        {
+            className: "p-sprite__goblin-sword__blue"
+        },
+        {
+            className: "p-sprite__goblin-bow__blue"
+        },
+        {
+            className: "p-sprite__fox__blue"
+        },
+        {
+            className: "p-sprite__meercat__red"
+        },
+    ]
+    %>
+
+<section class="bottom js-enemies-anime">
+
+    <div class="bottom__enemies js-enemies">
+        <%
+            let conter = 19;
+            items.forEach((item, idx) => {
+        %>
+        <div class="bottom__enemy -num-<%= conter %> js-enemy-chara">
+            <div class="<%= item.className %>"></div>
+        </div>
+        <%
+            conter = conter - 1
+            })
+        %>
+    </div>
 
     <button class="bottom__pagetop js-pagetop">
         <div class="bottom__pagetop__inner">
-            <span class="shadow"><img src="<%= pageInfo.relPath %>assets/img/bottom/ph_pagetop_shadow.png" alt=""></span>
+            <span class="shadow js-pagetop-shadow"><img src="<%= pageInfo.relPath %>assets/img/bottom/ph_pagetop_shadow.png" alt=""></span>
             <span class="brown js-pagetop-chara"><img src="<%= pageInfo.relPath %>assets/img/bottom/ph_pagetop.png" alt=""></span>
             <p class="balloon"><img src="<%= pageInfo.relPath %>assets/img/bottom/txt_balloon.png" alt=""></p>
         </div>

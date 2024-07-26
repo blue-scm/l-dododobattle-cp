@@ -29,6 +29,7 @@
         &.-move {
             height: getRem(176);
             position: fixed;
+            transform-origin: bottom center;
             width: getRem(176);
             z-index: 1000;
         }
@@ -37,5 +38,24 @@
     .balloon {
         @include absPosition(getRem(-100), getRem(-96));
         width: getRem(288);
+    }
+}
+
+.bottom__enemies {
+    @include absPosition(unset, 0, 0, unset);
+    width: calc(100% - getRem(190));
+    height: getRem(156);
+    overflow: hidden;
+}
+
+.bottom__enemy {
+    @include absPosition(unset, getRem(-156), getRem(16), unset);
+    transform: scale(-1, 1);
+    width: getRem(156);
+
+    @for $i from 0 through 19 {
+        &.-num-#{$i} {
+            z-index: $i;
+        }
     }
 }

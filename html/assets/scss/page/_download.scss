@@ -68,4 +68,8 @@
         @include absPosition(40px, 60px);
         width: 90px;
     }
+
+    .-slow {
+        animation-duration: 1.2s;
+    }
 }

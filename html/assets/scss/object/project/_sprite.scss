@@ -121,27 +121,11 @@
     background-image: url(#{$imgDir}common/sprite/ph_meercat3.png);
 }
 
-.-scale {
-    animation: stepAnimation 0.8s steps(3) infinite, scaleAnimatione 1s ease-out infinite;
-}
-
 @keyframes stepAnimation {
     from {
         background-position: 0% 0;
     }
     to {
         background-position: -100% 0%;
-    }
-}
-
-@keyframes scaleAnimatione {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.4);
-    }
-    100% {
-        transform: scale(1);
     }
 }
