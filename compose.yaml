@@ -1,0 +1,28 @@
+version: '3'
+
+services:
+  webserver:
+    image: httpd:latest
+    volumes:
+      - ./html:/usr/local/apache2/htdocs/
+    ports:
+      - "8186:80" # ブラウザからアクセスする場合(ホストからアクセス)は8186だが、コンテナ間での通信なら80なのに注意
+
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./build:/app/build
+      - ./html:/app/html
+      - nodemodule-content:/app/build/node_modules # nodeModuleを永続化。こうするとbuild時にキャッシュしてくれる
+    environment:
+      - WEB_SERVER_PROXY=webserver:80
+      - BROWSER_SYNC_LOCAL_PORT=3005
+      - BROWSER_SYNC_UI_PORT=3006
+    ports:
+      - "3005:3005"  # Browsersync Local
+      - "3006:3006"  # Browsersync UI
+
+volumes:
+  nodemodule-content: # nodeModuleを永続化。こうするとbuild時にキャッシュしてくれる

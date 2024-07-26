@@ -8,17 +8,22 @@ RUN apt-get update && apt-get install -y \
     libpng-dev \
     pkg-config
 
+ENV NODE_ENV=development
+
 # 作業ディレクトリを作成
 WORKDIR /app
 
 # ソースコードをコピー
-COPY build /app
+# package.json と yarn.lock を最初にコピーし、依存関係をインストール
+COPY ./build/package.json ./build/yarn.lock /app/build/
+WORKDIR /app/build
+RUN yarn install && yarn cache clean
 
-# 依存関係をインストール
-RUN yarn install
+COPY ./build /app/build
+COPY ./html /app/html
 
 # Browserslistのデータベースを更新
-RUN npx browserslist@latest --update-db
+# RUN npx browserslist@latest --update-db
 
 # Gulpをグローバルにインストール
 RUN yarn global add gulp-cli
