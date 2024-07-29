@@ -49,8 +49,10 @@
 <div class="wide c-visible_wide">
     <div class="wide__content js-chara-container">
         <% items.forEach((item, idx) => { %>
-        <div class="wide__chara -<%= item.id %> js-chara-<%= idx %>">
-            <div class="<%= item.className %> wide__anime -stop js-wide-chara"></div>
+        <div class="wide__chara -<%= item.id %>">
+            <div class="wide__anime__scalewrap">
+                <div class="<%= item.className %> wide__anime"></div>
+            </div>
         </div>
         <% }) %>
     </div>

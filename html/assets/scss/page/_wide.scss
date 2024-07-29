@@ -18,11 +18,13 @@
 }
 
 .wide__chara {
+    @include cmn-transition();
     height: getRem(80);
     width: getRem(80);
 
     &.-goblin-bow-green {
         @include absPosition(getRem(310), getRem(112));
+        transform: scale(-1, 1);
     }
 
     &.-slime-blue-left {
@@ -39,6 +41,7 @@
 
     &.-meercat-green {
         @include absPosition(getRem(803), getRem(356));
+        transform: scale(-1, 1);
     }
 
     &.-meercat-red {
@@ -47,6 +50,7 @@
 
     &.-goblin-bow-blue {
         @include absPosition(getRem(345), unset, unset, getRem(538));
+        transform: scale(-1, 1);
     }
 
     &.-fox-green {
@@ -63,13 +67,72 @@
 
     &.-fox-blue {
         @include absPosition(getRem(664), unset, unset, getRem(216));
+        transform: scale(-1, 1);
+    }
+
+    // スクロール中
+    .-scrolling & {
+        animation: moveLtoR 1s linear infinite;
+
+        &.-goblin-bow-green,
+        &.-meercat-green,
+        &.-goblin-bow-blue,
+        &.-fox-blue {
+            animation: moveRtoL 1s linear infinite;
+        }
+
+        &.-slime-green,
+        &.-slime-blue-right {
+            animation-duration: 0.5s;
+        }
+    }
+
+    @keyframes moveLtoR {
+        0% {
+            transform: translateX(0) scale(1, 1);
+        }
+        50% {
+            transform: translateX(-10%) scale(1, 1);
+        }
+        51% {
+            transform: translateX(-10%) scale(-1, 1);
+        }
+        100% {
+            transform: translateX(0) scale(-1, 1);
+        }
+    }
+
+    @keyframes moveRtoL {
+        0% {
+            transform: translateX(0) scale(-1, 1);
+        }
+        50% {
+            transform: translateX(10%) scale(-1, 1);
+        }
+        51% {
+            transform: translateX(10%) scale(1, 1);
+        }
+        100% {
+            transform: translateX(0) scale(1, 1);
+        }
+    }
+}
+
+.wide__anime__scalewrap {
+    @include cmn-transition();
+    transform-origin: bottom center;
+
+    // スクロール中
+    .-scrolling & {
+        transform: scale(1.3);
     }
 }
 
 .wide__anime {
-    transform-origin: bottom center;
+    animation-play-state: paused;
 
-    &.-stop {
-        animation-play-state: paused;
+    // スクロール中
+    .-scrolling & {
+        animation-play-state: running;
     }
 }

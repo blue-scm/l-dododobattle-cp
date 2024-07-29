@@ -199,6 +199,10 @@
         .chara2 {
             @include absPosition(null, null, getRem(-74), 0);
             width: getRem(240);
+
+            .-delay {
+                animation-delay: 0.4s;
+            }
         }
     }
 

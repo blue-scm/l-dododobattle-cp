@@ -6,17 +6,16 @@ gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
 export default class ScrollEffect {
     constructor() {
-        this.init();
-        this.charas;
         this.scrollEndTimer;
         this.onPageTopFlg = false;
+        this.enemyTimelines = [];
+        this.init();
     }
 
     init() {
         this.setupAnimations();
         this.setupScrollTriggers();
         this.setupPageTop();
-        this.charas = document.querySelectorAll('.js-wide-chara');
     }
 
     setupAnimations() {
@@ -67,17 +66,22 @@ export default class ScrollEffect {
             trigger: '.wrapper',
             start: 'top top',
             onUpdate: (self) => {
-                this.animeCharaSprite(self);
-                this.stopCharaSprite();
+                this.handleScrollingClass(self);
             },
         });
 
         const enemies = document.querySelectorAll('.js-enemy-chara');
         enemies.forEach((enemy, idx) => {
+            const tl = this.createIndividualEnemyAnimation(enemy, idx);
+            this.enemyTimelines.push(tl); // 各タイムラインを配列に追加
+
             ScrollTrigger.create({
                 trigger: '.js-enemies-anime',
-                start: 'top-=400 top',
-                onEnter: () => this.createBottomEnemyAnimation(enemy, idx).play(),
+                start: 'top bottom',
+                onEnter: () => tl.play(),
+                onEnterBack: () => tl.play(),
+                onLeave: () => tl.pause(),
+                onLeaveBack: () => tl.pause(),
             });
         });
     }
@@ -167,13 +171,18 @@ export default class ScrollEffect {
         return tl;
     }
 
-    createBottomEnemyAnimation(enemy, idx) {
+    createIndividualEnemyAnimation(enemy, idx) {
         const enemyAreaW = document.querySelector('.js-enemies').getBoundingClientRect().width;
-        const tl = gsap.timeline({ paused: true });
+        const tl = gsap.timeline({
+            paused: true,
+            onComplete: () => {
+                tl.restart();
+            },
+        });
         tl.to(enemy, {
             x: enemyAreaW,
-            duration: 2.8,
-            ease: 'none',
+            duration: gsap.utils.random(4, 6),
+            ease: 'power1.in',
             delay: idx * 0.5 + gsap.utils.random(-0.3, 0.3),
         }).to(
             enemy,
@@ -186,50 +195,18 @@ export default class ScrollEffect {
         return tl;
     }
 
-    animeCharaSprite(self) {
-        this.charas.forEach((chara) => {
-            chara.classList.remove('-stop');
-        });
+    handleScrollingClass(self) {
+        const wrapper = document.querySelector('.wrapper');
+        if (self.direction !== 0 && !wrapper.classList.contains('-scrolling')) {
+            wrapper.classList.add('-scrolling');
+        }
 
-        const currentVel = parseInt(Math.abs(self.getVelocity()));
-        let speed = 0.5;
-        const list = {
-            high: 0.1,
-            mid: 1.2,
-            low: 2.5,
-        };
-        if (currentVel > 2000) speed = list.high;
-        if (2000 > currentVel > 500) speed = list.mid;
-        if (currentVel < 500) speed = list.low;
-
-        gsap.to(this.charas, {
-            scale: 1.6,
-            duration: speed,
-            ease: 'power3.out',
-            onComplete: () => {
-                gsap.to(this.charas, {
-                    scale: 1,
-                    duration: 0.8,
-                    ease: 'power3.out',
-                });
-            },
-        });
-    }
-
-    stopCharaSprite() {
         clearTimeout(this.scrollEndTimer);
         this.scrollEndTimer = setTimeout(() => {
-            this.charas.forEach((chara) => {
-                chara.classList.add('-stop');
-            });
-            gsap.to(this.charas, {
-                scale: 1,
-                duration: 0.8,
-                ease: 'power3.out',
-            });
-        }, 100);
+            wrapper.classList.remove('-scrolling');
+        }, 200);
     }
-
+    
     animePageTop() {
         const target = document.querySelector('.js-pagetop-chara');
         const rect = target.getBoundingClientRect();
@@ -237,8 +214,7 @@ export default class ScrollEffect {
         const targetLeft = rect.left;
         const targetH = rect.height;
 
-        gsap.set(target, { top: `${targetTop}px` });
-        gsap.set(target, { left: `${targetLeft}px` });
+        gsap.set(target, { top: `${targetTop}px`, left: `${targetLeft}px`, transformOrigin: '50% 50%', rotation: 0 });
         target.classList.add('-move');
 
         const tl = gsap.timeline();
@@ -270,6 +246,7 @@ export default class ScrollEffect {
                 {
                     y: (targetTop + targetH) * -1,
                     duration: 2.8,
+                    rotation: 360 * 10,
                     ease: 'power3.inOut',
                     onComplete: () => {
                         gsap.set(target, { top: 0 });

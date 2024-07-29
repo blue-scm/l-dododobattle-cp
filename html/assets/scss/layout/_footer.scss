@@ -4,6 +4,12 @@
     @include relPosition();
     background: #000;
     color: #fff;
+
+    @include MQ_WIDE {
+        @include MQ_UNDER(1620) {
+            padding-bottom: 170px;
+        }
+    }
 }
 
 .l-footer__row {

@@ -1,5 +1,6 @@
 @use 'global' as *;
 
+// PCのみ
 .download {
     @include fxdPosition(null, calc(((100% - 604px) / 2 + 604px) + 40px), 0);
     aspect-ratio: 840 / 556;
@@ -65,11 +66,15 @@
     }
 
     &.-sec {
-        @include absPosition(40px, 60px);
+        @include absPosition(36px, 60px);
         width: 90px;
     }
 
     .-slow {
         animation-duration: 1.2s;
+    }
+
+    .-delay {
+        animation-delay: 0.4s;
     }
 }
