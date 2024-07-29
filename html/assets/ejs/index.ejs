@@ -25,11 +25,7 @@
         </script>
         <!-- End Google Tag Manager -->
 
-        <meta charset="utf-8" />
-        <meta name="keyword" content="ダミー,ダミー2,ダミー3" />
-        <meta name="description" content="ディスクリプションダミー" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title><%= meta.title %></title>
+        <%- include('./_inc/common/_meta', {pageInfo: pageInfo}) %>
 
         <!-- PAGE CSS -->
         <link href="assets/css/main.css" rel="stylesheet" type="text/css" />
@@ -42,7 +38,9 @@
 		</noscript>
         <!-- End Google Tag Manager (noscript) -->
 
-        <div class="wrapper"><%- include('./_inc/_indextemplate', {pageInfo: pageInfo}) %></div>
+        <div class="wrapper">
+            <%- include('./_inc/_indextemplate', {pageInfo: pageInfo}) %>
+        </div>
 
         <script src="assets/js/vendor.js"></script>
         <script src="assets/js/main.js"></script>

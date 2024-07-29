@@ -2,5 +2,24 @@
     "meta":{
         "title":"LINE ドドドバトル 公式サイト",
         "description": "押し寄せる！ドドドな爽快感！群がるモンスターの大群を蹴散らす超爽快アクション。スマホ向けアプリゲーム『LINE ドドドバトル』の公式サイト。"
+    },
+    "og": {
+        "og_url": "https://dododo.game.line.me/ja/",
+        "og_image": "https://dododo.game.line.me/ja/assets/siteinfo/og_image.jpg",
+        "twitter": "@bikkuriman_wc",
+        "favicon": "assets/siteinfo/favicon.ico",
+        "apt": "assets/siteinfo/apple-touch-icon-precomposed.png"
+    },
+    "snslinks": {
+        "line": "https://liff.line.me/1645278921-kWRPP32q/?accountId=245kpdgy",
+        "twitter": "https://twitter.com/"
+    },
+    "dl": {
+        "appstore": "https://apps.apple.com/jp/app/id6450285947",
+        "googleplay": "https://play.google.com/store/apps/details?id=jp.Marvelous.BMWC"
+    },
+    "footer": {
+        "policy": "https://terms2.line.me/LGAPP_privacy",
+        "contact": "https://contact-cc.line.me/lg/categoryId/13628"
     }
 }

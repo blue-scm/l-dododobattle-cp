@@ -1,0 +1,18 @@
+@use 'global' as *;
+
+.c-android {
+    display: none;
+
+    [data-os='android'] & {
+        display: block;
+    }
+}
+
+.c-ios {
+    display: none;
+
+    [data-os='ios'] & {
+        display: block;
+    }
+}
+

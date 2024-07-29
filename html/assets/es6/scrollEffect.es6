@@ -1,4 +1,4 @@
-import { gsap, random } from 'gsap';
+import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
 
@@ -16,6 +16,7 @@ export default class ScrollEffect {
         this.setupAnimations();
         this.setupScrollTriggers();
         this.setupPageTop();
+        this.setupResizeListener();
     }
 
     setupAnimations() {
@@ -206,7 +207,7 @@ export default class ScrollEffect {
             wrapper.classList.remove('-scrolling');
         }, 200);
     }
-    
+
     animePageTop() {
         const target = document.querySelector('.js-pagetop-chara');
         const rect = target.getBoundingClientRect();
@@ -261,5 +262,11 @@ export default class ScrollEffect {
                 },
                 '<'
             );
+    }
+
+    setupResizeListener() {
+        window.addEventListener('resize', () => {
+            ScrollTrigger.refresh();
+        });
     }
 }

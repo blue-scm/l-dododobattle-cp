@@ -1,13 +1,23 @@
 @use 'global' as *;
 
+$mvW: 580;
+$mvH: 1080;
+// $mvH: 930;
+
 .mv {
     @include relPosition();
     font-size: getRem(32);
     z-index: $zLayer2;
 
     &.-top {
-        min-height: 100vh;
-        padding-top: getRem(20);
+        @include MQ_NARROW {
+            padding-top: getRem(20);
+        }
+
+        @include MQ_WIDE {
+            height: 100vh;
+            min-height: #{$mvH}px;
+        }
     }
 
     &.-bottom {
@@ -21,18 +31,35 @@
     margin: 0 auto;
     width: getRem(710);
     z-index: $zLayer1;
+
+    .-top & {
+        @include MQ_WIDE {
+            @include absPosition(getPer(45, $mvH), getPer(27, $mvW));
+            width: 530px;
+        }
+    }
 }
 
 .mv__chara {
     &.-sally {
         @include absPosition(getRem(184), null, null, getRem(-80));
         width: getRem(290);
+
+        @include MQ_WIDE {
+            @include absPosition(getPer(150, $mvH), null, null, getPer(-74, $mvW));
+            width: 328px;
+        }
     }
 
     &.-brown {
         @include absPosition(getRem(488), getRem(0));
         width: getRem(228);
         z-index: $zLayer1;
+
+        @include MQ_WIDE {
+            @include absPosition(auto, 0, getPer(6, $mvH));
+            width: 294px;
+        }
     }
 }
 
@@ -42,6 +69,13 @@
 
     .-top & {
         margin: getRem(-18) auto 0;
+
+        @include MQ_WIDE {
+            @include absPosition(getPer(340, $mvH), getPer(-15, $mvW));
+            margin: 0;
+            transform-origin: 50% 50%;
+            width: 610px;
+        }
     }
 
     .-bottom & {
@@ -98,6 +132,12 @@
 .mv__links {
     margin: getRem(20) auto 0;
     width: getRem(564);
+
+    .-top & {
+        @include MQ_WIDE {
+            display: none;
+        }
+    }
 }
 
 .mv__links__btn {

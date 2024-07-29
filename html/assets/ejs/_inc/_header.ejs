@@ -1,18 +1,26 @@
 <header class="l-header">
 
     <div class="l-header__cont">
-        <a href="" class="l-header__dl c-visible_nrw">
-            <img src="<%= pageInfo.relPath %>assets/img/header/btn_dl.png" alt="今すぐダウンロード！">
-        </a>
-    
+        <div class="c-ios">
+            <a href="<%= dl.appstore %>" target="_blank" class="l-header__dl c-visible_nrw top-menu-play">
+                <img src="<%= pageInfo.relPath %>assets/img/header/btn_dl.png" alt="今すぐダウンロード！">
+            </a>    
+        </div>
+
+        <div class="c-android">
+            <a href="<%= dl.googleplay %>" target="_blank" class="l-header__dl c-visible_nrw top-menu-play">
+                <img src="<%= pageInfo.relPath %>assets/img/header/btn_dl.png" alt="今すぐダウンロード！">
+            </a>    
+        </div>
+        
         <div class="l-header__links">
-            <a href="" target="_blank" class="l-header__links__btn">
+            <a href="<%= snslinks.line %>" target="_blank" class="l-header__links__btn top-menu-line">
                 <picture>
                     <source media="(max-width:1280px)" srcset="<%= pageInfo.relPath %>assets/img/header/ico_line.png" />
                     <img src="<%= pageInfo.relPath %>assets/img/header/btn_line.png" alt="キャンペーンをチェック！">
                 </picture>
             </a>
-            <a href="" target="_blank" class="l-header__links__btn">
+            <a href="<%= snslinks.twitter %>" target="_blank" class="l-header__links__btn top-menu-x">
                 <picture>
                     <source media="(max-width:1280px)" srcset="<%= pageInfo.relPath %>assets/img/header/ico_x.png" />
                     <img src="<%= pageInfo.relPath %>assets/img/header/btn_x.png" alt="最新情報をチェック！">
