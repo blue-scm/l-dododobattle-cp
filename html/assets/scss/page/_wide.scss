@@ -6,10 +6,17 @@
     height: 100%;
     width: 100%;
 
-    @include MQ_WIDE {
-        @media (max-height: 800px) {
-            height: 800px;
-        }
+    @media (max-height: 800px) {
+        height: 800px;
+    }
+
+    &::before {
+        @include absPosition(null, 0, 0);
+        background: linear-gradient(rgba(0, 153, 26, 0) 0%, rgba(34, 96, 44, 1) 100%);
+        content: '';
+        height: 278px;
+        opacity: 0.6;
+        width: 100%;
     }
 }
 
