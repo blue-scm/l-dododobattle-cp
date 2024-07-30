@@ -12,6 +12,7 @@ $mvH: 1080;
     &.-top {
         @include MQ_NARROW {
             padding-top: getRem(20);
+            min-height: getRem(1000);
         }
 
         @include MQ_WIDE {

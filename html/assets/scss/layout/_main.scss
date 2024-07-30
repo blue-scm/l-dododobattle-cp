@@ -3,21 +3,11 @@
 .l-main {
     @include relPosition();
     overflow: hidden;
-
-    // background: url(#{$imgDir}bg_wide.jpg) no-repeat center / cover;
-
-    // @include relPosition();
-    // min-height: 100vh;
-    // min-height: 100svh;
-    // width: 100%;
-
-   
 }
 
 .l-main__videobg {
     @include fxdPosition(0, 50%);
     height: 100vh;
-    height: 100svh;
     transform: translateX(-50%);
     width: 100%;
 

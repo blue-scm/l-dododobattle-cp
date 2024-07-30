@@ -5,6 +5,10 @@
     margin-top: getRem(184);
     padding: 0 0 getRem(180);
 
+    @include MQ_WIDE {
+        margin-top: 132px;
+    }
+
     &::before {
         @include absPosition(getRem(-190));
         background: url(#{$imgDir}about/bg_deco.png) no-repeat 0 0 / 100%;
@@ -12,6 +16,10 @@
         height: getRem(421);
         opacity: 0.6;
         width: 100%;
+
+        @include MQ_WIDE {
+            @include absPosition(-312px);
+        }
     }
 
     &::after {
@@ -124,12 +132,18 @@
     cursor: pointer;
     height: getRem(342);
     margin: 0 auto;
+    overflow: hidden;
     width: getRem(446);
 
     iframe {
-        height: 100%;
+        @include absPosition(50%, 50%);
+        aspect-ratio: 16 / 9;
+        // height: 100%;
+        // height: 150%;
         pointer-events: none;
-        width: 100%;
+        transform: translate(-50%, -50%);
+        // width: 100%;
+        width: 130%;
     }
 
     &::after {

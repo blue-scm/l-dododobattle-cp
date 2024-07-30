@@ -1030,7 +1030,7 @@ nav li:before {
   font-size: 2rem;
 }
 .l-footer__spec dt {
-  color: #8A7C21;
+  color: #8a7c21;
   display: inline-block;
   font-weight: 700;
   width: 10rem;
@@ -1090,7 +1090,6 @@ nav li:before {
   top: 0;
   left: 50%;
   height: 100vh;
-  height: 100svh;
   transform: translateX(-50%);
   width: 100%;
 }
@@ -1568,12 +1567,17 @@ nav li:before {
   cursor: pointer;
   height: 21.375rem;
   margin: 0 auto;
+  overflow: hidden;
   width: 27.875rem;
 }
 .about__pv__cont__movie iframe {
-  height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  aspect-ratio: 16/9;
   pointer-events: none;
-  width: 100%;
+  transform: translate(-50%, -50%);
+  width: 130%;
 }
 .about__pv__cont__movie::after {
   position: absolute;
@@ -1846,8 +1850,8 @@ nav li:before {
 }
 .-key3 .keywords__cont__item__ttl .effect {
   position: absolute;
-  top: -5rem;
-  right: -8.4375rem;
+  top: -5.625rem;
+  right: -7.5rem;
 }
 .-key4 .keywords__cont__item__ttl .effect {
   position: absolute;
@@ -2534,11 +2538,29 @@ nav li:before {
   }
   .mv.-top {
     padding-top: 1.25rem;
+    min-height: 62.5rem;
   }
 }
 @media (min-width: 960px){
   html {
     font-size: min(12.3733333333px, 2.1333333333vw);
+  }
+  .l-footer__row + .l-footer__row {
+    padding-top: 24px;
+    padding-bottom: 24px;
+  }
+  .l-footer__spec {
+    font-size: 16px;
+    margin-top: 16px;
+  }
+  .l-footer__offer {
+    margin-top: 24px;
+  }
+  .l-footer__offer__txt {
+    font-size: 14px;
+  }
+  .l-footer__bottom {
+    font-size: 14px;
   }
   .l-header {
     position: fixed;
@@ -2578,6 +2600,13 @@ nav li:before {
   }
   .c-visible_nrw {
     display: none;
+  }
+  .about {
+    margin-top: 132px;
+  }
+  .about::before {
+    position: absolute;
+    top: -312px;
   }
   .contents {
     margin: 0 auto;

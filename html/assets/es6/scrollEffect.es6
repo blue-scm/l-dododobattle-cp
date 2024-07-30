@@ -148,8 +148,17 @@ export default class ScrollEffect {
             const ttltxt = keyword.querySelector('.ttltxt');
             const movie = keyword.querySelector('.keywords__cont__item__movie');
             const catchImg = keyword.querySelector('.keywords__cont__item__catch img');
+            const video = keyword.querySelector('video');
 
-            tl.to(ttltxt, { duration: 0.6, opacity: 1, scale: 1, ease: 'elastic.out(1,0.3)' }, 0.2)
+            tl.call(
+                () => {
+                    video.play();
+                },
+                null,
+                null,
+                0.1
+            )
+                .to(ttltxt, { duration: 0.6, opacity: 1, scale: 1, ease: 'elastic.out(1,0.3)' }, '<')
                 .to(ttltxt, { duration: 0.05, x: '-5%', repeat: 9, yoyo: true, ease: 'power1.in' }, '<')
                 .to(movie, { duration: 1.0, opacity: 1, scale: 1, rotate: 0, ease: 'back.inOut' }, '<0.2')
                 .to(catchImg, { duration: 0.8, clipPath: 'inset(0 0% 0 0)', ease: 'power2.inOut' }, '<0.6');
