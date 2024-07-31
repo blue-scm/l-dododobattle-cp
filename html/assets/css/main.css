@@ -1099,15 +1099,6 @@ nav li:before {
   height: 100%;
   width: 100%;
 }
-.l-main__videobg::before {
-  position: absolute;
-  top: 0;
-  left: 0;
-  background: rgba(60, 109, 56, 0.6);
-  content: "";
-  height: 100%;
-  width: 100%;
-}
 .l-main__videobg::after {
   position: absolute;
   top: 0;
