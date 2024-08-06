@@ -33,16 +33,16 @@
     }
 
     .balloon {
-        @include absPosition(getRem(-100), getRem(-96));
-        width: getRem(288);
+        @include absPosition(getRem(-100), getRem(-46));
+        width: getRem(228);
     }
 }
 
 .bottom__enemies {
     @include absPosition(unset, 0, 0, unset);
-    width: calc(100% - getRem(190));
     height: getRem(156);
     overflow: hidden;
+    width: calc(100% - getRem(190));
 }
 
 .bottom__enemy {

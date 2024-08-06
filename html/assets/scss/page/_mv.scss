@@ -1,6 +1,6 @@
 @use 'global' as *;
 
-$mvW: 580;
+$mvW: 480;
 $mvH: 1080;
 // $mvH: 930;
 
@@ -11,7 +11,7 @@ $mvH: 1080;
 
     &.-top {
         @include MQ_NARROW {
-            padding-top: getRem(20);
+            padding-top: getRem(95);
             min-height: getRem(1000);
         }
 
@@ -30,52 +30,54 @@ $mvH: 1080;
 .mv__maincatch {
     @include relPosition();
     margin: 0 auto;
-    width: getRem(710);
+    width: getRem(624);
     z-index: $zLayer1;
 
     .-top & {
         @include MQ_WIDE {
-            @include absPosition(getPer(45, $mvH), getPer(27, $mvW));
-            width: 530px;
+            @include absPosition(getPer(235, $mvH), getPer(26, $mvW));
+            width: 420px;
         }
     }
 }
 
 .mv__chara {
     &.-sally {
-        @include absPosition(getRem(184), null, null, getRem(-80));
-        width: getRem(290);
+        @include absPosition(getRem(210), null, null, getRem(0));
+        width: getRem(203);
 
         @include MQ_WIDE {
-            @include absPosition(getPer(150, $mvH), null, null, getPer(-74, $mvW));
-            width: 328px;
+            @include absPosition(getPer(70, $mvH), null, null, getPer(14, $mvW));
+            width: 168px;
+            transform: rotate(-10deg);
         }
     }
 
     &.-brown {
-        @include absPosition(getRem(488), getRem(0));
-        width: getRem(228);
+        @include absPosition(getRem(452), getRem(14));
+        width: getRem(208);
         z-index: $zLayer1;
 
         @include MQ_WIDE {
-            @include absPosition(auto, 0, getPer(6, $mvH));
-            width: 294px;
+            @include absPosition(auto, getPer(26, $mvW), getPer(155, $mvH));
+            width: 245px;
+            transform: rotate(3deg);
         }
     }
 }
 
 .mv__logo {
     @include relPosition();
-    width: getRem(706);
+    width: getRem(660);
 
     .-top & {
-        margin: getRem(-18) auto 0;
+        margin: getRem(-60) auto 0;
 
         @include MQ_WIDE {
-            @include absPosition(getPer(340, $mvH), getPer(-15, $mvW));
+            @include absPosition(getPer(348, $mvH), getPer(4, $mvW));
             margin: 0;
             transform-origin: 50% 50%;
-            width: 610px;
+            width: 465px;
         }
     }
 
@@ -94,7 +96,7 @@ $mvH: 1080;
     @include relPosition();
     display: block;
     margin: getRem(-28) auto 0;
-    width: getRem(644);
+    width: getRem(622);
 
     &::before {
         @include absPosition(50%, 50%);
@@ -131,7 +133,7 @@ $mvH: 1080;
 }
 
 .mv__links {
-    margin: getRem(20) auto 0;
+    margin: getRem(48) auto 0;
     width: getRem(564);
 
     .-top & {

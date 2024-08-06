@@ -39,7 +39,11 @@
 .about__catch {
     @include relPosition();
     margin: 0 auto;
-    width: getRem(724);
+    width: getRem(696);
+
+    @include MQ_WIDE {
+        width: 408px;
+    }
 
     &::before {
         @include absPosition(50%, 50%);
@@ -158,7 +162,7 @@
 }
 
 .about__pv__balloon {
-    @include absPosition(getRem(-2), getRem(42));
+    @include absPosition(getRem(-9), getRem(42));
     width: getRem(292);
     z-index: $zLayer1;
 }

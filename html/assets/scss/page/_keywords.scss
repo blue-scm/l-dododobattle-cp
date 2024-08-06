@@ -116,7 +116,7 @@
     margin: getRem(-96) auto 0;
 
     border-radius: getRem(32);
-    width: getRem(624);
+    width: getRem(592);
 
     .-key1 & {
         border: getRem(10) solid #b21315;
@@ -246,8 +246,8 @@
 
     .-key5 & {
         .chara1 {
-            @include absPosition(null, getRem(-150), getRem(0));
-            width: getRem(1046);
+            @include absPosition(null, getRem(-110), getRem(0));
+            width: getRem(958);
         }
     }
 

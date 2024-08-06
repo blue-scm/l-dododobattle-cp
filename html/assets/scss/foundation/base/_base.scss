@@ -6,7 +6,7 @@ html {
     }
 
     @include MQ_WIDE {
-        font-size: min(16px * 580 / 750, (16 / 750 * 1vw * 100));
+        font-size: min(16px * 480 / 750, (16 / 750 * 1vw * 100));
     }
 }
 

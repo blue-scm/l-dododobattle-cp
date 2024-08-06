@@ -6,7 +6,7 @@
     @include MQ_WIDE {
         margin: 0 auto;
         padding: 0 8px;
-        width: calc(580px + 16px);
+        width: calc(480px + 16px);
     }
 
     &::before {
@@ -17,7 +17,7 @@
             content: '';
             height: 100%;
             transform: translateX(-50%);
-            width: calc(580px + 16px);
+            width: calc(480px + 16px);
         }
     }
 
