@@ -19,8 +19,8 @@
         border-top: 1px solid #797981;
 
         @include MQ_WIDE {
-            padding-top: 24px;
             padding-bottom: 24px;
+            padding-top: 24px;
         }
     }
 }
@@ -47,9 +47,9 @@
 .l-footer__spec {
     @include relPosition();
     display: flex;
-    margin-top: getRem(28);
     flex-wrap: wrap;
     font-size: getRem(32);
+    margin-top: getRem(28);
 
     @include MQ_WIDE {
         font-size: 16px;

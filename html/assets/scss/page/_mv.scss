@@ -54,7 +54,7 @@ $mvH: 1080;
 
     .-top & {
         @include MQ_WIDE {
-            @include absPosition(getPer(235, $mvH), getPer(26, $mvW));
+            @include absPosition(getPer(225, $mvH), getPer(26, $mvW));
             width: 420px;
         }
     }
@@ -62,23 +62,23 @@ $mvH: 1080;
 
 .mv__chara {
     &.-sally {
-        @include absPosition(getRem(210), null, null, getRem(0));
-        width: getRem(203);
+        @include absPosition(getRem(180), null, null, getRem(-50));
+        width: getRem(269);
 
         @include MQ_WIDE {
-            @include absPosition(getPer(70, $mvH), null, null, getPer(14, $mvW));
-            width: 168px;
+            @include absPosition(getPer(25, $mvH), null, null, getPer(-22, $mvW));
+            width: 220px;
             transform: rotate(-10deg);
         }
     }
 
     &.-brown {
-        @include absPosition(getRem(452), getRem(14));
+        @include absPosition(getRem(462), getRem(28));
         width: getRem(208);
         z-index: $zLayer1;
 
         @include MQ_WIDE {
-            @include absPosition(auto, getPer(26, $mvW), getPer(155, $mvH));
+            @include absPosition(auto, getPer(26, $mvW), getPer(95, $mvH));
             width: 245px;
             transform: rotate(3deg);
         }

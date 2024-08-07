@@ -1025,9 +1025,9 @@ nav li:before {
 .l-footer__spec {
   position: relative;
   display: flex;
-  margin-top: 1.75rem;
   flex-wrap: wrap;
   font-size: 2rem;
+  margin-top: 1.75rem;
 }
 .l-footer__spec dt {
   color: #8a7c21;
@@ -2114,14 +2114,14 @@ nav li:before {
 
 .mv__chara.-sally {
   position: absolute;
-  top: 13.125rem;
-  right: 0rem;
-  width: 12.6875rem;
+  top: 11.25rem;
+  right: -3.125rem;
+  width: 16.8125rem;
 }
 .mv__chara.-brown {
   position: absolute;
-  top: 28.25rem;
-  left: 0.875rem;
+  top: 28.875rem;
+  left: 1.75rem;
   width: 13rem;
   z-index: 1000;
 }
@@ -2615,8 +2615,8 @@ nav li:before {
     font-size: min(10.24px, 2.1333333333vw);
   }
   .l-footer__row + .l-footer__row {
-    padding-top: 24px;
     padding-bottom: 24px;
+    padding-top: 24px;
   }
   .l-footer__spec {
     font-size: 16px;
@@ -2634,7 +2634,7 @@ nav li:before {
   .l-header {
     position: fixed;
     top: 0;
-    left: calc((100% - 604px) / 2 - 328px);
+    left: calc((100% - 604px) / 2 - 283px);
   }
   .l-header__links {
     margin: 40px;
@@ -2706,22 +2706,22 @@ nav li:before {
   }
   .-top .mv__maincatch {
     position: absolute;
-    top: 21.7%;
+    top: 20.8%;
     left: 5.4%;
     width: 420px;
   }
   .mv__chara.-sally {
     position: absolute;
-    top: 6.4%;
-    right: 2.9%;
-    width: 168px;
+    top: 2.3%;
+    right: -4.6%;
+    width: 220px;
     transform: rotate(-10deg);
   }
   .mv__chara.-brown {
     position: absolute;
     top: auto;
     left: 5.4%;
-    bottom: 14.3%;
+    bottom: 8.7%;
     width: 245px;
     transform: rotate(3deg);
   }
