@@ -2169,80 +2169,81 @@ nav li:before {
 
 .wide__content {
   position: relative;
+  height: 100%;
 }
 
 .wide__chara {
   transition: all 0.3s ease;
-  height: 5rem;
-  width: 5rem;
+  height: 80px;
+  width: 80px;
 }
 .wide__chara.-goblin-bow-green {
   position: absolute;
-  top: 19.375rem;
-  left: 7rem;
+  top: -1.9%;
+  left: 5.7%;
   transform: scale(-1, 1);
 }
 .wide__chara.-slime-blue-left {
   position: absolute;
-  top: 39rem;
-  left: 3.75rem;
+  top: 32.7%;
+  left: 3.1%;
 }
 .wide__chara.-slime-green {
   position: absolute;
-  top: 32.1875rem;
-  left: 19.375rem;
+  top: 19.9%;
+  left: 15.6%;
 }
 .wide__chara.-slime-yellow-left {
   position: absolute;
-  top: 42.6875rem;
-  left: 29.125rem;
+  top: 35.4%;
+  left: 24.2%;
 }
 .wide__chara.-meercat-green {
   position: absolute;
-  top: 50.1875rem;
-  left: 22.25rem;
+  top: 82.5%;
+  left: 19.7%;
   transform: scale(-1, 1);
 }
 .wide__chara.-meercat-red {
   position: absolute;
-  top: 60.0625rem;
-  left: 2rem;
+  top: 54.5%;
+  left: 5.8%;
 }
 .wide__chara.-goblin-bow-blue {
   position: absolute;
-  top: 21.5625rem;
+  top: 8.9%;
   left: unset;
   bottom: unset;
-  right: 33.625rem;
+  right: 28%;
   transform: scale(-1, 1);
 }
 .wide__chara.-fox-green {
   position: absolute;
-  top: 20.8125rem;
+  top: 7.8%;
   left: unset;
   bottom: unset;
-  right: 6.8125rem;
+  right: 5.6%;
 }
 .wide__chara.-slime-yellow-right {
   position: absolute;
-  top: 34rem;
+  top: 28.4%;
   left: unset;
   bottom: unset;
-  right: 21.875rem;
+  right: 18.2%;
 }
 .wide__chara.-slime-blue-right {
   position: absolute;
-  top: 42.6875rem;
+  top: 40.2%;
   left: unset;
   bottom: unset;
-  right: 31.125rem;
+  right: 25.9%;
 }
 .wide__chara.-fox-blue {
   position: absolute;
-  top: 41.5rem;
+  top: 55.6%;
   left: unset;
   bottom: unset;
-  right: 13.5rem;
+  right: 11.2%;
   transform: scale(-1, 1);
 }
 .-scrolling .wide__chara {

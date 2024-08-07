@@ -1,4 +1,5 @@
 @use 'global' as *;
+@use 'sass:math';
 
 .wide {
     @include fxdPosition(0, 0);
@@ -22,58 +23,69 @@
 
 .wide__content {
     @include relPosition();
+    height: 100%;
+}
+
+@function getPerWideHeight($bunshi, $bunbo: 1080) {
+    $per: math.div(math.floor(math.percentage(math.div($bunshi, $bunbo)) * 10), 10);
+    @return $per;
+}
+
+@function getPerWideWidth($bunshi, $bunbo: 1920) {
+    $per: math.div(math.floor(math.percentage(math.div($bunshi, $bunbo)) * 10), 10);
+    @return $per;
 }
 
 .wide__chara {
     @include cmn-transition();
-    height: getRem(80);
-    width: getRem(80);
+    height: 80px;
+    width: 80px;
 
     &.-goblin-bow-green {
-        @include absPosition(getRem(310), getRem(112));
+        @include absPosition(getPerWideHeight(-20), getPerWideWidth(110));
         transform: scale(-1, 1);
     }
 
     &.-slime-blue-left {
-        @include absPosition(getRem(624), getRem(60));
+        @include absPosition(getPerWideHeight(354), getPerWideWidth(61));
     }
 
     &.-slime-green {
-        @include absPosition(getRem(515), getRem(310));
+        @include absPosition(getPerWideHeight(215), getPerWideWidth(300));
     }
 
     &.-slime-yellow-left {
-        @include absPosition(getRem(683), getRem(466));
+        @include absPosition(getPerWideHeight(383), getPerWideWidth(466));
     }
 
     &.-meercat-green {
-        @include absPosition(getRem(803), getRem(356));
+        @include absPosition(getPerWideHeight(892), getPerWideWidth(380));
         transform: scale(-1, 1);
     }
 
     &.-meercat-red {
-        @include absPosition(getRem(961), getRem(32));
+        @include absPosition(getPerWideHeight(589), getPerWideWidth(112));
     }
 
     &.-goblin-bow-blue {
-        @include absPosition(getRem(345), unset, unset, getRem(538));
+        @include absPosition(getPerWideHeight(97), unset, unset, getPerWideWidth(538));
         transform: scale(-1, 1);
     }
 
     &.-fox-green {
-        @include absPosition(getRem(333), unset, unset, getRem(109));
+        @include absPosition(getPerWideHeight(85), unset, unset, getPerWideWidth(109));
     }
 
     &.-slime-yellow-right {
-        @include absPosition(getRem(544), unset, unset, getRem(350));
+        @include absPosition(getPerWideHeight(307), unset, unset, getPerWideWidth(350));
     }
 
     &.-slime-blue-right {
-        @include absPosition(getRem(683), unset, unset, getRem(498));
+        @include absPosition(getPerWideHeight(435), unset, unset, getPerWideWidth(498));
     }
 
     &.-fox-blue {
-        @include absPosition(getRem(664), unset, unset, getRem(216));
+        @include absPosition(getPerWideHeight(601), unset, unset, getPerWideWidth(216));
         transform: scale(-1, 1);
     }
 
