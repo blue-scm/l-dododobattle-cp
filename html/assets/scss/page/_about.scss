@@ -9,19 +9,6 @@
         margin-top: 132px;
     }
 
-    &::before {
-        @include absPosition(getRem(-190));
-        background: url(#{$imgDir}about/bg_deco.png) no-repeat 0 0 / 100%;
-        content: '';
-        height: getRem(421);
-        opacity: 0.6;
-        width: 100%;
-
-        @include MQ_WIDE {
-            @include absPosition(-312px);
-        }
-    }
-
     &::after {
         @include absPosition(getRem(145), 0);
         background: url(#{$imgDir}about/bg.png) no-repeat 0 0 / 100% auto;

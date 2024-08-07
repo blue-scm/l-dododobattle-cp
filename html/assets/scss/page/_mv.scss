@@ -7,7 +7,7 @@ $mvH: 1080;
 .mv {
     @include relPosition();
     font-size: getRem(32);
-    z-index: $zLayer2;
+    position: relative;
 
     &.-top {
         @include MQ_NARROW {
@@ -24,6 +24,25 @@ $mvH: 1080;
     &.-bottom {
         margin-top: getRem(180);
         padding-bottom: getRem(48);
+    }
+
+    &:before {
+        content: '';
+        background: url(#{$imgDir}mv/bg_frame.png) no-repeat 0 0 / 100% auto;
+
+        @include MQ_NARROW {
+            width: getRem(960);
+            height: getRem(2160);
+            @include absPosition(50%, 50%);
+            transform: translateX(-50%) translateY(-45%);
+        }
+
+        @include MQ_WIDE {
+            width: 620px;
+            height: 1395px;
+            @include absPosition(-50px, 50%);
+            transform: translateX(-50%);
+        }
     }
 }
 

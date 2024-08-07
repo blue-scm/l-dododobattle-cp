@@ -16,3 +16,10 @@
     }
 }
 
+.c-ipad {
+    display: none;
+
+    [data-os='ipad'] & {
+        display: block;
+    }
+}

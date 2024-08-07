@@ -1,6 +1,7 @@
 @use 'global' as *;
 
 .keywords {
+    z-index: 1;
     @include relPosition();
     margin-top: getRem(-160);
     // padding-bottom: getRem(50);
@@ -193,7 +194,7 @@
 .keywords__cont__item__chara {
     .-key1 & {
         .chara1 {
-            @include absPosition(null, null, getRem(-44), getRem(54));
+            @include absPosition(null, null, getRem(-44), getRem(18));
             width: getRem(320);
         }
         .chara2 {
