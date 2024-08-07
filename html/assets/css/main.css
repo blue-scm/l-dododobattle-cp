@@ -1076,6 +1076,62 @@ nav li:before {
   width: 31.375rem;
 }
 
+.l-header__dl__deco {
+  overflow: hidden;
+  position: relative;
+}
+.l-header__dl__deco::before {
+  -webkit-animation: shinyshiny 2.5s ease-in-out infinite;
+          animation: shinyshiny 2.5s ease-in-out infinite;
+  background-color: #fff;
+  content: "";
+  display: inline-block;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: -180px;
+  transition: 300ms;
+  width: 30px;
+}
+
+@-webkit-keyframes shinyshiny {
+  0% {
+    opacity: 0;
+    transform: scale(0) rotate(45deg);
+  }
+  80% {
+    opacity: 0.5;
+    transform: scale(0) rotate(45deg);
+  }
+  81% {
+    opacity: 1;
+    transform: scale(4) rotate(45deg);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(50) rotate(45deg);
+  }
+}
+
+@keyframes shinyshiny {
+  0% {
+    opacity: 0;
+    transform: scale(0) rotate(45deg);
+  }
+  80% {
+    opacity: 0.5;
+    transform: scale(0) rotate(45deg);
+  }
+  81% {
+    opacity: 1;
+    transform: scale(4) rotate(45deg);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(50) rotate(45deg);
+  }
+}
+
 .l-header__links__btn {
   display: block;
 }
