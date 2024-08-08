@@ -1532,6 +1532,7 @@ nav li:before {
   content: "";
   height: 71.625rem;
   width: 71.625rem;
+  pointer-events: none;
 }
 @-webkit-keyframes rotateLight {
   from {

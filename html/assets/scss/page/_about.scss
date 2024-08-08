@@ -39,6 +39,7 @@
         content: '';
         height: getRem(1146);
         width: getRem(1146);
+        pointer-events: none;
     }
 
     @keyframes rotateLight {
