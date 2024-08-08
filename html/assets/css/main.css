@@ -1081,6 +1081,7 @@ nav li:before {
           clip-path: polygon(2% 24%, 5% 92%, 95% 93%, 98% 20%);
   height: 8.25rem;
   overflow: hidden;
+  pointer-events: none;
   width: 27rem;
   position: absolute;
   top: 0;

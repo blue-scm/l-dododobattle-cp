@@ -61,6 +61,7 @@
     clip-path: polygon(2% 24%, 5% 92%, 95% 93%, 98% 20%);
     height: getRem(132);
     overflow: hidden;
+    pointer-events: none;
     width: getRem(432);
     @include absPosition(0, getRem(23));
 

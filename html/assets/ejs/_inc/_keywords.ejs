@@ -1,96 +1,78 @@
 <section class="keywords">
-
     <div class="keywords__inner">
-
-
         <div class="keywords__head">
             <div class="keywords__head__bg">
-                <img src="<%= pageInfo.relPath %>assets/img/keywords/bg_tape.png" alt="">
+                <img src="<%= pageInfo.relPath %>assets/img/keywords/bg_tape.png" alt="" />
             </div>
             <h2 class="keywords__head__ttl">
-                <img src="<%= pageInfo.relPath %>assets/img/keywords/ttl_main.png" alt="ドドドバトルがわかる5つのキーワード">
+                <img src="<%= pageInfo.relPath %>assets/img/keywords/ttl_main.png" alt="ドドドバトルがわかる5つのキーワード" />
             </h2>
         </div>
 
         <div class="keywords__cont">
-
             <% for (var i = 0; i < 5; i++) { %>
             <div class="keywords__cont__item -key<%= i+1 %>">
-
                 <div class="keywords__cont__item__bg"></div>
-                       
+
                 <h3 class="keywords__cont__item__ttl">
-                    <span class="ttl"><img src="<%= pageInfo.relPath %>assets/img/keywords/ttl_key<%= i+1 %>.png" alt=""></span>
-                    <span class="ttltxt"><img src="<%= pageInfo.relPath %>assets/img/keywords/ttltxt_key<%= i+1 %>.png" alt=""></span>
-                    <span class="effect"><img src="<%= pageInfo.relPath %>assets/img/keywords/ph_effect_key<%= i+1 %>.png" alt=""></span>
+                    <span class="ttl"><img src="<%= pageInfo.relPath %>assets/img/keywords/ttl_key<%= i+1 %>.png" alt="" /></span>
+                    <span class="ttltxt"><img src="<%= pageInfo.relPath %>assets/img/keywords/ttltxt_key<%= i+1 %>.png" alt="" /></span>
+                    <span class="effect"><img src="<%= pageInfo.relPath %>assets/img/keywords/ph_effect_key<%= i+1 %>.png" alt="" /></span>
                 </h3>
 
                 <div class="keywords__cont__item__movie">
                     <div class="keywords__cont__item__movie__inner">
-                        <video poster="<%= pageInfo.relPath %>assets/img/keywords/th_movie_key<%= i+1 %>.jpg" webkit-playsinline playsinline muted loop>
-                            <source src="<%= pageInfo.relPath %>assets/mov/mov_<%= i+1 %>.mp4" type="video/mp4">
+                        <video poster="<%= pageInfo.relPath %>assets/img/keywords/th_movie_key.jpg" webkit-playsinline playsinline muted loop>
+                            <source src="<%= pageInfo.relPath %>assets/mov/mov_<%= i+1 %>.mp4" type="video/mp4" />
                         </video>
                     </div>
                 </div>
 
                 <p class="keywords__cont__item__catch">
-                    <img src="<%= pageInfo.relPath %>assets/img/keywords/txt_catch_key<%= i+1 %>.png" alt="">
+                    <img src="<%= pageInfo.relPath %>assets/img/keywords/txt_catch_key<%= i+1 %>.png" alt="" />
                 </p>
 
                 <div class="keywords__cont__item__chara">
-
                     <% if ( i === 0 ) { %>
-                        <div class="chara1">
-                            <div class="p-sprite__slime__green"></div>
-                        </div>
-                        <div class="chara2">
-                            <div class="p-sprite__slime__blue -delay"></div>
-                        </div>
-                    <% } %> 
-
-                    <% if ( i === 1 ) { %>
-                        <div class="chara1">
-                            <img src="<%= pageInfo.relPath %>assets/img/keywords/ph_chara_key<%= i+1 %>_1.png" alt="">
-                        </div>
-                        <div class="chara2">
-                            <img src="<%= pageInfo.relPath %>assets/img/keywords/ph_chara_key<%= i+1 %>_2.png" alt="">
-                        </div>
+                    <div class="chara1">
+                        <div class="p-sprite__slime__green"></div>
+                    </div>
+                    <div class="chara2">
+                        <div class="p-sprite__slime__blue -delay"></div>
+                    </div>
+                    <% } %> <% if ( i === 1 ) { %>
+                    <div class="chara1">
+                        <img src="<%= pageInfo.relPath %>assets/img/keywords/ph_chara_key<%= i+1 %>_1.png" alt="" />
+                    </div>
+                    <div class="chara2">
+                        <img src="<%= pageInfo.relPath %>assets/img/keywords/ph_chara_key<%= i+1 %>_2.png" alt="" />
+                    </div>
+                    <% } %> <% if ( i === 2 || i === 4 ) { %>
+                    <div class="chara1">
+                        <img src="<%= pageInfo.relPath %>assets/img/keywords/ph_chara_key<%= i+1 %>.png" alt="" />
+                    </div>
+                    <% } %> <% if ( i === 3 ) { %>
+                    <div class="chara1">
+                        <img src="<%= pageInfo.relPath %>assets/img/keywords/ph_chara_key<%= i+1 %>_1.png" alt="" />
+                    </div>
+                    <div class="chara2">
+                        <div class="p-sprite__inu"></div>
+                    </div>
                     <% } %>
-
-                    <% if ( i === 2 || i === 4 ) { %>
-                        <div class="chara1">
-                            <img src="<%= pageInfo.relPath %>assets/img/keywords/ph_chara_key<%= i+1 %>.png" alt="">
-                        </div>
-                    <% } %>
-
-                    <% if ( i === 3 ) { %>
-                        <div class="chara1">
-                            <img src="<%= pageInfo.relPath %>assets/img/keywords/ph_chara_key<%= i+1 %>_1.png" alt="">
-                        </div>
-                        <div class="chara2">
-                            <div class="p-sprite__inu"></div>
-                        </div>
-                    <% } %>
-
                 </div>
-
             </div>
             <% } %>
-
         </div>
-        
+
         <div class="keywords__bottom">
             <div class="keywords__bottom__inner">
                 <div class="keywords__boottom__tape1">
-                    <img src="<%= pageInfo.relPath %>assets/img/keywords/bg_tape_bottom_1.png" alt="">
+                    <img src="<%= pageInfo.relPath %>assets/img/keywords/bg_tape_bottom_1.png" alt="" />
                 </div>
                 <div class="keywords__boottom__tape2">
-                    <img src="<%= pageInfo.relPath %>assets/img/keywords/bg_tape_bottom_2.png" alt="">
+                    <img src="<%= pageInfo.relPath %>assets/img/keywords/bg_tape_bottom_2.png" alt="" />
                 </div>
             </div>
-            
         </div>
-
     </div>
-
 </section>
