@@ -26,15 +26,8 @@
     height: 100%;
 }
 
-@function getPerWideHeight($bunshi, $bunbo: 1080) {
-    $per: math.div(math.floor(math.percentage(math.div($bunshi, $bunbo)) * 10), 10);
-    @return $per;
-}
-
-@function getPerWideWidth($bunshi, $bunbo: 1920) {
-    $per: math.div(math.floor(math.percentage(math.div($bunshi, $bunbo)) * 10), 10);
-    @return $per;
-}
+$mvW: 1920;
+$mvH: 1080;
 
 .wide__chara {
     @include cmn-transition();
@@ -42,50 +35,50 @@
     width: 80px;
 
     &.-goblin-bow-green {
-        @include absPosition(getPerWideHeight(-20), getPerWideWidth(110));
+        @include absPosition(getPer(-20, $mvH), getPer(110, $mvW));
         transform: scale(-1, 1);
     }
 
     &.-slime-blue-left {
-        @include absPosition(getPerWideHeight(354), getPerWideWidth(61));
+        @include absPosition(getPer(354, $mvH), getPer(61, $mvW));
     }
 
     &.-slime-green {
-        @include absPosition(getPerWideHeight(215), getPerWideWidth(300));
+        @include absPosition(getPer(215, $mvH), getPer(300, $mvW));
     }
 
     &.-slime-yellow-left {
-        @include absPosition(getPerWideHeight(383), getPerWideWidth(466));
+        @include absPosition(getPer(383, $mvH), getPer(466, $mvW));
     }
 
     &.-meercat-green {
-        @include absPosition(getPerWideHeight(892), getPerWideWidth(380));
+        @include absPosition(getPer(892, $mvH), getPer(380, $mvW));
         transform: scale(-1, 1);
     }
 
     &.-meercat-red {
-        @include absPosition(getPerWideHeight(589), getPerWideWidth(112));
+        @include absPosition(getPer(589, $mvH), getPer(112, $mvW));
     }
 
     &.-goblin-bow-blue {
-        @include absPosition(getPerWideHeight(97), unset, unset, getPerWideWidth(538));
+        @include absPosition(getPer(97, $mvH), unset, unset, getPer(538, $mvW));
         transform: scale(-1, 1);
     }
 
     &.-fox-green {
-        @include absPosition(getPerWideHeight(85), unset, unset, getPerWideWidth(109));
+        @include absPosition(getPer(85, $mvH), unset, unset, getPer(109, $mvW));
     }
 
     &.-slime-yellow-right {
-        @include absPosition(getPerWideHeight(307), unset, unset, getPerWideWidth(350));
+        @include absPosition(getPer(307, $mvH), unset, unset, getPer(350, $mvW));
     }
 
     &.-slime-blue-right {
-        @include absPosition(getPerWideHeight(435), unset, unset, getPerWideWidth(498));
+        @include absPosition(getPer(435, $mvH), unset, unset, getPer(498, $mvW));
     }
 
     &.-fox-blue {
-        @include absPosition(getPerWideHeight(601), unset, unset, getPerWideWidth(216));
+        @include absPosition(getPer(601, $mvH), unset, unset, getPer(216, $mvW));
         transform: scale(-1, 1);
     }
 

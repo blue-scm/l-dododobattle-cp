@@ -58,11 +58,14 @@
 }
 
 .l-header__dl__deco {
+    clip-path: polygon(2% 24%, 5% 92%, 95% 93%, 98% 20%);
+    height: getRem(132);
     overflow: hidden;
-    position: relative;
+    width: getRem(432);
+    @include absPosition(0, getRem(23));
 
     &::before {
-        animation: shinyshiny 2.5s ease-in-out infinite;
+        animation: btnShiny 4s ease-in-out infinite;
         background-color: #fff;
         content: '';
         display: inline-block;
@@ -75,16 +78,16 @@
     }
 }
 
-@keyframes shinyshiny {
+@keyframes btnShiny {
     0% {
         opacity: 0;
         transform: scale(0) rotate(45deg);
     }
-    80% {
+    70% {
         opacity: 0.5;
         transform: scale(0) rotate(45deg);
     }
-    81% {
+    75% {
         opacity: 1;
         transform: scale(4) rotate(45deg);
     }

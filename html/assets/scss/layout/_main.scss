@@ -10,6 +10,7 @@
     height: 100vh;
     transform: translateX(-50%);
     width: 100%;
+    overflow: hidden;
 
     @include MQ_WIDE {
         width: 480px;
@@ -28,6 +29,28 @@
     //     height: 100%;
     //     width: 100%;
     // }
+
+    $mvH: 1080;
+    $mvW: 480;
+
+    &:before {
+        content: '';
+        background: url(#{$imgDir}mv/bg_frame.png) no-repeat 0 0 / cover;
+
+        @include MQ_NARROW {
+            width: getRem(960);
+            height: getRem(2160);
+            @include absPosition(getRem(-400), 50%);
+            transform: translateX(-50%);
+        }
+
+        @include MQ_WIDE {
+            width: getPer(480, $mvW);
+            height: getPer(1080, $mvH);
+            @include absPosition(50%, 50%);
+            transform: translateX(-50%) translateY(-50%);
+        }
+    }
 
     &::after {
         @include absPosition(0, 0);
