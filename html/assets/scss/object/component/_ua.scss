@@ -23,3 +23,11 @@
         display: block;
     }
 }
+
+.c-others {
+    display: none;
+
+    [data-os='others'] & {
+        display: block;
+    }
+}

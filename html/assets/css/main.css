@@ -1347,6 +1347,13 @@ nav li:before {
   display: block;
 }
 
+.c-others {
+  display: none;
+}
+[data-os=others] .c-others {
+  display: block;
+}
+
 .c-visible_nrw {
   display: block;
 }
@@ -2611,6 +2618,19 @@ nav li:before {
   }
   .c-visible_wide {
     display: none;
+  }
+  [data-os=others] .download {
+    aspect-ratio: auto;
+    display: block;
+    height: 30.8vw;
+    padding: 4.2vw 13.3vw 0;
+    width: 90.6vw;
+  }
+  [data-os=others] .download__txt {
+    width: 42.5rem;
+  }
+  [data-os=others] .download__links {
+    margin-top: 1rem;
   }
   .mv.-top {
     padding-top: 5.9375rem;
