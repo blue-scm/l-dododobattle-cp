@@ -65,35 +65,31 @@
     @include absPosition(0, getRem(23));
 
     &::before {
-        animation: btnShiny 4s ease-in-out infinite;
+        animation: btnShiny 5s ease-in-out infinite;
         background-color: #fff;
         content: '';
         display: inline-block;
-        height: 100%;
+        height: getRem(450);
         left: 0;
         position: absolute;
-        top: -180px;
+        top: getRem(-100);
         transition: 300ms;
-        width: 30px;
+        width: getRem(40);
     }
 }
 
 @keyframes btnShiny {
     0% {
-        opacity: 0;
-        transform: scale(0) rotate(45deg);
+        opacity: 0.6;
+        transform: rotate(45deg) translateX(getRem(-100)) translateY(getRem(-210));
     }
-    70% {
-        opacity: 0.5;
-        transform: scale(0) rotate(45deg);
-    }
-    75% {
-        opacity: 1;
-        transform: scale(4) rotate(45deg);
+    80% {
+        opacity: 0.6;
+        transform: rotate(45deg) translateX(getRem(-100)) translateY(getRem(-210));
     }
     100% {
-        opacity: 0;
-        transform: scale(50) rotate(45deg);
+        opacity: 0.6;
+        transform: rotate(45deg) translateX(getRem(490)) translateY(getRem(-140));
     }
 }
 
