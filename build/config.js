@@ -1,5 +1,5 @@
 // config
-const PROJECT_ROOT = '../html';
+const PROJECT_ROOT = '../html/ja';
 
 // dockerでの立ち上げかどうかこのENVで判断
 let proxy = 'localhost:8138';
