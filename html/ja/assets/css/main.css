@@ -1895,23 +1895,27 @@ nav li:before {
   z-index: 1000;
 }
 .-key1 .keywords__cont__item__ttl .effect {
+  background: url(../img/keywords/ph_effect_star.png) no-repeat 0 0/100%;
   position: absolute;
   top: -8.125rem;
   right: -10rem;
 }
 .-key2 .keywords__cont__item__ttl .effect {
+  background: url(../img/keywords/ph_effect_fox.png) no-repeat 0 0/100%;
   position: absolute;
-  top: -10rem;
-  left: -7.5rem;
+  top: -9.375rem;
+  left: -8.875rem;
   bottom: auto;
   right: auto;
 }
 .-key3 .keywords__cont__item__ttl .effect {
+  background: url(../img/keywords/ph_effect_glove.png) no-repeat 0 0/100%;
   position: absolute;
   top: -5.625rem;
   right: -7.5rem;
 }
 .-key4 .keywords__cont__item__ttl .effect {
+  background: url(../img/keywords/ph_effect_star.png) no-repeat 0 0/100%;
   position: absolute;
   top: -5.625rem;
   left: -7.5rem;
@@ -1919,6 +1923,7 @@ nav li:before {
   right: auto;
 }
 .-key5 .keywords__cont__item__ttl .effect {
+  background: url(../img/keywords/ph_effect_fox.png) no-repeat 0 0/100%;
   position: absolute;
   top: -10rem;
   right: -7.5rem;
@@ -1990,9 +1995,7 @@ nav li:before {
   right: 2.125rem;
 }
 .-key5 .keywords__cont__item__catch {
-  position: absolute;
-  left: 2.125rem;
-  bottom: 29.75rem;
+  display: none;
 }
 
 .-key1 .keywords__cont__item__chara .chara1 {
@@ -2056,7 +2059,7 @@ nav li:before {
 }
 .-key5 .keywords__cont__item__chara .chara1 {
   position: absolute;
-  left: -6.875rem;
+  left: -6.375rem;
   bottom: 0rem;
   width: 59.875rem;
 }
@@ -2237,9 +2240,10 @@ nav li:before {
 }
 
 .wide__chara {
-  transition: all 0.3s ease;
+  font-size: 0;
   height: 80px;
   width: 80px;
+  transition: all 0.3s ease;
 }
 .wide__chara.-goblin-bow-green {
   position: absolute;

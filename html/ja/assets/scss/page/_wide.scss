@@ -30,9 +30,10 @@ $mvW: 1920;
 $mvH: 1080;
 
 .wide__chara {
-    @include cmn-transition();
+    font-size: 0;
     height: 80px;
     width: 80px;
+    @include cmn-transition();
 
     &.-goblin-bow-green {
         @include absPosition(getPer(-20, $mvH), getPer(110, $mvW));

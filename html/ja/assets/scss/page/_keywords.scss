@@ -89,22 +89,27 @@
         z-index: $zLayer1;
 
         .-key1 & {
+            background: url(#{$imgDir}keywords/ph_effect_star.png) no-repeat 0 0 / 100%;
             @include absPosition(getRem(-130), null, null, getRem(-160));
         }
 
         .-key2 & {
-            @include absPosition(getRem(-160), getRem(-120), auto, auto);
+            background: url(#{$imgDir}keywords/ph_effect_fox.png) no-repeat 0 0 / 100%;
+            @include absPosition(getRem(-150), getRem(-142), auto, auto);
         }
 
         .-key3 & {
+            background: url(#{$imgDir}keywords/ph_effect_glove.png) no-repeat 0 0 / 100%;
             @include absPosition(getRem(-90), null, null, getRem(-120));
         }
 
         .-key4 & {
+            background: url(#{$imgDir}keywords/ph_effect_star.png) no-repeat 0 0 / 100%;
             @include absPosition(getRem(-90), getRem(-120), auto, auto);
         }
 
         .-key5 & {
+            background: url(#{$imgDir}keywords/ph_effect_fox.png) no-repeat 0 0 / 100%;
             @include absPosition(getRem(-160), null, null, getRem(-120));
         }
     }
@@ -187,7 +192,7 @@
     }
 
     .-key5 & {
-        @include absPosition(null, getRem(34), getRem(476));
+        display: none;
     }
 }
 
@@ -247,7 +252,7 @@
 
     .-key5 & {
         .chara1 {
-            @include absPosition(null, getRem(-110), getRem(0));
+            @include absPosition(null, getRem(-102), getRem(0));
             width: getRem(958);
         }
     }
