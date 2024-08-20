@@ -220,7 +220,7 @@
             width: getRem(212);
         }
         .chara2 {
-            @include absPosition(null, getRem(148), getRem(36));
+            @include absPosition(null, getRem(138), getRem(36));
             animation: charaMove 0.5s 0.25s infinite alternate;
             transform-origin: bottom;
             width: getRem(184);
@@ -238,15 +238,14 @@
 
     .-key4 & {
         .chara1 {
-            @include absPosition(null, getRem(-12), getRem(84));
+            @include absPosition(null, getRem(-30), getRem(-44));
             animation: charaMove 0.5s infinite alternate;
             transform-origin: bottom;
             width: getRem(284);
         }
         .chara2 {
-            @include absPosition(null, 0, getRem(-84));
-            transform: scale(-1, 1);
-            width: getRem(260);
+            @include absPosition(null, getRem(174), getRem(-70));
+            width: getRem(228);
         }
     }
 

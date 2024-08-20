@@ -11,7 +11,7 @@
     }
 
     @include MQ_WIDE {
-        @include fxdPosition(0, calc((100% - 604px) / 2 - (248px + 35px)));
+        @include fxdPosition(0, calc((100% - 496px) / 2 - (252px + 92px)));
     }
 
     .-scrolled & {
@@ -103,7 +103,7 @@
 
     @include MQ_WIDE {
         margin: 40px;
-        width: 248px;
+        width: 252px;
 
         @include MQ_UNDER(1280) {
             filter: drop-shadow(0 0 20px rgba(#000, 0.4));

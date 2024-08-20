@@ -2025,7 +2025,7 @@ nav li:before {
 }
 .-key2 .keywords__cont__item__chara .chara2 {
   position: absolute;
-  left: 9.25rem;
+  left: 8.625rem;
   bottom: 2.25rem;
   -webkit-animation: charaMove 0.5s 0.25s infinite alternate;
           animation: charaMove 0.5s 0.25s infinite alternate;
@@ -2043,8 +2043,8 @@ nav li:before {
 }
 .-key4 .keywords__cont__item__chara .chara1 {
   position: absolute;
-  left: -0.75rem;
-  bottom: 5.25rem;
+  left: -1.875rem;
+  bottom: -2.75rem;
   -webkit-animation: charaMove 0.5s infinite alternate;
           animation: charaMove 0.5s infinite alternate;
   transform-origin: bottom;
@@ -2052,10 +2052,9 @@ nav li:before {
 }
 .-key4 .keywords__cont__item__chara .chara2 {
   position: absolute;
-  left: 0;
-  bottom: -5.25rem;
-  transform: scale(-1, 1);
-  width: 16.25rem;
+  left: 10.875rem;
+  bottom: -4.375rem;
+  width: 14.25rem;
 }
 .-key5 .keywords__cont__item__chara .chara1 {
   position: absolute;
@@ -2659,11 +2658,11 @@ nav li:before {
   .l-header {
     position: fixed;
     top: 0;
-    left: calc((100% - 604px) / 2 - 283px);
+    left: calc((100% - 496px) / 2 - 344px);
   }
   .l-header__links {
     margin: 40px;
-    width: 248px;
+    width: 252px;
   }
   .l-header__links__btn + .l-header__links__btn {
     margin-top: 10px;
