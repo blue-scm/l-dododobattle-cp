@@ -37,4 +37,9 @@
 <meta http-equiv="Expires" content="0">
 
 <!-- PAGE CSS -->
-<link href="assets/css/main.css" rel="stylesheet" type="text/css" />
+<%# page css loop %>
+<% if (pageInfo.css) { %>
+<% pageInfo.css.forEach(function (value) { %>
+<link rel="stylesheet" href="<%= pageInfo.relPath %><%= value %>" />
+<% }); %>
+<% } %> 

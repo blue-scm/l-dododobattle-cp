@@ -3,8 +3,8 @@
 	title:"",
 	class:'top',
 	relPath:'./',
-	css:['./assets/css/top.css'],
-	js:['./assets/js/top.js'] }
+	css:['assets/css/main.css'],
+	js:['assets/js/main.js'] }
 %>
 
 <!DOCTYPE html>
@@ -26,9 +26,6 @@
         <!-- End Google Tag Manager -->
 
         <%- include('./_inc/common/_meta', {pageInfo: pageInfo}) %>
-
-        <!-- PAGE CSS -->
-        <link href="assets/css/main.css" rel="stylesheet" type="text/css" />
     </head>
 
     <body>
@@ -42,8 +39,7 @@
             <%- include('./_inc/_indextemplate', {pageInfo: pageInfo}) %>
         </div>
 
-        <script src="assets/js/vendor.js"></script>
-        <script src="assets/js/main.js"></script>
+        <%- include('./_inc/common/_js', {pageInfo: pageInfo}) %>
 
 		<!-- User Insight PCDF Code Start : -->
 		<script type="text/javascript">
