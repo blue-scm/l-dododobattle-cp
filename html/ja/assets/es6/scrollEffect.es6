@@ -119,15 +119,15 @@ export default class ScrollEffect {
     createAboutCatchAnimation() {
         gsap.set('.about__catch', { opacity: 0, scale: 0.5 });
         gsap.set('.about__catch__slime', { opacity: 0, scale: 1 });
-        gsap.set('.about__catch__slime.-slime1', { x: '250%', y: '250%', rotate: 2520 });
-        gsap.set('.about__catch__slime.-slime2', { x: '-150%', y: '200%', rotate: -1440 });
-        gsap.set('.about__catch__slime.-slime3', { x: '-270%', y: '0%', rotate: 2160 });
-        gsap.set('.about__catch__slime.-slime4', { x: '220%', y: '-130%', rotate: 1800 });
-        gsap.set('.about__catch__slime.-slime5', { x: '-100%', y: '-280%', rotate: -1440 });
-        gsap.set('.about__catch__slime.-slime6', { x: '-120%', y: '-130%', rotate: 2520 });
+        gsap.set('.about__catch__slime.-slime1', { x: '250%', y: '250%' });
+        gsap.set('.about__catch__slime.-slime2', { x: '-150%', y: '200%' });
+        gsap.set('.about__catch__slime.-slime3', { x: '-270%', y: '0%' });
+        gsap.set('.about__catch__slime.-slime4', { x: '220%', y: '-130%' });
+        gsap.set('.about__catch__slime.-slime5', { x: '-100%', y: '-280%' });
+        gsap.set('.about__catch__slime.-slime6', { x: '-120%', y: '-130%' });
 
         const tl = gsap.timeline({ paused: true });
-        tl.to('.about__catch__slime', { duration: 1.0, opacity: 1, scale: 1, rotate: 0, x: 0, y: 0, stagger: 0.05, ease: 'circ.out' }, 0).to(
+        tl.to('.about__catch__slime', { duration: 0.6, opacity: 1, scale: 1, x: 0, y: 0, stagger: 0.05, ease: 'circ.out' }, 0).to(
             '.about__catch',
             { duration: 0.8, opacity: 1, scale: 1, ease: 'bounce.out' },
             '<'

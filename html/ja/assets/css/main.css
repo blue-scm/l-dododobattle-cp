@@ -1519,29 +1519,12 @@ nav li:before {
   position: absolute;
   top: 50%;
   left: 50%;
-  -webkit-animation: rotateLight 30s linear infinite;
-          animation: rotateLight 30s linear infinite;
   background: url(../img/about/bg_light.png) no-repeat center/100%;
   content: "";
   height: 71.625rem;
+  transform: translate(-50%, -50%);
   width: 71.625rem;
   pointer-events: none;
-}
-@-webkit-keyframes rotateLight {
-  from {
-    transform: translate(-50%, -50%) rotate(0);
-  }
-  to {
-    transform: translate(-50%, -50%) rotate(360deg);
-  }
-}
-@keyframes rotateLight {
-  from {
-    transform: translate(-50%, -50%) rotate(0);
-  }
-  to {
-    transform: translate(-50%, -50%) rotate(360deg);
-  }
 }
 .about__catch img {
   position: relative;
@@ -1620,7 +1603,6 @@ nav li:before {
 
 .about__pv__cont__movie {
   position: relative;
-  background: yellow;
   cursor: pointer;
   height: 21.375rem;
   margin: 0 auto;
