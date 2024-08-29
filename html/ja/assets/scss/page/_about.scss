@@ -34,12 +34,21 @@
 
     &::before {
         @include absPosition(50%, 50%);
+        animation: rotateLight 30s linear infinite;
         background: url(#{$imgDir}about/bg_light.png) no-repeat center / 100%;
         content: '';
         height: getRem(1146);
-        transform: translate(-50%, -50%);
         width: getRem(1146);
         pointer-events: none;
+    }
+
+    @keyframes rotateLight {
+        from {
+            transform: translate(-50%, -50%) rotate(0);
+        }
+        to {
+            transform: translate(-50%, -50%) rotate(360deg);
+        }
     }
 
     img {
