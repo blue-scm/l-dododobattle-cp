@@ -1,0 +1,1 @@
+{"version":3,"file":"main.js","mappings":"AAAAA,QAAQC,IAAI","sources":["webpack:///./src/es6/dododo-cp/main.es6"],"sourcesContent":["console.log(\"hgoe\");\n"],"names":["console","log"],"sourceRoot":""}

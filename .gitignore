@@ -9,5 +9,3 @@ desktop.ini
 .settings
 *.tmproj
 .idea
-
-/build/node_modules/

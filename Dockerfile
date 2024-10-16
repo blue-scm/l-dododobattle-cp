@@ -1,5 +1,5 @@
 # ベースイメージを指定
-FROM node:18
+FROM node:20
 
 # 必要なシステムパッケージをインストール
 RUN apt-get update && apt-get install -y \
@@ -15,18 +15,14 @@ WORKDIR /app
 
 # ソースコードをコピー
 # package.json と yarn.lock を最初にコピーし、依存関係をインストール
-COPY ./build/package.json ./build/yarn.lock /app/build/
-WORKDIR /app/build
+COPY package.json yarn.lock /app/
 RUN yarn install && yarn cache clean
 
-COPY ./build /app/build
-COPY ./html /app/html
-
-# Browserslistのデータベースを更新
-# RUN npx browserslist@latest --update-db
+# 全てのソースコードをコピー
+COPY . /app
 
 # Gulpをグローバルにインストール
 RUN yarn global add gulp-cli
 
-# コンテナ起動時に実行するコマンド
-CMD ["yarn", "run", "dev"]
+# 環境変数を使用してコマンドを切り替える
+CMD ["sh", "-c", "if [ \"$ES5_MODE\" = \"true\" ]; then yarn run dev:es5; else yarn run dev; fi"]

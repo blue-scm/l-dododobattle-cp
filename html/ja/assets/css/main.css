@@ -112,14 +112,6 @@
  *
  * @param boolean $important
  */
-@-webkit-keyframes lightcase-spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(359deg);
-  }
-}
 @keyframes lightcase-spin {
   0% {
     transform: rotate(0deg);
@@ -229,7 +221,6 @@ html[data-lc-type=image] #lightcase-content .lightcase-contentInner {
   font-size: 32px;
   text-shadow: 0 0 15px #fff;
   -moz-transform-origin: 50% 53%;
-  -webkit-animation: lightcase-spin 0.5s infinite linear;
   animation: lightcase-spin 0.5s infinite linear;
 }
 
@@ -264,7 +255,7 @@ a[class*=lightcase-icon-] {
 /* line 20, ../scss/components/mixins/_presets.scss */
 a[class*=lightcase-icon-], a[class*=lightcase-icon-]:focus {
   text-decoration: none;
-  color: white;
+  color: rgb(255, 255, 255);
   -webkit-tap-highlight-color: transparent;
   transition: color, opacity, ease-in-out 0.25s;
 }
@@ -344,10 +335,8 @@ a[class*=lightcase-icon-].lightcase-icon-pause, a[class*=lightcase-icon-].lightc
   */
 ::before,
 ::after {
-  text-decoration: inherit;
-  /* 1 */
-  vertical-align: inherit;
-  /* 2 */
+  text-decoration: inherit; /* 1 */
+  vertical-align: inherit; /* 2 */
 }
 
 /**
@@ -360,22 +349,15 @@ a[class*=lightcase-icon-].lightcase-icon-pause, a[class*=lightcase-icon-].lightc
   * 6. Breaks words to prevent overflow in all browsers (opinionated).
   */
 html {
-  cursor: default;
-  /* 1 */
-  line-height: 1.5;
-  /* 2 */
-  -moz-tab-size: 4;
-  /* 3 */
+  cursor: default; /* 1 */
+  line-height: 1.5; /* 2 */
+  -moz-tab-size: 4; /* 3 */
   -o-tab-size: 4;
-     tab-size: 4;
-  /* 3 */
+     tab-size: 4; /* 3 */
   -webkit-tap-highlight-color: transparent;
-  -ms-text-size-adjust: 100%;
-  /* 5 */
-  -webkit-text-size-adjust: 100%;
-  /* 5 */
-  word-break: break-word;
-  /* 6 */
+  -ms-text-size-adjust: 100%; /* 5 */
+  -webkit-text-size-adjust: 100%; /* 5 */
+  word-break: break-word; /* 6 */
 }
 
 /* Sections
@@ -425,12 +407,9 @@ ul ul {
   * 3. Show the overflow in Edge 18- and IE.
   */
 hr {
-  color: inherit;
-  /* 1 */
-  height: 0;
-  /* 2 */
-  overflow: visible;
-  /* 3 */
+  color: inherit; /* 1 */
+  height: 0; /* 2 */
+  overflow: visible; /* 3 */
 }
 
 /**
@@ -462,14 +441,10 @@ nav li::before {
   * 3. Prevent overflow of the container in all browsers (opinionated).
   */
 pre {
-  font-family: monospace, monospace;
-  /* 1 */
-  font-size: 1em;
-  /* 2 */
-  overflow: auto;
-  /* 3 */
-  -ms-overflow-style: scrollbar;
-  /* 3 */
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
+  overflow: auto; /* 3 */
+  -ms-overflow-style: scrollbar; /* 3 */
 }
 
 /* Text-level semantics
@@ -505,10 +480,8 @@ strong {
 code,
 kbd,
 samp {
-  font-family: monospace, monospace;
-  /* 1 */
-  font-size: 1em;
-  /* 2 */
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
 }
 
 /**
@@ -584,12 +557,9 @@ svg:not(:root) {
   * 3. Remove text indentation from table contents in Chrome, Edge, and Safari.
   */
 table {
-  border-collapse: collapse;
-  /* 1 */
-  border-color: inherit;
-  /* 2 */
-  text-indent: 0;
-  /* 3 */
+  border-collapse: collapse; /* 1 */
+  border-color: inherit; /* 2 */
+  text-indent: 0; /* 3 */
 }
 
 /* Forms
@@ -608,10 +578,8 @@ select {
   * 2. Remove the inheritance of text transform in Edge 18-, Firefox, and IE.
   */
 button {
-  overflow: visible;
-  /* 1 */
-  text-transform: none;
-  /* 2 */
+  overflow: visible; /* 1 */
+  text-transform: none; /* 2 */
 }
 
 /**
@@ -629,10 +597,8 @@ button,
   * 2. Correct the padding in Firefox.
   */
 fieldset {
-  border: 1px solid #a0a0a0;
-  /* 1 */
-  padding: 0.35em 0.75em 0.625em;
-  /* 2 */
+  border: 1px solid #a0a0a0; /* 1 */
+  padding: 0.35em 0.75em 0.625em; /* 2 */
 }
 
 /**
@@ -647,14 +613,10 @@ input {
   * 2. Correct the color inheritance from `fieldset` elements in IE.
   */
 legend {
-  color: inherit;
-  /* 2 */
-  display: table;
-  /* 1 */
-  max-width: 100%;
-  /* 1 */
-  white-space: normal;
-  /* 1 */
+  color: inherit; /* 2 */
+  display: table; /* 1 */
+  max-width: 100%; /* 1 */
+  white-space: normal; /* 1 */
 }
 
 /**
@@ -662,10 +624,8 @@ legend {
   * 2. Add the correct vertical alignment in Chrome, Edge, and Firefox.
   */
 progress {
-  display: inline-block;
-  /* 1 */
-  vertical-align: baseline;
-  /* 2 */
+  display: inline-block; /* 1 */
+  vertical-align: baseline; /* 2 */
 }
 
 /**
@@ -681,14 +641,10 @@ select {
   * 3. Change the resize direction in all browsers (opinionated).
   */
 textarea {
-  margin: 0;
-  /* 1 */
-  overflow: auto;
-  /* 2 */
-  resize: vertical;
-  /* 3 */
-  resize: block;
-  /* 3 */
+  margin: 0; /* 1 */
+  overflow: auto; /* 2 */
+  resize: vertical; /* 3 */
+  resize: block; /* 3 */
 }
 
 /**
@@ -704,10 +660,8 @@ textarea {
   * 2. Correct the outline style in Safari.
   */
 [type=search] {
-  -webkit-appearance: textfield;
-  /* 1 */
-  outline-offset: -2px;
-  /* 2 */
+  -webkit-appearance: textfield; /* 1 */
+  outline-offset: -2px; /* 2 */
 }
 
 /**
@@ -738,10 +692,8 @@ textarea {
   * 2. Change font properties to `inherit` in Safari.
   */
 ::-webkit-file-upload-button {
-  -webkit-appearance: button;
-  /* 1 */
-  font: inherit;
-  /* 2 */
+  -webkit-appearance: button; /* 1 */
+  font: inherit; /* 2 */
 }
 
 /**
@@ -784,7 +736,6 @@ dialog {
   color: black;
   display: block;
   height: -moz-fit-content;
-  height: -webkit-fit-content;
   height: fit-content;
   left: 0;
   margin: auto;
@@ -792,7 +743,6 @@ dialog {
   position: absolute;
   right: 0;
   width: -moz-fit-content;
-  width: -webkit-fit-content;
   width: fit-content;
 }
 
@@ -1077,8 +1027,7 @@ nav li:before {
 }
 
 .l-header__dl__deco {
-  -webkit-clip-path: polygon(2% 24%, 5% 92%, 95% 93%, 98% 20%);
-          clip-path: polygon(2% 24%, 5% 92%, 95% 93%, 98% 20%);
+  clip-path: polygon(2% 24%, 5% 92%, 95% 93%, 98% 20%);
   height: 8.25rem;
   overflow: hidden;
   pointer-events: none;
@@ -1088,8 +1037,7 @@ nav li:before {
   left: 1.4375rem;
 }
 .l-header__dl__deco::before {
-  -webkit-animation: btnShiny 5s ease-in-out infinite;
-          animation: btnShiny 5s ease-in-out infinite;
+  animation: btnShiny 5s ease-in-out infinite;
   background-color: #fff;
   content: "";
   display: inline-block;
@@ -1099,21 +1047,6 @@ nav li:before {
   top: -6.25rem;
   transition: 300ms;
   width: 2.5rem;
-}
-
-@-webkit-keyframes btnShiny {
-  0% {
-    opacity: 0.6;
-    transform: rotate(45deg) translateX(-6.25rem) translateY(-13.125rem);
-  }
-  80% {
-    opacity: 0.6;
-    transform: rotate(45deg) translateX(-6.25rem) translateY(-13.125rem);
-  }
-  100% {
-    opacity: 0.6;
-    transform: rotate(45deg) translateX(30.625rem) translateY(-8.75rem);
-  }
 }
 
 @keyframes btnShiny {
@@ -1205,12 +1138,10 @@ nav li:before {
   height: 100%;
   opacity: 0;
   overflow: scroll;
-  -ms-overflow-style: none;
-  /* IE, Edge 対応 */
+  -ms-overflow-style: none; /* IE, Edge 対応 */
   overflow-y: scroll;
   pointer-events: none;
-  scrollbar-width: none;
-  /* Firefox 対応 */
+  scrollbar-width: none; /* Firefox 対応 */
   transition: all 0.5s 0s ease;
   visibility: hidden;
   width: 100%;
@@ -1278,31 +1209,10 @@ nav li:before {
   opacity: 0;
 }
 
-@-webkit-keyframes itemInSp {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
 @keyframes itemInSp {
   0% {
     opacity: 0;
     transform: translateY(20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-@-webkit-keyframes itemInPc {
-  0% {
-    opacity: 0;
-    transform: translateY(30px);
   }
   100% {
     opacity: 1;
@@ -1352,134 +1262,105 @@ nav li:before {
 }
 
 .p-sprite__meercat__red, .p-sprite__meercat__green, .p-sprite__meercat__yellow, .p-sprite__goblin-bow__blue, .p-sprite__goblin-bow__green, .p-sprite__goblin-bow__yellow, .p-sprite__goblin-sword__blue, .p-sprite__goblin-sword__green, .p-sprite__goblin-sword__yellow, .p-sprite__goblin__blue, .p-sprite__goblin__green, .p-sprite__goblin__yellow, .p-sprite__inu, .p-sprite__fox__yellow, .p-sprite__fox__blue, .p-sprite__fox__green, .p-sprite__slime__yellow, .p-sprite__slime__green, .p-sprite__slime__blue {
-  -webkit-animation: stepAnimation 0.8s infinite;
-          animation: stepAnimation 0.8s infinite;
+  animation: stepAnimation 0.8s infinite;
   aspect-ratio: 1/1;
   background-repeat: repeat-x;
   background-size: auto 100%;
 }
 
 .p-sprite__slime__blue {
-  -webkit-animation-timing-function: steps(3);
-          animation-timing-function: steps(3);
+  animation-timing-function: steps(3);
   background-image: url(../img/common/sprite/ph_slime1.png);
 }
 
 .p-sprite__slime__green {
-  -webkit-animation-timing-function: steps(3);
-          animation-timing-function: steps(3);
+  animation-timing-function: steps(3);
   background-image: url(../img/common/sprite/ph_slime2.png);
 }
 
 .p-sprite__slime__yellow {
-  -webkit-animation-timing-function: steps(3);
-          animation-timing-function: steps(3);
+  animation-timing-function: steps(3);
   background-image: url(../img/common/sprite/ph_slime3.png);
 }
 
 .p-sprite__fox__green {
-  -webkit-animation-timing-function: steps(3);
-          animation-timing-function: steps(3);
+  animation-timing-function: steps(3);
   background-image: url(../img/common/sprite/ph_fox1.png);
 }
 
 .p-sprite__fox__blue {
-  -webkit-animation-timing-function: steps(3);
-          animation-timing-function: steps(3);
+  animation-timing-function: steps(3);
   background-image: url(../img/common/sprite/ph_fox2.png);
 }
 
 .p-sprite__fox__yellow {
-  -webkit-animation-timing-function: steps(3);
-          animation-timing-function: steps(3);
+  animation-timing-function: steps(3);
   background-image: url(../img/common/sprite/ph_fox3.png);
 }
 
 .p-sprite__inu {
-  -webkit-animation-timing-function: steps(7);
-          animation-timing-function: steps(7);
+  animation-timing-function: steps(7);
   background-image: url(../img/common/sprite/ph_inu.png);
 }
 
 .p-sprite__goblin__yellow {
-  -webkit-animation-timing-function: steps(3);
-          animation-timing-function: steps(3);
+  animation-timing-function: steps(3);
   background-image: url(../img/common/sprite/ph_goblin1.png);
 }
 
 .p-sprite__goblin__green {
-  -webkit-animation-timing-function: steps(3);
-          animation-timing-function: steps(3);
+  animation-timing-function: steps(3);
   background-image: url(../img/common/sprite/ph_goblin2.png);
 }
 
 .p-sprite__goblin__blue {
-  -webkit-animation-timing-function: steps(3);
-          animation-timing-function: steps(3);
+  animation-timing-function: steps(3);
   background-image: url(../img/common/sprite/ph_goblin3.png);
 }
 
 .p-sprite__goblin-sword__yellow {
-  -webkit-animation-timing-function: steps(3);
-          animation-timing-function: steps(3);
+  animation-timing-function: steps(3);
   background-image: url(../img/common/sprite/ph_goblin4.png);
 }
 
 .p-sprite__goblin-sword__green {
-  -webkit-animation-timing-function: steps(3);
-          animation-timing-function: steps(3);
+  animation-timing-function: steps(3);
   background-image: url(../img/common/sprite/ph_goblin5.png);
 }
 
 .p-sprite__goblin-sword__blue {
-  -webkit-animation-timing-function: steps(3);
-          animation-timing-function: steps(3);
+  animation-timing-function: steps(3);
   background-image: url(../img/common/sprite/ph_goblin6.png);
 }
 
 .p-sprite__goblin-bow__yellow {
-  -webkit-animation-timing-function: steps(3);
-          animation-timing-function: steps(3);
+  animation-timing-function: steps(3);
   background-image: url(../img/common/sprite/ph_goblin7.png);
 }
 
 .p-sprite__goblin-bow__green {
-  -webkit-animation-timing-function: steps(3);
-          animation-timing-function: steps(3);
+  animation-timing-function: steps(3);
   background-image: url(../img/common/sprite/ph_goblin8.png);
 }
 
 .p-sprite__goblin-bow__blue {
-  -webkit-animation-timing-function: steps(3);
-          animation-timing-function: steps(3);
+  animation-timing-function: steps(3);
   background-image: url(../img/common/sprite/ph_goblin9.png);
 }
 
 .p-sprite__meercat__yellow {
-  -webkit-animation-timing-function: steps(3);
-          animation-timing-function: steps(3);
+  animation-timing-function: steps(3);
   background-image: url(../img/common/sprite/ph_meercat1.png);
 }
 
 .p-sprite__meercat__green {
-  -webkit-animation-timing-function: steps(3);
-          animation-timing-function: steps(3);
+  animation-timing-function: steps(3);
   background-image: url(../img/common/sprite/ph_meercat2.png);
 }
 
 .p-sprite__meercat__red {
-  -webkit-animation-timing-function: steps(3);
-          animation-timing-function: steps(3);
+  animation-timing-function: steps(3);
   background-image: url(../img/common/sprite/ph_meercat3.png);
-}
-
-@-webkit-keyframes stepAnimation {
-  from {
-    background-position: 0% 0;
-  }
-  to {
-    background-position: -100% 0%;
-  }
 }
 
 @keyframes stepAnimation {
@@ -1519,21 +1400,12 @@ nav li:before {
   position: absolute;
   top: 50%;
   left: 50%;
-  -webkit-animation: rotateLight 30s linear infinite;
-          animation: rotateLight 30s linear infinite;
+  animation: rotateLight 30s linear infinite;
   background: url(../img/about/bg_light.png) no-repeat center/100%;
   content: "";
   height: 71.625rem;
   width: 71.625rem;
   pointer-events: none;
-}
-@-webkit-keyframes rotateLight {
-  from {
-    transform: translate(-50%, -50%) rotate(0);
-  }
-  to {
-    transform: translate(-50%, -50%) rotate(360deg);
-  }
 }
 @keyframes rotateLight {
   from {
@@ -1717,12 +1589,10 @@ nav li:before {
   transform: scale(-1, 1);
 }
 .bottom__enemy:nth-of-type(3n) div {
-  -webkit-animation-delay: 0.2s;
-          animation-delay: 0.2s;
+  animation-delay: 0.2s;
 }
 .bottom__enemy:nth-of-type(4n) div {
-  -webkit-animation-delay: 0.5s;
-          animation-delay: 0.5s;
+  animation-delay: 0.5s;
 }
 
 .contents {
@@ -1780,12 +1650,10 @@ nav li:before {
   width: 90px;
 }
 .download__chara .-slow {
-  -webkit-animation-duration: 1.2s;
-          animation-duration: 1.2s;
+  animation-duration: 1.2s;
 }
 .download__chara .-delay {
-  -webkit-animation-delay: 0.4s;
-          animation-delay: 0.4s;
+  animation-delay: 0.4s;
 }
 
 .keywords {
@@ -2010,15 +1878,13 @@ nav li:before {
   width: 15rem;
 }
 .-key1 .keywords__cont__item__chara .chara2 .-delay {
-  -webkit-animation-delay: 0.4s;
-          animation-delay: 0.4s;
+  animation-delay: 0.4s;
 }
 .-key2 .keywords__cont__item__chara .chara1 {
   position: absolute;
   left: 0rem;
   bottom: 2.75rem;
-  -webkit-animation: charaMove 0.5s infinite alternate;
-          animation: charaMove 0.5s infinite alternate;
+  animation: charaMove 0.5s infinite alternate;
   transform-origin: bottom;
   width: 13.25rem;
 }
@@ -2026,8 +1892,7 @@ nav li:before {
   position: absolute;
   left: 8.625rem;
   bottom: 2.25rem;
-  -webkit-animation: charaMove 0.5s 0.25s infinite alternate;
-          animation: charaMove 0.5s 0.25s infinite alternate;
+  animation: charaMove 0.5s 0.25s infinite alternate;
   transform-origin: bottom;
   width: 11.5rem;
 }
@@ -2035,8 +1900,7 @@ nav li:before {
   position: absolute;
   bottom: 3.125rem;
   right: -0.3125rem;
-  -webkit-animation: charaMove 0.5s infinite alternate;
-          animation: charaMove 0.5s infinite alternate;
+  animation: charaMove 0.5s infinite alternate;
   transform-origin: bottom;
   width: 19.25rem;
 }
@@ -2044,8 +1908,7 @@ nav li:before {
   position: absolute;
   left: -1.875rem;
   bottom: -2.75rem;
-  -webkit-animation: charaMove 0.5s infinite alternate;
-          animation: charaMove 0.5s infinite alternate;
+  animation: charaMove 0.5s infinite alternate;
   transform-origin: bottom;
   width: 17.75rem;
 }
@@ -2060,14 +1923,6 @@ nav li:before {
   left: -6.375rem;
   bottom: 0rem;
   width: 59.875rem;
-}
-@-webkit-keyframes charaMove {
-  from {
-    transform: scale3d(0.98, 1.02, 1);
-  }
-  to {
-    transform: scale3d(1, 1, 1);
-  }
 }
 @keyframes charaMove {
   from {
@@ -2162,8 +2017,7 @@ nav li:before {
   position: absolute;
   top: 50%;
   left: 50%;
-  -webkit-animation: flashDlBtn 1s cubic-bezier(0.785, 0.135, 0.15, 0.86) infinite alternate;
-          animation: flashDlBtn 1s cubic-bezier(0.785, 0.135, 0.15, 0.86) infinite alternate;
+  animation: flashDlBtn 1s cubic-bezier(0.785, 0.135, 0.15, 0.86) infinite alternate;
   background: url(../img/mv/bg_flash.png) no-repeat center/100%;
   content: "";
   height: 16.75rem;
@@ -2183,14 +2037,6 @@ nav li:before {
 }
 .mv__dl__btn img {
   position: relative;
-}
-@-webkit-keyframes flashDlBtn {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0.3;
-  }
 }
 @keyframes flashDlBtn {
   from {
@@ -2225,7 +2071,7 @@ nav li:before {
   position: absolute;
   left: 0;
   bottom: 0;
-  background: linear-gradient(rgba(0, 153, 26, 0) 0%, #22602c 100%);
+  background: linear-gradient(rgba(0, 153, 26, 0) 0%, rgb(34, 96, 44) 100%);
   content: "";
   height: 278px;
   opacity: 0.6;
@@ -2313,30 +2159,13 @@ nav li:before {
   transform: scale(-1, 1);
 }
 .-scrolling .wide__chara {
-  -webkit-animation: moveLtoR 1s linear infinite;
-          animation: moveLtoR 1s linear infinite;
+  animation: moveLtoR 1s linear infinite;
 }
 .-scrolling .wide__chara.-goblin-bow-green, .-scrolling .wide__chara.-meercat-green, .-scrolling .wide__chara.-goblin-bow-blue, .-scrolling .wide__chara.-fox-blue {
-  -webkit-animation: moveRtoL 1s linear infinite;
-          animation: moveRtoL 1s linear infinite;
+  animation: moveRtoL 1s linear infinite;
 }
 .-scrolling .wide__chara.-slime-green, .-scrolling .wide__chara.-slime-blue-right {
-  -webkit-animation-duration: 0.5s;
-          animation-duration: 0.5s;
-}
-@-webkit-keyframes moveLtoR {
-  0% {
-    transform: translateX(0) scale(1, 1);
-  }
-  50% {
-    transform: translateX(-10%) scale(1, 1);
-  }
-  51% {
-    transform: translateX(-10%) scale(-1, 1);
-  }
-  100% {
-    transform: translateX(0) scale(-1, 1);
-  }
+  animation-duration: 0.5s;
 }
 @keyframes moveLtoR {
   0% {
@@ -2350,20 +2179,6 @@ nav li:before {
   }
   100% {
     transform: translateX(0) scale(-1, 1);
-  }
-}
-@-webkit-keyframes moveRtoL {
-  0% {
-    transform: translateX(0) scale(-1, 1);
-  }
-  50% {
-    transform: translateX(10%) scale(-1, 1);
-  }
-  51% {
-    transform: translateX(10%) scale(1, 1);
-  }
-  100% {
-    transform: translateX(0) scale(1, 1);
   }
 }
 @keyframes moveRtoL {
@@ -2390,12 +2205,10 @@ nav li:before {
 }
 
 .wide__anime {
-  -webkit-animation-play-state: paused;
-          animation-play-state: paused;
+  animation-play-state: paused;
 }
 .-scrolling .wide__anime {
-  -webkit-animation-play-state: running;
-          animation-play-state: running;
+  animation-play-state: running;
 }
 @media screen and (min-width: 769px){
   .lightcase-icon-close {
@@ -2439,7 +2252,6 @@ nav li:before {
     bottom: 50%;
     margin-bottom: -0.5em;
   }
-
   /* line 57, ../scss/components/modules/_navigation.scss */
   a[class*=lightcase-icon-]:hover, #lightcase-case:hover ~ a[class*=lightcase-icon-] {
     opacity: 1;
@@ -2475,13 +2287,11 @@ nav li:before {
   html[data-lc-type=inline] #lightcase-content .lightcase-contentInner, html[data-lc-type=ajax] #lightcase-content .lightcase-contentInner, html[data-lc-type=error] #lightcase-content .lightcase-contentInner {
     padding: 15px;
   }
-
   /* line 52, ../scss/components/modules/_content.scss */
   html[data-lc-type=inline] #lightcase-content .lightcase-contentInner, html[data-lc-type=inline] #lightcase-content .lightcase-contentInner > *, html[data-lc-type=ajax] #lightcase-content .lightcase-contentInner, html[data-lc-type=ajax] #lightcase-content .lightcase-contentInner > *, html[data-lc-type=error] #lightcase-content .lightcase-contentInner, html[data-lc-type=error] #lightcase-content .lightcase-contentInner > * {
     width: 100% !important;
     max-width: none !important;
   }
-
   /* line 59, ../scss/components/modules/_content.scss */
   html[data-lc-type=inline] #lightcase-content .lightcase-contentInner > *:not(iframe), html[data-lc-type=ajax] #lightcase-content .lightcase-contentInner > *:not(iframe), html[data-lc-type=error] #lightcase-content .lightcase-contentInner > *:not(iframe) {
     height: auto !important;
@@ -2526,7 +2336,6 @@ nav li:before {
     padding-left: 15px;
     padding-right: 15px;
   }
-
   /* line 51, ../scss/components/modules/_info.scss */
   html:not([data-lc-type=image]):not([data-lc-type=video]):not([data-lc-type=flash]):not([data-lc-type=error]) #lightcase-info {
     position: static;
@@ -2609,8 +2418,7 @@ nav li:before {
     transform: translateY(20px);
   }
   .c-scrollreveal.-reveal {
-    -webkit-animation: itemInSp 1s 0s forwards;
-            animation: itemInSp 1s 0s forwards;
+    animation: itemInSp 1s 0s forwards;
   }
   .c-visible_wide {
     display: none;
@@ -2695,8 +2503,7 @@ nav li:before {
     transform: translateY(30px);
   }
   .c-scrollreveal.-reveal {
-    -webkit-animation: itemInPc 1s 0s forwards;
-            animation: itemInPc 1s 0s forwards;
+    animation: itemInPc 1s 0s forwards;
   }
   .c-visible_nrw {
     display: none;
