@@ -1,0 +1,43 @@
+<%
+  const items = [
+    {
+        id: "ft",
+        title: {
+            "sub": "ダミーダミー",
+            "main": "無料",
+        },
+        date: "-2024/00/00(●)〜2024/00/00(●)-",
+        head: "ダミー見出しダミー見出しダミー見出しダミー見出しダミー見出し",
+        body: "ダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミー",
+        link: "",
+    },
+  ];
+%>
+<section class="campaigns">
+    <h2 class="campaigns__head"></h2>
+    <div class="campaigns__items">
+        <% items.forEach((item) => { %>
+        <div class="campaigns__item">
+            <div class="campaigns__inner" data-accordion="<%= item.id %>">
+                <div class="campaigns__badge">
+                    <img src="<%= imgDir %>badge_<%= item.id %>.webp" alt="">
+                </div>
+                <h3>
+                    <span class="campaigns__title-sub"><%= item.sub  %></span><br>
+                    <span class="campaigns__title-img"><img src="<%= imgDir %>title_<%= item.id %>.webp" alt=""></span><span class="campaigns__title-main"><%= item.main  %></span>
+                </h3>
+                <div class="campaigns__img">
+                    <img src="<%= imgDir %>main__<%= item.id %>.webp" alt="">
+                </div>
+                <div class="campaigns__date"><%= item.date %></div>
+                <div class="campaigns__head"><%= item.head %></div>
+                <div class="campaigns__body"><%= item.body %></div>
+                <a href="<%= item.link %>" target="_blank" rel="noopener noreferrer" class="campaigns__btn">
+                    <img src="<%= imgDir %>btn_<%= item.id %>.webp" alt="">
+                </a>
+            </div>
+            <button class="campaigns__btn" data-accordion-trrigger="<%= item.id %>">くわしく見る</button>
+        </div>
+        <% }) %>
+    </div>
+</section>
