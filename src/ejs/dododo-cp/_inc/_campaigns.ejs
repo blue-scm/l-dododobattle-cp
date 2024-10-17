@@ -1,7 +1,7 @@
 <%
   const items = [
     {
-        id: "ft",
+        id: "01",
         title: {
             "sub": "ダミーダミー",
             "main": "無料",
@@ -9,35 +9,78 @@
         date: "-2024/00/00(●)〜2024/00/00(●)-",
         head: "ダミー見出しダミー見出しダミー見出しダミー見出しダミー見出し",
         body: "ダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミー",
-        link: "",
+        link: {
+            text: "今すぐプレイ！",
+            href: "",
+        },
+    },
+    {
+        id: "02",
+        title: {
+            "sub": "ダミーダミー",
+            "main": "無料",
+        },
+        date: "-2024/00/00(●)〜2024/00/00(●)-",
+        head: "ダミー見出しダミー見出しダミー見出しダミー見出しダミー見出し",
+        body: "ダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミー",
+        link: {
+            text: "今すぐプレイ！",
+            href: "",
+        },
+    },
+    {
+        id: "03",
+        title: {
+            "sub": "ダミーダミー",
+            "main": "無料",
+        },
+        date: "-2024/00/00(●)〜2024/00/00(●)-",
+        head: "ダミー見出しダミー見出しダミー見出しダミー見出しダミー見出し",
+        body: "ダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミー",
+        link: {
+            text: "今すぐプレイ！",
+            href: "",
+        },
     },
   ];
 %>
 <section class="campaigns">
-    <h2 class="campaigns__head"></h2>
+    <h2 class="campaigns__head">
+        <span class="campaigns__head__main">
+            <img src="<%= imgDir %>anime_head.png" alt="ドドド" width="390" height="200" loading="lazy">
+        </span>
+        <img src="<%= imgDir %>txt_head.webp" alt="なキャンペーンを見逃すな！" width="390" height="227" loading="lazy">
+    </h2>
     <div class="campaigns__items">
         <% items.forEach((item) => { %>
-        <div class="campaigns__item">
+        <article class="campaigns__item">
+            <div class="campaigns__badge">
+                <img src="<%= imgDir %>badge_<%= item.id %>.webp" alt="" width="72" height="72" loading="lazy">
+            </div>
             <div class="campaigns__inner" data-accordion="<%= item.id %>">
-                <div class="campaigns__badge">
-                    <img src="<%= imgDir %>badge_<%= item.id %>.webp" alt="">
-                </div>
-                <h3>
-                    <span class="campaigns__title-sub"><%= item.sub  %></span><br>
-                    <span class="campaigns__title-img"><img src="<%= imgDir %>title_<%= item.id %>.webp" alt=""></span><span class="campaigns__title-main"><%= item.main  %></span>
+                <h3 class="campaigns__title">
+                    <span class="campaigns__title__sub">
+                        <img src="<%= imgDir %>txt_title_sub_<%= item.id %>.webp" alt="<%= item.title.sub %>" width="390" height="128" loading="lazy">
+                    </span>
+                    <span class="campaigns__title__main">
+                        <img src="<%= imgDir %>txt_title_main_<%= item.id %>.webp" alt="<%= item.title.main %>" width="268" height="89" loading="lazy">
+                    </span>
                 </h3>
                 <div class="campaigns__img">
-                    <img src="<%= imgDir %>main__<%= item.id %>.webp" alt="">
+                    <img src="<%= imgDir %>ph_main_<%= item.id %>.webp" alt="">
+                    <div class="campaigns__img__frame"></div>
                 </div>
-                <div class="campaigns__date"><%= item.date %></div>
-                <div class="campaigns__head"><%= item.head %></div>
-                <div class="campaigns__body"><%= item.body %></div>
-                <a href="<%= item.link %>" target="_blank" rel="noopener noreferrer" class="campaigns__btn">
-                    <img src="<%= imgDir %>btn_<%= item.id %>.webp" alt="">
-                </a>
+                <div class="campaigns__texts">
+                    <div class="campaigns__date"><%= item.date %></div>
+                    <div class="campaigns__head"><%= item.head %></div>
+                    <div class="campaigns__body"><%= item.body %></div>
+                    <a href="<%= item.link.href %>" target="_blank" rel="noopener noreferrer" class="campaigns__link">
+                        <img src="<%= imgDir %>ph_btn_link_<%= item.id %>.webp" alt="" width="320" height="70" alt="<%= item.link.text %>" loading="lazy">
+                    </a>
+                </div>
             </div>
-            <button class="campaigns__btn" data-accordion-trrigger="<%= item.id %>">くわしく見る</button>
-        </div>
+            <button type="button" class="campaigns__trigger" data-accordion-trigger="<%= item.id %>">くわしく見る</button>
+        </article>
         <% }) %>
     </div>
 </section>

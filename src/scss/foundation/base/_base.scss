@@ -1,4 +1,4 @@
-@use 'global/' as *;
+@use "src/scss/global" as *;
 
 html {
     @include MQ_NARROW {
@@ -12,10 +12,10 @@ html {
 
 body {
     @include fontsize(16);
-    @include font-smoothing('on');
+    @include font-smoothing("on");
     background-color: #fff;
     color: getColor(primary);
-    font-family: 'YakuHanJP_Noto', 'Noto Sans JP', sans-serif;
+    font-family: "YakuHanJP_Noto", "Noto Sans JP", sans-serif;
     line-height: 1.7;
     -webkit-text-size-adjust: 100%;
 }
@@ -31,7 +31,7 @@ button {
 }
 
 //計測タグの余白をリセット
-iframe[name='google_conversion_frame'] {
+iframe[name="google_conversion_frame"] {
     height: 0;
     position: absolute;
 }

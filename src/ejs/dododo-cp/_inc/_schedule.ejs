@@ -1,19 +1,25 @@
 <div class="schedule">
-    <h3 class="schedule__head">開催スケジュールをCHECK!</h3>
+    <h3 class="schedule__head">
+        <img src="<%= imgDir %>txt_head.svg" alt="開催スケジュールをCHECK!" loading="lazy" width="267" height="20" loading="lazy">
+    </h3>
     <div class="schedule__box">
         <div class="schedule__box__inner">
-            <img src="<%= imgDir %>main.webp" alt="">
+            <img src="<%= imgDir %>ph_box_inner.png" alt="" loading="lazy" width="336" height="356">
         </div>
-        <button class="schedule__btn"></button>
+        <button type="button" class="schedule__btn">
+            <img src="<%= imgDir %>icon_open.webp" alt="開く" width="48" height="48" loading="lazy">
+        </button>
     </div>
 </div>
-<div class="schedule__modal">
+<dialog class="schedule__modal">
     <div class="schedule__modal__inner">
-        <button class="schedule__modal__close">閉じる</button>
+        <button type="button" class="schedule__modal__close">
+            <img src="<%= imgDir %>icon_close.svg" alt="閉じる" width="56" height="56" loading="lazy">
+        </button>
         <div class="schedule__modal__body">
             <div class="schedule__modal__img">
-                <img src="<%= imgDir %>main.webp" alt="">
+                <img src="<%= imgDir %>main.webp" alt="" width="294" height="714" loading="lazy">
             </div>
         </div>
     </div>
-</div>
+</dialog>

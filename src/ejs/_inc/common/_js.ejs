@@ -1,10 +1,10 @@
 <!-- VENDOR JS -->
-<script src="<%= assetsDir %>assets/js/vendor.js"></script>
+<script defer src="<%= assetsDir %>assets/js/vendor.js"></script>
 
 <!-- PAGE JS -->
 <%# page js loop %>
 <% if (common.js) { %>
 <% common.js.forEach(function (value) { %>
-<script src="<%= assetsDir %><%= value %>"></script>
+<script defer src="<%= assetsDir %><%= value %>"></script>
 <% }); %>
 <% } %> 

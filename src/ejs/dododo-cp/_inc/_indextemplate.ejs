@@ -1,13 +1,14 @@
 <%
     const imgDir = "/ja/dododo-cp/assets/img/";
+    const commonDir = "/ja/dododo-cp/assets/img/common/";
 %>
 <div class="l-contents">
     <main class="l-main">
         <div class="l-bg-main"></div>
-        <%- include('./_fv', { imgDir: imgDir + "fv/" }) %>
-        <%- include('./_campaigns', { imgDir: imgDir + "campaigns/" }) %>
-        <%- include('./_schedule', { imgDir: imgDir + "schedule/" }) %>
-        <%- include('./_announce', { imgDir: imgDir + "announce/" }) %>
-        <%- include('./_foot', { imgDir: imgDir + "foot/" }) %>
+        <%- include('./_mv', { imgDir: imgDir + "mv/", commonDir: commonDir }) %>
+        <%- include('./_campaigns', { imgDir: imgDir + "campaigns/", commonDir: commonDir }) %>
+        <%- include('./_schedule', { imgDir: imgDir + "schedule/", commonDir: commonDir }) %>
+        <%- include('./_announce', { imgDir: imgDir + "announce/", commonDir: commonDir }) %>
+        <%- include('./_foot', { imgDir: imgDir + "foot/", commonDir: commonDir }) %>
     </main>
 </div>

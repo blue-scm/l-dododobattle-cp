@@ -1,0 +1,76 @@
+@use "src/scss/global" as *;
+
+html {
+    font-size: min(calc(100vw * 16 / 390), 19.7px);
+}
+
+body {
+    @include fontsize(16);
+    @include font-smoothing("on");
+    background-color: #fff;
+    color: getColor(primary);
+    font-family: "YakuHanJP_Noto", "Noto Sans JP", sans-serif;
+    line-height: 1.7;
+    -webkit-text-size-adjust: 100%;
+}
+
+img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+button {
+    padding: 0;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.l-contents {
+    background-attachment: fixed;
+    background-image: url("/ja/dododo-cp/assets/img/bg/pc.webp");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.l-main {
+    position: relative;
+    max-width: 480px;
+    margin: 0 auto;
+
+    @include MQ_WIDE {
+        &::before,
+        &::after {
+            content: "";
+            background-attachment: fixed;
+            background-image: url("/ja/dododo-cp/assets/img/bg/line.webp");
+            background-position: top 0 left 0;
+            background-size: 100%;
+            background-repeat: no-repeat;
+            width: 12px;
+            height: 100%;
+        }
+
+        &::before {
+            @include absPosition(0, -12px);
+        }
+
+        &::after {
+            @include absPosition(0, null, null, -12px);
+        }
+    }
+}
+
+.l-bg-main {
+    @include fxdPosition(0, 50%);
+    translate: -50% 0;
+    max-width: 480px;
+    width: 100%;
+    height: 100svh;
+    background-image: url("/ja/dododo-cp/assets/img/bg/main.webp");
+    background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+}

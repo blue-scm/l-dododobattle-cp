@@ -1,0 +1,35 @@
+@use "src/scss/global" as *;
+
+.schedule {
+    margin-top: getRem(72);
+    position: relative;
+}
+
+.schedule__head {
+    margin: 0 auto;
+    width: getRem(267);
+    filter: drop-shadow(0px 0px 20px #000000) drop-shadow(0px 0px 20px #000000) drop-shadow(0px 0px 20px #000000);
+}
+
+.schedule__box {
+    position: relative;
+    margin: getRem(10) auto 0;
+    width: getRem(336);
+    height: getRem(356);
+    background-image: url("/ja/dododo-cp/assets/img/bg/schedule_box.webp");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+.schedule__box__inner {
+    width: 100%;
+}
+
+.schedule__btn {
+    @include absPosition(null, null, 0, 0);
+    cursor: pointer;
+    width: getRem(48);
+    height: getRem(48);
+}

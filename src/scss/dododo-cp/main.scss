@@ -1,0 +1,8 @@
+@use "../foundation/lib/_sanitize.scss";
+@use "../foundation/base/_sanitize_override.scss";
+
+@use "../layout/footer";
+@use "../object/**/*.scss";
+
+@use "./layout/**/*.scss";
+@use "./page/**/*.scss";
