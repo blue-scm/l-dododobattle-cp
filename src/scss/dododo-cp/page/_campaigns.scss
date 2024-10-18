@@ -14,9 +14,6 @@
     display: block;
 }
 
-.campaigns__items {
-}
-
 .campaigns__item {
     position: relative;
     background-image: url("/ja/dododo-cp/assets/img/bg/campaigns_upper.webp"), url("/ja/dododo-cp/assets/img/bg/campaigns_lower.webp");
@@ -40,6 +37,10 @@
         height: getRem(60);
         background: linear-gradient(180deg, rgba(200, 165, 87, 0) 0%, #c8a557 72%);
         content: "";
+    }
+
+    [aria-expanded="true"] &::after {
+        content: none;
     }
 }
 
@@ -94,7 +95,7 @@
 
 .campaigns__texts {
     margin-top: getRem(8);
-    padding: 0 getRem(35);
+    padding: 0 getRem(35) getRem(32);
     color: #663814;
 }
 
@@ -141,4 +142,40 @@
     background-position: center;
     background-repeat: no-repeat;
     cursor: pointer;
+
+    &::after {
+        content: "";
+        @include absPosition(50%, null, null, getRem(18));
+        translate: 0 -50%;
+        background-image: url("/ja/dododo-cp/assets/img/campaigns/icon_arrow.svg");
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        width: getRem(16);
+        height: getRem(16);
+
+        [aria-expanded="true"] & {
+            rotate: 180deg;
+        }
+    }
+}
+
+.campaigns__trigger__open {
+    [aria-expanded="true"] & {
+        display: none;
+    }
+
+    [aria-expanded="false"] & {
+        display: block;
+    }
+}
+
+.campaigns__trigger__close {
+    [aria-expanded="true"] & {
+        display: block;
+    }
+
+    [aria-expanded="false"] & {
+        display: none;
+    }
 }

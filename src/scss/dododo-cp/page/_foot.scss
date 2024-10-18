@@ -2,22 +2,67 @@
 
 .foot {
     position: relative;
+    margin-top: getRem(-70);
+    background-image: url("/ja/dododo-cp/assets/img/bg/foot_02.webp"), url("/ja/dododo-cp/assets/img/bg/foot_01.webp");
+    background-position: top getRem(417) left 50%, top 0 left 50%;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+}
+
+.foot__inner {
+    padding-top: getRem(96);
+}
+
+.foot__main {
+    position: relative;
+    width: 100%;
+    height: getRem(177);
+}
+
+.foot__main__treasure {
+    @include absPosition(0, 50%);
+    width: getRem(230);
+    translate: -50%;
+}
+
+.foot__main__anime {
+    @include absPosition(getRem(-12), 0);
+}
+
+.foot__main__txt {
+    @include absPosition(null, 50%, 0);
+    width: getRem(150);
+    translate: -50%;
 }
 
 .foot__link {
-    margin: 0 auto;
+    display: block;
+    margin: getRem(24) auto 0;
     width: getRem(350);
 }
 
 .foot__lower {
+    position: relative;
     margin-top: getRem(128);
     padding-top: getRem(64);
     padding-bottom: getRem(40);
     width: 100%;
     background-image: url("/ja/dododo-cp/assets/img/bg/foot_lower.webp");
-    background-size: cover;
-    background-position: center;
+    background-size: 100%;
+    background-position: top 0 left 50%;
     background-repeat: no-repeat;
+
+    &::before {
+        @include absPosition(getRem(348), 0);
+        content: "";
+        display: block;
+        width: 100%;
+        height: 100%;
+        background-image: url("/ja/dododo-cp/assets/img/bg/foot_lower_repeat.webp");
+        background-size: 100%;
+        background-position: top 0 left 50%;
+        background-repeat: repeat-y;
+    }
 }
 
 .foot__sns {
@@ -63,20 +108,62 @@
 }
 
 .foot__notice {
+    position: relative;
     margin: getRem(16) auto 0;
     width: getRem(350);
-    height: getRem(48);
     color: #fff;
     border: 2px solid #fff;
 }
 
 .foot__notice__btn {
+    position: relative;
     width: 100%;
-    height: 100%;
+    height: getRem(48);
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: getRem(16);
     line-height: 1;
     font-weight: 700;
+}
+
+.foot__notice__btn__icon {
+    @include absPosition(50%, null, null, getRem(18));
+    width: getRem(12);
+    height: getRem(12);
+    translate: 0 -50%;
+
+    &::before,
+    &::after {
+        content: "";
+        display: block;
+        background-color: #fff;
+    }
+
+    &::before {
+        @include absPosition(50%, 0);
+        translate: 0 -50%;
+        width: 100%;
+        height: 2px;
+    }
+
+    &::after {
+        @include absPosition(0, 50%);
+        translate: -50%;
+        width: 2px;
+        height: 100%;
+    }
+
+    [open] &::after {
+        opacity: 0;
+    }
+}
+
+.foot__notice__contents {
+    border-top: 2px solid #fff;
+    padding: getRem(24) getRem(20);
+
+    p {
+        font-size: getRem(10);
+    }
 }

@@ -27,12 +27,18 @@ button {
     cursor: pointer;
 }
 
+.wrapper {
+    position: relative;
+}
+
 .l-contents {
-    background-attachment: fixed;
-    background-image: url("/ja/dododo-cp/assets/img/bg/pc.webp");
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
+    @include MQ_OVER($contentsWidth) {
+        background-attachment: fixed;
+        background-image: url("/ja/dododo-cp/assets/img/bg/pc.webp");
+        background-position: bottom 0 left 50%;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
 }
 
 .l-main {
@@ -73,4 +79,8 @@ button {
     background-position: center;
     background-size: 100%;
     background-repeat: no-repeat;
+}
+
+.l-stickey-container {
+    position: relative;
 }

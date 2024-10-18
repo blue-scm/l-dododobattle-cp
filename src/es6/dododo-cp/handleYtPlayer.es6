@@ -15,11 +15,22 @@ export function handleYtPlayer(ytPlayer) {
             ytPlayer.setYtPlayerIns(container);
         });
 
-        playTriggers.forEach((playTrigger) => {
-            playTrigger.addEventListener("click", (e) => {
-                const containerId = e.currentTarget.dataset.playTrigger;
-                ytPlayer.play(containerId);
+        if (playTriggers.length) {
+            playTriggers.forEach((playTrigger) => {
+                playTrigger.addEventListener("click", (e) => {
+                    const containerId = e.currentTarget.dataset.playTrigger;
+                    ytPlayer.play(containerId);
+                });
             });
-        });
+        }
+
+        if (stopTriggers.length) {
+            stopTriggers.forEach((stopTrigger) => {
+                stopTrigger.addEventListener("click", (e) => {
+                    const containerId = e.currentTarget.dataset.stopTrigger;
+                    ytPlayer.stop(containerId);
+                });
+            });
+        }
     };
 }

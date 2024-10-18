@@ -2,6 +2,7 @@
 
 .schedule {
     margin-top: getRem(72);
+    padding-bottom: getRem(24);
     position: relative;
 }
 
@@ -20,11 +21,27 @@
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
-    overflow: hidden;
 }
 
 .schedule__box__inner {
+    position: relative;
     width: 100%;
+    height: calc(100% - getRem(3));
+    padding-top: getRem(34);
+    overflow: hidden;
+
+    img {
+        margin: 0 auto;
+        width: getRem(294);
+    }
+
+    &::before {
+        @include absPosition(0, 0);
+        content: "";
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0) 49.5%, rgba(0, 0, 0, 0.6) 100%);
+    }
 }
 
 .schedule__btn {
@@ -32,4 +49,24 @@
     cursor: pointer;
     width: getRem(48);
     height: getRem(48);
+}
+
+.schedule__modal {
+    margin: 0 auto;
+    padding: getRem(65) 0;
+    width: getRem(294);
+}
+
+.schedule__modal__close {
+    @include fxdPosition(0, null, null, 0);
+    width: getRem(56);
+    height: getRem(56);
+}
+
+.schedule__anchor {
+    position: sticky;
+    display: block;
+    left: calc(100% - getRem(108));
+    bottom: 0;
+    width: getRem(108);
 }

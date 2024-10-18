@@ -1,6 +1,5 @@
 @use "src/scss/global" as *;
 .announce {
-    margin-top: getRem(56);
     position: relative;
     width: 100%;
     height: getRem(400);
@@ -8,10 +7,17 @@
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+    z-index: 2;
 }
 
 .announce__main {
     @include absPosition(getRem(192), 50%);
     translate: -50%;
     width: getRem(326);
+}
+
+.announce__sub {
+    @include absPosition(getRem(165), 50%);
+    translate: -50%;
+    width: getRem(235);
 }

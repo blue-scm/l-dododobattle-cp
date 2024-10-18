@@ -5,19 +5,16 @@ export class YtPlayer {
 
     setYtPlayerIns(container) {
         const videoId = container.dataset.ytContainer;
+        const playerVarsStr = container.dataset.playervars;
+        const playerVars = playerVarsStr ? JSON.parse(playerVarsStr) : {};
         const containerId = container.id;
         this.players[containerId] = {};
         this.players[containerId].videoId = videoId;
         this.players[containerId].instance = new YT.Player(containerId, {
-            height: "350",
-            width: "180",
+            width: 350,
+            height: 180,
             videoId: videoId,
-            playerVars: {
-                controls: 0,
-                playsinline: 1,
-                autoplay: 1,
-                mute: 1,
-            },
+            playerVars: playerVars,
             events: {
                 onStateChange: this.onStateChange.bind(this),
                 onError: this.onError,

@@ -1,0 +1,47 @@
+@use "src/scss/global" as *;
+@use "sass:math";
+
+$baseW: 1920;
+$baseH: 1080;
+$half: 252;
+$magicnumber: 58;
+$xPosBase: 252 + 112;
+
+.charcters {
+    @include MQ_OVER($contentsWidth) {
+        @include fxdPosition(0, 0);
+        width: 100%;
+        height: 100vh;
+    }
+}
+
+.charcters__item {
+    @include MQ_OVER($contentsWidth) {
+        position: absolute;
+        width: 112px;
+        height: 112px;
+        aspect-ratio: 1 / 1;
+    }
+
+    @media (min-aspect-ratio: 16/9) {
+        width: math.percentage(math.div(112, $baseW));
+        height: auto;
+    }
+
+    @media (max-aspect-ratio: 16/9) {
+        width: auto;
+        height: math.percentage(math.div(112, $baseH));
+    }
+}
+
+.-goblin-bow-green {
+    @media (min-aspect-ratio: 16/9) {
+        left: calc(50% - (#{$xPosBase}px + 228px));
+        bottom: math.percentage(math.div(783, $baseH));
+    }
+
+    @media (max-aspect-ratio: 16/9) {
+        left: calc(50% - (#{$xPosBase}px + 228px));
+        bottom: math.percentage(math.div(783, $baseH));
+    }
+}
