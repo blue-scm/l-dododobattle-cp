@@ -69,4 +69,12 @@
     left: calc(100% - getRem(108));
     bottom: 0;
     width: getRem(108);
+
+    @include MQ_UNDER(1620) {
+        bottom: getRem(140);
+    }
+
+    @include MQ_UNDER($contentsMaxWidth) {
+        bottom: 0;
+    }
 }

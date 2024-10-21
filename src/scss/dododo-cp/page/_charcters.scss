@@ -1,47 +1,83 @@
 @use "src/scss/global" as *;
 @use "sass:math";
 
-$baseW: 1920;
-$baseH: 1080;
-$half: 252;
-$magicnumber: 58;
-$xPosBase: 252 + 112;
-
 .charcters {
-    @include MQ_OVER($contentsWidth) {
+    @include MQ_OVER($contentsMaxWidth) {
         @include fxdPosition(0, 0);
         width: 100%;
         height: 100vh;
     }
+
+    @include MQ_UNDER($contentsMaxWidth) {
+        display: none;
+    }
 }
 
 .charcters__item {
-    @include MQ_OVER($contentsWidth) {
+    @include MQ_OVER($contentsMaxWidth) {
         position: absolute;
         width: 112px;
         height: 112px;
         aspect-ratio: 1 / 1;
-    }
 
-    @media (min-aspect-ratio: 16/9) {
-        width: math.percentage(math.div(112, $baseW));
-        height: auto;
-    }
+        @media (min-aspect-ratio: 16/9) {
+            width: math.percentage(math.div(112, $baseW));
+            height: auto;
+        }
 
-    @media (max-aspect-ratio: 16/9) {
-        width: auto;
-        height: math.percentage(math.div(112, $baseH));
+        @media (max-aspect-ratio: 16/9) {
+            width: auto;
+            height: math.percentage(math.div(112, $baseH));
+        }
     }
 }
 
-.-goblin-bow-green {
-    @media (min-aspect-ratio: 16/9) {
-        left: calc(50% - (#{$xPosBase}px + 228px));
-        bottom: math.percentage(math.div(783, $baseH));
+@mixin pos($side, $x, $centerToX, $y) {
+    @media (min-aspect-ratio: 16 / 9) {
+        @if $side == "left" {
+            left: math.percentage(math.div($x, $baseW));
+        } @else {
+            right: math.percentage(math.div($x, $baseW));
+        }
+        // 画面ではなく背景画像の大きさに合わせた相対位置
+        bottom: calc(math.div($y, $baseH) * (100vw / 16 * 9));
     }
 
-    @media (max-aspect-ratio: 16/9) {
-        left: calc(50% - (#{$xPosBase}px + 228px));
-        bottom: math.percentage(math.div(783, $baseH));
+    @media (max-aspect-ratio: 16 / 9) {
+        // 中央からの相対位置
+        @if $side == "left" {
+            left: calc(50% - math.div($centerToX + (math.div($contentsMaxWidth, 2)) + 112, $baseW) * (100vh / 9 * 16));
+        } @else {
+            left: calc(50% + math.div($centerToX + (math.div($contentsMaxWidth, 2)), $baseW) * (100vh / 9 * 16));
+        }
+        bottom: math.percentage(math.div($y, $baseH));
     }
+}
+
+.-goblin-sword-green {
+    @include pos("left", 64, 547, 668);
+}
+.-goblin-green {
+    @include pos("left", 371, 240, 783);
+}
+.-slime-blue {
+    @include pos("left", 494, 117, 441);
+}
+.-goblin-bow-yellow {
+    @include pos("left", 229, 382, 39);
+}
+.-meercat-red {
+    @include pos("left", 465, 146, 39);
+}
+.-slime-green {
+    @include pos("right", 450, 155, 814);
+}
+.-meercat-green {
+    @include pos("right", 51, 554, 618);
+}
+.-fox-blue {
+    @include pos("right", 351, 254, 447);
+}
+.-slime-yellow {
+    @include pos("right", 558, 47, 39);
 }

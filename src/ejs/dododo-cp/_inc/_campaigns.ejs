@@ -45,16 +45,14 @@
   ];
 %>
 <section class="campaigns">
-    <h2 class="campaigns__head">
-        <span class="campaigns__head__main">
-            <img src="<%= imgDir %>anime_head.png" alt="ドドド" width="390" height="200" loading="lazy">
-        </span>
+    <h2 class="campaigns__head" data-cam-anime-head>
+        <div class="campaigns__head__main" data-apng-id="textdododo" data-apng-src="<%= imgDir %>anime_head.png"></div>
         <img src="<%= imgDir %>txt_head.webp" alt="なキャンペーンを見逃すな！" width="390" height="227" loading="lazy">
     </h2>
     <div class="campaigns__items">
         <% items.forEach((item) => { %>
-        <article class="campaigns__item" aria-expanded="false" data-accordion-parent="<%= item.id %>">
-            <div class="campaigns__badge">
+        <article class="campaigns__item" aria-expanded="false" data-accordion-parent="<%= item.id %>" data-cam-anime-article="">
+            <div class="campaigns__badge" data-cam-anime-badge="">
                 <img src="<%= imgDir %>badge_<%= item.id %>.webp" alt="" width="72" height="72" loading="lazy">
             </div>
             <div class="campaigns__inner" id="campaign<%= item.id %>">
@@ -63,13 +61,13 @@
                         <span class="campaigns__title__sub">
                             <img src="<%= imgDir %>txt_title_sub_<%= item.id %>.webp" alt="<%= item.title.sub %>" width="390" height="128" loading="lazy">
                         </span>
-                        <span class="campaigns__title__main">
+                        <span class="campaigns__title__main" data-cam-anime-title="">
                             <img src="<%= imgDir %>txt_title_main_<%= item.id %>.webp" alt="<%= item.title.main %>" width="268" height="89" loading="lazy">
                         </span>
                     </h3>
                     <div class="campaigns__img">
-                        <img src="<%= imgDir %>ph_main_<%= item.id %>.webp" alt="">
-                        <div class="campaigns__img__frame"></div>
+                        <img src="<%= imgDir %>ph_main_<%= item.id %>.webp" alt="" data-cam-anime-image="">
+                        <div class="campaigns__img__frame" data-cam-anime-image=""></div>
                     </div>
                     <div class="campaigns__texts">
                         <div class="campaigns__date"><%= item.date %></div>

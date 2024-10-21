@@ -50,6 +50,7 @@
         "webpack-stream": "^7.0.0"
     },
     "dependencies": {
+        "apng-js": "^1.1.4",
         "cross-env": "^7.0.3",
         "glslify-loader": "^2.0.0",
         "gsap": "^3.12.5",

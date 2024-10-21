@@ -1,7 +1,12 @@
 @use "src/scss/global" as *;
+@use "sass:math";
 
 .mv {
-    padding-top: getRem(68);
+    width: 100%;
+    height: 100lvh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     overflow: hidden;
 }
 
@@ -27,8 +32,13 @@
 }
 
 .mv__main {
-    @include absPosition(getRem(-68), 0);
+    @include absPosition(getRem(-48), 0);
     width: 100%;
+
+    canvas {
+        width: 100%;
+        height: auto;
+    }
 }
 
 .mv__link {
@@ -72,65 +82,51 @@
     width: getRem(111);
 }
 
-.mv__movie {
-    position: relative;
-    margin: getRem(42) auto 0;
-    width: getRem(350);
-    height: getRem(180);
+[data-mv-anime-logo] {
+    opacity: 0;
+    scale: 1.5;
+    rotate: -180deg;
+}
 
-    &::before {
-        content: "";
-        @include absPosition(0, 0);
-        width: 100%;
-        height: 100%;
-        background-color: #d9d4d0;
-        rotate: -3deg;
+[data-mv-anime-brown] {
+    opacity: 0;
+    transform: translateX(10%) translateY(20%);
+}
+
+[data-mv-anime-sally] {
+    opacity: 0;
+    transform: translateX(-10%) translateY(20%);
+}
+
+[data-mv-anime-other] {
+    opacity: 0;
+}
+
+.is-anime {
+    animation: trembling 1.8s ease-out infinite;
+    transform: translateX(0);
+}
+
+@keyframes trembling {
+    0% {
+        transform: translateX(-5%);
     }
-}
-
-.mv__movie__container {
-    position: relative;
-    width: 100%;
-    height: 100%;
-}
-
-.mv__movie__noise {
-    @include absPosition(50%, 50%);
-    translate: -50% -50%;
-    width: 100%;
-    height: 100%;
-    background-image: url("/ja/dododo-cp/assets/img/mv/noise.webp");
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-.mv__movie__frame {
-    @include absPosition(calc(50% + 1px), 50%);
-    translate: -50% -50%;
-    width: calc(100% + 2px);
-    height: calc(100% + 2px);
-    background-image: url("/ja/dododo-cp/assets/img/mv/frame.svg");
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-.mv__movie__text {
-    @include absPosition(getRem(38), 50%);
-    width: 100%;
-    text-align: center;
-    font-size: getRem(22);
-    line-height: 1.45;
-    font-weight: 800;
-    letter-spacing: -0.1em;
-    text-shadow: 0px 0px 20px #7139bf, 0px 0px 20px #7139bf, 0px 0px 20px #7139bf, 0px 0px 20px #7139bf;
-    translate: -50%;
-    color: #fff;
-}
-
-.mv__movie__trigger {
-    @include absPosition(getRem(76), 50%);
-    width: getRem(64);
-    translate: -50%;
+    10% {
+        transform: translateX(5%);
+    }
+    20% {
+        transform: translateX(0);
+    }
+    30% {
+        transform: translateX(-5%);
+    }
+    40% {
+        transform: translateX(5%);
+    }
+    50% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(0);
+    }
 }

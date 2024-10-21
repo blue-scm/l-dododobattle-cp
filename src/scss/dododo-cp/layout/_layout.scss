@@ -1,7 +1,9 @@
 @use "src/scss/global" as *;
+@use "sass:math";
 
 html {
-    font-size: min(calc(100vw * 16 / 390), 19.7px);
+    font-size: min(100vw * math.div(16, 390), math.div(16, 390) * $contentsMaxWidth * 1px);
+    scroll-behavior: smooth;
 }
 
 body {
@@ -32,7 +34,7 @@ button {
 }
 
 .l-contents {
-    @include MQ_OVER($contentsWidth) {
+    @include MQ_OVER($contentsMaxWidth) {
         background-attachment: fixed;
         background-image: url("/ja/dododo-cp/assets/img/bg/pc.webp");
         background-position: bottom 0 left 50%;
@@ -74,7 +76,7 @@ button {
     translate: -50% 0;
     max-width: 480px;
     width: 100%;
-    height: 100svh;
+    height: 100lvh;
     background-image: url("/ja/dododo-cp/assets/img/bg/main.webp");
     background-position: center;
     background-size: 100%;

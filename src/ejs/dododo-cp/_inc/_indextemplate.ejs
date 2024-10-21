@@ -3,15 +3,16 @@
     const commonDir = "/ja/dododo-cp/assets/img/common/";
 %>
 <div class="l-contents">
-    <!-- <%- include('./_charcters', { imgDir: imgDir + "charcters/", commonDir: commonDir }) %> -->
+    <%- include('./_charcters', { imgDir: imgDir + "charcters/", commonDir: commonDir }) %>
     <div class="l-main">
         <main>
-            <div class="l-bg-main"></div>
+            <div class="l-bg-main" data-bg-anime></div>
             <div class="l-stickey-container">
                 <%- include('./_mv', { imgDir: imgDir + "mv/", commonDir: commonDir }) %>
+                <%- include('./_movie', { imgDir: imgDir + "mv/", commonDir: commonDir }) %>
                 <%- include('./_campaigns', { imgDir: imgDir + "campaigns/", commonDir: commonDir }) %>
                 <%- include('./_schedule', { imgDir: imgDir + "schedule/", commonDir: commonDir }) %>
-                <a href="#secschedule" class="schedule__anchor">
+                <a href="#secschedule" class="schedule__anchor" data-mv-anime-other>
                     <img src="/ja/dododo-cp/assets/img/schedule/btn_anchor.png" alt="" width="108" height="116">
                 </a>
             </div>
