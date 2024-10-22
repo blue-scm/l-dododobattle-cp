@@ -2,19 +2,19 @@
 @use "sass:math";
 
 .charcters {
-    @include MQ_OVER($contentsMaxWidth) {
+    @include MQ_WIDE {
         @include fxdPosition(0, 0);
         width: 100%;
         height: 100vh;
     }
 
-    @include MQ_UNDER($contentsMaxWidth) {
+    @include MQ_NARROW {
         display: none;
     }
 }
 
 .charcters__item {
-    @include MQ_OVER($contentsMaxWidth) {
+    @include MQ_WIDE {
         position: absolute;
         width: 112px;
         height: 112px;
@@ -39,12 +39,12 @@
         } @else {
             right: math.percentage(math.div($x, $baseW));
         }
-        // 画面ではなく背景画像の大きさに合わせた相対位置
+        // 画面ではなく背景画像の大きさに合わせた位置
         bottom: calc(math.div($y, $baseH) * (100vw / 16 * 9));
     }
 
     @media (max-aspect-ratio: 16 / 9) {
-        // 中央からの相対位置
+        // 中央からの位置
         @if $side == "left" {
             left: calc(50% - math.div($centerToX + (math.div($contentsMaxWidth, 2)) + 112, $baseW) * (100vh / 9 * 16));
         } @else {
@@ -80,4 +80,12 @@
 }
 .-slime-yellow {
     @include pos("right", 558, 47, 39);
+}
+
+.charcters__anime {
+    animation-play-state: paused;
+
+    .-move & {
+        animation-play-state: running;
+    }
 }

@@ -1,0 +1,42 @@
+@use "src/scss/global" as *;
+@use "sass:math";
+
+.deco-items {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.deco-item {
+    position: absolute;
+    top: 2lvh;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    animation: fall 10s linear 0s infinite;
+    animation-play-state: paused;
+
+    .-fall & {
+        animation-play-state: running;
+    }
+}
+
+@for $i from 1 through 20 {
+    .deco-item:nth-child(#{$i}) {
+        left: getRem(math.random(300));
+        animation-duration: #{math.random(4) + 7}s;
+        animation-delay: #{math.random(10)}s;
+        width: getRem(math.random(18) + 12);
+        height: getRem(math.random(18) + 12);
+        background-image: url("/ja/dododo-cp/assets/img/bg/deco_0#{math.random(12) + 1}.webp");
+    }
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(0) rotate(0);
+    }
+    100% {
+        transform: translateY(100lvh) rotate(720deg);
+    }
+}

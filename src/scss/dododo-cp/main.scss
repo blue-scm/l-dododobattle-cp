@@ -1,6 +1,8 @@
 @use "../foundation/lib/_sanitize.scss";
 @use "../foundation/base/_sanitize_override.scss";
 
+@use "../layout/header";
+@use "../layout/footer";
 @use "../object/**/*.scss";
 @use "../page/download.scss";
 

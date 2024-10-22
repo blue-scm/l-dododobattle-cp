@@ -3,10 +3,6 @@
 .foot {
     position: relative;
     margin-top: getRem(-70);
-    // background-image: url("/ja/dododo-cp/assets/img/bg/foot_02.webp"), url("/ja/dododo-cp/assets/img/bg/foot_01.webp");
-    // background-position: top getRem(417) left 50%, top 0 left 50%;
-    // background-repeat: no-repeat;
-    // background-size: 100% auto;
 }
 
 .foot__inner {
@@ -27,6 +23,12 @@
 
 .foot__main__anime {
     @include absPosition(getRem(-12), 0);
+    width: 100%;
+
+    canvas {
+        width: 100%;
+        height: auto;
+    }
 }
 
 .foot__main__txt {
@@ -90,6 +92,7 @@
 }
 
 .foot__home {
+    position: relative;
     display: block;
     margin: getRem(16) auto 0;
     width: getRem(350);
@@ -105,6 +108,18 @@
     display: flex;
     align-items: center;
     justify-content: center;
+
+    &::after {
+        @include absPosition(50%, unset, unset, getRem(25));
+        content: "";
+        width: getRem(14);
+        height: getRem(14);
+        transform: translateY(-50%);
+        background-image: url("/ja/dododo-cp/assets/img/common/icon_blank.svg");
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
 }
 
 .foot__notice {
@@ -154,16 +169,18 @@
         height: 100%;
     }
 
-    [open] &::after {
+    [aria-expanded="true"] &::after {
         opacity: 0;
     }
 }
 
 .foot__notice__contents {
-    border-top: 2px solid #fff;
-    padding: getRem(24) getRem(20);
+    height: 0;
+    overflow: hidden;
 
     p {
+        border-top: 2px solid #fff;
+        padding: getRem(24) getRem(20);
         font-size: getRem(10);
     }
 }

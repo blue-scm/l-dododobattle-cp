@@ -8,12 +8,26 @@
     @include MQ_WIDE {
         @include MQ_UNDER(1620) {
             padding-bottom: 170px;
+
+            .-dododo-cp & {
+                padding-bottom: getRem(120);
+            }
         }
     }
 }
 
 .l-footer__row {
     padding: getRem(64) getRem(40);
+
+    .-dododo-cp & {
+        @include MQ_NARROW {
+            padding: getRem(32) getRem(28);
+        }
+
+        @include MQ_WIDE {
+            padding: getRem(32) getRem(20);
+        }
+    }
 
     & + & {
         border-top: 1px solid #797981;
@@ -28,20 +42,43 @@
 .l-footer__head {
     display: flex;
     gap: 0 getRem(24);
+
+    @include MQ_NARROW {
+        .-dododo-cp & {
+            gap: 0 getRem(7);
+        }
+    }
 }
 
 .l-footer__head__ico {
     width: getRem(236);
+
+    @include MQ_NARROW {
+        .-dododo-cp & {
+            width: getRem(122);
+        }
+    }
 }
 
 .l-footer__head__logo {
     width: getRem(382);
+
+    @include MQ_NARROW {
+        .-dododo-cp & {
+            width: getRem(198);
+        }
+    }
 }
 
 .l-footer__dllinks {
     display: flex;
     gap: getRem(10);
     margin-top: getRem(32);
+
+    .-dododo-cp & {
+        gap: getRem(5);
+        margin-top: getRem(16);
+    }
 }
 
 .l-footer__spec {
@@ -50,6 +87,13 @@
     flex-wrap: wrap;
     font-size: getRem(32);
     margin-top: getRem(28);
+
+    @include MQ_NARROW {
+        .-dododo-cp & {
+            font-size: getRem(16);
+            margin-top: getRem(14);
+        }
+    }
 
     @include MQ_WIDE {
         font-size: 16px;
@@ -61,16 +105,30 @@
         display: inline-block;
         font-weight: 700;
         width: getRem(160);
+
+        .-dododo-cp & {
+            width: getRem(80);
+        }
     }
 
     dd {
         display: inline-block;
         width: calc(100% - getRem(160));
+
+        .-dododo-cp & {
+            width: calc(100% - getRem(80));
+        }
     }
 }
 
 .l-footer__offer {
     margin-top: getRem(48);
+
+    @include MQ_NARROW {
+        .-dododo-cp & {
+            margin-top: getRem(24);
+        }
+    }
 
     @include MQ_WIDE {
         margin-top: 24px;
@@ -79,6 +137,12 @@
 
 .l-footer__offer__txt {
     font-size: getRem(28);
+
+    @include MQ_NARROW {
+        .-dododo-cp & {
+            font-size: getRem(14);
+        }
+    }
 
     @include MQ_WIDE {
         font-size: 14px;
@@ -89,6 +153,12 @@
     color: #797981;
     font-size: getRem(28);
     text-align: center;
+
+    @include MQ_NARROW {
+        .-dododo-cp & {
+            font-size: getRem(14);
+        }
+    }
 
     @include MQ_WIDE {
         font-size: 14px;

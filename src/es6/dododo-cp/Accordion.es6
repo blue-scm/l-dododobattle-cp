@@ -5,7 +5,7 @@ export class Accordion {
         this.wrapper = content.parentNode;
         this.parent = document.querySelector(`[data-accordion-parent="${this.id}"]`);
         this.trigger = document.querySelector(`[data-accordion-trigger="${this.id}"]`);
-        this.defaultH = this.parent.offsetHeight;
+        this.defaultH = this.wrapper.offsetHeight;
         this.contentH = 0;
         this.open = false;
         this.animTiming = {

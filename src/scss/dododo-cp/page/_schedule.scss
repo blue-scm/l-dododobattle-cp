@@ -2,7 +2,7 @@
 
 .schedule {
     margin-top: getRem(72);
-    padding-bottom: getRem(24);
+    padding-bottom: getRem(56);
     position: relative;
 }
 
@@ -10,6 +10,7 @@
     margin: 0 auto;
     width: getRem(267);
     filter: drop-shadow(0px 0px 20px #000000) drop-shadow(0px 0px 20px #000000) drop-shadow(0px 0px 20px #000000);
+    will-change: filter;
 }
 
 .schedule__box {
@@ -27,20 +28,12 @@
     position: relative;
     width: 100%;
     height: calc(100% - getRem(3));
-    padding-top: getRem(34);
-    overflow: hidden;
+    padding: getRem(34) 0;
+    overflow: scroll;
 
     img {
         margin: 0 auto;
         width: getRem(294);
-    }
-
-    &::before {
-        @include absPosition(0, 0);
-        content: "";
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(180deg, rgba(0, 0, 0, 0) 49.5%, rgba(0, 0, 0, 0.6) 100%);
     }
 }
 
@@ -64,11 +57,14 @@
 }
 
 .schedule__anchor {
-    position: sticky;
+    position: fixed;
     display: block;
-    left: calc(100% - getRem(108));
+    left: calc(50% + getRem(88));
     bottom: 0;
     width: getRem(108);
+    z-index: 10;
+    opacity: 0;
+    transition: opacity 0.2s linear;
 
     @include MQ_UNDER(1620) {
         bottom: getRem(140);
@@ -77,4 +73,13 @@
     @include MQ_UNDER($contentsMaxWidth) {
         bottom: 0;
     }
+
+    &.-append {
+        opacity: 1;
+    }
+}
+
+[data-schedule-anime-head] {
+    opacity: 0;
+    scale: 1.8;
 }

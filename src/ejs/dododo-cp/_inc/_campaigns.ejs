@@ -42,12 +42,71 @@
             href: "",
         },
     },
+    {
+        id: "04",
+        title: {
+            "sub": "ダミーダミー",
+            "main": "無料",
+        },
+        date: "-2024/00/00(●)〜2024/00/00(●)-",
+        head: "ダミー見出しダミー見出しダミー見出しダミー見出しダミー見出し",
+        body: "ダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミー",
+        link: {
+            text: "今すぐプレイ！",
+            href: "",
+        },
+    },
+    {
+        id: "05",
+        title: {
+            "sub": "ダミーダミー",
+            "main": "無料",
+        },
+        date: "-2024/00/00(●)〜2024/00/00(●)-",
+        head: "ダミー見出しダミー見出しダミー見出しダミー見出しダミー見出し",
+        body: "ダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミー",
+        link: {
+            text: "今すぐプレイ！",
+            href: "",
+        },
+    },
+    {
+        id: "06",
+        title: {
+            "sub": "ダミーダミー",
+            "main": "無料",
+        },
+        date: "-2024/00/00(●)〜2024/00/00(●)-",
+        head: "ダミー見出しダミー見出しダミー見出しダミー見出しダミー見出し",
+        body: "ダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミー",
+        link: {
+            text: "今すぐプレイ！",
+            href: "",
+        },
+    },
+    {
+        id: "07",
+        title: {
+            "sub": "ダミーダミー",
+            "main": "無料",
+        },
+        date: "-2024/00/00(●)〜2024/00/00(●)-",
+        head: "ダミー見出しダミー見出しダミー見出しダミー見出しダミー見出し",
+        body: "ダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミー",
+        link: {
+            text: "今すぐプレイ！",
+            href: "",
+        },
+    }
   ];
 %>
 <section class="campaigns">
     <h2 class="campaigns__head" data-cam-anime-head>
         <div class="campaigns__head__main" data-apng-id="textdododo" data-apng-src="<%= imgDir %>anime_head.png"></div>
         <img src="<%= imgDir %>txt_head.webp" alt="なキャンペーンを見逃すな！" width="390" height="227" loading="lazy">
+        <div class="campaigns__head__sally" data-cam-anime-sally="">
+            <img src="<%= commonDir %>chara_sally.webp" alt="" width="122" height="109" loading="lazy">
+        </div>
     </h2>
     <div class="campaigns__items">
         <% items.forEach((item) => { %>
@@ -79,7 +138,7 @@
                     </div>
                 </div>
             </div>
-            <button type="button" class="campaigns__trigger" data-accordion-trigger="<%= item.id %>" aria-controls="campaign<%= item.id %>"><span class="campaigns__trigger__open">くわしく見る</span><span class="campaigns__trigger__close">閉じる</span></button>
+            <button type="button" data-cam-anime-btn="" class="campaigns__trigger" data-accordion-trigger="<%= item.id %>" aria-controls="campaign<%= item.id %>"><span class="campaigns__trigger__open">くわしく見る</span><span class="campaigns__trigger__close">閉じる</span></button>
         </article>
         <% }) %>
     </div>

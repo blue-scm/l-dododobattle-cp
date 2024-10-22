@@ -1,4 +1,4 @@
-@use 'global' as *;
+@use "src/scss/global" as *;
 
 .l-header {
     @include MQ_NARROW {
@@ -24,10 +24,14 @@
     &::before {
         @include MQ_NARROW {
             @include absPosition(0, 0);
-            background: url(#{$imgDir}header/bg.png) no-repeat 0 0 / 100%;
-            content: '';
+            background: url(/ja/assets/img/header/bg.png) no-repeat 0 0 / 100%;
+            content: "";
             height: getRem(88);
             width: 100%;
+
+            .-dododo-cp & {
+                height: getRem(42);
+            }
         }
     }
 }
@@ -38,11 +42,19 @@
         display: flex;
         justify-content: space-between;
         padding: 0 getRem(30) 0 getRem(24);
+
+        .-dododo-cp & {
+            padding: 0 getRem(15) 0 getRem(12);
+        }
     }
 }
 
 .l-header__dl {
     width: getRem(432);
+
+    .-dododo-cp & {
+        width: getRem(224);
+    }
 
     img {
         filter: drop-shadow(0 getRem(8) getRem(16) rgba(#000, 0.5));
@@ -50,8 +62,8 @@
 
     &::before {
         @include absPosition(getRem(10), getRem(5));
-        background: url(#{$imgDir}header/ph_kira.png) no-repeat 0 0 / 100%;
-        content: '';
+        background: url(/ja/assets/img/header/ph_kira.png) no-repeat 0 0 / 100%;
+        content: "";
         height: getRem(52);
         width: getRem(502);
     }
@@ -65,10 +77,16 @@
     width: getRem(432);
     @include absPosition(0, getRem(23));
 
+    .-dododo-cp & {
+        @include absPosition(0, getRem(12));
+        width: getRem(216);
+        height: getRem(60);
+    }
+
     &::before {
         animation: btnShiny 5s ease-in-out infinite;
         background-color: #fff;
-        content: '';
+        content: "";
         display: inline-block;
         height: getRem(450);
         left: 0;
@@ -99,6 +117,11 @@
         display: flex;
         gap: getRem(18);
         margin-top: getRem(20);
+
+        .-dododo-cp & {
+            gap: getRem(9);
+            margin-top: getRem(10);
+        }
     }
 
     @include MQ_WIDE {
@@ -118,6 +141,11 @@
         filter: drop-shadow(0 getRem(8) getRem(20) rgba(#000, 0.6));
         height: getRem(96);
         width: getRem(96);
+
+        .-dododo-cp & {
+            height: getRem(50);
+            width: getRem(50);
+        }
     }
 
     @include MQ_WIDE {

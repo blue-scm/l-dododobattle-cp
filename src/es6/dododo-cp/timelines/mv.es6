@@ -1,22 +1,24 @@
-import { gsap } from "gsap";
 import { createAPNGPlayer } from "../createAPNGPlayers.es6";
 
-export async function mv() {
+export async function mv(gsap) {
     const mainVisual = await createAPNGPlayer("mainVisual");
-
     // mainVisualはapng-jsのPlayerインスタンスであるため、callメソッドに渡すときは関数を定義して渡す
     // 直接渡すとplayメソッドにそぐわない引数が渡されるためエラーになる
     const func = () => {
         mainVisual.play();
     };
+
     const logo = document.querySelector("[data-mv-anime-logo]");
     const brown = document.querySelector("[data-mv-anime-brown]");
     const sally = document.querySelector("[data-mv-anime-sally]");
     const other = document.querySelectorAll("[data-mv-anime-other]");
     const baloon = document.querySelector("[data-mv-anime-baloon]");
+    const deco = document.querySelector("[data-deco-anime]");
+
     const tl = gsap.timeline({
         onComplete: () => {
             baloon.classList.add("is-anime");
+            deco.classList.add("-fall");
         },
         paused: true,
     });

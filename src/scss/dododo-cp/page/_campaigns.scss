@@ -20,6 +20,11 @@
     }
 }
 
+.campaigns__head__sally {
+    @include absPosition(getRem(-20), null, null, getRem(-18));
+    width: getRem(128);
+}
+
 .campaigns__item {
     position: relative;
     background-image: url("/ja/dododo-cp/assets/img/bg/campaigns_upper.webp"), url("/ja/dododo-cp/assets/img/bg/campaigns_lower.webp");
@@ -189,10 +194,11 @@
 [data-cam-anime-badge],
 [data-cam-anime-title] {
     opacity: 0;
-    scale: 1.3;
+    scale: 1.8;
 }
 
 [data-cam-anime-image] {
     opacity: 0;
-    rotate: -4deg;
+    scale: 0.2;
+    rotate: -800deg;
 }

@@ -33,15 +33,3 @@
         @content;
     }
 }
-
-@mixin MQ_UNDER_H($px) {
-    @media (max-height: #{$px}px) {
-        @content;
-    }
-}
-
-@mixin MQ_OVER_H($px) {
-    @media (min-height: #{$px+1}px) {
-        @content;
-    }
-}

@@ -9,10 +9,6 @@
     padding: 25px 38px 0;
     width: 420px;
 
-    &.-dododo {
-        @include fxdPosition(null, calc(50% + (169px + 252px)), 0);
-    }
-
     @include MQ_UNDER(1620) {
         @include fxdPosition(auto, 50%, 0);
         background: url(/ja/assets/img/download/bg_dl_narrow.png) no-repeat top / 100%;
@@ -22,10 +18,6 @@
         transform: translateX(-50%);
         width: 500px;
         z-index: $zLayer6;
-
-        &.-dododo {
-            @include fxdPosition(auto, 50%, 0);
-        }
     }
 
     [data-os="others"] & {
