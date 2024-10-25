@@ -10,7 +10,7 @@ html {
         font-size: math.div(16, 390) * $contentsMaxWidth * 1px;
     }
 
-    @media (max-height: 900px) and (min-width: 960px) {
+    @media (min-height: 900px) and (min-width: 960px) {
         font-size: math.div(16, 390) * 600 * 1px;
     }
 }
@@ -53,7 +53,7 @@ button {
         left: 0;
         width: 100%;
         height: 100%;
-        background-image: url("/ja/dododo-cp/assets/img/bg/floor.webp"), url("/ja/dododo-cp/assets/img/bg/wall.webp");
+        background-image: url("../img/bg/floor.webp"), url("../img/bg/wall.webp");
         background-position: bottom 0 left 0, top 0 left 0;
         background-repeat: repeat-x, repeat;
         background-size: 438px, 224px;
@@ -75,7 +75,7 @@ button {
         &::before,
         &::after {
             content: "";
-            background-image: url("/ja/dododo-cp/assets/img/bg/line.webp");
+            background-image: url("../img/bg/line.webp");
             background-position: top 0 left 0;
             background-size: 100%;
             background-repeat: repeat-y;
@@ -93,7 +93,7 @@ button {
         }
     }
 
-    @media (max-height: 900px) and (min-width: 960px) {
+    @media (min-height: 900px) and (min-width: 960px) {
         max-width: 624px;
         margin: 0 auto;
 
@@ -117,7 +117,7 @@ button {
         margin: 0 auto;
     }
 
-    @media (max-height: 900px) and (min-width: 960px) {
+    @media (min-height: 900px) and (min-width: 960px) {
         max-width: 600px;
         margin: 0 auto;
     }
@@ -134,17 +134,17 @@ button {
         max-width: 480px;
     }
 
-    @media (max-height: 900px) and (min-width: 960px) {
+    @media (min-height: 900px) and (min-width: 960px) {
         max-width: 600px;
     }
 }
 
 .l-bg-main__image {
     @include absPosition(0, 50%);
-    translate: -50% 0;
+    transform: translate(-50%, 0);
     width: 126%;
     height: 100%;
-    background-image: url("/ja/dododo-cp/assets/img/bg/main.webp");
+    background-image: url("../img/bg/main.webp");
     background-position: center;
     background-size: 100%;
     background-repeat: no-repeat;

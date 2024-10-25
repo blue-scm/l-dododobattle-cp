@@ -27,7 +27,7 @@
 
 .campaigns__item {
     position: relative;
-    background-image: url("/ja/dododo-cp/assets/img/bg/campaigns_upper.webp"), url("/ja/dododo-cp/assets/img/bg/campaigns_lower.webp");
+    background-image: url("../img/bg/campaigns_upper.webp"), url("../img/bg/campaigns_lower.webp");
     background-size: 100%, 100%;
     background-position: top 0 left 50%, top getRem(419) left 50%;
     background-repeat: no-repeat, repeat-y;
@@ -94,11 +94,10 @@
 }
 
 .campaigns__img__frame {
-    @include absPosition(50%, 50%);
-    translate: -50% -50%;
+    @include absPosition(-1px, -1px);
     width: calc(100% + 2px);
     height: calc(100% + 2px);
-    background-image: url("/ja/dododo-cp/assets/img/campaigns/frame.svg");
+    background-image: url("../img/campaigns/frame.svg");
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
@@ -136,11 +135,18 @@
     margin-top: getRem(12);
 }
 
-.campaigns__trigger {
+.campaigns__trigger__wrapper {
     @include absPosition(null, 50%, getRem(-24), null);
-    translate: -50%;
+    transform: translate(-50%, 0);
     width: getRem(250);
     height: getRem(48);
+    background-image: url("../img/campaigns/ph_btn_trigger.webp");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.campaigns__trigger {
     font-size: getRem(16);
     line-height: 1.45;
     font-weight: 800;
@@ -148,17 +154,14 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: url("/ja/dododo-cp/assets/img/campaigns/ph_btn_trigger.webp");
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-    cursor: pointer;
+    width: 100%;
+    height: 100%;
 
     &::after {
         content: "";
         @include absPosition(50%, null, null, getRem(18));
         translate: 0 -50%;
-        background-image: url("/ja/dododo-cp/assets/img/campaigns/icon_arrow.svg");
+        background-image: url("../img/campaigns/icon_arrow.svg");
         background-size: contain;
         background-position: center;
         background-repeat: no-repeat;

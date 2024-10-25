@@ -13,6 +13,7 @@ export function appendCharacters(gsap) {
             each: 0.1,
         },
         ease: "bounce.out",
+        delay: 0.5,
     };
     const animeSettingFlare = {
         opacity: 1,
@@ -21,6 +22,7 @@ export function appendCharacters(gsap) {
             from: "center",
             each: 0.1,
         },
+        delay: 0.5,
     };
 
     gsap.to(oddArray, animeSetting);

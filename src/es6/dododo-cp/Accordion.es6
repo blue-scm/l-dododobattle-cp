@@ -6,7 +6,7 @@ export class Accordion {
         this.wrapper = content.parentNode;
         this.parent = document.querySelector(`[data-accordion-parent="${this.id}"]`);
         this.trigger = document.querySelector(`[data-accordion-trigger="${this.id}"]`);
-        this.defaultH = this.wrapper.offsetHeight;
+        this.defaultH = this.pixelToRem(this.wrapper.offsetHeight);
         this.contentH = 0;
         this.open = false;
         this.animTiming = {
@@ -22,7 +22,7 @@ export class Accordion {
     }
 
     toggle() {
-        this.contentH = this.content.offsetHeight;
+        this.contentH = this.pixelToRem(this.content.offsetHeight);
         if (this.open) {
             this.wrapper.animate(this.closeAnimKeyframes(this.defaultH, this.contentH), this.animTiming);
         } else {
@@ -32,31 +32,13 @@ export class Accordion {
         this.parent.setAttribute("aria-expanded", this.open);
     }
 
-    // リサイズ時に高さをリセットする
-    reset() {
-        const baseWidth = !this.mql.matches ? 480 : this.wrapper.offsetWidth;
-        const magnification = baseWidth / this.defaultBaseWidth;
-        const currnerHeight = this.defaultH * magnification;
-        this.defaultH = currnerHeight;
-        this.contentH = this.content.offsetHeight;
-        this.defaultBaseWidth = baseWidth;
-
-        this.wrapper.animate(this.closeAnimKeyframes(this.defaultH, this.contentH), {
-            duration: 50,
-            easing: "linear",
-            fill: "forwards",
-        });
-        this.open = false;
-        this.parent.setAttribute("aria-expanded", this.open);
-    }
-
     openAnimKeyframes(defaultH, contentH) {
         return [
             {
-                height: defaultH + "px",
+                height: defaultH + "rem",
             },
             {
-                height: contentH + "px",
+                height: contentH + "rem",
             },
         ];
     }
@@ -64,11 +46,15 @@ export class Accordion {
     closeAnimKeyframes(defaultH, contentH) {
         return [
             {
-                height: contentH + "px",
+                height: contentH + "rem",
             },
             {
-                height: defaultH + "px",
+                height: defaultH + "rem",
             },
         ];
+    }
+
+    pixelToRem(px) {
+        return px / parseFloat(getComputedStyle(document.documentElement).fontSize);
     }
 }

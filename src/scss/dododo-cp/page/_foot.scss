@@ -48,7 +48,7 @@
     margin-top: getRem(128);
     padding-top: getRem(64);
     width: 100%;
-    background-image: url("/ja/dododo-cp/assets/img/bg/foot_lower.webp");
+    background-image: url("../img/bg/foot_lower.webp");
     background-size: 100%;
     background-position: top 0 left 50%;
     background-repeat: no-repeat;
@@ -78,7 +78,7 @@
 .foot__btns {
     margin: getRem(16) auto 0;
     padding-bottom: getRem(40);
-    background-image: url("/ja/dododo-cp/assets/img/bg/foot_lower_repeat.webp");
+    background-image: url("../img/bg/foot_lower_repeat.webp");
     background-size: 100%;
     background-position: top 0 left 50%;
     background-repeat: repeat-y;
@@ -93,7 +93,7 @@
     margin: 0 auto;
     line-height: 1;
     font-weight: 900;
-    background-image: url("/ja/dododo-cp/assets/img/foot/ph_btn_link.webp");
+    background-image: url("../img/foot/ph_btn_link.webp");
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
@@ -108,7 +108,7 @@
         width: getRem(14);
         height: getRem(14);
         transform: translateY(-50%);
-        background-image: url("/ja/dododo-cp/assets/img/common/icon_blank.svg");
+        background-image: url("../img/common/icon_blank.svg");
         background-size: contain;
         background-position: center;
         background-repeat: no-repeat;

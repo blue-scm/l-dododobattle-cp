@@ -13,9 +13,6 @@ export function handleMediaQuery(status) {
         }
 
         if (status.maxWidth.matches && currentWidth !== window.innerWidth) {
-            status.accordionIns.forEach((accordion) => {
-                accordion.reset();
-            });
             setTimeout(() => {
                 status.scrollTriggerIns.refresh();
             }, 600);

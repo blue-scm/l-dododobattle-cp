@@ -138,7 +138,9 @@
                     </div>
                 </div>
             </div>
-            <button type="button" data-cam-anime-btn="" class="top-cp<%= idx + 1 %>-more campaigns__trigger" data-accordion-trigger="<%= item.id %>" aria-controls="campaign<%= item.id %>"><span class="campaigns__trigger__open">くわしく見る</span><span class="campaigns__trigger__close">閉じる</span></button>
+            <div class="campaigns__trigger__wrapper">
+                <button type="button" data-cam-anime-btn="" class="top-cp<%= idx + 1 %>-more campaigns__trigger" data-accordion-trigger="<%= item.id %>" aria-controls="campaign<%= item.id %>"><span class="campaigns__trigger__open">くわしく見る</span><span class="campaigns__trigger__close">閉じる</span></button>
+            </div>
         </article>
         <% }) %>
     </div>

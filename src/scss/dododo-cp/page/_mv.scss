@@ -15,7 +15,7 @@
         padding-top: getRem(68);
     }
 
-    @media (min-width: 960px) and (max-height: 940px) {
+    @media (min-width: 960px) and (min-height: 900px) and (max-height: 1000px) {
         height: auto;
         display: block;
         padding-top: getRem(68);
@@ -71,7 +71,7 @@
     margin: getRem(8) auto 0;
     width: getRem(282);
     height: getRem(58);
-    background-image: url("/ja/dododo-cp/assets/img/mv/ph_btn_x.webp");
+    background-image: url("../img/mv/ph_btn_x.webp");
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;

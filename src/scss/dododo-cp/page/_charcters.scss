@@ -16,7 +16,7 @@ $base: 348;
             content: "";
             width: 100%;
             height: 152px;
-            background-image: url("/ja/dododo-cp/assets/img/bg/gate.webp");
+            background-image: url("../img/bg/gate.webp");
             background-position: top 0 left 0;
             background-repeat: repeat-x;
             background-size: 344px;
@@ -33,7 +33,7 @@ $base: 348;
         position: absolute;
         width: 108px;
         height: 96px;
-        background-image: url("/ja/dododo-cp/assets/img/bg/gate_open.webp");
+        background-image: url("../img/bg/gate_open.webp");
         background-position: top 0 left 0;
         background-repeat: no-repeat;
         background-size: contain;
@@ -90,7 +90,7 @@ $base: 348;
         &::after {
             content: "";
             display: block;
-            background-image: url("/ja/dododo-cp/assets/img/bg/flare.svg");
+            background-image: url("../img/bg/flare.svg");
             background-position: center;
             background-repeat: no-repeat;
             background-size: contain;
@@ -159,7 +159,7 @@ $base: 348;
 
         &.-meercat-green,
         &.-goblin-green {
-            @include absPosition(unset, 30%, 0, unset);
+            @include absPosition(unset, 10%, 0, unset);
             animation-duration: 1.2s;
         }
 

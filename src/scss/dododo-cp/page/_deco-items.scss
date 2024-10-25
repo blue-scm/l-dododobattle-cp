@@ -28,7 +28,7 @@
         animation-delay: #{math.random(10)}s;
         width: getRem(math.random(18) + 12);
         height: getRem(math.random(18) + 12);
-        background-image: url("/ja/dododo-cp/assets/img/bg/deco_0#{math.random(12) + 1}.webp");
+        background-image: url("../img/bg/deco_0#{math.random(12) + 1}.webp");
         transform: translateY(-100%) rotate(0);
     }
 }

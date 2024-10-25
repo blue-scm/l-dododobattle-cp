@@ -1,12 +1,9 @@
-import { createAPNGPlayer } from "../createAPNGPlayers.es6";
 import { appendCharacters } from "./appendCharacters.es6";
 
-export async function mv(gsap) {
-    const mainVisual = await createAPNGPlayer("mainVisual");
-    // mainVisualはapng-jsのPlayerインスタンスであるため、callメソッドに渡すときは関数を定義して渡す
-    // 直接渡すとplayメソッドにそぐわない引数が渡されるためエラーになる
+export async function mv(gsap, status) {
+    const img = document.querySelector("[data-mv-anime-main]");
     const func = () => {
-        mainVisual.play();
+        img.src = "./assets/img/mv/anime_main.webp";
     };
 
     const logo = document.querySelector("[data-mv-anime-logo]");
@@ -18,6 +15,7 @@ export async function mv(gsap) {
 
     const tl = gsap.timeline({
         onComplete: () => {
+            status.mvAnimated = true;
             baloon.classList.add("-rumble");
             deco.classList.add("-fall");
             other[0].classList.add("-rumble");
