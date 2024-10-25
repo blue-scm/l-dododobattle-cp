@@ -11,7 +11,7 @@
 <!-- Open Graph Meta Tags -->
 <meta property="og:description" content="<%= pageInfo.meta.description %>" />
 <meta property="og:image" content="<%= common.og.og_image %>" />
-<meta property="og:url" content="<%= common.og.og_url %>">
+<meta property="og:url" content="<%= pageInfo.og ? pageInfo.og.og_url : common.og.og_url %>">
 <meta property="og:type" content="website">
 
 <!-- Twitter Meta Tags -->
@@ -20,7 +20,7 @@
 <meta name="twitter:creator" content="<%= common.og.twitter %>" />
 <meta name="twitter:title" content="<%= pageInfo.meta.title %>" />
 <meta name="twitter:description" content="<%= pageInfo.meta.description %>" />
-<meta name="twitter:image" content="<%= common.og.og_image %>" />
+<meta name="twitter:image" content="<%= pageInfo.og ? pageInfo.og.og_image : common.og.og_image %>" />
 
 <!-- Favicon and Apple Touch Icon -->
 <link rel="shortcut icon" type="image/png" href="/<%= common.og.favicon %>" />

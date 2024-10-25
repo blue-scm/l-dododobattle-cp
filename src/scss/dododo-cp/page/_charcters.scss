@@ -102,10 +102,6 @@ $base: 348;
             height: 144px;
             animation: flare 5s linear infinite;
             animation-play-state: paused;
-
-            .-move & {
-                animation-play-state: running;
-            }
         }
 
         &::before {
@@ -114,6 +110,11 @@ $base: 348;
 
         &::after {
             @include absPosition(-38px, null, null, -62px);
+        }
+
+        &.-anime::before,
+        &.-anime::after {
+            animation-play-state: running;
         }
     }
 }
@@ -224,17 +225,22 @@ $base: 348;
 @keyframes flare {
     0% {
         opacity: 1;
+        scale: 1.4;
     }
     18% {
-        opacity: 0.6;
+        opacity: 0.2;
+        scale: 1;
     }
-    40% {
+    42% {
         opacity: 1;
+        scale: 1.4;
     }
-    72% {
-        opacity: 0.6;
+    63% {
+        opacity: 0.2;
+        scale: 1;
     }
     100% {
         opacity: 1;
+        scale: 1.4;
     }
 }

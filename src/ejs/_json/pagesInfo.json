@@ -40,6 +40,10 @@
             "meta": {
                 "title": "LINE ドドドバトル 新規リリース記念！7大キャンペーン特設サイト",
                 "description": "『LINE ドドドバトル』は新規リリース記念して、7大キャンペーンを開催中！ドドドなキャンペーンを見逃すな！"
+            },
+            "og": {
+                "og_url": "https://dododo.game.line.me/ja/dododo-cp/",
+                "og_image": "https://dododo.game.line.me/ja/assets/siteinfo/og_image.jpg"
             }
         }
     }
