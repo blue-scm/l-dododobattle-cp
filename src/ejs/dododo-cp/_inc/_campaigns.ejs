@@ -109,7 +109,7 @@
         </div>
     </h2>
     <div class="campaigns__items">
-        <% items.forEach((item) => { %>
+        <% items.forEach((item, idx) => { %>
         <article class="campaigns__item" aria-expanded="false" data-accordion-parent="<%= item.id %>" data-cam-anime-article="">
             <div class="campaigns__badge" data-cam-anime-badge="">
                 <img src="<%= imgDir %>badge_<%= item.id %>.webp" alt="" width="72" height="72" loading="lazy">
@@ -125,20 +125,20 @@
                         </span>
                     </h3>
                     <div class="campaigns__img">
-                        <img src="<%= imgDir %>ph_main_<%= item.id %>.webp" alt="" data-cam-anime-image="">
+                        <img src="<%= imgDir %>ph_main_<%= item.id %>.webp" alt="" data-cam-anime-image="" loading="lazy" width="350" height="196">
                         <div class="campaigns__img__frame" data-cam-anime-image=""></div>
                     </div>
                     <div class="campaigns__texts">
                         <div class="campaigns__date"><%= item.date %></div>
                         <div class="campaigns__head"><%= item.head %></div>
                         <div class="campaigns__body"><%= item.body %></div>
-                        <a href="<%= item.link.href %>" target="_blank" rel="noopener noreferrer" class="campaigns__link">
+                        <a href="<%= item.link.href %>" target="_blank" rel="noopener noreferrer" class="top-cp<%= idx + 1 %>-detail campaigns__link">
                             <img src="<%= imgDir %>ph_btn_link_<%= item.id %>.webp" alt="" width="320" height="70" alt="<%= item.link.text %>" loading="lazy">
                         </a>
                     </div>
                 </div>
             </div>
-            <button type="button" data-cam-anime-btn="" class="campaigns__trigger" data-accordion-trigger="<%= item.id %>" aria-controls="campaign<%= item.id %>"><span class="campaigns__trigger__open">くわしく見る</span><span class="campaigns__trigger__close">閉じる</span></button>
+            <button type="button" data-cam-anime-btn="" class="top-cp<%= idx + 1 %>-more campaigns__trigger" data-accordion-trigger="<%= item.id %>" aria-controls="campaign<%= item.id %>"><span class="campaigns__trigger__open">くわしく見る</span><span class="campaigns__trigger__close">閉じる</span></button>
         </article>
         <% }) %>
     </div>

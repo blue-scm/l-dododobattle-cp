@@ -5,8 +5,8 @@
             "og_url": "https://dododo.game.line.me/ja/",
             "og_image": "https://dododo.game.line.me/ja/assets/siteinfo/og_image.jpg",
             "twitter": "@LINE_dododo_jp",
-            "favicon": "assets/siteinfo/favicon.ico",
-            "apt": "assets/siteinfo/apple-touch-icon-precomposed.png"
+            "favicon": "ja/assets/siteinfo/favicon.ico",
+            "apt": "ja/assets/siteinfo/apple-touch-icon-precomposed.png"
         },
         "snslinks": {
             "line": "https://lin.ee/RRznmpD/wots/oa",

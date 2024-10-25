@@ -3,9 +3,14 @@
 
 .charcters {
     @include MQ_WIDE {
-        @include fxdPosition(0, 0);
-        width: 100%;
-        height: 100vh;
+        @include fxdPosition(unset, 50%, 0, unset);
+        width: 1920px;
+        height: 1080px;
+        transform: translateX(-50%);
+        background-image: url("/ja/dododo-cp/assets/img/bg/gates.webp");
+        background-position: bottom 74px left 50%;
+        background-repeat: no-repeat;
+        background-size: 1702px;
     }
 
     @include MQ_NARROW {
@@ -13,73 +18,97 @@
     }
 }
 
+.charcters__gate {
+    @include MQ_WIDE {
+        position: absolute;
+        width: 159px;
+        height: 140px;
+        background-image: url("/ja/dododo-cp/assets/img/bg/gate_open.webp");
+        background-position: top 0 left 0;
+        background-repeat: no-repeat;
+        background-size: contain;
+
+        &.-goblin-sword-green {
+            left: 80px;
+            bottom: 691px;
+        }
+        &.-goblin-green {
+            left: 353px;
+            bottom: 789px;
+        }
+        &.-slime-blue {
+            left: 462px;
+            bottom: 489px;
+        }
+        &.-slime-green {
+            right: 426px;
+            bottom: 789px;
+        }
+        &.-meercat-green {
+            right: 75px;
+            bottom: 680px;
+        }
+        &.-fox-blue {
+            right: 340px;
+            bottom: 463px;
+        }
+    }
+}
+
 .charcters__item {
     @include MQ_WIDE {
         position: absolute;
-        width: 112px;
-        height: 112px;
+        width: 96px;
+        height: 96px;
         aspect-ratio: 1 / 1;
 
-        @media (min-aspect-ratio: 16/9) {
-            width: math.percentage(math.div(112, $baseW));
-            height: auto;
+        .charcters__gate & {
+            @include absPosition(unset, 20%, 0, unset);
         }
 
-        @media (max-aspect-ratio: 16/9) {
-            width: auto;
-            height: math.percentage(math.div(112, $baseH));
+        &.-goblin-bow-yellow {
+            left: 163px;
+            bottom: 55px;
+        }
+        &.-meercat-red {
+            left: 490px;
+            bottom: 55px;
+        }
+        &.-slime-yellow {
+            right: 554px;
+            bottom: 55px;
+        }
+        &.-goblin-sword-green,
+        &.-goblin-green,
+        &.-slime-blue,
+        &.-fox-blue,
+        &.-goblin-bow-yellow {
+            animation: moveRtoL 1s linear infinite;
+            animation-play-state: paused;
+        }
+        &.-meercat-green,
+        &.-slime-green,
+        &.-slime-yellow,
+        &.-meercat-red {
+            animation: moveLtoR 1s linear infinite;
+            animation-play-state: paused;
+        }
+
+        &.-meercat-green,
+        &.-goblin-green {
+            @include absPosition(unset, 30%, 0, unset);
+            animation-duration: 1.2s;
+        }
+
+        &.-goblin-sword-green,
+        &.-fox-blue {
+            animation-duration: 0.6s;
+        }
+
+        .-move & {
+            animation-play-state: running;
         }
     }
-}
-
-@mixin pos($side, $x, $centerToX, $y) {
-    @media (min-aspect-ratio: 16 / 9) {
-        @if $side == "left" {
-            left: math.percentage(math.div($x, $baseW));
-        } @else {
-            right: math.percentage(math.div($x, $baseW));
-        }
-        // 画面ではなく背景画像の大きさに合わせた位置
-        bottom: calc(math.div($y, $baseH) * (100vw / 16 * 9));
-    }
-
-    @media (max-aspect-ratio: 16 / 9) {
-        // 中央からの位置
-        @if $side == "left" {
-            left: calc(50% - math.div($centerToX + (math.div($contentsMaxWidth, 2)) + 112, $baseW) * (100vh / 9 * 16));
-        } @else {
-            left: calc(50% + math.div($centerToX + (math.div($contentsMaxWidth, 2)), $baseW) * (100vh / 9 * 16));
-        }
-        bottom: math.percentage(math.div($y, $baseH));
-    }
-}
-
-.-goblin-sword-green {
-    @include pos("left", 64, 547, 668);
-}
-.-goblin-green {
-    @include pos("left", 371, 240, 783);
-}
-.-slime-blue {
-    @include pos("left", 494, 117, 441);
-}
-.-goblin-bow-yellow {
-    @include pos("left", 229, 382, 39);
-}
-.-meercat-red {
-    @include pos("left", 465, 146, 39);
-}
-.-slime-green {
-    @include pos("right", 450, 155, 814);
-}
-.-meercat-green {
-    @include pos("right", 51, 554, 618);
-}
-.-fox-blue {
-    @include pos("right", 351, 254, 447);
-}
-.-slime-yellow {
-    @include pos("right", 558, 47, 39);
 }
 
 .charcters__anime {
@@ -87,5 +116,35 @@
 
     .-move & {
         animation-play-state: running;
+    }
+}
+
+@keyframes moveLtoR {
+    0% {
+        transform: translateX(0) scale(1, 1);
+    }
+    50% {
+        transform: translateX(-10%) scale(1, 1);
+    }
+    51% {
+        transform: translateX(-10%) scale(-1, 1);
+    }
+    100% {
+        transform: translateX(0) scale(-1, 1);
+    }
+}
+
+@keyframes moveRtoL {
+    0% {
+        transform: translateX(0) scale(-1, 1);
+    }
+    50% {
+        transform: translateX(10%) scale(-1, 1);
+    }
+    51% {
+        transform: translateX(10%) scale(1, 1);
+    }
+    100% {
+        transform: translateX(0) scale(1, 1);
     }
 }

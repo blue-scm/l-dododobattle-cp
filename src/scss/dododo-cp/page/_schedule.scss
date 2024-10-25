@@ -64,10 +64,26 @@
     width: getRem(108);
     z-index: 10;
     opacity: 0;
-    transition: opacity 0.2s linear;
+    visibility: hidden;
+    transition: opacity 0.2s linear, visibility 0.2s linear;
+    overflow: hidden;
 
-    @include MQ_UNDER(1620) {
-        bottom: getRem(140);
+    &::before {
+        animation: btnShinySchedule 2.3s ease-in-out infinite;
+        background-color: #fff;
+        content: "";
+        display: inline-block;
+        height: 80%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: getRem(14);
+    }
+
+    [data-os="others"] & {
+        @include MQ_UNDER(1620) {
+            bottom: getRem(140);
+        }
     }
 
     @include MQ_UNDER($contentsMaxWidth) {
@@ -76,10 +92,30 @@
 
     &.-append {
         opacity: 1;
+        visibility: visible;
+    }
+}
+
+@keyframes btnShinySchedule {
+    0% {
+        opacity: 0.6;
+        transform: rotate(45deg) translateX(getRem(-40)) translateY(getRem(-60)) skew(-8deg, -8deg);
+    }
+    80% {
+        opacity: 0.4;
+        transform: rotate(45deg) translateX(getRem(-40)) translateY(getRem(-60)) skew(-8deg, -8deg);
+    }
+    100% {
+        opacity: 0.2;
+        transform: rotate(45deg) translateX(getRem(120)) translateY(getRem(10)) skew(-8deg, -8deg);
     }
 }
 
 [data-schedule-anime-head] {
     opacity: 0;
     scale: 1.8;
+}
+
+[data-schedule-anime-btn] {
+    transform-origin: bottom right;
 }

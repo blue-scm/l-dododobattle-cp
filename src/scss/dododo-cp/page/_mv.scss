@@ -59,6 +59,10 @@
     display: block;
     margin: getRem(296) auto 0;
     width: getRem(350);
+
+    &.-rumble {
+        animation: rumble 1.4s ease-out 0.4s infinite;
+    }
 }
 
 .mv__x {
@@ -113,10 +117,11 @@
 
 [data-mv-anime-other] {
     opacity: 0;
+    scale: 1.8;
 }
 
 .is-anime {
-    animation: trembling 1.8s ease-out infinite;
+    animation: trembling 1.8s ease-out 0.4s infinite;
     transform: translateX(0);
 }
 
@@ -141,5 +146,32 @@
     }
     100% {
         transform: translateX(0);
+    }
+}
+
+@keyframes rumble {
+    0% {
+        transform: translate(12px);
+    }
+    5% {
+        transform: translate(-12px);
+    }
+    10% {
+        transform: translate(12px);
+    }
+    15% {
+        transform: translate(-12px);
+    }
+    20% {
+        transform: translate(12px);
+    }
+    25% {
+        transform: translate(-12px);
+    }
+    30% {
+        transform: translate(0);
+    }
+    100% {
+        transform: translate(0);
     }
 }

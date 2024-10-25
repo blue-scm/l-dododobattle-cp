@@ -1,5 +1,6 @@
 export class Accordion {
-    constructor(content) {
+    constructor(content, mql) {
+        this.mql = mql;
         this.content = content;
         this.id = content.dataset.accordion;
         this.wrapper = content.parentNode;
@@ -13,6 +14,7 @@ export class Accordion {
             easing: "ease-out",
             fill: "forwards",
         };
+        this.defaultBaseWidth = !this.mql.matches ? 480 : this.wrapper.offsetWidth;
     }
 
     registerEvent() {
@@ -27,6 +29,24 @@ export class Accordion {
             this.wrapper.animate(this.openAnimKeyframes(this.defaultH, this.contentH), this.animTiming);
         }
         this.open = !this.open;
+        this.parent.setAttribute("aria-expanded", this.open);
+    }
+
+    // リサイズ時に高さをリセットする
+    reset() {
+        const baseWidth = !this.mql.matches ? 480 : this.wrapper.offsetWidth;
+        const magnification = baseWidth / this.defaultBaseWidth;
+        const currnerHeight = this.defaultH * magnification;
+        this.defaultH = currnerHeight;
+        this.contentH = this.content.offsetHeight;
+        this.defaultBaseWidth = baseWidth;
+
+        this.wrapper.animate(this.closeAnimKeyframes(this.defaultH, this.contentH), {
+            duration: 50,
+            easing: "linear",
+            fill: "forwards",
+        });
+        this.open = false;
         this.parent.setAttribute("aria-expanded", this.open);
     }
 

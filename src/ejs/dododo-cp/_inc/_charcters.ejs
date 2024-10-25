@@ -3,14 +3,17 @@
         {
             id: "goblin-sword-green",
             className: "p-sprite__goblin-sword__green",
+            gate: true,
         },
         {
             id: "goblin-green",
             className: "p-sprite__goblin__green",
+            gate: true,
         },
         {
             id: "slime-blue",
             className: "p-sprite__slime__blue",
+            gate: true,
         },
         {
             id: "goblin-bow-yellow",
@@ -23,14 +26,17 @@
         {
             id: "slime-green",
             className: "p-sprite__slime__green",
+            gate: true,
         },
         {
             id: "meercat-green",
             className: "p-sprite__meercat__green",
+            gate: true,
         },
         {
             id: "fox-blue",
             className: "p-sprite__fox__blue",
+            gate: true,
         },
         {
             id: "slime-yellow",
@@ -41,10 +47,14 @@
 
 <div class="charcters" data-scroll-move-chara="">
     <% items.forEach((item, idx) => { %>
-    <div class="charcters__item -<%= item.id %>">
-        <div class="charcters__item__scalewrap">
+    <% if (item.gate) { %>
+    <div class="charcters__gate -<%= item.id %>">
+        <% } %>
+        <div class="charcters__item -<%= item.id %>">
             <div class="<%= item.className %> charcters__anime"></div>
         </div>
+        <% if (item.gate) { %>
     </div>
+    <% } %>
     <% }) %>
 </div>

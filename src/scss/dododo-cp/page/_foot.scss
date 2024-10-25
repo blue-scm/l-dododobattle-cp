@@ -47,27 +47,11 @@
     position: relative;
     margin-top: getRem(128);
     padding-top: getRem(64);
-    padding-bottom: getRem(40);
     width: 100%;
     background-image: url("/ja/dododo-cp/assets/img/bg/foot_lower.webp");
     background-size: 100%;
     background-position: top 0 left 50%;
     background-repeat: no-repeat;
-
-    &::before {
-        @include absPosition(getRem(348), 0);
-        content: "";
-        display: block;
-        width: 100%;
-        height: 100%;
-        background-image: url("/ja/dododo-cp/assets/img/bg/foot_lower_repeat.webp");
-        background-size: 100%;
-        background-position: top 0 left 50%;
-        background-repeat: repeat-y;
-    }
-}
-
-.foot__sns {
 }
 
 .foot__sns__lead {
@@ -91,13 +75,22 @@
     }
 }
 
+.foot__btns {
+    margin: getRem(16) auto 0;
+    padding-bottom: getRem(40);
+    background-image: url("/ja/dododo-cp/assets/img/bg/foot_lower_repeat.webp");
+    background-size: 100%;
+    background-position: top 0 left 50%;
+    background-repeat: repeat-y;
+}
+
 .foot__home {
     position: relative;
     display: block;
-    margin: getRem(16) auto 0;
     width: getRem(350);
     height: getRem(72);
     font-size: getRem(20);
+    margin: 0 auto;
     line-height: 1;
     font-weight: 900;
     background-image: url("/ja/dododo-cp/assets/img/foot/ph_btn_link.webp");
@@ -183,4 +176,9 @@
         padding: getRem(24) getRem(20);
         font-size: getRem(10);
     }
+}
+
+[data-foot-anime-sub] {
+    opacity: 0;
+    scale: 1.8;
 }

@@ -1,13 +1,14 @@
 @use "src/scss/global" as *;
 
 .l-header {
+    z-index: $zLayer6;
+
     @include MQ_NARROW {
         @include cmn-transition();
         @include fxdPosition(0, 0);
         opacity: 0;
         transform: translateY(-100%);
         width: 100%;
-        z-index: $zLayer6;
     }
 
     @include MQ_WIDE {
@@ -18,6 +19,13 @@
         @include MQ_NARROW {
             opacity: 1;
             transform: translateY(0);
+        }
+    }
+
+    .-dododo-cp.-scrolled & {
+        @include MQ_NARROW {
+            opacity: 0;
+            visibility: hidden;
         }
     }
 

@@ -9,7 +9,7 @@
 
 .deco-item {
     position: absolute;
-    top: 2lvh;
+    top: calc((100% - 100lvh) / 2);
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
@@ -23,18 +23,19 @@
 
 @for $i from 1 through 20 {
     .deco-item:nth-child(#{$i}) {
-        left: getRem(math.random(300));
-        animation-duration: #{math.random(4) + 7}s;
+        left: getRem(math.random(330));
+        animation-duration: #{math.random(2) + 4}s;
         animation-delay: #{math.random(10)}s;
         width: getRem(math.random(18) + 12);
         height: getRem(math.random(18) + 12);
         background-image: url("/ja/dododo-cp/assets/img/bg/deco_0#{math.random(12) + 1}.webp");
+        transform: translateY(-100%) rotate(0);
     }
 }
 
 @keyframes fall {
     0% {
-        transform: translateY(0) rotate(0);
+        transform: translateY(-100%) rotate(0);
     }
     100% {
         transform: translateY(100lvh) rotate(720deg);
