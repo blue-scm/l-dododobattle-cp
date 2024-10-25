@@ -1,13 +1,13 @@
 import { createAPNGPlayer } from "../createAPNGPlayers.es6";
 
-export async function campaigns(gsap, ScrollTrigger) {
-    const textdododo = await createAPNGPlayer("textdododo");
+export function campaigns(gsap, ScrollTrigger) {
     const head = document.querySelector("[data-cam-anime-head]");
     ScrollTrigger.create({
         trigger: head,
         start: "top center",
         once: true,
-        onEnter: () => {
+        onEnter: async () => {
+            const textdododo = await createAPNGPlayer("textdododo");
             textdododo.play();
         },
     });

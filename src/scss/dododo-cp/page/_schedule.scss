@@ -66,19 +66,6 @@
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.2s linear, visibility 0.2s linear;
-    overflow: hidden;
-
-    &::before {
-        animation: btnShinySchedule 2.3s ease-in-out infinite;
-        background-color: #fff;
-        content: "";
-        display: inline-block;
-        height: 80%;
-        left: 0;
-        position: absolute;
-        top: 0;
-        width: getRem(14);
-    }
 
     [data-os="others"] & {
         @include MQ_UNDER(1620) {
@@ -96,18 +83,42 @@
     }
 }
 
+.schedule__anchor__shine {
+    overflow: hidden;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: getRem(88);
+    height: getRem(96);
+    clip-path: polygon(50% 0%, 100% 18%, 100% 82%, 50% 100%, 0 82%, 0 18%);
+
+    &::before {
+        animation: btnShinySchedule 2.3s ease-in-out infinite;
+        background-color: #fff;
+        content: "";
+        display: inline-block;
+        height: 110%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: getRem(14);
+        transform-origin: bottom right;
+    }
+}
+
 @keyframes btnShinySchedule {
     0% {
         opacity: 0.6;
-        transform: rotate(45deg) translateX(getRem(-40)) translateY(getRem(-60)) skew(-8deg, -8deg);
+        transform: rotate(60deg) translateX(getRem(-92));
     }
     80% {
-        opacity: 0.4;
-        transform: rotate(45deg) translateX(getRem(-40)) translateY(getRem(-60)) skew(-8deg, -8deg);
+        opacity: 0.6;
+        transform: rotate(60deg) translateX(getRem(-92));
     }
     100% {
-        opacity: 0.2;
-        transform: rotate(45deg) translateX(getRem(120)) translateY(getRem(10)) skew(-8deg, -8deg);
+        opacity: 0.6;
+        transform: rotate(60deg) translateX(getRem(44));
     }
 }
 

@@ -1,8 +1,8 @@
 import { createAPNGPlayer } from "../createAPNGPlayers.es6";
 
-export async function foot(gsap) {
-    const textfoot = await createAPNGPlayer("textfoot");
-    const func = () => {
+export function foot(gsap) {
+    const func = async () => {
+        const textfoot = await createAPNGPlayer("textfoot");
         textfoot.play();
     };
     const main = document.querySelector("[data-foot-anime-main]");

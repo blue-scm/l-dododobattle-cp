@@ -140,6 +140,12 @@
             filter: drop-shadow(0 0 20px rgba(#000, 0.4));
         }
     }
+
+    @media (max-height: 900px) and (min-width: 960px) {
+        .-dododo-cp & {
+            margin-left: 20px;
+        }
+    }
 }
 
 .l-header__links__btn {

@@ -61,7 +61,7 @@
     width: getRem(350);
 
     &.-rumble {
-        animation: rumble 1.4s ease-out 0.4s infinite;
+        animation: rumble 3.2s ease-out 0.4s infinite;
     }
 }
 
@@ -81,6 +81,10 @@
     @include absPosition(50%, getRem(-40));
     width: getRem(64);
     translate: 0 -50%;
+
+    &.-rumble {
+        animation: trembling 1.8s ease-out 0.4s infinite;
+    }
 }
 
 .mv__x__detail {
@@ -120,11 +124,6 @@
     scale: 1.8;
 }
 
-.is-anime {
-    animation: trembling 1.8s ease-out 0.4s infinite;
-    transform: translateX(0);
-}
-
 @keyframes trembling {
     0% {
         transform: translateX(-5%);
@@ -153,22 +152,22 @@
     0% {
         transform: translate(12px);
     }
-    5% {
+    2% {
         transform: translate(-12px);
+    }
+    4% {
+        transform: translate(12px);
+    }
+    6% {
+        transform: translate(-12px);
+    }
+    8% {
+        transform: translate(12px);
     }
     10% {
-        transform: translate(12px);
-    }
-    15% {
         transform: translate(-12px);
     }
-    20% {
-        transform: translate(12px);
-    }
-    25% {
-        transform: translate(-12px);
-    }
-    30% {
+    12% {
         transform: translate(0);
     }
     100% {

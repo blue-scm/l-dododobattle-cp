@@ -1,16 +1,26 @@
 @use "src/scss/global" as *;
 @use "sass:math";
 
+$half: 240;
+$base: 348;
+
 .charcters {
     @include MQ_WIDE {
         @include fxdPosition(unset, 50%, 0, unset);
-        width: 1920px;
+        width: 100%;
         height: 1080px;
         transform: translateX(-50%);
-        background-image: url("/ja/dododo-cp/assets/img/bg/gates.webp");
-        background-position: bottom 74px left 50%;
-        background-repeat: no-repeat;
-        background-size: 1702px;
+
+        &::before {
+            @include absPosition(null, 0, 74px, null);
+            content: "";
+            width: 100%;
+            height: 152px;
+            background-image: url("/ja/dododo-cp/assets/img/bg/gate.webp");
+            background-position: top 0 left 0;
+            background-repeat: repeat-x;
+            background-size: 344px;
+        }
     }
 
     @include MQ_NARROW {
@@ -21,36 +31,85 @@
 .charcters__gate {
     @include MQ_WIDE {
         position: absolute;
-        width: 159px;
-        height: 140px;
+        width: 108px;
+        height: 96px;
         background-image: url("/ja/dododo-cp/assets/img/bg/gate_open.webp");
         background-position: top 0 left 0;
         background-repeat: no-repeat;
         background-size: contain;
 
         &.-goblin-sword-green {
-            left: 80px;
-            bottom: 691px;
+            left: calc(50% - #{$base + 651}px);
+            bottom: 814px;
         }
         &.-goblin-green {
-            left: 353px;
-            bottom: 789px;
+            left: calc(50% - #{$base + 399}px);
+            bottom: 613px;
         }
         &.-slime-blue {
-            left: 462px;
-            bottom: 489px;
+            left: calc(50% - #{$base + 260}px);
+            bottom: 393px;
+        }
+        &.-meercat-yellow {
+            left: calc(50% - #{$base + 660}px);
+            bottom: 393px;
+        }
+        &.-fox-green {
+            left: calc(50% - #{$base + 302}px);
+            bottom: 1064px;
+        }
+        &.-goblin-sword-blue {
+            left: calc(50% + #{$half + 531}px);
+            bottom: 393px;
         }
         &.-slime-green {
-            right: 426px;
-            bottom: 789px;
+            left: calc(50% + #{$half + 131}px);
+            bottom: 956px;
         }
         &.-meercat-green {
-            right: 75px;
-            bottom: 680px;
+            left: calc(50% + #{$half + 409}px);
+            bottom: 697px;
         }
         &.-fox-blue {
-            right: 340px;
-            bottom: 463px;
+            left: calc(50% + #{$half + 131}px);
+            bottom: 393px;
+        }
+        &.-goblin-sword-yellow {
+            left: calc(50% + #{$half + 623}px);
+            bottom: 1024px;
+        }
+    }
+}
+
+.charcters__flare {
+    @include MQ_WIDE {
+        width: 100%;
+        opacity: 0;
+
+        &::before,
+        &::after {
+            content: "";
+            display: block;
+            background-image: url("/ja/dododo-cp/assets/img/bg/flare.svg");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            width: 145px;
+            height: 144px;
+            animation: flare 5s linear infinite;
+            animation-play-state: paused;
+
+            .-move & {
+                animation-play-state: running;
+            }
+        }
+
+        &::before {
+            @include absPosition(-38px, -62px);
+        }
+
+        &::after {
+            @include absPosition(-38px, null, null, -62px);
         }
     }
 }
@@ -58,8 +117,8 @@
 .charcters__item {
     @include MQ_WIDE {
         position: absolute;
-        width: 96px;
-        height: 96px;
+        width: 80px;
+        height: 80px;
         aspect-ratio: 1 / 1;
 
         .charcters__gate & {
@@ -82,14 +141,18 @@
         &.-goblin-green,
         &.-slime-blue,
         &.-fox-blue,
-        &.-goblin-bow-yellow {
+        &.-goblin-bow-yellow,
+        &.-meercat-yellow,
+        &.-goblin-sword-blue {
             animation: moveRtoL 1s linear infinite;
             animation-play-state: paused;
         }
         &.-meercat-green,
         &.-slime-green,
         &.-slime-yellow,
-        &.-meercat-red {
+        &.-meercat-red,
+        &.-fox-green,
+        &.-goblin-sword-yellow {
             animation: moveLtoR 1s linear infinite;
             animation-play-state: paused;
         }
@@ -102,7 +165,7 @@
 
         &.-goblin-sword-green,
         &.-fox-blue {
-            animation-duration: 0.6s;
+            animation-duration: 0.8s;
         }
 
         .-move & {
@@ -117,6 +180,11 @@
     .-move & {
         animation-play-state: running;
     }
+}
+
+[data-character] {
+    transform: translateX(0) translateY(0) scale(0);
+    transform-origin: bottom center;
 }
 
 @keyframes moveLtoR {
@@ -146,5 +214,23 @@
     }
     100% {
         transform: translateX(0) scale(1, 1);
+    }
+}
+
+@keyframes flare {
+    0% {
+        opacity: 1;
+    }
+    18% {
+        opacity: 0.6;
+    }
+    40% {
+        opacity: 1;
+    }
+    72% {
+        opacity: 0.6;
+    }
+    100% {
+        opacity: 1;
     }
 }

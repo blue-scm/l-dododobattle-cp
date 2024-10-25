@@ -6,26 +6,13 @@
             gate: true,
         },
         {
+            id: "fox-blue",
+            className: "p-sprite__fox__blue",
+            gate: true,
+        },
+        {
             id: "goblin-green",
             className: "p-sprite__goblin__green",
-            gate: true,
-        },
-        {
-            id: "slime-blue",
-            className: "p-sprite__slime__blue",
-            gate: true,
-        },
-        {
-            id: "goblin-bow-yellow",
-            className: "p-sprite__goblin-bow__yellow",
-        },
-        {
-            id: "meercat-red",
-            className: "p-sprite__meercat__red",
-        },
-        {
-            id: "slime-green",
-            className: "p-sprite__slime__green",
             gate: true,
         },
         {
@@ -34,13 +21,46 @@
             gate: true,
         },
         {
-            id: "fox-blue",
-            className: "p-sprite__fox__blue",
+            id: "goblin-bow-yellow",
+            className: "p-sprite__goblin-bow__yellow",
+        },
+        {
+            id: "slime-blue",
+            className: "p-sprite__slime__blue",
+            gate: true,
+        },
+        {
+            id: "meercat-red",
+            className: "p-sprite__meercat__red",
+        },
+        {
+            id: "goblin-sword-yellow",
+            className: "p-sprite__goblin-sword__yellow",
+            gate: true,
+        },
+        {
+            id: "slime-green",
+            className: "p-sprite__slime__green",
             gate: true,
         },
         {
             id: "slime-yellow",
             className: "p-sprite__slime__yellow",
+        },
+        {
+            id: "goblin-sword-blue",
+            className: "p-sprite__goblin-sword__blue",
+            gate: true,
+        },
+        {
+            id: "fox-green",
+            className: "p-sprite__fox__green",
+            gate: true,
+        },
+        {
+            id: "meercat-yellow",
+            className: "p-sprite__meercat__yellow",
+            gate: true,
         },
     ]
 %>
@@ -51,9 +71,12 @@
     <div class="charcters__gate -<%= item.id %>">
         <% } %>
         <div class="charcters__item -<%= item.id %>">
-            <div class="<%= item.className %> charcters__anime"></div>
+            <div class="charcters__item__inner" data-character="">
+                <div class="<%= item.className %> charcters__anime"></div>
+            </div>
         </div>
         <% if (item.gate) { %>
+        <div class="charcters__flare" data-character-flare=""></div>
     </div>
     <% } %>
     <% }) %>

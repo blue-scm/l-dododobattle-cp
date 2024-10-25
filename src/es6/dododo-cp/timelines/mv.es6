@@ -1,4 +1,5 @@
 import { createAPNGPlayer } from "../createAPNGPlayers.es6";
+import { appendCharacters } from "./appendCharacters.es6";
 
 export async function mv(gsap) {
     const mainVisual = await createAPNGPlayer("mainVisual");
@@ -17,9 +18,10 @@ export async function mv(gsap) {
 
     const tl = gsap.timeline({
         onComplete: () => {
-            baloon.classList.add("is-anime");
+            baloon.classList.add("-rumble");
             deco.classList.add("-fall");
             other[0].classList.add("-rumble");
+            appendCharacters(gsap);
         },
         paused: true,
     });

@@ -9,6 +9,10 @@ html {
     @include MQ_WIDE {
         font-size: math.div(16, 390) * $contentsMaxWidth * 1px;
     }
+
+    @media (max-height: 900px) and (min-width: 960px) {
+        font-size: math.div(16, 390) * 600 * 1px;
+    }
 }
 
 body {
@@ -19,6 +23,10 @@ body {
     font-family: "YakuHanJP_Noto", "Noto Sans JP", sans-serif;
     line-height: 1.7;
     -webkit-text-size-adjust: 100%;
+
+    @include MQ_WIDE {
+        overflow-x: hidden;
+    }
 }
 
 img {
@@ -67,22 +75,34 @@ button {
         &::before,
         &::after {
             content: "";
-            background-attachment: fixed;
             background-image: url("/ja/dododo-cp/assets/img/bg/line.webp");
             background-position: top 0 left 0;
             background-size: 100%;
-            background-repeat: no-repeat;
+            background-repeat: repeat-y;
             width: 12px;
-            height: 100%;
+            height: 100vh;
             z-index: 1;
         }
 
         &::before {
-            @include absPosition(0, 0);
+            @include fxdPosition(0, calc(50% - 252px));
         }
 
         &::after {
-            @include absPosition(0, null, null, 0);
+            @include fxdPosition(0, calc(50% + 240px));
+        }
+    }
+
+    @media (max-height: 900px) and (min-width: 960px) {
+        max-width: 624px;
+        margin: 0 auto;
+
+        &::before {
+            @include fxdPosition(0, calc(50% - 312px));
+        }
+
+        &::after {
+            @include fxdPosition(0, calc(50% + 300px));
         }
     }
 }
@@ -96,6 +116,11 @@ button {
         max-width: 480px;
         margin: 0 auto;
     }
+
+    @media (max-height: 900px) and (min-width: 960px) {
+        max-width: 600px;
+        margin: 0 auto;
+    }
 }
 
 .l-bg-main {
@@ -107,6 +132,10 @@ button {
 
     @include MQ_WIDE {
         max-width: 480px;
+    }
+
+    @media (max-height: 900px) and (min-width: 960px) {
+        max-width: 600px;
     }
 }
 

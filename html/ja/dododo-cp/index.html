@@ -103,42 +103,98 @@
     <div class="charcters" data-scroll-move-chara="">
       <div class="charcters__gate -goblin-sword-green">
         <div class="charcters__item -goblin-sword-green">
-          <div class="p-sprite__goblin-sword__green charcters__anime"></div>
+          <div class="charcters__item__inner" data-character="">
+            <div class="p-sprite__goblin-sword__green charcters__anime"></div>
+          </div>
         </div>
+        <div class="charcters__flare" data-character-flare=""></div>
+      </div>
+      <div class="charcters__gate -fox-blue">
+        <div class="charcters__item -fox-blue">
+          <div class="charcters__item__inner" data-character="">
+            <div class="p-sprite__fox__blue charcters__anime"></div>
+          </div>
+        </div>
+        <div class="charcters__flare" data-character-flare=""></div>
       </div>
       <div class="charcters__gate -goblin-green">
         <div class="charcters__item -goblin-green">
-          <div class="p-sprite__goblin__green charcters__anime"></div>
+          <div class="charcters__item__inner" data-character="">
+            <div class="p-sprite__goblin__green charcters__anime"></div>
+          </div>
+        </div>
+        <div class="charcters__flare" data-character-flare=""></div>
+      </div>
+      <div class="charcters__gate -meercat-green">
+        <div class="charcters__item -meercat-green">
+          <div class="charcters__item__inner" data-character="">
+            <div class="p-sprite__meercat__green charcters__anime"></div>
+          </div>
+        </div>
+        <div class="charcters__flare" data-character-flare=""></div>
+      </div>
+      <div class="charcters__item -goblin-bow-yellow">
+        <div class="charcters__item__inner" data-character="">
+          <div class="p-sprite__goblin-bow__yellow charcters__anime"></div>
         </div>
       </div>
       <div class="charcters__gate -slime-blue">
         <div class="charcters__item -slime-blue">
-          <div class="p-sprite__slime__blue charcters__anime"></div>
+          <div class="charcters__item__inner" data-character="">
+            <div class="p-sprite__slime__blue charcters__anime"></div>
+          </div>
         </div>
-      </div>
-      <div class="charcters__item -goblin-bow-yellow">
-        <div class="p-sprite__goblin-bow__yellow charcters__anime"></div>
+        <div class="charcters__flare" data-character-flare=""></div>
       </div>
       <div class="charcters__item -meercat-red">
-        <div class="p-sprite__meercat__red charcters__anime"></div>
+        <div class="charcters__item__inner" data-character="">
+          <div class="p-sprite__meercat__red charcters__anime"></div>
+        </div>
+      </div>
+      <div class="charcters__gate -goblin-sword-yellow">
+        <div class="charcters__item -goblin-sword-yellow">
+          <div class="charcters__item__inner" data-character="">
+            <div class="p-sprite__goblin-sword__yellow charcters__anime"></div>
+          </div>
+        </div>
+        <div class="charcters__flare" data-character-flare=""></div>
       </div>
       <div class="charcters__gate -slime-green">
         <div class="charcters__item -slime-green">
-          <div class="p-sprite__slime__green charcters__anime"></div>
+          <div class="charcters__item__inner" data-character="">
+            <div class="p-sprite__slime__green charcters__anime"></div>
+          </div>
         </div>
-      </div>
-      <div class="charcters__gate -meercat-green">
-        <div class="charcters__item -meercat-green">
-          <div class="p-sprite__meercat__green charcters__anime"></div>
-        </div>
-      </div>
-      <div class="charcters__gate -fox-blue">
-        <div class="charcters__item -fox-blue">
-          <div class="p-sprite__fox__blue charcters__anime"></div>
-        </div>
+        <div class="charcters__flare" data-character-flare=""></div>
       </div>
       <div class="charcters__item -slime-yellow">
-        <div class="p-sprite__slime__yellow charcters__anime"></div>
+        <div class="charcters__item__inner" data-character="">
+          <div class="p-sprite__slime__yellow charcters__anime"></div>
+        </div>
+      </div>
+      <div class="charcters__gate -goblin-sword-blue">
+        <div class="charcters__item -goblin-sword-blue">
+          <div class="charcters__item__inner" data-character="">
+            <div class="p-sprite__goblin-sword__blue charcters__anime"></div>
+          </div>
+        </div>
+        <div class="charcters__flare" data-character-flare=""></div>
+      </div>
+      <div class="charcters__gate -fox-green">
+        <div class="charcters__item -fox-green">
+          <div class="charcters__item__inner" data-character="">
+            <div class="p-sprite__fox__green charcters__anime"></div>
+          </div>
+        </div>
+        <div class="charcters__flare" data-character-flare=""></div>
+      </div>
+      <div class="charcters__gate -meercat-yellow">
+        <div class="charcters__item -meercat-yellow">
+          <div class="charcters__item__inner" data-character="">
+            <div class="p-sprite__meercat__yellow charcters__anime"></div>
+          </div>
+        </div>
+        <div class="charcters__flare" data-character-flare=""></div>
       </div>
     </div>
     <div class="l-main">
@@ -204,7 +260,7 @@
           <div class="movie__frame"></div>
           <p class="movie__text">ドドドの世界はここからCHECK!</p>
           <button type="button" class="movie__trigger js-modal_open top-pv" data-play-trigger="modalPlayer" data-modalID="movie">
-            <img src="/ja/dododo-cp/assets/img/mv/icon_play.webp" alt="" width="61" height="64">
+            <img src="/ja/dododo-cp/assets/img/mv/icon_play.webp" alt="" width="61" height="64" loading="lazy">
           </button>
         </div>
         <section class="campaigns">
@@ -496,6 +552,7 @@
         </div>
         <button type="button" class="schedule__anchor js-modal_open" data-scroll-append-target="" data-modalID="schedule">
           <img src="/ja/dododo-cp/assets/img/schedule/btn_anchor.png" alt="" width="108" height="116">
+          <div class="schedule__anchor__shine"></div>
         </button>
       </main>
       <footer class="l-footer">

@@ -1388,6 +1388,11 @@ button {
   animation-play-state: running;
 }
 
+[data-character] {
+  transform: translateX(0) translateY(0) scale(0);
+  transform-origin: bottom center;
+}
+
 @keyframes moveLtoR {
   0% {
     transform: translateX(0) scale(1, 1);
@@ -1416,6 +1421,23 @@ button {
     transform: translateX(0) scale(1, 1);
   }
 }
+@keyframes flare {
+  0% {
+    opacity: 1;
+  }
+  18% {
+    opacity: 0.6;
+  }
+  40% {
+    opacity: 1;
+  }
+  72% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 .deco-items {
   position: relative;
   width: 100%;
@@ -1436,202 +1458,202 @@ button {
 }
 
 .deco-item:nth-child(1) {
-  left: 4.5rem;
-  animation-duration: 5s;
-  animation-delay: 3s;
-  width: 1.75rem;
-  height: 1.5625rem;
-  background-image: url("/ja/dododo-cp/assets/img/bg/deco_08.webp");
-  transform: translateY(-100%) rotate(0);
-}
-
-.deco-item:nth-child(2) {
-  left: 6.3125rem;
+  left: 19.125rem;
   animation-duration: 6s;
-  animation-delay: 6s;
+  animation-delay: 9s;
   width: 1.25rem;
-  height: 1.5625rem;
-  background-image: url("/ja/dododo-cp/assets/img/bg/deco_06.webp");
-  transform: translateY(-100%) rotate(0);
-}
-
-.deco-item:nth-child(3) {
-  left: 7.875rem;
-  animation-duration: 5s;
-  animation-delay: 2s;
-  width: 1.5rem;
-  height: 0.875rem;
-  background-image: url("/ja/dododo-cp/assets/img/bg/deco_03.webp");
-  transform: translateY(-100%) rotate(0);
-}
-
-.deco-item:nth-child(4) {
-  left: 19.75rem;
-  animation-duration: 5s;
-  animation-delay: 7s;
-  width: 1.1875rem;
-  height: 0.9375rem;
-  background-image: url("/ja/dododo-cp/assets/img/bg/deco_07.webp");
-  transform: translateY(-100%) rotate(0);
-}
-
-.deco-item:nth-child(5) {
-  left: 19.5rem;
-  animation-duration: 6s;
-  animation-delay: 6s;
-  width: 0.875rem;
-  height: 1rem;
-  background-image: url("/ja/dododo-cp/assets/img/bg/deco_010.webp");
-  transform: translateY(-100%) rotate(0);
-}
-
-.deco-item:nth-child(6) {
-  left: 7.4375rem;
-  animation-duration: 6s;
-  animation-delay: 3s;
-  width: 1.75rem;
-  height: 1.5625rem;
-  background-image: url("/ja/dododo-cp/assets/img/bg/deco_012.webp");
-  transform: translateY(-100%) rotate(0);
-}
-
-.deco-item:nth-child(7) {
-  left: 19.75rem;
-  animation-duration: 6s;
-  animation-delay: 8s;
-  width: 1.3125rem;
-  height: 1.0625rem;
-  background-image: url("/ja/dododo-cp/assets/img/bg/deco_08.webp");
-  transform: translateY(-100%) rotate(0);
-}
-
-.deco-item:nth-child(8) {
-  left: 7rem;
-  animation-duration: 6s;
-  animation-delay: 7s;
-  width: 0.8125rem;
-  height: 1.8125rem;
-  background-image: url("/ja/dododo-cp/assets/img/bg/deco_03.webp");
-  transform: translateY(-100%) rotate(0);
-}
-
-.deco-item:nth-child(9) {
-  left: 6.875rem;
-  animation-duration: 6s;
-  animation-delay: 8s;
-  width: 1.3125rem;
-  height: 0.875rem;
-  background-image: url("/ja/dododo-cp/assets/img/bg/deco_07.webp");
-  transform: translateY(-100%) rotate(0);
-}
-
-.deco-item:nth-child(10) {
-  left: 5.0625rem;
-  animation-duration: 5s;
-  animation-delay: 3s;
-  width: 1.4375rem;
-  height: 0.8125rem;
+  height: 1.5rem;
   background-image: url("/ja/dododo-cp/assets/img/bg/deco_05.webp");
   transform: translateY(-100%) rotate(0);
 }
 
-.deco-item:nth-child(11) {
-  left: 12.0625rem;
-  animation-duration: 6s;
+.deco-item:nth-child(2) {
+  left: 19.4375rem;
+  animation-duration: 5s;
+  animation-delay: 6s;
+  width: 1.25rem;
+  height: 1.4375rem;
+  background-image: url("/ja/dododo-cp/assets/img/bg/deco_013.webp");
+  transform: translateY(-100%) rotate(0);
+}
+
+.deco-item:nth-child(3) {
+  left: 10.1875rem;
+  animation-duration: 5s;
+  animation-delay: 6s;
+  width: 1.3125rem;
+  height: 1.0625rem;
+  background-image: url("/ja/dododo-cp/assets/img/bg/deco_09.webp");
+  transform: translateY(-100%) rotate(0);
+}
+
+.deco-item:nth-child(4) {
+  left: 6.0625rem;
+  animation-duration: 5s;
   animation-delay: 10s;
-  width: 1.125rem;
-  height: 1.8125rem;
+  width: 1.25rem;
+  height: 1.3125rem;
+  background-image: url("/ja/dododo-cp/assets/img/bg/deco_03.webp");
+  transform: translateY(-100%) rotate(0);
+}
+
+.deco-item:nth-child(5) {
+  left: 13.0625rem;
+  animation-duration: 5s;
+  animation-delay: 3s;
+  width: 1.875rem;
+  height: 0.875rem;
+  background-image: url("/ja/dododo-cp/assets/img/bg/deco_07.webp");
+  transform: translateY(-100%) rotate(0);
+}
+
+.deco-item:nth-child(6) {
+  left: 0.8125rem;
+  animation-duration: 6s;
+  animation-delay: 9s;
+  width: 1.6875rem;
+  height: 1.375rem;
+  background-image: url("/ja/dododo-cp/assets/img/bg/deco_010.webp");
+  transform: translateY(-100%) rotate(0);
+}
+
+.deco-item:nth-child(7) {
+  left: 12.75rem;
+  animation-duration: 6s;
+  animation-delay: 5s;
+  width: 1.3125rem;
+  height: 1.625rem;
+  background-image: url("/ja/dododo-cp/assets/img/bg/deco_013.webp");
+  transform: translateY(-100%) rotate(0);
+}
+
+.deco-item:nth-child(8) {
+  left: 20.0625rem;
+  animation-duration: 6s;
+  animation-delay: 6s;
+  width: 1.3125rem;
+  height: 0.9375rem;
+  background-image: url("/ja/dododo-cp/assets/img/bg/deco_013.webp");
+  transform: translateY(-100%) rotate(0);
+}
+
+.deco-item:nth-child(9) {
+  left: 10.875rem;
+  animation-duration: 5s;
+  animation-delay: 7s;
+  width: 1.25rem;
+  height: 1.4375rem;
+  background-image: url("/ja/dododo-cp/assets/img/bg/deco_011.webp");
+  transform: translateY(-100%) rotate(0);
+}
+
+.deco-item:nth-child(10) {
+  left: 5.9375rem;
+  animation-duration: 6s;
+  animation-delay: 8s;
+  width: 1.6875rem;
+  height: 1.5625rem;
+  background-image: url("/ja/dododo-cp/assets/img/bg/deco_09.webp");
+  transform: translateY(-100%) rotate(0);
+}
+
+.deco-item:nth-child(11) {
+  left: 16.75rem;
+  animation-duration: 5s;
+  animation-delay: 8s;
+  width: 1.0625rem;
+  height: 1.5rem;
   background-image: url("/ja/dododo-cp/assets/img/bg/deco_02.webp");
   transform: translateY(-100%) rotate(0);
 }
 
 .deco-item:nth-child(12) {
-  left: 3.875rem;
-  animation-duration: 5s;
-  animation-delay: 6s;
-  width: 1.5rem;
-  height: 1.4375rem;
-  background-image: url("/ja/dododo-cp/assets/img/bg/deco_08.webp");
+  left: 18.4375rem;
+  animation-duration: 6s;
+  animation-delay: 9s;
+  width: 1.8125rem;
+  height: 0.9375rem;
+  background-image: url("/ja/dododo-cp/assets/img/bg/deco_012.webp");
   transform: translateY(-100%) rotate(0);
 }
 
 .deco-item:nth-child(13) {
-  left: 11.75rem;
+  left: 7.875rem;
   animation-duration: 6s;
-  animation-delay: 6s;
-  width: 0.8125rem;
-  height: 1.375rem;
-  background-image: url("/ja/dododo-cp/assets/img/bg/deco_09.webp");
+  animation-delay: 9s;
+  width: 1.75rem;
+  height: 1.875rem;
+  background-image: url("/ja/dododo-cp/assets/img/bg/deco_013.webp");
   transform: translateY(-100%) rotate(0);
 }
 
 .deco-item:nth-child(14) {
   left: 1.25rem;
-  animation-duration: 5s;
-  animation-delay: 6s;
-  width: 1rem;
-  height: 1.625rem;
-  background-image: url("/ja/dododo-cp/assets/img/bg/deco_07.webp");
+  animation-duration: 6s;
+  animation-delay: 10s;
+  width: 1.6875rem;
+  height: 1.3125rem;
+  background-image: url("/ja/dododo-cp/assets/img/bg/deco_08.webp");
   transform: translateY(-100%) rotate(0);
 }
 
 .deco-item:nth-child(15) {
-  left: 17.6875rem;
+  left: 2.625rem;
   animation-duration: 5s;
-  animation-delay: 10s;
-  width: 1.125rem;
-  height: 1.125rem;
-  background-image: url("/ja/dododo-cp/assets/img/bg/deco_013.webp");
+  animation-delay: 2s;
+  width: 1.3125rem;
+  height: 1.3125rem;
+  background-image: url("/ja/dododo-cp/assets/img/bg/deco_08.webp");
   transform: translateY(-100%) rotate(0);
 }
 
 .deco-item:nth-child(16) {
-  left: 12.875rem;
+  left: 15.0625rem;
   animation-duration: 6s;
-  animation-delay: 6s;
-  width: 0.8125rem;
-  height: 1.0625rem;
-  background-image: url("/ja/dododo-cp/assets/img/bg/deco_02.webp");
+  animation-delay: 9s;
+  width: 1.4375rem;
+  height: 1.6875rem;
+  background-image: url("/ja/dododo-cp/assets/img/bg/deco_04.webp");
   transform: translateY(-100%) rotate(0);
 }
 
 .deco-item:nth-child(17) {
-  left: 2.3125rem;
-  animation-duration: 6s;
-  animation-delay: 6s;
-  width: 1rem;
-  height: 1.6875rem;
-  background-image: url("/ja/dododo-cp/assets/img/bg/deco_02.webp");
+  left: 20.0625rem;
+  animation-duration: 5s;
+  animation-delay: 10s;
+  width: 1.125rem;
+  height: 1.25rem;
+  background-image: url("/ja/dododo-cp/assets/img/bg/deco_03.webp");
   transform: translateY(-100%) rotate(0);
 }
 
 .deco-item:nth-child(18) {
-  left: 1.6875rem;
+  left: 10.75rem;
   animation-duration: 5s;
-  animation-delay: 8s;
-  width: 1rem;
-  height: 0.875rem;
-  background-image: url("/ja/dododo-cp/assets/img/bg/deco_010.webp");
+  animation-delay: 6s;
+  width: 0.8125rem;
+  height: 1.8125rem;
+  background-image: url("/ja/dododo-cp/assets/img/bg/deco_02.webp");
   transform: translateY(-100%) rotate(0);
 }
 
 .deco-item:nth-child(19) {
-  left: 8.8125rem;
-  animation-duration: 5s;
+  left: 1.25rem;
+  animation-duration: 6s;
   animation-delay: 3s;
-  width: 1.125rem;
-  height: 1.4375rem;
-  background-image: url("/ja/dododo-cp/assets/img/bg/deco_09.webp");
+  width: 1.5625rem;
+  height: 1rem;
+  background-image: url("/ja/dododo-cp/assets/img/bg/deco_013.webp");
   transform: translateY(-100%) rotate(0);
 }
 
 .deco-item:nth-child(20) {
-  left: 15.625rem;
-  animation-duration: 6s;
-  animation-delay: 1s;
-  width: 1.75rem;
-  height: 0.875rem;
-  background-image: url("/ja/dododo-cp/assets/img/bg/deco_02.webp");
+  left: 4.125rem;
+  animation-duration: 5s;
+  animation-delay: 8s;
+  width: 1.4375rem;
+  height: 1.5rem;
+  background-image: url("/ja/dododo-cp/assets/img/bg/deco_03.webp");
   transform: translateY(-100%) rotate(0);
 }
 
@@ -1955,7 +1977,7 @@ button {
   width: 21.875rem;
 }
 .mv__link.-rumble {
-  animation: rumble 1.4s ease-out 0.4s infinite;
+  animation: rumble 3.2s ease-out 0.4s infinite;
 }
 
 .mv__x {
@@ -1976,6 +1998,9 @@ button {
   left: -2.5rem;
   width: 4rem;
   translate: 0 -50%;
+}
+.mv__x__baloon.-rumble {
+  animation: trembling 1.8s ease-out 0.4s infinite;
 }
 
 .mv__x__detail {
@@ -2015,11 +2040,6 @@ button {
   scale: 1.8;
 }
 
-.is-anime {
-  animation: trembling 1.8s ease-out 0.4s infinite;
-  transform: translateX(0);
-}
-
 @keyframes trembling {
   0% {
     transform: translateX(-5%);
@@ -2047,22 +2067,22 @@ button {
   0% {
     transform: translate(12px);
   }
-  5% {
+  2% {
     transform: translate(-12px);
+  }
+  4% {
+    transform: translate(12px);
+  }
+  6% {
+    transform: translate(-12px);
+  }
+  8% {
+    transform: translate(12px);
   }
   10% {
-    transform: translate(12px);
-  }
-  15% {
     transform: translate(-12px);
   }
-  20% {
-    transform: translate(12px);
-  }
-  25% {
-    transform: translate(-12px);
-  }
-  30% {
+  12% {
     transform: translate(0);
   }
   100% {
@@ -2138,36 +2158,47 @@ button {
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.2s linear, visibility 0.2s linear;
-  overflow: hidden;
-}
-.schedule__anchor::before {
-  animation: btnShinySchedule 2.3s ease-in-out infinite;
-  background-color: #fff;
-  content: "";
-  display: inline-block;
-  height: 80%;
-  left: 0;
-  position: absolute;
-  top: 0;
-  width: 0.875rem;
 }
 .schedule__anchor.-append {
   opacity: 1;
   visibility: visible;
 }
 
+.schedule__anchor__shine {
+  overflow: hidden;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 5.5rem;
+  height: 6rem;
+  clip-path: polygon(50% 0%, 100% 18%, 100% 82%, 50% 100%, 0 82%, 0 18%);
+}
+.schedule__anchor__shine::before {
+  animation: btnShinySchedule 2.3s ease-in-out infinite;
+  background-color: #fff;
+  content: "";
+  display: inline-block;
+  height: 110%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 0.875rem;
+  transform-origin: bottom right;
+}
+
 @keyframes btnShinySchedule {
   0% {
     opacity: 0.6;
-    transform: rotate(45deg) translateX(-2.5rem) translateY(-3.75rem) skew(-8deg, -8deg);
+    transform: rotate(60deg) translateX(-5.75rem);
   }
   80% {
-    opacity: 0.4;
-    transform: rotate(45deg) translateX(-2.5rem) translateY(-3.75rem) skew(-8deg, -8deg);
+    opacity: 0.6;
+    transform: rotate(60deg) translateX(-5.75rem);
   }
   100% {
-    opacity: 0.2;
-    transform: rotate(45deg) translateX(7.5rem) translateY(0.625rem) skew(-8deg, -8deg);
+    opacity: 0.6;
+    transform: rotate(60deg) translateX(2.75rem);
   }
 }
 [data-schedule-anime-head] {
@@ -2360,6 +2391,9 @@ button {
   html {
     font-size: 19.6923076923px;
   }
+  body {
+    overflow-x: hidden;
+  }
   .l-bg-wide {
     position: fixed;
     top: 0;
@@ -2377,24 +2411,23 @@ button {
   }
   .l-main::before, .l-main::after {
     content: "";
-    background-attachment: fixed;
     background-image: url("/ja/dododo-cp/assets/img/bg/line.webp");
     background-position: top 0 left 0;
     background-size: 100%;
-    background-repeat: no-repeat;
+    background-repeat: repeat-y;
     width: 12px;
-    height: 100%;
+    height: 100vh;
     z-index: 1;
   }
   .l-main::before {
-    position: absolute;
+    position: fixed;
     top: 0;
-    left: 0;
+    left: calc(50% - 252px);
   }
   .l-main::after {
-    position: absolute;
+    position: fixed;
     top: 0;
-    right: 0;
+    left: calc(50% + 240px);
   }
   .l-main__inner {
     max-width: 480px;
@@ -2409,51 +2442,104 @@ button {
     left: 50%;
     bottom: 0;
     right: unset;
-    width: 1920px;
+    width: 100%;
     height: 1080px;
     transform: translateX(-50%);
-    background-image: url("/ja/dododo-cp/assets/img/bg/gates.webp");
-    background-position: bottom 74px left 50%;
-    background-repeat: no-repeat;
-    background-size: 1702px;
+  }
+  .charcters::before {
+    position: absolute;
+    left: 0;
+    bottom: 74px;
+    content: "";
+    width: 100%;
+    height: 152px;
+    background-image: url("/ja/dododo-cp/assets/img/bg/gate.webp");
+    background-position: top 0 left 0;
+    background-repeat: repeat-x;
+    background-size: 344px;
   }
   .charcters__gate {
     position: absolute;
-    width: 159px;
-    height: 140px;
+    width: 108px;
+    height: 96px;
     background-image: url("/ja/dododo-cp/assets/img/bg/gate_open.webp");
     background-position: top 0 left 0;
     background-repeat: no-repeat;
     background-size: contain;
   }
   .charcters__gate.-goblin-sword-green {
-    left: 80px;
-    bottom: 691px;
+    left: calc(50% - 999px);
+    bottom: 814px;
   }
   .charcters__gate.-goblin-green {
-    left: 353px;
-    bottom: 789px;
+    left: calc(50% - 747px);
+    bottom: 613px;
   }
   .charcters__gate.-slime-blue {
-    left: 462px;
-    bottom: 489px;
+    left: calc(50% - 608px);
+    bottom: 393px;
+  }
+  .charcters__gate.-meercat-yellow {
+    left: calc(50% - 1008px);
+    bottom: 393px;
+  }
+  .charcters__gate.-fox-green {
+    left: calc(50% - 650px);
+    bottom: 1064px;
+  }
+  .charcters__gate.-goblin-sword-blue {
+    left: calc(50% + 771px);
+    bottom: 393px;
   }
   .charcters__gate.-slime-green {
-    right: 426px;
-    bottom: 789px;
+    left: calc(50% + 371px);
+    bottom: 956px;
   }
   .charcters__gate.-meercat-green {
-    right: 75px;
-    bottom: 680px;
+    left: calc(50% + 649px);
+    bottom: 697px;
   }
   .charcters__gate.-fox-blue {
-    right: 340px;
-    bottom: 463px;
+    left: calc(50% + 371px);
+    bottom: 393px;
+  }
+  .charcters__gate.-goblin-sword-yellow {
+    left: calc(50% + 863px);
+    bottom: 1024px;
+  }
+  .charcters__flare {
+    width: 100%;
+    opacity: 0;
+  }
+  .charcters__flare::before, .charcters__flare::after {
+    content: "";
+    display: block;
+    background-image: url("/ja/dododo-cp/assets/img/bg/flare.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 145px;
+    height: 144px;
+    animation: flare 5s linear infinite;
+    animation-play-state: paused;
+  }
+  .-move .charcters__flare::before, .-move .charcters__flare::after {
+    animation-play-state: running;
+  }
+  .charcters__flare::before {
+    position: absolute;
+    top: -38px;
+    left: -62px;
+  }
+  .charcters__flare::after {
+    position: absolute;
+    top: -38px;
+    right: -62px;
   }
   .charcters__item {
     position: absolute;
-    width: 96px;
-    height: 96px;
+    width: 80px;
+    height: 80px;
     aspect-ratio: 1/1;
   }
   .charcters__gate .charcters__item {
@@ -2475,11 +2561,11 @@ button {
     right: 554px;
     bottom: 55px;
   }
-  .charcters__item.-goblin-sword-green, .charcters__item.-goblin-green, .charcters__item.-slime-blue, .charcters__item.-fox-blue, .charcters__item.-goblin-bow-yellow {
+  .charcters__item.-goblin-sword-green, .charcters__item.-goblin-green, .charcters__item.-slime-blue, .charcters__item.-fox-blue, .charcters__item.-goblin-bow-yellow, .charcters__item.-meercat-yellow, .charcters__item.-goblin-sword-blue {
     animation: moveRtoL 1s linear infinite;
     animation-play-state: paused;
   }
-  .charcters__item.-meercat-green, .charcters__item.-slime-green, .charcters__item.-slime-yellow, .charcters__item.-meercat-red {
+  .charcters__item.-meercat-green, .charcters__item.-slime-green, .charcters__item.-slime-yellow, .charcters__item.-meercat-red, .charcters__item.-fox-green, .charcters__item.-goblin-sword-yellow {
     animation: moveLtoR 1s linear infinite;
     animation-play-state: paused;
   }
@@ -2492,7 +2578,7 @@ button {
     animation-duration: 1.2s;
   }
   .charcters__item.-goblin-sword-green, .charcters__item.-fox-blue {
-    animation-duration: 0.6s;
+    animation-duration: 0.8s;
   }
   .-move .charcters__item {
     animation-play-state: running;
@@ -2506,6 +2592,36 @@ button {
   .l-header__links__btn {
     margin: 0 0 0 auto;
     width: 56px;
+  }
+}
+
+@media (max-height: 900px) and (min-width: 960px){
+  .-dododo-cp .l-header__links {
+    margin-left: 20px;
+  }
+  html {
+    font-size: 24.6153846154px;
+  }
+  .l-main {
+    max-width: 624px;
+    margin: 0 auto;
+  }
+  .l-main::before {
+    position: fixed;
+    top: 0;
+    left: calc(50% - 312px);
+  }
+  .l-main::after {
+    position: fixed;
+    top: 0;
+    left: calc(50% + 300px);
+  }
+  .l-main__inner {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  .l-bg-main {
+    max-width: 600px;
   }
 }
 
