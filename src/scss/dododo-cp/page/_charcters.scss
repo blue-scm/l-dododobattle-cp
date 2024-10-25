@@ -116,6 +116,11 @@ $base: 348;
         &.-anime::after {
             animation-play-state: running;
         }
+
+        &.-even::before,
+        &.-even::after {
+            animation: flareE 6s linear infinite;
+        }
     }
 }
 
@@ -236,6 +241,33 @@ $base: 348;
         scale: 1.4;
     }
     63% {
+        opacity: 0.2;
+        scale: 1;
+    }
+    100% {
+        opacity: 1;
+        scale: 1.4;
+    }
+}
+
+@keyframes flareE {
+    0% {
+        opacity: 1;
+        scale: 1.4;
+    }
+    24% {
+        opacity: 1;
+        scale: 1.4;
+    }
+    46% {
+        opacity: 0.2;
+        scale: 1;
+    }
+    66% {
+        opacity: 1;
+        scale: 1.4;
+    }
+    80% {
         opacity: 0.2;
         scale: 1;
     }

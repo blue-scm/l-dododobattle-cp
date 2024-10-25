@@ -24,8 +24,9 @@ export function appendCharacters(gsap) {
         },
         delay: 0.5,
         onComplete: () => {
-            flare.forEach((el) => {
-                el.classList.add("-anime");
+            flare.forEach((el, idx) => {
+                if (idx % 2 === 0) el.classList.add("-even", "-anime");
+                if (idx % 2 !== 0) el.classList.add("-odd", "-anime");
             });
         },
     };
