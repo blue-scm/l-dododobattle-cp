@@ -29,6 +29,12 @@
             width: getVW(680);
         }
     }
+
+    @media (min-height: 900px) and (min-width: 1621px) {
+        .-dododo-cp & {
+            @include fxdPosition(null, calc(50% + 312px + 96px), 0);
+        }
+    }
 }
 
 .download__row {

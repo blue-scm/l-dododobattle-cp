@@ -1,9 +1,12 @@
+import { createAPNGPlayer } from "../createAPNGPlayers.es6";
 import { appendCharacters } from "./appendCharacters.es6";
 
 export async function mv(gsap, status) {
-    const img = document.querySelector("[data-mv-anime-main]");
+    const mainVisual = await createAPNGPlayer("mainVisual");
+    // mainVisualはapng-jsのPlayerインスタンスであるため、callメソッドに渡すときは関数を定義して渡す
+    // 直接渡すとplayメソッドにそぐわない引数が渡されるためエラーになる
     const func = () => {
-        img.src = "./assets/img/mv/anime_main.webp";
+        mainVisual.play();
     };
 
     const logo = document.querySelector("[data-mv-anime-logo]");

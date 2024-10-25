@@ -57,6 +57,10 @@ $base: 348;
         &.-fox-green {
             left: calc(50% - #{$base + 302}px);
             bottom: 1064px;
+
+            @media (min-height: 900px) and (min-width: 960px) {
+                left: calc(50% - #{$base + 410}px);
+            }
         }
         &.-goblin-sword-blue {
             left: calc(50% + #{$half + 531}px);
