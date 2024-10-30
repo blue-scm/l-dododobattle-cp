@@ -1,7 +1,7 @@
-import ScrollEffect from './scrollEffect.es6';
-import Modal from './modal.es6';
-import Movie from './movie.es6';
-import UA from './ua.es6';
+import ScrollEffect from './top/scrollEffect.es6';
+import Modal from './common/modal.es6';
+import Movie from './top/movie.es6';
+import UA from './common/ua.es6';
 export default class Main {
     constructor() {}
 

@@ -16,6 +16,13 @@
     }
 }
 
+//（960px）以上で画面の高さが高い場合
+@mixin MQ_WIDE_HIGH {
+    @media (min-height: 900px) and (min-width: 960px) {
+        @content;
+    }
+}
+
 @mixin MQ_MID {
     @media (min-width: 769px) and (max-width: 1200px) {
         @content;

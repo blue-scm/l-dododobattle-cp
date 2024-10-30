@@ -1,0 +1,147 @@
+<%
+  const items = [
+    {
+        id: "01",
+        title: {
+            "sub": "ダミーダミー",
+            "main": "無料",
+        },
+        date: "-2024/00/00(●)〜2024/00/00(●)-",
+        head: "ダミー見出しダミー見出しダミー見出しダミー見出しダミー見出し",
+        body: "ダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミー",
+        link: {
+            text: "今すぐプレイ！",
+            href: "",
+        },
+    },
+    {
+        id: "02",
+        title: {
+            "sub": "ダミーダミー",
+            "main": "無料",
+        },
+        date: "-2024/00/00(●)〜2024/00/00(●)-",
+        head: "ダミー見出しダミー見出しダミー見出しダミー見出しダミー見出し",
+        body: "ダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミー",
+        link: {
+            text: "今すぐプレイ！",
+            href: "",
+        },
+    },
+    {
+        id: "03",
+        title: {
+            "sub": "ダミーダミー",
+            "main": "無料",
+        },
+        date: "-2024/00/00(●)〜2024/00/00(●)-",
+        head: "ダミー見出しダミー見出しダミー見出しダミー見出しダミー見出し",
+        body: "ダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミー",
+        link: {
+            text: "今すぐプレイ！",
+            href: "",
+        },
+    },
+    {
+        id: "04",
+        title: {
+            "sub": "ダミーダミー",
+            "main": "無料",
+        },
+        date: "-2024/00/00(●)〜2024/00/00(●)-",
+        head: "ダミー見出しダミー見出しダミー見出しダミー見出しダミー見出し",
+        body: "ダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミー",
+        link: {
+            text: "今すぐプレイ！",
+            href: "",
+        },
+    },
+    {
+        id: "05",
+        title: {
+            "sub": "ダミーダミー",
+            "main": "無料",
+        },
+        date: "-2024/00/00(●)〜2024/00/00(●)-",
+        head: "ダミー見出しダミー見出しダミー見出しダミー見出しダミー見出し",
+        body: "ダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミー",
+        link: {
+            text: "今すぐプレイ！",
+            href: "",
+        },
+    },
+    {
+        id: "06",
+        title: {
+            "sub": "ダミーダミー",
+            "main": "無料",
+        },
+        date: "-2024/00/00(●)〜2024/00/00(●)-",
+        head: "ダミー見出しダミー見出しダミー見出しダミー見出しダミー見出し",
+        body: "ダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミー",
+        link: {
+            text: "今すぐプレイ！",
+            href: "",
+        },
+    },
+    {
+        id: "07",
+        title: {
+            "sub": "ダミーダミー",
+            "main": "無料",
+        },
+        date: "-2024/00/00(●)〜2024/00/00(●)-",
+        head: "ダミー見出しダミー見出しダミー見出しダミー見出しダミー見出し",
+        body: "ダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミー",
+        link: {
+            text: "今すぐプレイ！",
+            href: "",
+        },
+    }
+  ];
+%>
+<section class="campaigns">
+    <h2 class="campaigns__head" data-cam-anime-head>
+        <div class="campaigns__head__main" data-apng-id="textdododo" data-apng-src="<%= imgDir %>anime_head.png"></div>
+        <img src="<%= imgDir %>txt_head.webp" alt="なキャンペーンを見逃すな！" loading="lazy">
+        <div class="campaigns__head__sally" data-cam-anime-sally="">
+            <img src="<%= commonDir %>chara_sally.webp" alt="" loading="lazy">
+        </div>
+    </h2>
+    <div class="campaigns__items">
+        <% items.forEach((item, idx) => { %>
+        <article class="campaigns__item" aria-expanded="false" data-accordion-parent="<%= item.id %>" data-cam-anime-article="">
+            <div class="campaigns__badge" data-cam-anime-badge="">
+                <img src="<%= imgDir %>badge_<%= item.id %>.webp" alt="" loading="lazy">
+            </div>
+            <div class="campaigns__inner" id="campaign<%= item.id %>">
+                <div class="campaigns__contents" data-accordion="<%= item.id %>">
+                    <h3 class="campaigns__title">
+                        <span class="campaigns__title__sub">
+                            <img src="<%= imgDir %>txt_title_sub_<%= item.id %>.webp" alt="<%= item.title.sub %>" loading="lazy">
+                        </span>
+                        <span class="campaigns__title__main" data-cam-anime-title="">
+                            <img src="<%= imgDir %>txt_title_main_<%= item.id %>.webp" alt="<%= item.title.main %>" loading="lazy">
+                        </span>
+                    </h3>
+                    <div class="campaigns__img">
+                        <img src="<%= imgDir %>ph_main_<%= item.id %>.webp" alt="" data-cam-anime-image="" loading="lazy">
+                        <div class="campaigns__img__frame" data-cam-anime-image=""></div>
+                    </div>
+                    <div class="campaigns__texts">
+                        <div class="campaigns__date"><%= item.date %></div>
+                        <div class="campaigns__head"><%= item.head %></div>
+                        <div class="campaigns__body"><%= item.body %></div>
+                        <a href="<%= item.link.href %>" target="_blank" rel="noopener noreferrer" class="top-cp<%= idx + 1 %>-detail campaigns__link">
+                            <img src="<%= imgDir %>ph_btn_link_<%= item.id %>.webp" alt="" alt="<%= item.link.text %>" loading="lazy">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="campaigns__trigger__wrapper">
+                <button type="button" data-cam-anime-btn="" class="top-cp<%= idx + 1 %>-more campaigns__trigger" data-accordion-trigger="<%= item.id %>" aria-controls="campaign<%= item.id %>"><span class="campaigns__trigger__open">くわしく見る</span><span class="campaigns__trigger__close">閉じる</span></button>
+            </div>
+        </article>
+        <% }) %>
+    </div>
+</section>

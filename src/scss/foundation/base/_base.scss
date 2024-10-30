@@ -8,6 +8,10 @@ html {
     @include MQ_WIDE {
         font-size: min(16px * 480 / 750, (16 / 750 * 1vw * 100));
     }
+
+    @include  MQ_WIDE_HIGH {
+        font-size: min(16px * 600 / 750, (16 / 750 * 1vw * 100));
+    }
 }
 
 body {
@@ -28,6 +32,7 @@ button {
     cursor: pointer;
     display: block;
     outline: none;
+    padding: 0;
 }
 
 //計測タグの余白をリセット

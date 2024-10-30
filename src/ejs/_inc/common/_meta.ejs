@@ -2,6 +2,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 <title><%= pageInfo.meta.title %></title>
+
+<link rel="alternate" hreflang="ja" href="<%= common.og.og_url %>">
+
 <meta name="description" content="<%= pageInfo.meta.description %>" />
 <meta property="og:title" content="<%= pageInfo.meta.title %>" />
 
@@ -10,7 +13,7 @@
 
 <!-- Open Graph Meta Tags -->
 <meta property="og:description" content="<%= pageInfo.meta.description %>" />
-<meta property="og:image" content="<%= common.og.og_image %>" />
+<meta property="og:image" content="<%= pageInfo.og ? pageInfo.og.og_image : common.og.og_image %>" />
 <meta property="og:url" content="<%= pageInfo.og ? pageInfo.og.og_url : common.og.og_url %>">
 <meta property="og:type" content="website">
 
@@ -23,8 +26,8 @@
 <meta name="twitter:image" content="<%= pageInfo.og ? pageInfo.og.og_image : common.og.og_image %>" />
 
 <!-- Favicon and Apple Touch Icon -->
-<link rel="shortcut icon" type="image/png" href="/<%= common.og.favicon %>" />
-<link rel="apple-touch-icon" href="/<%= common.og.apt %>" />
+<link rel="shortcut icon" type="image/png" href="<%= pageInfo.og ? pageInfo.og.favicon : common.og.favicon %>" />
+<link rel="apple-touch-icon" href="<%= pageInfo.og ? pageInfo.og.apt : common.og.apt %>" />
 
 <!-- Apple Meta Tags -->
 <meta name="apple-mobile-web-app-capable" content="yes">
@@ -44,6 +47,6 @@
 
 <!-- PAGE CSS -->
 <%# page css loop %>
-<% common.css.forEach(function (value) { %>
-<link rel="stylesheet" href="<%= assetsDir %><%= value %>" />
+<% pages[pageId].css.forEach(function (value) { %>
+<link rel="stylesheet" href="<%= value %>" />
 <% }); %>

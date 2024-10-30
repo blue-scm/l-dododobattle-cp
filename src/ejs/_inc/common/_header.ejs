@@ -1,0 +1,38 @@
+<header class="l-header">
+    <div class="l-header__cont">
+        <div class="c-ios">
+            <a href="<%= common.dl.common %>" target="_blank" class="l-header__dl c-visible_nrw top-menu-play">
+                <img src="<%= pageInfo.relPath %>assets/img/common/header/btn_dl.png" alt="今すぐダウンロード！" />
+            </a>
+            <p class="l-header__dl__deco c-visible_nrw"></p>
+        </div>
+
+        <div class="c-android">
+            <a href="<%= common.dl.common %>" target="_blank" class="l-header__dl c-visible_nrw top-menu-play">
+                <img src="<%= pageInfo.relPath %>assets/img/common/header/btn_dl.png" alt="今すぐダウンロード！" />
+            </a>
+            <p class="l-header__dl__deco c-visible_nrw">
+                <svg width="0" height="0" style="position: absolute; top: 0; left: 0">
+                    <clipPath id="clip01">
+                        <path d="M5.5 46.5L0 3.5L206 0L200.5 47.5L5.5 46.5Z" />
+                    </clipPath>
+                </svg>
+            </p>
+        </div>
+
+        <div class="l-header__links">
+            <a href="<%= common.snslinks.line %>" target="_blank" class="l-header__links__btn top-menu-line">
+                <picture>
+                    <source media="(max-width:1280px)" srcset="<%= pageInfo.relPath %>assets/img/common/header/ico_line.png" />
+                    <img src="<%= pageInfo.relPath %>assets/img/common/header/btn_line.png" alt="LINE キャンペーンをチェック！" />
+                </picture>
+            </a>
+            <a href="<%= common.snslinks.twitter %>" target="_blank" class="l-header__links__btn top-menu-x">
+                <picture>
+                    <source media="(max-width:1280px)" srcset="<%= pageInfo.relPath %>assets/img/common/header/ico_x.png" />
+                    <img src="<%= pageInfo.relPath %>assets/img/common/header/btn_x.png" alt="X 最新情報をチェック！" />
+                </picture>
+            </a>
+        </div>
+    </div>
+</header>

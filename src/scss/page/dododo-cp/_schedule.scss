@@ -1,0 +1,128 @@
+@use "src/scss/global" as *;
+
+.schedule {
+    @include relPosition;
+    margin-top: getRem(144);
+    padding-bottom: getRem(112);
+}
+
+.schedule__head {
+    filter: drop-shadow(0px 0px 20px #000) drop-shadow(0px 0px 20px #000) drop-shadow(0px 0px 20px #000);
+    margin: 0 auto;
+    width: getRem(534);
+    will-change: filter;
+}
+
+.schedule__box {
+    @include relPosition;
+    background: url("#{$imgDir}dododo-cp/bg/schedule_box.webp") no-repeat center / contain;
+    margin: getRem(20) auto 0;
+    height: getRem(712);
+    padding-top: getRem(3);
+    width: getRem(680);
+}
+
+.schedule__box__inner {
+    @include relPosition;
+    height: calc(100% - getRem(6));
+    padding: getRem(68) 0;
+    overflow-y: scroll;
+
+    img {
+        display: block;
+        margin: 0 auto;
+        width: getRem(588);
+    }
+}
+
+.schedule__btn {
+    @include absPosition(null, null, 0, 0);
+    cursor: pointer;
+    width: getRem(96);
+    height: getRem(96);
+}
+
+.schedule__modal {
+    margin: 0 auto;
+    padding: getRem(130) 0;
+    width: getRem(588);
+}
+
+.schedule__modal__close {
+    @include fxdPosition(0, null, null, 0);
+    width: getRem(112);
+    height: getRem(112);
+}
+
+.schedule__anchor {
+    @include fxdPosition(null, calc(50% + getRem(160)), 0);
+    display: block;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s linear, visibility 0.2s linear;
+    width: getRem(216);
+    z-index: 10;
+
+    [data-os="others"] & {
+        @include MQ_UNDER(1620) {
+            bottom: getRem(280);
+        }
+    }
+
+    @include MQ_UNDER($contentsMaxWidth) {
+        bottom: 0;
+    }
+
+    &.-append {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+.schedule__anchor__shine {
+    overflow: hidden;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: getRem(176);
+    height: getRem(192);
+    clip-path: polygon(50% 0%, 100% 18%, 100% 82%, 50% 100%, 0 82%, 0 18%);
+
+    &::before {
+        animation: btnShinySchedule 2.3s ease-in-out infinite;
+        background-color: #fff;
+        content: "";
+        display: inline-block;
+        height: 110%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: getRem(56);
+        transform-origin: bottom right;
+    }
+}
+
+@keyframes btnShinySchedule {
+    0% {
+        opacity: 0.6;
+        transform: rotate(60deg) translateX(getRem(-184));
+    }
+    80% {
+        opacity: 0.6;
+        transform: rotate(60deg) translateX(getRem(-184));
+    }
+    100% {
+        opacity: 0.6;
+        transform: rotate(60deg) translateX(getRem(88));
+    }
+}
+
+[data-schedule-anime-head] {
+    opacity: 0;
+    scale: 1.8;
+}
+
+[data-schedule-anime-btn] {
+    transform-origin: bottom right;
+}

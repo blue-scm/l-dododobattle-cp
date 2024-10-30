@@ -10,6 +10,7 @@ module.exports = (env) => {
         mode: 'production',
         entry: {
             main: CONFIG.PATH.es6 + 'main.es6',
+            "dododo-cp": CONFIG.PATH.es6 + 'dododo-cp.es6',
         },
 
         output: {

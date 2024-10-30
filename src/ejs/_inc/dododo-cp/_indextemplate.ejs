@@ -1,0 +1,31 @@
+<%
+    const imgDir = "../assets/img/dododo-cp/";
+    const commonDir = "../assets/img/dododo-cp/common/";
+%>
+<%- include('../common/_header') %>
+<div class="l-bg-wide"></div>
+<%- include('./_charcters', { imgDir: imgDir + "charcters/", commonDir: commonDir }) %>
+
+<div class="contents">
+    <main class="l-main">
+        <div class="l-bg-main">
+            <div class="l-bg-main__image" data-bg-anime></div>
+            <%- include('./_deco-item', { imgDir: imgDir + "bg/", commonDir: commonDir }) %>
+        </div>
+        <%- include('./_mv', { imgDir: imgDir + "mv/", commonDir: commonDir }) %>
+        <%- include('./_movie', { imgDir: imgDir + "mv/", commonDir: commonDir }) %>
+        <%- include('./_campaigns', { imgDir: imgDir + "campaigns/", commonDir: commonDir }) %>
+        <%- include('./_schedule', { imgDir: imgDir + "schedule/", commonDir: commonDir }) %>
+        <%- include('./_announce', { imgDir: imgDir + "announce/", commonDir: commonDir }) %>
+        <%- include('./_foot', { imgDir: imgDir + "foot/", commonDir: commonDir }) %>
+        <button type="button" class="schedule__anchor js-modal_open" data-scroll-append-target="" data-modalID="schedule">
+            <img src="<%= imgDir %>schedule/btn_anchor.png" alt="">
+            <div class="schedule__anchor__shine"></div>
+        </button>
+    </main>
+
+    <%- include('../../_inc/common/_footer') %>
+</div>
+
+<%- include('../../_inc/common/_download') %>
+<%- include('./_modal', { imgDir: imgDir + "modal/", commonDir: commonDir }) %>

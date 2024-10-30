@@ -1,0 +1,152 @@
+@use 'global' as *;
+
+.about {
+    @include relPosition();
+    margin-top: getRem(184);
+    padding: 0 0 getRem(180);
+
+    @include MQ_WIDE {
+        margin-top: 132px;
+    }
+
+    &::after {
+        @include absPosition(getRem(145), 0);
+        background: url(#{$imgDir}top/about/bg.png) no-repeat 0 0 / 100% auto;
+        content: '';
+        height: 100%;
+        width: 100%;
+    }
+}
+
+.about__inner {
+    @include relPosition();
+    z-index: $zLayer1;
+}
+
+.about__catch {
+    @include relPosition();
+    margin: 0 auto;
+    width: getRem(696);
+
+    &::before {
+        @include absPosition(50%, 50%);
+        animation: rotateLight 30s linear infinite;
+        background: url(#{$imgDir}top/about/bg_light.png) no-repeat center / 100%;
+        content: '';
+        height: getRem(1146);
+        width: getRem(1146);
+        pointer-events: none;
+    }
+
+    @keyframes rotateLight {
+        from {
+            transform: translate(-50%, -50%) rotate(0);
+        }
+        to {
+            transform: translate(-50%, -50%) rotate(360deg);
+        }
+    }
+
+    img {
+        @include relPosition();
+    }
+}
+
+.about__catch__slime {
+    display: block;
+
+    &.-slime1 {
+        @include absPosition(getRem(-48), getRem(90));
+        width: getRem(87);
+    }
+
+    &.-slime2 {
+        @include absPosition(getRem(-80), null, null, getRem(94));
+        width: getRem(127);
+    }
+
+    &.-slime3 {
+        @include absPosition(getRem(120), null, null, getRem(-10));
+        width: getRem(115);
+    }
+
+    &.-slime4 {
+        width: getRem(129);
+        @include absPosition(null, getRem(20), getRem(-30));
+    }
+
+    &.-slime5 {
+        width: getRem(70);
+        @include absPosition(null, null, getRem(-30), getRem(250));
+    }
+
+    &.-slime6 {
+        width: getRem(186);
+        @include absPosition(null, null, getRem(-100), getRem(50));
+    }
+}
+
+.about__pv {
+    @include relPosition();
+    height: getRem(544);
+    margin: getRem(90) auto 0;
+}
+
+.about__pv__cont {
+    @include relPosition();
+    height: 100%;
+    padding-top: getRem(130);
+
+    &::after {
+        @include absPosition(0, 0);
+        background: url(#{$imgDir}top/about/ph_tv.png) no-repeat 0 0 / 100%;
+        content: '';
+        height: 100%;
+        pointer-events: none;
+        width: 100%;
+    }
+}
+
+.about__pv__shadow {
+    @include absPosition(null, getRem(95), 0);
+    background: url(#{$imgDir}top/about/ph_shadow.png) no-repeat 0 0 / 100%;
+    height: getRem(52);
+    width: getRem(560);
+}
+
+.about__pv__cont__movie {
+    @include relPosition();
+    // background: yellow;
+    cursor: pointer;
+    height: getRem(342);
+    margin: 0 auto;
+    overflow: hidden;
+    width: getRem(446);
+
+    iframe {
+        @include absPosition(50%, 50%);
+        aspect-ratio: 16 / 9;
+        // height: 100%;
+        // height: 150%;
+        pointer-events: none;
+        transform: translate(-50%, -50%);
+        // width: 100%;
+        width: 130%;
+    }
+
+    &::after {
+        @include absPosition(50%, 50%);
+        background: url(#{$imgDir}top/about/btn_play.png) no-repeat 0 0 / 100%;
+        content: '';
+        display: block;
+        height: getRem(162);
+        transform: translate(-50%, -50%);
+        width: getRem(162);
+    }
+}
+
+.about__pv__balloon {
+    @include absPosition(getRem(-9), getRem(42));
+    width: getRem(292);
+    z-index: $zLayer1;
+}

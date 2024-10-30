@@ -1,0 +1,170 @@
+@use "src/scss/global" as *;
+
+.foot {
+    @include relPosition;
+    margin-top: getRem(-140);
+}
+
+.foot__inner {
+    padding-top: getRem(192);
+}
+
+.foot__main {
+    @include relPosition;
+    height: getRem(354);
+    width: 100%;
+}
+
+.foot__main__treasure {
+    @include absPosition(0, 50%);
+    width: getRem(460);
+    translate: -50%;
+}
+
+.foot__main__anime {
+    @include absPosition(getRem(-24), 0);
+    width: 100%;
+
+    canvas {
+        width: 100%;
+        height: auto;
+    }
+}
+
+.foot__main__txt {
+    @include absPosition(null, 50%, 0);
+    width: getRem(300);
+    translate: -50%;
+}
+
+.foot__link {
+    display: block;
+    margin: getRem(48) auto 0;
+    width: getRem(700);
+}
+
+.foot__lower {
+    @include relPosition;
+    background: url("#{$imgDir}dododo-cp/bg/foot_lower.webp") no-repeat 50% 0 / 100%;
+    margin-top: getRem(256);
+    padding-top: getRem(128);
+}
+
+.foot__sns__lead {
+    color: #fff;
+    font-size: getRem(40);
+    font-weight: 800;
+    line-height: 1;
+    text-align: center;
+    text-shadow: 0px 0px 20px #261614, 0px 0px 20px #261614, 0px 0px 20px #261614;
+}
+
+.foot__sns___links {
+    margin-top: getRem(32);
+    display: flex;
+    justify-content: center;
+    gap: getRem(32);
+
+    a {
+        display: block;
+        width: getRem(112);
+    }
+}
+
+.foot__btns {
+    background: url("#{$imgDir}dododo-cp/bg/foot_lower_repeat.webp") repeat-y 50% 0 / 100%;
+    margin: getRem(32) auto 0;
+    padding-bottom: getRem(80);
+}
+
+.foot__home {
+    @include relPosition;
+    align-items: center;
+    background: url("#{$imgDir}dododo-cp/foot/ph_btn_link.webp") no-repeat center / contain;
+    color: #fff;
+    display: flex;
+    font-size: getRem(40);
+    font-weight: 900;
+    height: getRem(144);
+    justify-content: center;
+    line-height: 1;
+    margin: 0 auto;
+    width: getRem(700);
+
+    &::after {
+        @include absPosition(50%, unset, unset, getRem(100));
+        background: url("#{$imgDir}dododo-cp/common/icon_blank.svg") no-repeat center / contain;
+        content: "";
+        height: getRem(28);
+        transform: translateY(-50%);
+        width: getRem(28);
+    }
+}
+
+.foot__notice {
+    @include relPosition;
+    border: 2px solid #fff;
+    color: #fff;
+    margin: getRem(32) auto 0;
+    width: getRem(700);
+}
+
+.foot__notice__btn {
+    @include relPosition;
+    align-items: center;
+    display: flex;
+    font-size: getRem(32);
+    font-weight: 700;
+    height: getRem(96);
+    line-height: 1;
+    justify-content: center;
+    width: 100%;
+}
+
+.foot__notice__btn__icon {
+    @include absPosition(50%, null, null, getRem(36));
+    width: getRem(24);
+    translate: 0 -50%;
+    height: getRem(24);
+
+    &::before,
+    &::after {
+        background-color: #fff;
+        content: "";
+        display: block;
+    }
+
+    &::before {
+        @include absPosition(50%, 0);
+        height: 2px;
+        translate: 0 -50%;
+        width: 100%;
+    }
+
+    &::after {
+        @include absPosition(0, 50%);
+        height: 100%;
+        translate: -50%;
+        width: 2px;
+    }
+
+    [aria-expanded="true"] &::after {
+        opacity: 0;
+    }
+}
+
+.foot__notice__contents {
+    height: 0;
+    overflow: hidden;
+
+    p {
+        border-top: 2px solid #fff;
+        padding: getRem(48) getRem(40);
+        font-size: getRem(20);
+    }
+}
+
+[data-foot-anime-sub] {
+    opacity: 0;
+    scale: 1.8;
+}

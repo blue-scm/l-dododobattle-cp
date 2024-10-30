@@ -1,0 +1,168 @@
+@use "src/scss/global" as *;
+
+$mvW: 480;
+$mvH: 1080;
+
+.mv {
+    @include relPosition();
+
+    @include MQ_NARROW {
+        min-height: getRem(1000);
+    }
+
+    @include MQ_WIDE {
+        height: 100vh;
+        min-height: #{$mvH}px;
+    }
+}
+
+.mv__inner {
+    @include relPosition;
+    height: 100%;
+    padding-top: getRem(136);
+}
+
+.mv__logo {
+    width: getRem(554);
+    margin: 0 auto;
+}
+
+.mv__chara {
+    &.-brown {
+        @include absPosition(getRem(32), getRem(-6));
+        width: getRem(204);
+    }
+
+    &.-sally {
+        @include absPosition(0, null, null, getRem(-26));
+        width: getRem(244);
+    }
+}
+
+.mv__main {
+    @include absPosition(0, 0);
+    width: 100%;
+
+    canvas {
+        width: 100%;
+        height: auto;
+    }
+}
+
+.mv__link {
+    @include relPosition;
+    display: block;
+    margin: getRem(592) auto 0;
+    width: getRem(700);
+
+    &.-rumble {
+        animation: rumble 3.2s ease-out 0.4s infinite;
+    }
+}
+
+.mv__x {
+    @include relPosition;
+    background: url("#{$imgDir}dododo-cp/mv/ph_btn_x.webp") no-repeat center / contain;
+    display: block;
+    height: getRem(116);
+    margin: getRem(16) auto 0;
+    width: getRem(564);
+}
+
+.mv__x__baloon {
+    @include absPosition(50%, getRem(-80));
+    width: getRem(128);
+    translate: 0 -50%;
+
+    &.-rumble {
+        animation: trembling 1.8s ease-out 0.4s infinite;
+    }
+}
+
+.mv__x__detail {
+    align-items: center;
+    display: flex;
+    gap: getRem(16);
+    height: 100%;
+    justify-content: center;
+}
+
+.mv__x__icon {
+    width: getRem(64);
+}
+
+.mv__x__text {
+    width: getRem(222);
+}
+
+[data-mv-anime-logo] {
+    opacity: 0;
+    scale: 1.5;
+    rotate: -180deg;
+}
+
+[data-mv-anime-brown] {
+    opacity: 0;
+    transform: translateX(10%) translateY(20%);
+}
+
+[data-mv-anime-sally] {
+    opacity: 0;
+    transform: translateX(-10%) translateY(20%);
+}
+
+[data-mv-anime-other] {
+    opacity: 0;
+    scale: 1.8;
+}
+
+@keyframes trembling {
+    0% {
+        transform: translateX(-5%);
+    }
+    10% {
+        transform: translateX(5%);
+    }
+    20% {
+        transform: translateX(0);
+    }
+    30% {
+        transform: translateX(-5%);
+    }
+    40% {
+        transform: translateX(5%);
+    }
+    50% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes rumble {
+    0% {
+        transform: translate(12px);
+    }
+    2% {
+        transform: translate(-12px);
+    }
+    4% {
+        transform: translate(12px);
+    }
+    6% {
+        transform: translate(-12px);
+    }
+    8% {
+        transform: translate(12px);
+    }
+    10% {
+        transform: translate(-12px);
+    }
+    12% {
+        transform: translate(0);
+    }
+    100% {
+        transform: translate(0);
+    }
+}

@@ -1,0 +1,44 @@
+@use "global" as *;
+
+.l-bg-wide {
+    .wrapper.-dododo-cp & {
+        @include MQ_WIDE {
+            @include fxdPosition(0, 0);
+            background: url("#{$imgDir}dododo-cp/bg/floor.webp") repeat-x bottom left / 438px, url("#{$imgDir}dododo-cp/bg/wall.webp") repeat top left / 224px;
+            width: 100%;
+            height: 100%;
+        }
+
+        @include MQ_NARROW {
+            display: none;
+        }
+    }
+}
+
+.l-bg-main {
+    .wrapper.-dododo-cp & {
+        @include fxdPosition(50lvh, 50%);
+        translate: -50% -50%;
+        height: 110lvh;
+        overflow: hidden;
+        width: 100%;
+
+        @include MQ_WIDE {
+            max-width: 480px;
+        }
+
+        @include MQ_WIDE_HIGH {
+            max-width: 600px;
+        }
+    }
+}
+
+.l-bg-main__image {
+    .wrapper.-dododo-cp & {
+        @include absPosition(0, 50%);
+        background: url("#{$imgDir}dododo-cp/bg/main.webp") no-repeat center / 100%;
+        transform: translate(-50%, 0);
+        height: 100%;
+        width: 126%;
+    }
+}

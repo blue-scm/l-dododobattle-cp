@@ -5,8 +5,8 @@
             "og_url": "https://dododo.game.line.me/ja/",
             "og_image": "https://dododo.game.line.me/ja/assets/siteinfo/og_image.jpg",
             "twitter": "@LINE_dododo_jp",
-            "favicon": "ja/assets/siteinfo/favicon.ico",
-            "apt": "ja/assets/siteinfo/apple-touch-icon-precomposed.png"
+            "favicon": "./assets/siteinfo/favicon.ico",
+            "apt": "./assets/siteinfo/apple-touch-icon-precomposed.png"
         },
         "snslinks": {
             "line": "https://lin.ee/RRznmpD/wots/oa",
@@ -20,19 +20,19 @@
         "footer": {
             "policy": "https://terms2.line.me/LGAPP_privacy",
             "contact": "https://lg-cs.line.me/fm/public/inquiry/index"
-        },
-        "css": ["assets/css/main.css"],
-        "js": ["assets/js/main.js"]
+        }
     },
     "pages": {
-        "home": {
+        "top": {
             "dir": "",
             "relPath": "./",
             "class": "top",
             "meta": {
                 "title": "LINE ドドドバトル 公式サイト",
-                "description": "押し寄せる！ドドドな爽快感！群がるモンスターの大群を蹴散らす超爽快アクション。スマホ向けアプリゲーム『LINE ドドドバトル』の公式サイト。"
-            }
+                "description": "押し寄せる！ドドドな爽快感！群がるモンスターの大群を蹴散らす超爽快カジュアルアクション。スマホ向けアプリゲーム『LINE ドドドバトル』の公式サイト。"
+            },
+            "css": ["./assets/css/main.css"],
+            "js": ["./assets/js/main.js"]
         },
         "dododo-cp": {
             "dir": "dododo-cp",
@@ -43,8 +43,12 @@
             },
             "og": {
                 "og_url": "https://dododo.game.line.me/ja/dododo-cp/",
-                "og_image": "https://dododo.game.line.me/ja/assets/siteinfo/og_image.jpg"
-            }
+                "og_image": "https://dododo.game.line.me/ja/assets/siteinfo/og_image_dododo-cp.jpg",
+                "favicon": "../assets/siteinfo/favicon_dododo-cp.ico",
+                "apt": "../assets/siteinfo/apple-touch-icon-precomposed_dododo-cp.png"
+            },
+            "css": ["../assets/css/dododo-cp.css"],
+            "js": ["../assets/js/dododo-cp.js"]
         }
     }
 }

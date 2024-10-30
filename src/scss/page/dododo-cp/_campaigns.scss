@@ -1,0 +1,196 @@
+@use "src/scss/global" as *;
+
+.campaigns {
+    @include relPosition;
+    margin-top: getRem(68);
+}
+
+.campaigns__head {
+    @include relPosition;
+}
+
+.campaigns__head__main {
+    @include absPosition(getRem(-84), 0);
+
+    canvas {
+        width: 100%;
+        height: auto;
+    }
+}
+
+.campaigns__head__sally {
+    @include absPosition(getRem(-40), null, null, getRem(-36));
+    width: getRem(256);
+}
+
+.campaigns__item {
+    @include relPosition;
+    background-image: url("#{$imgDir}dododo-cp/bg/campaigns_upper.webp"), url("#{$imgDir}dododo-cp/bg/campaigns_lower.webp");
+    background-size: 100%, 100%;
+    background-position: top 0 left 50%, top getRem(838) left 50%;
+    background-repeat: no-repeat, repeat-y;
+
+    & + & {
+        margin-top: getRem(108);
+    }
+}
+
+.campaigns__inner {
+    @include relPosition;
+    height: getRem(838);
+    overflow: hidden;
+
+    &::after {
+        @include absPosition(null, 0, 0, 0);
+        background: linear-gradient(180deg, rgba(200, 165, 87, 0) 0%, #c8a557 72%);
+        content: "";
+        height: getRem(120);
+        width: 100%;
+    }
+
+    [aria-expanded="true"] &::after {
+        content: none;
+    }
+}
+
+.campaigns__badge {
+    @include absPosition(getRem(-32), null, null, getRem(40));
+    width: getRem(144);
+}
+
+.campaigns__title {
+    @include relPosition;
+}
+
+.campaigns__title__sub {
+    display: block;
+}
+
+.campaigns__title__main {
+    @include absPosition(getRem(68), 0);
+    display: block;
+    width: getRem(520);
+}
+
+.campaigns__img {
+    @include relPosition;
+    margin: 0 auto;
+    width: getRem(680);
+
+    &::before {
+        content: "";
+        @include absPosition(0, 0);
+        width: 100%;
+        height: 100%;
+        background: #83614680;
+        rotate: -3deg;
+    }
+
+    img {
+        @include relPosition;
+    }
+}
+
+.campaigns__img__frame {
+    @include absPosition(-1px, -1px);
+    background: url("#{$imgDir}dododo-cp/campaigns/frame.svg") no-repeat center / contain;
+    height: calc(100% + 2px);
+    width: calc(100% + 2px);
+}
+
+.campaigns__texts {
+    color: #663814;
+    margin-top: getRem(16);
+    padding: 0 getRem(70) getRem(64);
+}
+
+.campaigns__date {
+    text-align: center;
+    font-size: getRem(32);
+    line-height: 1.45;
+    font-weight: 800;
+}
+
+.campaigns__head {
+    margin-top: getRem(20);
+    font-size: getRem(36);
+    line-height: 1.44;
+    font-weight: 800;
+}
+
+.campaigns__body {
+    margin-top: getRem(16);
+    font-size: getRem(32);
+    line-height: 1.4;
+    font-weight: 400;
+}
+
+.campaigns__link {
+    display: block;
+    margin-top: getRem(24);
+}
+
+.campaigns__trigger__wrapper {
+    @include absPosition(null, 50%, getRem(-48), null);
+    background: url("#{$imgDir}dododo-cp/campaigns/ph_btn_trigger.webp") no-repeat center / contain;
+    height: getRem(96);
+    transform: translate(-50%, 0);
+    width: getRem(1000);
+}
+
+.campaigns__trigger {
+    align-items: center;
+    color: #fff;
+    display: flex;
+    font-size: getRem(32);
+    height: 100%;
+    justify-content: center;
+    line-height: 1.45;
+    font-weight: 800;
+    width: 100%;
+
+    &::after {
+        @include absPosition(50%, null, null, getRem(36));
+        background: url("#{$imgDir}dododo-cp/campaigns/icon_arrow.svg") no-repeat center / contain;
+        content: "";
+        height: getRem(32);
+        translate: 0 -50%;
+        width: getRem(32);
+
+        [aria-expanded="true"] & {
+            rotate: 180deg;
+        }
+    }
+}
+
+.campaigns__trigger__open {
+    [aria-expanded="true"] & {
+        display: none;
+    }
+
+    [aria-expanded="false"] & {
+        display: block;
+    }
+}
+
+.campaigns__trigger__close {
+    [aria-expanded="true"] & {
+        display: block;
+    }
+
+    [aria-expanded="false"] & {
+        display: none;
+    }
+}
+
+[data-cam-anime-badge],
+[data-cam-anime-title] {
+    opacity: 0;
+    scale: 1.8;
+}
+
+[data-cam-anime-image] {
+    opacity: 0;
+    scale: 0.2;
+    rotate: -800deg;
+}

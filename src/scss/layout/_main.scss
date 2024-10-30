@@ -1,4 +1,4 @@
-@use 'global' as *;
+@use "global" as *;
 
 .l-main {
     @include relPosition();
@@ -16,26 +16,22 @@
         width: 480px;
     }
 
+    @include MQ_WIDE_HIGH {
+        width: 600px;
+    }
+
     video {
         object-fit: cover;
         height: 100%;
         width: 100%;
     }
 
-    // &::before {
-    //     @include absPosition(0, 0);
-    //     background: rgba(#3c6d38, 0.6);
-    //     content: '';
-    //     height: 100%;
-    //     width: 100%;
-    // }
-
     $mvH: 1080;
     $mvW: 480;
 
     &:before {
-        content: '';
-        background: url(#{$imgDir}mv/bg_frame.png) no-repeat 0 0 / cover;
+        content: "";
+        background: url(#{$imgDir}top/mv/bg_frame.png) no-repeat 0 0 / cover;
 
         @include MQ_NARROW {
             width: getRem(960);
@@ -54,8 +50,8 @@
 
     &::after {
         @include absPosition(0, 0);
-        background: url(#{$imgDir}bg_dot.png) 0 0 / #{getRem(12)};
-        content: '';
+        background: url(#{$imgDir}top/bg_dot.png) 0 0 / #{getRem(12)};
+        content: "";
         height: 100%;
         opacity: 0.15;
         width: 100%;

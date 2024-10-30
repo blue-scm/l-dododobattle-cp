@@ -1,0 +1,44 @@
+@use "src/scss/global" as *;
+.announce {
+    @include relPosition;
+    background: url("#{$imgDir}dododo-cp/bg/announce.webp") no-repeat center / cover;
+    height: getRem(800);
+    z-index: 2;
+}
+
+.announce__deco {
+    width: getRem(252);
+
+    &.-left {
+        @include absPosition(getRem(202), getRem(120));
+    }
+    &.-right {
+        @include absPosition(getRem(202), unset, unset, getRem(120));
+    }
+}
+
+.announce__main {
+    @include absPosition(getRem(384), 50%);
+    translate: -50%;
+    width: getRem(652);
+}
+
+.announce__sub {
+    @include absPosition(getRem(330), 50%);
+    translate: -50%;
+    width: getRem(470);
+}
+
+[data-anno-scroll] {
+    opacity: 0;
+}
+
+[data-anno-anime-text] {
+    scale: 1.8;
+    opacity: 0;
+}
+
+[data-anno-anime-shine] {
+    scale: 0;
+    rotate: -220deg;
+}
