@@ -23,6 +23,8 @@ export class Accordion {
 
     toggle() {
         this.contentH = this.pixelToRem(this.content.offsetHeight);
+        console.log("らっぱー", this.wrapper.offsetHeight);
+        console.log("こんてんとはいと", this.content.offsetHeight);
         if (this.open) {
             this.wrapper.animate(this.closeAnimKeyframes(this.defaultH, this.contentH), this.animTiming);
         } else {
@@ -55,6 +57,28 @@ export class Accordion {
     }
 
     pixelToRem(px) {
-        return px / parseFloat(getComputedStyle(document.documentElement).fontSize);
+        const vw = window.innerWidth;
+        const vh = window.innerHeight;
+
+        let rootFontSize;
+
+        if (vw <= 959) {
+            // MQ_NARROW の計算（959px以下の場合）
+            rootFontSize = (16 / 750) * vw;
+        } else if (vw >= 960 && vh >= 900) {
+            // MQ_WIDE_HIGH の計算（960px以上かつ高さが900px以上の場合）
+            rootFontSize = Math.min(16 * (600 / 750), (16 / 750) * vw);
+        } else if (vw >= 960) {
+            // MQ_WIDE の計算（960px以上の場合）
+            rootFontSize = Math.min(16 * (480 / 750), (16 / 750) * vw);
+        } else if (vw >= 769 && vw <= 1200) {
+            // MQ_MID の計算（769px以上1200px以下の場合）
+            rootFontSize = (16 / 750) * vw;
+        } else {
+            // それ以外のデフォルト設定
+            rootFontSize = 16;
+        }
+
+        return px / rootFontSize;
     }
 }

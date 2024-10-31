@@ -1632,6 +1632,7 @@ nav li:before {
 
 .campaigns__link {
   display: block;
+  height: 8.75rem;
   margin-top: 1.5rem;
 }
 
@@ -1804,202 +1805,202 @@ nav li:before {
 }
 
 .deco-item:nth-child(1) {
-  left: 16.4375rem;
+  left: 21.125rem;
   animation-duration: 6s;
-  animation-delay: 4s;
-  width: 1.125rem;
-  height: 1.3125rem;
-  background-image: url("../img/dododo-cp/bg/deco_08.webp");
+  animation-delay: 5s;
+  width: 1.8125rem;
+  height: 1.375rem;
+  background-image: url("../img/dododo-cp/bg/deco_04.webp");
   transform: translateY(-100%) rotate(0);
 }
 
 .deco-item:nth-child(2) {
-  left: 25.4375rem;
-  animation-duration: 5s;
-  animation-delay: 7s;
-  width: 1.375rem;
-  height: 1.4375rem;
-  background-image: url("../img/dododo-cp/bg/deco_010.webp");
+  left: 40rem;
+  animation-duration: 6s;
+  animation-delay: 8s;
+  width: 1.8125rem;
+  height: 1.875rem;
+  background-image: url("../img/dododo-cp/bg/deco_05.webp");
   transform: translateY(-100%) rotate(0);
 }
 
 .deco-item:nth-child(3) {
-  left: 18.125rem;
+  left: 14.6875rem;
   animation-duration: 6s;
-  animation-delay: 8s;
-  width: 1.75rem;
-  height: 1.3125rem;
-  background-image: url("../img/dododo-cp/bg/deco_011.webp");
+  animation-delay: 10s;
+  width: 0.875rem;
+  height: 0.8125rem;
+  background-image: url("../img/dododo-cp/bg/deco_08.webp");
   transform: translateY(-100%) rotate(0);
 }
 
 .deco-item:nth-child(4) {
-  left: 4.5rem;
+  left: 5.5625rem;
   animation-duration: 6s;
-  animation-delay: 3s;
-  width: 1.625rem;
-  height: 1.75rem;
-  background-image: url("../img/dododo-cp/bg/deco_03.webp");
+  animation-delay: 9s;
+  width: 1.125rem;
+  height: 0.8125rem;
+  background-image: url("../img/dododo-cp/bg/deco_013.webp");
   transform: translateY(-100%) rotate(0);
 }
 
 .deco-item:nth-child(5) {
-  left: 4.625rem;
+  left: 8.25rem;
   animation-duration: 5s;
-  animation-delay: 9s;
-  width: 0.9375rem;
+  animation-delay: 10s;
+  width: 1.3125rem;
+  height: 1.0625rem;
+  background-image: url("../img/dododo-cp/bg/deco_06.webp");
+  transform: translateY(-100%) rotate(0);
+}
+
+.deco-item:nth-child(6) {
+  left: 29rem;
+  animation-duration: 5s;
+  animation-delay: 1s;
+  width: 1.625rem;
   height: 0.8125rem;
   background-image: url("../img/dododo-cp/bg/deco_02.webp");
   transform: translateY(-100%) rotate(0);
 }
 
-.deco-item:nth-child(6) {
-  left: 8.625rem;
-  animation-duration: 5s;
-  animation-delay: 1s;
-  width: 1.5rem;
-  height: 1.5625rem;
+.deco-item:nth-child(7) {
+  left: 33.8125rem;
+  animation-duration: 6s;
+  animation-delay: 10s;
+  width: 1.3125rem;
+  height: 1.625rem;
   background-image: url("../img/dododo-cp/bg/deco_013.webp");
   transform: translateY(-100%) rotate(0);
 }
 
-.deco-item:nth-child(7) {
-  left: 6.6875rem;
+.deco-item:nth-child(8) {
+  left: 9.75rem;
   animation-duration: 6s;
-  animation-delay: 4s;
-  width: 1.1875rem;
-  height: 1.625rem;
+  animation-delay: 9s;
+  width: 1.6875rem;
+  height: 1.4375rem;
+  background-image: url("../img/dododo-cp/bg/deco_013.webp");
+  transform: translateY(-100%) rotate(0);
+}
+
+.deco-item:nth-child(9) {
+  left: 20.5625rem;
+  animation-duration: 6s;
+  animation-delay: 10s;
+  width: 1.0625rem;
+  height: 1.1875rem;
+  background-image: url("../img/dododo-cp/bg/deco_013.webp");
+  transform: translateY(-100%) rotate(0);
+}
+
+.deco-item:nth-child(10) {
+  left: 29rem;
+  animation-duration: 5s;
+  animation-delay: 3s;
+  width: 0.875rem;
+  height: 1.3125rem;
   background-image: url("../img/dododo-cp/bg/deco_08.webp");
   transform: translateY(-100%) rotate(0);
 }
 
-.deco-item:nth-child(8) {
-  left: 44.125rem;
+.deco-item:nth-child(11) {
+  left: 20.5rem;
   animation-duration: 5s;
-  animation-delay: 5s;
-  width: 1.8125rem;
+  animation-delay: 10s;
+  width: 1.125rem;
   height: 1rem;
   background-image: url("../img/dododo-cp/bg/deco_03.webp");
   transform: translateY(-100%) rotate(0);
 }
 
-.deco-item:nth-child(9) {
-  left: 14.875rem;
-  animation-duration: 5s;
-  animation-delay: 6s;
-  width: 1.875rem;
-  height: 1.4375rem;
-  background-image: url("../img/dododo-cp/bg/deco_012.webp");
-  transform: translateY(-100%) rotate(0);
-}
-
-.deco-item:nth-child(10) {
-  left: 46.375rem;
-  animation-duration: 6s;
-  animation-delay: 5s;
-  width: 1.125rem;
-  height: 1.5625rem;
-  background-image: url("../img/dododo-cp/bg/deco_09.webp");
-  transform: translateY(-100%) rotate(0);
-}
-
-.deco-item:nth-child(11) {
-  left: 15.875rem;
-  animation-duration: 5s;
-  animation-delay: 9s;
-  width: 0.875rem;
-  height: 1.75rem;
-  background-image: url("../img/dododo-cp/bg/deco_03.webp");
-  transform: translateY(-100%) rotate(0);
-}
-
 .deco-item:nth-child(12) {
-  left: 20.875rem;
+  left: 43.25rem;
   animation-duration: 5s;
-  animation-delay: 5s;
-  width: 1rem;
-  height: 0.875rem;
-  background-image: url("../img/dododo-cp/bg/deco_02.webp");
-  transform: translateY(-100%) rotate(0);
-}
-
-.deco-item:nth-child(13) {
-  left: 37.375rem;
-  animation-duration: 5s;
-  animation-delay: 1s;
-  width: 0.8125rem;
-  height: 0.9375rem;
-  background-image: url("../img/dododo-cp/bg/deco_010.webp");
-  transform: translateY(-100%) rotate(0);
-}
-
-.deco-item:nth-child(14) {
-  left: 26.0625rem;
-  animation-duration: 5s;
-  animation-delay: 6s;
-  width: 1.5625rem;
-  height: 1.5625rem;
-  background-image: url("../img/dododo-cp/bg/deco_011.webp");
-  transform: translateY(-100%) rotate(0);
-}
-
-.deco-item:nth-child(15) {
-  left: 0.125rem;
-  animation-duration: 6s;
-  animation-delay: 1s;
-  width: 1.5rem;
-  height: 1.8125rem;
-  background-image: url("../img/dododo-cp/bg/deco_011.webp");
-  transform: translateY(-100%) rotate(0);
-}
-
-.deco-item:nth-child(16) {
-  left: 12.625rem;
-  animation-duration: 6s;
-  animation-delay: 5s;
-  width: 1.125rem;
-  height: 1.5625rem;
-  background-image: url("../img/dododo-cp/bg/deco_07.webp");
-  transform: translateY(-100%) rotate(0);
-}
-
-.deco-item:nth-child(17) {
-  left: 32.25rem;
-  animation-duration: 6s;
-  animation-delay: 7s;
-  width: 1.75rem;
-  height: 1.5625rem;
-  background-image: url("../img/dododo-cp/bg/deco_08.webp");
-  transform: translateY(-100%) rotate(0);
-}
-
-.deco-item:nth-child(18) {
-  left: 46.1875rem;
-  animation-duration: 6s;
-  animation-delay: 2s;
-  width: 1.875rem;
-  height: 1.4375rem;
+  animation-delay: 10s;
+  width: 0.875rem;
+  height: 1.625rem;
   background-image: url("../img/dododo-cp/bg/deco_05.webp");
   transform: translateY(-100%) rotate(0);
 }
 
-.deco-item:nth-child(19) {
-  left: 40.4375rem;
+.deco-item:nth-child(13) {
+  left: 0.3125rem;
   animation-duration: 6s;
-  animation-delay: 8s;
-  width: 1.6875rem;
-  height: 0.8125rem;
-  background-image: url("../img/dododo-cp/bg/deco_08.webp");
+  animation-delay: 10s;
+  width: 1.5625rem;
+  height: 1.875rem;
+  background-image: url("../img/dododo-cp/bg/deco_013.webp");
+  transform: translateY(-100%) rotate(0);
+}
+
+.deco-item:nth-child(14) {
+  left: 23.5rem;
+  animation-duration: 5s;
+  animation-delay: 5s;
+  width: 1.25rem;
+  height: 1.25rem;
+  background-image: url("../img/dododo-cp/bg/deco_013.webp");
+  transform: translateY(-100%) rotate(0);
+}
+
+.deco-item:nth-child(15) {
+  left: 47.75rem;
+  animation-duration: 5s;
+  animation-delay: 10s;
+  width: 0.8125rem;
+  height: 1.5rem;
+  background-image: url("../img/dododo-cp/bg/deco_03.webp");
+  transform: translateY(-100%) rotate(0);
+}
+
+.deco-item:nth-child(16) {
+  left: 30.125rem;
+  animation-duration: 6s;
+  animation-delay: 6s;
+  width: 0.875rem;
+  height: 1.875rem;
+  background-image: url("../img/dododo-cp/bg/deco_05.webp");
+  transform: translateY(-100%) rotate(0);
+}
+
+.deco-item:nth-child(17) {
+  left: 21.1875rem;
+  animation-duration: 6s;
+  animation-delay: 5s;
+  width: 1.5rem;
+  height: 1.875rem;
+  background-image: url("../img/dododo-cp/bg/deco_013.webp");
+  transform: translateY(-100%) rotate(0);
+}
+
+.deco-item:nth-child(18) {
+  left: 22.1875rem;
+  animation-duration: 5s;
+  animation-delay: 1s;
+  width: 1.25rem;
+  height: 1.875rem;
+  background-image: url("../img/dododo-cp/bg/deco_012.webp");
+  transform: translateY(-100%) rotate(0);
+}
+
+.deco-item:nth-child(19) {
+  left: 1.3125rem;
+  animation-duration: 6s;
+  animation-delay: 5s;
+  width: 1.4375rem;
+  height: 1.8125rem;
+  background-image: url("../img/dododo-cp/bg/deco_04.webp");
   transform: translateY(-100%) rotate(0);
 }
 
 .deco-item:nth-child(20) {
-  left: 26.75rem;
-  animation-duration: 6s;
-  animation-delay: 4s;
+  left: 25.125rem;
+  animation-duration: 5s;
+  animation-delay: 9s;
   width: 0.875rem;
-  height: 1.5rem;
-  background-image: url("../img/dododo-cp/bg/deco_04.webp");
+  height: 1.375rem;
+  background-image: url("../img/dododo-cp/bg/deco_012.webp");
   transform: translateY(-100%) rotate(0);
 }
 
