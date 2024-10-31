@@ -5,8 +5,8 @@
             "og_url": "https://dododo.game.line.me/ja/",
             "og_image": "https://dododo.game.line.me/ja/assets/siteinfo/og_image.jpg",
             "twitter": "@LINE_dododo_jp",
-            "favicon": "./assets/siteinfo/favicon.ico",
-            "apt": "./assets/siteinfo/apple-touch-icon-precomposed.png"
+            "favicon": "/ja/assets/siteinfo/favicon.ico",
+            "apt": "/ja/assets/siteinfo/apple-touch-icon-precomposed.png"
         },
         "snslinks": {
             "line": "https://lin.ee/RRznmpD/wots/oa",
@@ -44,11 +44,10 @@
             "og": {
                 "og_url": "https://dododo.game.line.me/ja/dododo-cp/",
                 "og_image": "https://dododo.game.line.me/ja/assets/siteinfo/og_image_dododo-cp.jpg",
-                "favicon": "../assets/siteinfo/favicon_dododo-cp.ico",
-                "apt": "../assets/siteinfo/apple-touch-icon-precomposed_dododo-cp.png"
+                "favicon": "/ja/assets/siteinfo/favicon_dododo-cp.ico"
             },
-            "css": ["../assets/css/dododo-cp.css"],
-            "js": ["../assets/js/dododo-cp.js"]
+            "css": ["/ja/assets/css/dododo-cp.css"],
+            "js": ["/ja/assets/js/dododo-cp.js"]
         }
     }
 }
