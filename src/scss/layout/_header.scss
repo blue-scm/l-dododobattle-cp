@@ -37,7 +37,7 @@
     &::before {
         @include MQ_NARROW {
             @include absPosition(0, 0);
-            background: url(/ja/assets/img/common/header/bg.png) no-repeat 0 0 / 100%;
+            background: url(#{$imgDir}common/header/bg.png) no-repeat 0 0 / 100%;
             content: "";
             height: getRem(88);
             width: 100%;
@@ -63,7 +63,7 @@
 
     &::before {
         @include absPosition(getRem(10), getRem(5));
-        background: url(/ja/assets/img/header/ph_kira.png) no-repeat 0 0 / 100%;
+        background: url(#{$imgDir}common/header/ph_kira.png) no-repeat 0 0 / 100%;
         content: "";
         height: getRem(52);
         width: getRem(502);

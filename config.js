@@ -1,6 +1,6 @@
 // config
 const PUBLIC_DIR = "./html";
-const PROJECT_DIR = "./html/ja";
+const PROJECT_DIR = "./html/ja/dododo-cp";
 const SRC_DIR = "./src";
 
 const CONFIG = {

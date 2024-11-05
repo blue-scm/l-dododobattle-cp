@@ -3,31 +3,31 @@
 
 <title><%= pageInfo.meta.title %></title>
 
-<link rel="alternate" hreflang="ja" href="<%= common.og.og_url %>">
+<link rel="alternate" hreflang="ja" href="<%= pageInfo.meta.og.og_url %>">
 
 <meta name="description" content="<%= pageInfo.meta.description %>" />
 <meta property="og:title" content="<%= pageInfo.meta.title %>" />
 
 <meta name="robots" content="index, follow">
-<link rel="canonical" href="<%= common.og.og_url %>">
+<link rel="canonical" href="<%= pageInfo.meta.og.og_url %>">
 
 <!-- Open Graph Meta Tags -->
 <meta property="og:description" content="<%= pageInfo.meta.description %>" />
-<meta property="og:image" content="<%= pageInfo.og ? pageInfo.og.og_image : common.og.og_image %>" />
-<meta property="og:url" content="<%= pageInfo.og ? pageInfo.og.og_url : common.og.og_url %>">
+<meta property="og:image" content="<%= pageInfo.meta.og.og_image %>" />
+<meta property="og:url" content="<%= pageInfo.meta.og.og_url %>">
 <meta property="og:type" content="website">
 
 <!-- Twitter Meta Tags -->
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:site" content="<%= common.og.twitter %>" />
-<meta name="twitter:creator" content="<%= common.og.twitter %>" />
+<meta name="twitter:site" content="<%= pageInfo.meta.og.twitter %>" />
+<meta name="twitter:creator" content="<%= pageInfo.meta.og.twitter %>" />
 <meta name="twitter:title" content="<%= pageInfo.meta.title %>" />
 <meta name="twitter:description" content="<%= pageInfo.meta.description %>" />
-<meta name="twitter:image" content="<%= pageInfo.og ? pageInfo.og.og_image : common.og.og_image %>" />
+<meta name="twitter:image" content="<%= pageInfo.meta.og.og_image %>" />
 
 <!-- Favicon and Apple Touch Icon -->
-<link rel="shortcut icon" type="image/png" href="<%= pageInfo.og ? pageInfo.og.favicon : common.og.favicon %>" />
-<link rel="apple-touch-icon" href="<%= common.og.apt %>" />
+<link rel="shortcut icon" type="image/png" href="<%= pageInfo.meta.og.favicon %>" />
+<link rel="apple-touch-icon" href="<%= pageInfo.meta.og.apt %>" />
 
 <!-- Apple Meta Tags -->
 <meta name="apple-mobile-web-app-capable" content="yes">
@@ -47,6 +47,6 @@
 
 <!-- PAGE CSS -->
 <%# page css loop %>
-<% pages[pageId].css.forEach(function (value) { %>
+<% pageInfo.css.forEach(function (value) { %>
 <link rel="stylesheet" href="<%= value %>" />
 <% }); %>

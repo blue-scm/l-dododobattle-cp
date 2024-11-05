@@ -1,12 +1,17 @@
 {
-    "common": {
-        "root": "/ja/",
-        "og": {
-            "og_url": "https://dododo.game.line.me/ja/",
-            "og_image": "https://dododo.game.line.me/ja/assets/siteinfo/og_image.jpg",
-            "twitter": "@LINE_dododo_jp",
-            "favicon": "/ja/assets/siteinfo/favicon.ico",
-            "apt": "/ja/assets/siteinfo/apple-touch-icon-precomposed.png"
+    "pageInfo": {
+        "class": "dododo-cp",
+        "relPath": "./",
+        "css": ["./assets/css/dododo-cp.css"],
+        "js": ["./assets/js/dododo-cp.js"],
+        "meta": {
+            "title": "LINE ドドドバトル 新規リリース記念！7大キャンペーン特設サイト",
+            "description": "『LINE ドドドバトル』は新規リリース記念して、7大キャンペーンを開催中！ドドドなキャンペーンを見逃すな！",
+            "og": {
+                "og_url": "https://dododo.game.line.me/ja/dododo-cp/",
+                "og_image": "https://dododo.game.line.me/ja/assets/siteinfo/og_image_dododo-cp.jpg",
+                "favicon": "./assets/siteinfo/favicon_dododo-cp.ico"
+            }
         },
         "snslinks": {
             "line": "https://lin.ee/RRznmpD/wots/oa",
@@ -20,34 +25,6 @@
         "footer": {
             "policy": "https://terms2.line.me/LGAPP_privacy",
             "contact": "https://lg-cs.line.me/fm/public/inquiry/index"
-        }
-    },
-    "pages": {
-        "top": {
-            "dir": "",
-            "relPath": "./",
-            "class": "top",
-            "meta": {
-                "title": "LINE ドドドバトル 公式サイト",
-                "description": "押し寄せる！ドドドな爽快感！群がるモンスターの大群を蹴散らす超爽快カジュアルアクション。スマホ向けアプリゲーム『LINE ドドドバトル』の公式サイト。"
-            },
-            "css": ["./assets/css/main.css"],
-            "js": ["./assets/js/main.js"]
-        },
-        "dododo-cp": {
-            "dir": "dododo-cp",
-            "relPath": "../",
-            "meta": {
-                "title": "LINE ドドドバトル 新規リリース記念！7大キャンペーン特設サイト",
-                "description": "『LINE ドドドバトル』は新規リリース記念して、7大キャンペーンを開催中！ドドドなキャンペーンを見逃すな！"
-            },
-            "og": {
-                "og_url": "https://dododo.game.line.me/ja/dododo-cp/",
-                "og_image": "https://dododo.game.line.me/ja/assets/siteinfo/og_image_dododo-cp.jpg",
-                "favicon": "/ja/assets/siteinfo/favicon_dododo-cp.ico"
-            },
-            "css": ["/ja/assets/css/dododo-cp.css"],
-            "js": ["/ja/assets/js/dododo-cp.js"]
         }
     }
 }

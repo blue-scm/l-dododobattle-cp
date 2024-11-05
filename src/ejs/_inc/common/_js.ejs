@@ -1,10 +1,10 @@
 <!-- VENDOR JS -->
-<script defer src="<%= pages[pageId].relPath %>assets/js/vendor.js"></script>
+<script defer src="<%= pageInfo.relPath %>assets/js/vendor.js"></script>
 
 <!-- PAGE JS -->
 <%# page js loop %>
-<% if (pages[pageId].js) { %>
-<% pages[pageId].js.forEach(function (value) { %>
+<% if (pageInfo.js) { %>
+<% pageInfo.js.forEach(function (value) { %>
 <script defer src="<%= value %>"></script>
 <% }); %>
 <% } %>
